@@ -1,0 +1,688 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Comparer un résultat expérimental avec un résultat théorique. &#8212; Etude de systèmes optiques</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp2_optique/notebook/comparaison.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Vérifier une loi physique" href="verifier_loi.html" />
+    <link rel="prev" title="1. Rendre compte de résultats expérimentaux" href="rcgeneral.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://pcsi3physiquestan.github.io/tp2_optique/notebook/comparaison.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Comparer un résultat expérimental avec un résultat théorique." />
+<meta property="og:description" content="Comparer un résultat expérimental avec un résultat théorique.  Comparaison qualitative.  Principe  Une première étude peut-être réalisée en comparant les interv" />
+
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Etude de systèmes optiques</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tp_incertitude.html">
+   Incertitudes de mesure et méthodes expérimentales.
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Vocabulaire et étapes d'une manipulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="vocabulaire.html">
+   1. Vocabulaire et étapes : Généralités
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Incertitudes
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="incertitude.html">
+   1. Les incertitudes de mesure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="distribution.html">
+   2. Distributions statistiques usuelles.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sources.html">
+   3. Sources d’incertitudes et bilan.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="indirecte.html">
+   4. Incertitude des mesurandes indirectes.
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Rendre compte d'un résultat
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="rcgeneral.html">
+   1. Rendre compte de résultats expérimentaux
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Exploiter les mesures
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Comparer un résultat expérimental avec un résultat théorique.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="verifier_loi.html">
+   2. Vérifier une loi physique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression.html">
+   3. Ajustement d’un modèle affine
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/notebook/comparaison.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebook/comparaison.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebook/comparaison.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparaison-qualitative">
+   1.1. Comparaison qualitative.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#principe">
+     1.1.1. Principe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#limites">
+     1.1.2. Limites
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ecart-normalise">
+   1.2. Ecart-normalisé
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#explication-du-raisonnement">
+     1.2.1. Explication du raisonnement.
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#position-du-probleme">
+       1.2.1.1. Position du problème
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#considerations-sur-les-distributions-statistiques">
+       1.2.1.2. Considérations sur les distributions statistiques
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#vers-l-ecart-normalise">
+       1.2.1.3. Vers l’écart-normalisé.
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#synthese">
+     1.2.2. Synthèse
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exemples-d-utilisation">
+   1.3. Exemples d’utilisation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resultat-unique">
+     1.3.1. Résultat unique
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#calcul-de-l-ecart-normalise">
+       1.3.1.1. Calcul de l’écart normalisé
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#analyse-graphique">
+       1.3.1.2. Analyse graphique.
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiples-resultats">
+     1.3.2. Multiples résultats
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>Obtenir une mesure n’est en général pas suffisant, il est important d’exploiter les résultats obtenus en vue de répondre à la problématique fixée. Vous aller apprendre ici à comparer un résultat expérimental à un résultat attendu (théorique, valeur constructeur…)</p>
+<div class="section" id="comparer-un-resultat-experimental-avec-un-resultat-theorique">
+<h1><span class="section-number">1. </span>Comparer un résultat expérimental avec un résultat théorique.<a class="headerlink" href="#comparer-un-resultat-experimental-avec-un-resultat-theorique" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="comparaison-qualitative">
+<h2><span class="section-number">1.1. </span>Comparaison qualitative.<a class="headerlink" href="#comparaison-qualitative" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="principe">
+<h3><span class="section-number">1.1.1. </span>Principe<a class="headerlink" href="#principe" title="Permalink to this headline">¶</a></h3>
+<p>Une première étude peut-être réalisée en comparant les intervalles associées au couple {résultat de mesurage + incertitude de mesure} à la valeur théorique attendue. Si la barre d’incertitude comprend la valeur théorique, on peut considérer que la théorie et l’expérience sont compatibles.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On peut utiliser cette méthode pour comparer une gamme de résultats à la valeur moyenne et voir si certains points ne sont pas des mesures problématiques.</p>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Un tracé graphique n’est pas obligatoire pour une seule mesure.</p>
+</div>
+</div>
+<div class="section" id="limites">
+<h3><span class="section-number">1.1.2. </span>Limites<a class="headerlink" href="#limites" title="Permalink to this headline">¶</a></h3>
+<p>Cette comparaison a ses limites car l’intervalle défini par l’écart-type autour du résultat de mesurage exclut des valeurs qui ont une probabilité encore importante d’être réalisée.</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<p>Dans le cas d’une distribution gaussienne, un valeur lors d’un tirage n’a que 63% de chance de se trouver dans l’intervalle à un écart-type. On ne tient pas compte d’un tiers des valeurs en raisonnant de cette façon.</p>
+</div>
+<p>De plus, on ne tient pas compte d’une possible incertitude sur la valeur théorique/constructeur.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Si la valeur théorique est sujette à une incertitude, on pourrait comparer deux intervalles mais la limite précédente rend le raisonnement encore plus imprécis.</p>
+</div>
+</div>
+</div>
+<div class="section" id="ecart-normalise">
+<h2><span class="section-number">1.2. </span>Ecart-normalisé<a class="headerlink" href="#ecart-normalise" title="Permalink to this headline">¶</a></h2>
+<p>Pour palier au problème précédent, on va utiliser une méthode très répandue aujourd’hui : le concept <strong>d’écart normalisé.</strong></p>
+<div class="section" id="explication-du-raisonnement">
+<h3><span class="section-number">1.2.1. </span>Explication du raisonnement.<a class="headerlink" href="#explication-du-raisonnement" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="position-du-probleme">
+<h4><span class="section-number">1.2.1.1. </span>Position du problème<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">¶</a></h4>
+<p>On considère :</p>
+<ul class="simple">
+<li><p>qu’on étudie une grandeur G possèdant une valeur attendue <span class="math notranslate nohighlight">\(G_{att}\)</span> dont la valeur est <span class="math notranslate nohighlight">\(g_{att}\)</span> avec une incertitude <span class="math notranslate nohighlight">\(u(G_{att})\)</span>. <em>On supposera que la distribution suivie est une distribution gaussienne.</em></p></li>
+<li><p>on a réalise le mesurage de la grandeur G (appelé <span class="math notranslate nohighlight">\(G_{mes}\)</span>) dont le résultat de mesurage est <span class="math notranslate nohighlight">\(g_{mes}\)</span> avec une incertitude <span class="math notranslate nohighlight">\(u(G_{mes})\)</span>. <em>On supposera aussi que la distribution est gaussienne.</em></p></li>
+</ul>
+<p>On veut savoir si la valeur mesurée et la valeur attendue sont cohérentes.</p>
+</div>
+<div class="section" id="considerations-sur-les-distributions-statistiques">
+<h4><span class="section-number">1.2.1.2. </span>Considérations sur les distributions statistiques<a class="headerlink" href="#considerations-sur-les-distributions-statistiques" title="Permalink to this headline">¶</a></h4>
+<p>On <strong>espère</strong> avoir un écart nul <span class="math notranslate nohighlight">\(g_{mes} - g_{att} = 0\)</span> mais il est évident que ce n’est pas possible car les <strong>deux grandeurs sont soumises à une incertitude (variabilité ou manque d’information).</strong></p>
+<p>Par contre, la grandeur <span class="math notranslate nohighlight">\(\Delta G = G_{mes} - G_{att}\)</span> est aussi un mesurande qu’on peut <em>voir comme</em> une variable aléatoire. Et si valeur attendue et expérience sont cohérentes, alors on <strong>attend</strong> l’espérance de cette distribution soit 0 (<em>distribution centrée</em>).</p>
+<p>De plus, <span class="math notranslate nohighlight">\(G_{mes}\)</span> et <span class="math notranslate nohighlight">\(G_{att}\)</span> étant indépendante, on peut connaître la variance de leur différence grâce aux théorèmes mathématiques sur la variance : <span class="math notranslate nohighlight">\(v_{\Delta G} = v_{G_{mes}} + v_{G_{att}}\)</span> soit pour les écart-type:</p>
+<div class="math notranslate nohighlight">
+\[
+    \sigma_{\Delta G} = \sqrt{\sigma^2_{G_{mes}} + \sigma^2_{G_{att}}}
+\]</div>
+<p>En divisant <span class="math notranslate nohighlight">\(\Delta G\)</span> par <span class="math notranslate nohighlight">\(\sigma_{\Delta G}\)</span>, on aura donc une variable aléatoire <span class="math notranslate nohighlight">\(\eta_G\)</span> qui aura un écart-type égal à 1 (<em>distribution réduite</em>).</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Si l’expérience et les attentes (théoriques ou constructeur) sont compatibles, on attend donc que la variable aléatoire associée au mesurande ;</p>
+<div class="math notranslate nohighlight">
+\[
+\eta_G = \frac{G_{mes} - G_{att}}{\sqrt{\sigma^2(G_{mes}) + \sigma^2(G_{att})}}
+\]</div>
+<p>soit possède <strong>une distribution centrée réduite.</strong></p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Vu qu’on compose en général plusieurs distributions pour arriver à <span class="math notranslate nohighlight">\(\eta_G\)</span>, il est raisonnable de penser qu’elle aura une allure gaussienne (ou au moins proche d’une gaussienne).</p>
+</div>
+</div>
+<p>On s’est donc ramené à l’idée que pour tester la compatibilité valeur attendue-expérience, il ne faut pas attendre un écart nul mais des données compatibles avec une estimation de <span class="math notranslate nohighlight">\(\eta_G\)</span></p>
+</div>
+<div class="section" id="vers-l-ecart-normalise">
+<h4><span class="section-number">1.2.1.3. </span>Vers l’écart-normalisé.<a class="headerlink" href="#vers-l-ecart-normalise" title="Permalink to this headline">¶</a></h4>
+<p>On rappelle qu’on ne possède pas l’allure de <span class="math notranslate nohighlight">\(\eta_G\)</span> mais uniquement <span class="math notranslate nohighlight">\(g_{mes}, u(G_{mes}), g_{att}, u(G_{att})\)</span>, on ne peut donc qu’estimer <span class="math notranslate nohighlight">\(\eta_G\)</span> par:</p>
+<div class="math notranslate nohighlight">
+\[
+\eta = \frac{g_{mes} - g_{att}}{\sqrt{u^2(G_{mes}) + u^2(G_{att})}}
+\]</div>
+<p><strong>Il faut donc un critère sur la valeur de <span class="math notranslate nohighlight">\(\eta\)</span> pour savoir s’il y a compatibilité ou non.</strong></p>
+<p>Il existe des tests en statistique permettant à partir d’une estimation de décider si l’hypothèse d’une distribution centrée réduite est acceptable ou non. Ces tests ne sont pas au programme, on admet que cela revient à fixer une valeur seuil pour <span class="math notranslate nohighlight">\(\eta\)</span> et considérer que si la valeur seuil est dépassée, il n’y a pas compatibilité. Si  <span class="math notranslate nohighlight">\(\eta\)</span> est inférieure à cette valeur seuil, il y a compatibilité.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>En théorie, le choix de la valeur seuil implique un pourcentage de risque d’erreur connu (ou presque…) lorsqu’on rejette la compatibilité et un risque d’erreur non connu lorsqu’on accepte la compatibilité. On doit se contenter de ce <em>risque d’erreur inconnu</em> en cas de compatibilité car <strong>on doit prendre une décision</strong>.</p>
+</div>
+<p>Dans le cadre des classes préparatoires, le choix de cette valeur seuil est fixé à 2. Cela revient, dans l’hypothèse d’une distribution gaussienne à rejetter une compatibilité avec un risque d’erreur de 5%.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Le choix d’une valeur de 2 est arbitraire mais régulièrement choisie en laboratoire ou dans l’industrie. On pourrait néanmoins choisir uine autre valeur (on choisit une valeur de 5 en physique des particules par exemple,le risque d’erreur en cas de rejet étant alors beaucoup plus faible).</p>
+</div>
+</div>
+</div>
+<div class="section" id="synthese">
+<h3><span class="section-number">1.2.2. </span>Synthèse<a class="headerlink" href="#synthese" title="Permalink to this headline">¶</a></h3>
+<div class="important admonition">
+<p class="admonition-title">Ecart normalisé</p>
+<p>Pour tester la compatibilité entre une valeur attendue <span class="math notranslate nohighlight">\(g_{att}\)</span> d’incertitude <span class="math notranslate nohighlight">\(u(g_{att})\)</span> et un résultat de mesurage <span class="math notranslate nohighlight">\(g_{mes}\)</span> d’incertitude <span class="math notranslate nohighlight">\(u(g_{mes})\)</span>, on calcule <strong>l’écart normalisé</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\eta = \frac{g_{mes} - g_{att}}{\sqrt{u^2(g_{mes}) + u^2(g_{att})}}
+\]</div>
+<ul class="simple">
+<li><p>Si l’écart normalisé est inférieur à 2, on considérera que valeur attendue et expérience sont compatibles.</p></li>
+<li><p>Si l’écart normalisé est supérieur à 2, on considérera que valeur attendue et expérience ne sont pas compatibles.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="exemples-d-utilisation">
+<h2><span class="section-number">1.3. </span>Exemples d’utilisation<a class="headerlink" href="#exemples-d-utilisation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="resultat-unique">
+<h3><span class="section-number">1.3.1. </span>Résultat unique<a class="headerlink" href="#resultat-unique" title="Permalink to this headline">¶</a></h3>
+<p>On va reprendre l’exemple de l’étude d’une résistance électrique. Cela sera aussi l’occasion de comprendre graphiquement la notion d’écart normalisé. On ne refait pas toute l’étude. On supposera :</p>
+<ol class="simple">
+<li><p>Cas 1 :</p>
+<ul class="simple">
+<li><p>qu’on a mesuré une valeur de résistance <span class="math notranslate nohighlight">\(R = 373,1 \pm 3,5 \Omega\)</span></p></li>
+<li><p>que le constructeur donne une valeur de résistance : <span class="math notranslate nohighlight">\(R = 370 \pm 4 \Omega\)</span></p></li>
+</ul>
+</li>
+<li><p>Cas 2 :</p>
+<ul class="simple">
+<li><p>qu’on a mesuré une valeur de résistance <span class="math notranslate nohighlight">\(R = 398,5 \pm 6,1 \Omega\)</span></p></li>
+<li><p>que le constructeur donne une valeur de résistance : <span class="math notranslate nohighlight">\(R = 370 \pm 4 \Omega\)</span></p></li>
+</ul>
+</li>
+</ol>
+<div class="section" id="calcul-de-l-ecart-normalise">
+<h4><span class="section-number">1.3.1.1. </span>Calcul de l’écart normalisé<a class="headerlink" href="#calcul-de-l-ecart-normalise" title="Permalink to this headline">¶</a></h4>
+<p>On obtient :</p>
+<ul class="simple">
+<li><p>Cas 1 : <span class="math notranslate nohighlight">\(\eta =\)</span><span class="pasted-text">0.6</span></p>
+<ul>
+<li><p>On peut donc conclure que la valeur constructeur et l’expérience réalisée sont compatibles.</p></li>
+</ul>
+</li>
+<li><p>Cas 2 : <span class="math notranslate nohighlight">\(\eta =\)</span><span class="pasted-text">3.9</span></p>
+<ul>
+<li><p>On doit considérer que la valeur constructeur et l’expérience réalisée ne sont pas compatibles.</p></li>
+<li><p><strong>Il ne faut pas en rester là et chercher les causes de cette incompatibilité.</strong></p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Les causes d’incompatibilité peuvent être nombreuses. Citons (non exhaustif):</p>
+<ul class="simple">
+<li><p>Une expérience mal réalisée</p></li>
+<li><p>Une modélisation théorique de l’expérience incorrecte. Par exemple ici, il y a peut-être une autre résistance dans le circuit (du générateur ?) qui modifie les relations théoriques à utiliser.</p></li>
+<li><p>Des incertitudes sous évaluées.</p></li>
+<li><p>Une valeur attendue incohérente (cette possibilité étant quand même <em>très rare</em> en TP).</p></li>
+</ul>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Si la valeur théorique n’a pas d’incertitude (vitesse de la lumière par exemple), on ne divise que par l’incertitude associée à la valeur mesurée. On se ramène ainsi au z-score utilisé au lycée.</p>
+</div>
+</div>
+<div class="section" id="analyse-graphique">
+<h4><span class="section-number">1.3.1.2. </span>Analyse graphique.<a class="headerlink" href="#analyse-graphique" title="Permalink to this headline">¶</a></h4>
+<p>Puisqu’on possède les valeurs mesurées et les incertitudes, on va pouvoir faire une simulation de Monte-Carlo des grandeurs. On a réalisé N=1000000 simulations.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>On a choisi des distributions gaussiennes pour les <span class="math notranslate nohighlight">\(R_i\)</span></p>
+</div>
+<p>On représente <a class="reference internal" href="#feta-fig"><span class="std std-ref">ci-dessous</span></a> (chaque ligne correspond à un cas) :</p>
+<ol class="simple">
+<li><p>Les barres d’incertitudes pour la valeur expérimentales puis pour la valeur constructeur.</p></li>
+<li><p>Les histogrammes des deux distributions (valeur expérimentale et valeur constructeur)</p></li>
+</ol>
+<div class="figure align-center" id="feta-fig">
+<div class="cell_output docutils container">
+<img alt="../_images/comparaison_15_0.png" src="../_images/comparaison_15_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="multiples-resultats">
+<h3><span class="section-number">1.3.2. </span>Multiples résultats<a class="headerlink" href="#multiples-resultats" title="Permalink to this headline">¶</a></h3>
+<p>On peur aussi se servir de l’écart normalisé pour tester la compatibilité d’un ensemble de mesures entre elles. On suppose que l’on a mesure 10 fois une distance focale d’une lentille <span class="math notranslate nohighlight">\(f'\)</span>. Les mesures sont données dans le <a class="reference internal" href="#focale-tbl"><span class="std std-ref">tableau ci-dessous</span></a></p>
+<div class="figure align-center" id="focale-tbl">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>f' (cm)</th>
+      <th>u(f') (cm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>10.55</td>
+      <td>0.43</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9.73</td>
+      <td>0.47</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10.39</td>
+      <td>0.33</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>9.08</td>
+      <td>0.40</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>10.80</td>
+      <td>0.26</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>10.99</td>
+      <td>0.20</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>9.08</td>
+      <td>0.47</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>9.06</td>
+      <td>0.33</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>10.34</td>
+      <td>0.22</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9.22</td>
+      <td>0.47</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>On va se servir de l’écart normalisé pour comparer les différents échantillons à la valeur moyenne obtenue et voir si certaines valeurs ne sont pas problématiques. La <a class="reference internal" href="#focen-fig"><span class="std std-ref">figure ci-après</span></a> montre les barre d’incertitude et les écart normalisés.</p>
+<p>La valeur de focale ainsi mesurée est :</p>
+<p><span class="math notranslate nohighlight">\(f' =\)</span> (<span class="pasted-text">9.92</span> <span class="math notranslate nohighlight">\(\pm\)</span> <span class="pasted-text">0.24</span>) cm</p>
+<div class="figure align-center" id="focen-fig">
+<div class="cell_output docutils container">
+<img alt="../_images/comparaison_17_3.png" src="../_images/comparaison_17_3.png" />
+</div>
+</div>
+<p>En pratique, il faudrait analyser les résultats précédents et si certains sont incompatibles, il faudrait en chercher les causes. A défaut de chercher les causes d’incompatibilité (on ne sait pas d’où viennent ces valeurs), on pourra déjà d’exercer à repérer les échantillons problématiques.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>L’utilisation de l’écart normalisé ne doit pas devenir une application d’une formule sans réflexion. Vous devez toujours vérifier que la manipulation a été réalisée correctement, même si l’écart normalisé est inférieur à 2.</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebook"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="rcgeneral.html" title="previous page"><span class="section-number">1. </span>Rendre compte de résultats expérimentaux</a>
+    <a class='right-next' id="next-link" href="verifier_loi.html" title="next page"><span class="section-number">2. </span>Vérifier une loi physique</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By C. Lacpatia<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

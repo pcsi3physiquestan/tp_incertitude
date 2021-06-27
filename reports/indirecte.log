@@ -1,0 +1,74 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/miniconda3/envs/jupybook/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/ubuntu/miniconda3/envs/jupybook/lib/python3.9/site-packages/nbclient/client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/ubuntu/miniconda3/envs/jupybook/lib/python3.9/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/ubuntu/miniconda3/envs/jupybook/lib/python3.9/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/home/ubuntu/miniconda3/envs/jupybook/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/home/ubuntu/miniconda3/envs/jupybook/lib/python3.9/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/home/ubuntu/miniconda3/envs/jupybook/lib/python3.9/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/home/ubuntu/miniconda3/envs/jupybook/lib/python3.9/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import numpy.random as rd  # La bibliothèque numpy.random contient les fonctions générant des échantillons aléatoires.
+import numpy as np  # La biliothèque numpy permettra de calculer la moyenne et l'écart-type d'un ensemble des valeurs.
+
+"""On importe aussi matplotlib.pyplot pour les tracés"""
+import matplotlib.pyplot as plt
+
+"""
+On commence par créer les N échantillons de U et I.
+"""
+N = 1000000  # Nombre d'échantillons à réaliser.
+U = 4.53
+uU = 0.03
+I = 12.14  # On travaille en mA pour ne pas gérer des nombres trop petits.
+uI = 0.08  # Même remarque
+
+Uech = rd.normal(U, uU, N)  # Création des échantillons pour U
+Iech = rd.normal(I, uI, N)  # Création des échantillons pour I
+
+
+"""
+On va créer les échantillons de R.
+Ici, l'opération est une simple division et Uech et Iech sont des vecteurs numpy. On peut donc
+écrire directement Uech / Iech pour diviser les éléments termes à termes (vectorialisation).
+"""
+Rech = Uech / Iech
+
+"""
+On va tracer l'histogramme des fréquences des valeurs de R. On pourra l'analyser par la suite.
+"""
+f, ax = plt.subplots()  # On crée une fenêtre graphique et des axes.
+f.suptitle("Distribution des valeurs simulées de R")  # On titre le graphique
+
+ax.set_xlabel("Valeurs de R")  # On légende l'axe des abscisses
+ax.set_ylabel("Fréquences")  # On légende l'axe des ordonnées
+
+ax.hist(Rech, bins='rice')  # On créer l'histogramme des valeurs.
+
+plt.show()  # On affiche le graphique
+
+"""
+On calcule la moyenne et l'écart comme valeur mesurée et incertitude-type"""
+R = np.mean(Rech)
+uR = np.std(Rech, ddof=1)  # Calcul de l'écart-type. L'option ddof permet de diviser par N-1 et non par N.
+
+print("La résistance vaut {:.1f} +/- {:.1f} Ohm".format(R * 1000, uR * 1000))
+"""
+------------------
+
+[0;36m  File [0;32m"<ipython-input-1-4c7b80b5e1e2>"[0;36m, line [0;32m46[0m
+[0;31m    """[0m
+[0m       ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m EOF while scanning triple-quoted string literal
+
+SyntaxError: EOF while scanning triple-quoted string literal (<ipython-input-1-4c7b80b5e1e2>, line 46)
+

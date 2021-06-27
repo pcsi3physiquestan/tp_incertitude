@@ -1,0 +1,627 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Rendre compte de résultats expérimentaux &#8212; Etude de systèmes optiques</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp2_optique/notebook/rcgeneral.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Comparer un résultat expérimental avec un résultat théorique." href="comparaison.html" />
+    <link rel="prev" title="4. Incertitude des mesurandes indirectes." href="indirecte.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://pcsi3physiquestan.github.io/tp2_optique/notebook/rcgeneral.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Rendre compte de résultats expérimentaux" />
+<meta property="og:description" content="Rendre compte de résultats expérimentaux  Résultat unique  Pour rappel, un résultat de mesure unique avec incertitude doit s’écrire sous la forme :   G = (G_{me" />
+
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Etude de systèmes optiques</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tp_incertitude.html">
+   Incertitudes de mesure et méthodes expérimentales.
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Vocabulaire et étapes d'une manipulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="vocabulaire.html">
+   1. Vocabulaire et étapes : Généralités
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Incertitudes
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="incertitude.html">
+   1. Les incertitudes de mesure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="distribution.html">
+   2. Distributions statistiques usuelles.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sources.html">
+   3. Sources d’incertitudes et bilan.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="indirecte.html">
+   4. Incertitude des mesurandes indirectes.
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Rendre compte d'un résultat
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Rendre compte de résultats expérimentaux
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Exploiter les mesures
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="comparaison.html">
+   1. Comparer un résultat expérimental avec un résultat théorique.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="verifier_loi.html">
+   2. Vérifier une loi physique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression.html">
+   3. Ajustement d’un modèle affine
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/notebook/rcgeneral.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebook/rcgeneral.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebook/rcgeneral.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resultat-unique">
+   1.1. Résultat unique
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ensemble-de-resultats">
+   1.2. Ensemble de résultats
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representation-graphique">
+   1.3. Représentation graphique
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#moyens-techniques">
+     1.3.1. Moyens techniques
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rappel-consignes-de-traces">
+     1.3.2. (Rappel) Consignes de tracés
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#types-de-traces-sous-matplotlib">
+     1.3.3. Types de tracés sous matplotlib
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-exemple-de-script-sous-matplotlib">
+     1.3.4. Un exemple de script sous matplotlib
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remarques">
+     1.3.5. Remarques
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>Nous avons déjà commencé à voir comment rendre compte d’une mesure unique avec son incertitude, nous allons maintenant voir comment rendre compte d’un groupe de résultat.</p>
+<div class="section" id="rendre-compte-de-resultats-experimentaux">
+<h1><span class="section-number">1. </span>Rendre compte de résultats expérimentaux<a class="headerlink" href="#rendre-compte-de-resultats-experimentaux" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="resultat-unique">
+<h2><span class="section-number">1.1. </span>Résultat unique<a class="headerlink" href="#resultat-unique" title="Permalink to this headline">¶</a></h2>
+<p>Pour rappel, <strong>un résultat de mesure unique avec incertitude doit s’écrire sous la forme :</strong></p>
+<div class="math notranslate nohighlight">
+\[
+G = (G_{mes} \pm u(G)) Unités
+\]</div>
+<p>Vous devez respectez les contraintes suivantes :</p>
+<ul class="simple">
+<li><p>L’incertitude de mesure doit avoir 2 chiffres significatifs</p></li>
+<li><p>La valeur mesure doit avoir la même précision que l’incertitude ne mesure.</p></li>
+</ul>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Vous pouvez utiliser des puissances de 10 en facteur si c’est nécessaire.</p>
+</div>
+</div>
+<div class="section" id="ensemble-de-resultats">
+<h2><span class="section-number">1.2. </span>Ensemble de résultats<a class="headerlink" href="#ensemble-de-resultats" title="Permalink to this headline">¶</a></h2>
+<p>Pour rendre compte (afficher proprement) d’un ensemble de résultats, on peut utiliser plusieurs moyens techniques:</p>
+<ul class="simple">
+<li><p>tableau markdown dans un notebook (<em>très verbeux et ne permet pas directement de manipuler les résultats</em>)</p></li>
+<li><p><strong>tableur (LibreOffice Calc, Excel…) : pratique pour l’affichage ET la manipulation des résultats</strong></p></li>
+<li><p>(HP) pandas : bibliothèque Python permettant de manipuler des données ET de les afficher de façon propre. C’est très pratique dans un notebook.</p></li>
+</ul>
+<p>Dans tous les cas, plusieurs points sont à respecter :</p>
+<ul class="simple">
+<li><p>Bien préciser le contenu des colonnes et les <strong>unités</strong> des grandeurs (en-tête c’est plus simple).</p></li>
+<li><p>Si la détermination des <strong>incertitudes de mesure</strong> est importante, réservez une colonne pour ces dernières.</p></li>
+<li><p>Pour un tableur, utilisez les <strong>formules de calcul du logiciel</strong> plutôt que tout calculer “à la main”.</p></li>
+</ul>
+<p><strong>Dans tous les cas, préfèrez un système (tableur ou numpy) qui permet d’automatiser les calculs à faire sur les résultats.</strong></p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Dans les premiers TP, l’utilisation des notebook vous obligera à surtout utiliser numpy pour manipuler un ensemble de résultat.
+Les méthodes de compte-rendu seront alors souvent guidées. Etudiez ces méthodes pour pouvoir les reproduire.</p>
+</div>
+</div>
+<div class="section" id="representation-graphique">
+<h2><span class="section-number">1.3. </span>Représentation graphique<a class="headerlink" href="#representation-graphique" title="Permalink to this headline">¶</a></h2>
+<p>Les représentations graphiques sont très utiles pour :</p>
+<ul class="simple">
+<li><p>Faire une synthèse rapide et visuelle des résultats. Possiblement des comparaisons.</p></li>
+<li><p>Tester visuellement une relation possible entre deux mesurandes.</p></li>
+</ul>
+<div class="section" id="moyens-techniques">
+<h3><span class="section-number">1.3.1. </span>Moyens techniques<a class="headerlink" href="#moyens-techniques" title="Permalink to this headline">¶</a></h3>
+<p>Vous disposerez principalement de trois méthodes pour obtenir des représentations graphiques :</p>
+<ul class="simple">
+<li><p>Logiciel métier associé à un instrument de mesure (console d’acquisition, oscilloscope, spectromètre…)</p></li>
+<li><p>Tableur (LibreOffice, Excel)</p></li>
+<li><p><strong>matplotlib</strong></p></li>
+</ul>
+<p>La bibliothèque <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> sera utilisée en priorité dans un premier temps, c’est pourquoi les exemples d’applications seront présentés avec ce moyen.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>L’utilisation de <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> n’impose pas l’utilisation de <code class="docutils literal notranslate"><span class="pre">numpy</span></code> mais c’est fortement recommandé.</p>
+</div>
+</div>
+<div class="section" id="rappel-consignes-de-traces">
+<h3><span class="section-number">1.3.2. </span>(Rappel) Consignes de tracés<a class="headerlink" href="#rappel-consignes-de-traces" title="Permalink to this headline">¶</a></h3>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Par la suite, les fonctions utilisées viennent de la bibliothèque <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> et soit:</p>
+<ul class="simple">
+<li><p>elles sont appliquées directement à un objet existant (par exemple des axes <code class="docutils literal notranslate"><span class="pre">ax</span></code>). On peut alors utiliser la syntaxe <code class="docutils literal notranslate"><span class="pre">ax.fonction(...)</span></code></p></li>
+<li><p>sinon (cas de <code class="docutils literal notranslate"><span class="pre">subplots</span></code> et de <code class="docutils literal notranslate"><span class="pre">show</span></code>), il ne faut pas oublier l’alias utilisé lors de l’import de matplotlib.pyplot (par exemple <code class="docutils literal notranslate"><span class="pre">plt.subplots(...)</span></code>).</p></li>
+</ul>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Pour créer une figure et des axes dans la figure, vous utiliserez la fonction <code class="docutils literal notranslate"><span class="pre">f,</span> <span class="pre">ax</span> <span class="pre">=</span> <span class="pre">plt.subplots()</span></code> qui créé une fenêtre graphique enregistrée dans la
+variable <code class="docutils literal notranslate"><span class="pre">f</span></code> et des axes dans cette fenêtre enregistrée dans la variable <code class="docutils literal notranslate"><span class="pre">ax</span></code>.</p>
+</div>
+<p>Une représentation graphique doit toujours :</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Syntaxe : la fenêtre graphique s’appellera <code class="docutils literal notranslate"><span class="pre">f</span></code> et les axes <code class="docutils literal notranslate"><span class="pre">ax</span></code> dans les codes donnés ici</p>
+</div>
+<ul class="simple">
+<li><p>Avoir un titre (<code class="docutils literal notranslate"><span class="pre">f.suptitle(&quot;Titre&quot;)</span></code>)</p></li>
+<li><p>Avoir des axes légendés (<code class="docutils literal notranslate"><span class="pre">ax.set_xlabel(&quot;Legende&quot;)</span></code> et <code class="docutils literal notranslate"><span class="pre">ax.set_xlabel(&quot;Légende&quot;)</span></code>)</p></li>
+<li><p>Une légende s’il y a plusieurs courbes :</p>
+<ul>
+<li><p>l’option <code class="docutils literal notranslate"><span class="pre">label=&quot;Nom</span> <span class="pre">de</span> <span class="pre">légende&quot;</span></code> dans la fonction <code class="docutils literal notranslate"><span class="pre">plot,</span> <span class="pre">hist,</span> <span class="pre">errorbar</span></code> permet de donner un nom à la courbe</p></li>
+<li><p>la fonction <code class="docutils literal notranslate"><span class="pre">ax.legend()</span></code> permet d’afficher la légende sur le graphique.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="types-de-traces-sous-matplotlib">
+<h3><span class="section-number">1.3.3. </span>Types de tracés sous matplotlib<a class="headerlink" href="#types-de-traces-sous-matplotlib" title="Permalink to this headline">¶</a></h3>
+<p>On sera amenés à tracer trois types de graphiques :</p>
+<ul>
+<li><p>des histogrammes (pour les distribution de valeur) : <code class="docutils literal notranslate"><span class="pre">ax.hist(valeurs,</span> <span class="pre">bins=...)</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">valeurs</span></code> est un vecteurs de valeurs (ou une liste de vecteurs pour tracés plusieurs histogrammes)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bins</span></code> est le nombre de bâtons de l’histogramme</p></li>
+</ul>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>on peut utiliser <code class="docutils literal notranslate"><span class="pre">bins</span> <span class="pre">=</span> <span class="pre">&quot;rice&quot;</span></code> pour une détermination automatique du nombre de bâtons</p>
+</div>
+</li>
+<li><p>des nuages de points sans incertitude ou des courbes (théoriques ou modèles) ! <code class="docutils literal notranslate"><span class="pre">ax.plot(x,</span> <span class="pre">y)</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code> sont des vecteurs contenant les abscisses et ordonnées.</p></li>
+<li><p>D’autres options de formattage peuvent être utiles :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">linewidth</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linestyle</span></code> (valeurs possibles : <code class="docutils literal notranslate"><span class="pre">&quot;-&quot;,</span> <span class="pre">&quot;--&quot;,</span> <span class="pre">&quot;-.&quot;,</span> <span class="pre">&quot;.&quot;,</span> <span class="pre">&quot;&quot;</span></code>)</p></li>
+</ul>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>La valeur est <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> est souvent utile quand on ne veut pas relier les points de mesure.</p>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">marker</span></code> (valeurs possibles : <code class="docutils literal notranslate"><span class="pre">&quot;.&quot;,</span> <span class="pre">&quot;o&quot;,</span> <span class="pre">&quot;+&quot;,</span> <span class="pre">&quot;x&quot;</span></code>…)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>des barres d’incertitude ou des croix d’incertitudes (cf. suite) : <code class="docutils literal notranslate"><span class="pre">ax.errorbar(x,</span> <span class="pre">y,</span> <span class="pre">xerr=ux,</span> <span class="pre">yerr=uy)</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> et <code class="docutils literal notranslate"><span class="pre">y</span></code> sont des vecteurs contenant les abscisses et ordonnées.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ux</span></code> et <code class="docutils literal notranslate"><span class="pre">uy</span></code> sont des <strong>vecteurs</strong> contenant les incertitudes sur les abscisses et ordonnées</p></li>
+</ul>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Elles sont optionnelles, on peut ne mettre que <code class="docutils literal notranslate"><span class="pre">yerr</span></code></p>
+</div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Des options supplémentaires existent comme <code class="docutils literal notranslate"><span class="pre">color</span></code> ou <code class="docutils literal notranslate"><span class="pre">label</span></code></p>
+</div>
+</div>
+<div class="section" id="un-exemple-de-script-sous-matplotlib">
+<h3><span class="section-number">1.3.4. </span>Un exemple de script sous matplotlib<a class="headerlink" href="#un-exemple-de-script-sous-matplotlib" title="Permalink to this headline">¶</a></h3>
+<p>Vous trouverez dans la cellule ci-dessous un exemple de structure de code permettant de tracé un nuage de points de mesures avec leurs incertitudes. Nous allons ainsi voir l’utilisation des croix d’incertitudes et des barres d’incertitudes.</p>
+<p>Essayez de garder une structure similaire pour éviter de perdre du temps à retrouver les commandes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On rappelle qu&#39;il est important d&#39;importer matplotlib.pyplot.</span>
+<span class="sd">On importe aussi numpy car il est très souvent utilisé.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Il faudra en général entrer vous-même vos données expérimentales dans un vecteur numpy</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">3.3</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mf">7.6</span><span class="p">,</span> <span class="mf">11.2</span><span class="p">,</span> <span class="mf">15.3</span><span class="p">])</span>  <span class="c1"># Préférez ordonner les abscisses par ordre croissant quand vous le pouvez.</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.2</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.7</span><span class="p">])</span>
+
+<span class="n">x_err</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.34</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">,</span> <span class="mf">0.98</span><span class="p">]</span>  <span class="c1"># En pratique x_err et y_err sont souvent calculés par Monte-Carlo.</span>
+<span class="n">y_err</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.14</span><span class="p">,</span> <span class="mf">0.32</span><span class="p">,</span> <span class="mf">0.84</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.48</span><span class="p">]</span>
+<span class="c1"># Remarque évitez de nommer les vecteurs incertitudes xerr et yerr.</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On crée ensuite la fenêtre graphique avec son titre et ses axes légendés</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Titre du graphique&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Légende des abscisses&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Légende des ordonnées&quot;</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On crée ensuite les tracés. On va ici tracer des points expérimentaux</span>
+<span class="sd">avec leurs incertitudes (abcisses et ordonnées). On va donc utiliser la fonction</span>
+<span class="sd">errorbar.</span>
+<span class="sd">On ne va pas relier les points : linestyle=&#39;&#39; (ou linestyle=None)</span>
+<span class="sd">On ne va pas mettre de marqueurs (il y a les croix d&#39;incertitudes) : marker=&#39;&#39;</span>
+<span class="sd">On met une légende : label=&quot;Données expérimentales&quot;</span>
+<span class="sd">On choisit la couleur : color=&quot;black&quot;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">xerr</span><span class="o">=</span><span class="n">x_err</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">y_err</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Données expérimentales&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On affiche la légende (après le tracé des courbes)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On demande d&#39;afficher le graphique (Note : dans un notebook, cette commande n&#39;est pas toujours nécessaire mais prenez l&#39;habitude de l&#39;utiliser)</span>
+<span class="sd">car elle est indispensable si vous utilisez spyder, idle ou pyzo (ou en ligne de commande).</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rcgeneral_5_0.png" src="../_images/rcgeneral_5_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="remarques">
+<h3><span class="section-number">1.3.5. </span>Remarques<a class="headerlink" href="#remarques" title="Permalink to this headline">¶</a></h3>
+<p>Dans un traitement plus évolué, on peut même ajouter du texte, des flèches pour montrer certains points, faire des tracés semi-logarithmiques… Ces éléments avancés seront rarement utilisés et lorsque c’est le cas, le code à utiliser sera donné.</p>
+<p>On peut aussi tracer des barre d’incertitude si l’on n’a que des incertitudes sur les ordonnées (ou si celle sur les abscisses sont considérées comme négligeable). La cellule ci-dessous en donne un exemple avec les données précédentes si les x n’avait pas d’incertitude.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On crée ensuite la fenere graphique avec son titre et ses axes légendés.</span>
+<span class="sd">On a changé le nom de la figure et des axes (f1 et xa3) pour rappeler que le nom de ces variables est arbitraire. C&#39;est vous qui le choisissez.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">f1</span><span class="p">,</span> <span class="n">xa3</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">f1</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Barres d&#39;incertitude&quot;</span><span class="p">)</span>
+<span class="n">xa3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Légende des abscisses&quot;</span><span class="p">)</span>
+<span class="n">xa3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Légende des ordonnées&quot;</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On crée ensuite les tracés. On va ici tracer des points expérimentaux</span>
+<span class="sd">avec leurs incertitudes (abcisses et ordonnées). On va donc utiliser la fonction</span>
+<span class="sd">errorbar.</span>
+<span class="sd">On ne va pas relier les points : linestyle=&#39;&#39; (ou linestyle=None)</span>
+<span class="sd">On ne va pas mettre de marqueurs (il y a les croix d&#39;incertitudes) : marker=&#39;&#39;</span>
+<span class="sd">On met une légende : label=&quot;Données expérimentales&quot;</span>
+<span class="sd">On choisit la couleur : color=&quot;black&quot;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">xa3</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">y_err</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Données expérimentales&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On affiche la légende (après le tracé des courbes)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">xa3</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On demande d&#39;afficher le graphique (Note : dans un notebook, cette commande n&#39;est pas toujours nécessaire mais prenez l&#39;habitude de l&#39;utiliser)</span>
+<span class="sd">car elle est indispensable si vous utilisez spyder, idle ou pyzo (ou en ligne de commande).</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/rcgeneral_7_0.png" src="../_images/rcgeneral_7_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebook"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="indirecte.html" title="previous page"><span class="section-number">4. </span>Incertitude des mesurandes indirectes.</a>
+    <a class='right-next' id="next-link" href="comparaison.html" title="next page"><span class="section-number">1. </span>Comparer un résultat expérimental avec un résultat théorique.</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By C. Lacpatia<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

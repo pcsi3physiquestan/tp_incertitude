@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. Sources d’incertitudes et bilan. &#8212; Etude de systèmes optiques</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp2_optique/notebook/sources.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Incertitude des mesurandes indirectes." href="indirecte.html" />
+    <link rel="prev" title="2. Distributions statistiques usuelles." href="distribution.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://pcsi3physiquestan.github.io/tp2_optique/notebook/sources.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Sources d’incertitudes et bilan." />
+<meta property="og:description" content="Sources d’incertitudes et bilan.  Faire un bilan des sources  Lorsqu’on réalise le mesurage d’un mesurande directe, plusieurs facteurs rendre notre mesure incer" />
+
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Etude de systèmes optiques</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tp_incertitude.html">
+   Incertitudes de mesure et méthodes expérimentales.
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Vocabulaire et étapes d'une manipulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="vocabulaire.html">
+   1. Vocabulaire et étapes : Généralités
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Incertitudes
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="incertitude.html">
+   1. Les incertitudes de mesure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="distribution.html">
+   2. Distributions statistiques usuelles.
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Sources d’incertitudes et bilan.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="indirecte.html">
+   4. Incertitude des mesurandes indirectes.
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Rendre compte d'un résultat
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="rcgeneral.html">
+   1. Rendre compte de résultats expérimentaux
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Exploiter les mesures
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="comparaison.html">
+   1. Comparer un résultat expérimental avec un résultat théorique.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="verifier_loi.html">
+   2. Vérifier une loi physique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression.html">
+   3. Ajustement d’un modèle affine
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/notebook/sources.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebook/sources.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebook/sources.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#faire-un-bilan-des-sources">
+   3.1. Faire un bilan des sources
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#precaution-importante">
+     3.1.1. Précaution importante
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sources-usuelles">
+     3.1.2. Sources usuelles
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fluctuation-ou-limitation-de-la-precision-de-la-mesure">
+       3.1.2.1. Fluctuation ou limitation de la précision de la mesure.
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#generalites">
+         3.1.2.1.1. Généralités
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#exemples">
+         3.1.2.1.2. Exemples
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#donnees-d-un-constructeur">
+       3.1.2.2. Données d’un constructeur
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id1">
+         3.1.2.2.1. Exemples
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#remarques-generales">
+       3.1.2.3. Remarques générales
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#combiner-plusieurs-sources-d-incertitude">
+   3.2. Combiner plusieurs sources d’incertitude
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simulation-de-monte-carlo">
+     3.2.1. Simulation de Monte-Carlo.
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#principe">
+       3.2.1.1. Principe
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemple">
+       3.2.1.2. Exemple
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#propagation-des-variances">
+     3.2.2. Propagation des variances
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>Dans ce notebook vous allez apprendre à faire un bilan des sources d’incertitude et à associer à chaque source une distribution statistique.</p>
+<div class="section" id="sources-d-incertitudes-et-bilan">
+<h1><span class="section-number">3. </span>Sources d’incertitudes et bilan.<a class="headerlink" href="#sources-d-incertitudes-et-bilan" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="faire-un-bilan-des-sources">
+<h2><span class="section-number">3.1. </span>Faire un bilan des sources<a class="headerlink" href="#faire-un-bilan-des-sources" title="Permalink to this headline">¶</a></h2>
+<p>Lorsqu’on réalise le mesurage d’un mesurande directe, plusieurs facteurs rendre notre mesure incertaine et faire que la reproduction de notre mesurage ne reproduira pas la même valeur mesurée. Si l’on ne fait qu’une seule mesure, il faut :</p>
+<ul class="simple">
+<li><p>identifier ces facteurs (ces <strong>sources d’incertitudes</strong>)</p></li>
+<li><p>associer à chaque <em>source d’incertitude</em> une <strong>distribution statistique</strong> et <strong>un écart-type</strong>.</p></li>
+<li><p><strong>combiner</strong> ces sources pour obtenir l’incertitude-type sur le mesurande étudié.</p></li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Attention, une source d’incertitude ne correspond pas à une grandeur d’influence mais à une contrainte <strong>pratique</strong> qui augmente la dispersion des résultats de mesurage.</p>
+</div>
+<div class="section" id="precaution-importante">
+<h3><span class="section-number">3.1.1. </span>Précaution importante<a class="headerlink" href="#precaution-importante" title="Permalink to this headline">¶</a></h3>
+<p>Citons le <code class="docutils literal notranslate"><span class="pre">Guide</span> <span class="pre">pour</span> <span class="pre">l'expression</span> <span class="pre">de</span> <span class="pre">l'incertitude</span> <span class="pre">de</span> <span class="pre">mesure</span></code> (référence dans le domaine) :</p>
+<blockquote>
+<div><p>Bien que ce Guide (ce notebook) fournisse un cadre pour l’estimation de l’incertitude, il ne peut remplacer ni la réflexion critique ni l’honnêteté intellectuelle ni la compétence professionnelle. L’évaluation de l’incertitude n’est jamais une tâche de routine ni une opération purement mathématique ; elle dépend de la connaissance détaillée de la nature du mesurande et du mesurage. La qualité et l’utilité de l’incertitude fournie pour le résultat d’un mesurage dépendent, en fin de compte, de la compréhension, de l’analyse critique et de l’intégrité de ceux qui contribuent à son évaluation. <code class="docutils literal notranslate"><span class="pre">(GUM</span> <span class="pre">p.8</span> <span class="pre">3.4.8)</span></code></p>
+</div></blockquote>
+<p>et :</p>
+<blockquote>
+<div><p>L’utilisation correcte de l’ensemble des informations disponibles pour une évaluation de type B de l’incertitude-type fait appel à la perspicacité fondée sur l’expérience et les connaissances générales, et c’est une compétence qui [peut](doit) s’apprendre par la pratique. <code class="docutils literal notranslate"><span class="pre">(GUM</span> <span class="pre">p.11</span> <span class="pre">4.3.2)</span></code></p>
+</div></blockquote>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>En clair, IL FAUT REFLECHIR ET NE PAS APPLIQUER DES RECETTES DE CUISINE SANS LES COMPRENDRE.</p>
+</div>
+</div>
+<div class="section" id="sources-usuelles">
+<h3><span class="section-number">3.1.2. </span>Sources usuelles<a class="headerlink" href="#sources-usuelles" title="Permalink to this headline">¶</a></h3>
+<p>Bien qu’il faille réfléchir aux sources d’incertitudes dans chaque cas, nous présentons ici quelques sources qu’on rencontre souvent et la manière d’associer à ces ressources une distribution statistique.</p>
+<p>On rappelle que ce sont des exemples qui ne doivent pas être transposés sans réflexion à toutes les expériences en TP.</p>
+<div class="section" id="fluctuation-ou-limitation-de-la-precision-de-la-mesure">
+<h4><span class="section-number">3.1.2.1. </span>Fluctuation ou limitation de la précision de la mesure.<a class="headerlink" href="#fluctuation-ou-limitation-de-la-precision-de-la-mesure" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="generalites">
+<h5><span class="section-number">3.1.2.1.1. </span>Généralités<a class="headerlink" href="#generalites" title="Permalink to this headline">¶</a></h5>
+<p>C’est la principale source d’incertitude que nous allons rencontré. En effet, généralement lors d’une mesure, les limitations de l’instrument, le flou (en optique) et la variation de la grandeur mesurée fera qu’on ne <strong>pourra pas dire mieux que : le résultat de mesure se trouve dans tel intervalle.</strong></p>
+</div>
+<div class="section" id="exemples">
+<h5><span class="section-number">3.1.2.1.2. </span>Exemples<a class="headerlink" href="#exemples" title="Permalink to this headline">¶</a></h5>
+<div class="tip admonition">
+<p class="admonition-title">Exemple : la mesure à la règle d’une position (ici les traits noir et vert)</p>
+<p><img alt="Mesure avec une règle" src="../_images/mesure_regle.jpg" /></p>
+<ul class="simple">
+<li><p>Pour le trait noir (fin), la détermination de sa position est limitée par les graduations de la règle.</p>
+<ul>
+<li><p>On peut dire que la mesure est entre <span class="math notranslate nohighlight">\([3.7 cm; 3.8cm]\)</span>.</p></li>
+<li><p>On choisira donc une distribution uniforme (toutes les valeurs 3.7 et 3.8 cm semblent possible de manière égale) d’intervale <span class="math notranslate nohighlight">\([3.7 cm; 3.8cm]\)</span>.</p></li>
+<li><p>L’incertitude-type sera <span class="math notranslate nohighlight">\(1 / \sqrt{12} = 0.29 cm\)</span> (cf. suite).</p></li>
+</ul>
+</li>
+<li><p>Pour le trait vert (épais), on n’a plus un trait entre deux valeurs (cas d’une image un peu floue en optique).</p>
+<ul>
+<li><p>On peut simplement dire que la mesure est entre <span class="math notranslate nohighlight">\([4.4 cm; 4.7cm]\)</span> (on ne limite par contre aux graduations car l’instrument ne permet pas mieux).</p></li>
+<li><p>On choisira donc une distribution uniforme (toutes les valeurs 4.4 et 4.7 cm semblent possible de manière égale) d’intervale <span class="math notranslate nohighlight">\([4.4 cm; 4.7cm]\)</span>.</p></li>
+<li><p>L’incertitude-type sera <span class="math notranslate nohighlight">\(3 / \sqrt{12} = 0.87 cm\)</span> (cf. suite).</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Exemple : La fluctuation d’un appareil</p>
+<p>On considère la mesure d’une tension <span class="math notranslate nohighlight">\(U\)</span> au moyen d’un multimètre numérique. Mais l’affichage fluctue et on observe que la mesure varie entre deux valeurs extrêmes : 2.43 V et 2.48 V.</p>
+<p>On va donc choisire une distribution uniforme d’intervale <span class="math notranslate nohighlight">\([2.43 V; 2.48 V]\)</span>.</p>
+<p>L’incertitude-type sera <span class="math notranslate nohighlight">\(0.05 / \sqrt{12} = 0.014 V\)</span> (cf. suite).</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Remarques</p>
+<ul class="simple">
+<li><p>On fait souvent le choix d’une distribution uniforme lorsqu’on est confronté à un intervalle de valeur de lecture acceptable. Comme on le verra par la suite il peut être utile de calculer l’écart-type (donc l’incertitude-type) associée à une telle distribution.</p>
+<ul>
+<li><p><em>On admettra que l’écart-type d’une telle distribution uniforme de largeur <span class="math notranslate nohighlight">\(l = (b-a)\)</span> est <span class="math notranslate nohighlight">\(\frac{l}{\sqrt{12}}\)</span> (cf. <a class="reference internal" href="distribution.html#dist-unif"><span class="std std-ref">simulation</span></a>).</em></p></li>
+</ul>
+</li>
+<li><p>Le choix d’une distribution uniforme est fréquent mais pas obligatoire si vous le considérez comme innaproprié. Par exemple, dans le cas du trait rouge (photo de la règle) qui est très fin et situé presque sur 3.5mm, on pourra choisir une distribution gaussienne centrée en 3.5mm et d’écart-type 1mm (car il est clairement entre 3.45 et 3.55 mm). <strong>Le choix d’une distribution n’est pas automatique mais une réflexion (rapide tout de même) basée sur le bon sens.</strong> Il n’est par contre pas nécessaire de connaître un grand catalogue de distribution, les ditributions <em>uniformes et normales</em> suffiront dans le cadre du programme.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="donnees-d-un-constructeur">
+<h4><span class="section-number">3.1.2.2. </span>Données d’un constructeur<a class="headerlink" href="#donnees-d-un-constructeur" title="Permalink to this headline">¶</a></h4>
+<p>On est souvent amené à utiliser les données d’un constructeur pour estimer une incertitude.</p>
+<div class="section" id="id1">
+<h5><span class="section-number">3.1.2.2.1. </span>Exemples<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
+<div class="tip admonition">
+<p class="admonition-title">Valeur d’un composant</p>
+<p>On utilise une lentille mince en optique de distance focale <span class="math notranslate nohighlight">\(f' = 10 cm\)</span>, le constructeur nous dit que sa distance focale est connue à 10%.</p>
+<p><strong>Sans plus d’informations</strong>, on considèrera qu’il s’agit de l’incertitude-type associée à une distribution gaussienne . On va donc associer à la valeur f’ une incertitude de distribution uniforme centrée en <span class="math notranslate nohighlight">\(10 cm\)</span> et d’écart-type <span class="math notranslate nohighlight">\(\frac{10}{100} \times 10 = 1 cm\)</span>.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Note : l’hypothèse d’une distribution normale ne sera pas plus fausse vu le manque d’information !</p>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Variabilité d’un instrument de mesure.</p>
+<p>Le multimètre numérique utilisé précédemment pour la mesure de U (dont la valeur mesurée est donc <span class="math notranslate nohighlight">\(\frac{2.43 + 2.48}{2} = 2.455 V\)</span>) est sujet à une dispersion des valeurs données, même si l’affichage est stable. Ainsi, le constructeur nous dit que la valeur mesurée, sur le calibre utilisé, possède une incertitude de 2%.</font></p>
+<p>A nouveau peu d’information, on va à nouveau considérer une distribution uniforme centrée sur 2.455 V et d’écart-type <span class="math notranslate nohighlight">\(\frac{2}{100} \times 2.455 = 0.049 V\)</span>.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Remarques</p>
+<ul class="simple">
+<li><p>Les constructeurs ne fournissent souvent que peu d’informations (un simple pourcentage). On doit donc en général choisir la distribution statistique associée (on n’est même pas sûr que la grandeur donnée soit une incertitude-type). Il n’est pas nécessaire de passer beaucoup de temps sur la question puisque la manipulation ne nous donnera aucune donnée supplémentaire pour décider.</p></li>
+<li><p>Le cas de la lentille et du multimètre sont tout de même différents.</p>
+<ul>
+<li><p><em>Dans le cas du multimètre</em>, il s’agit de la fidélité de l’instrument de mesure : elle représente le fait qu’en reprenant plusieurs fois la même mesure avec le même appareil, on risque d’obtenir des valeurs différentes (même si la mesure est stable). On ne peut rien faire dans la manipulation sinon tenir compte de cette dispersion annoncée.</p></li>
+<li><p><em>Dans le cas de la lentille</em>, il s’agit de la dispersion des valeurs de focale dans un lot de lentille fabriquées par le constructeur. Mais la lentille que vous utilisez possède une valeur de focale qui ne varie pas (ou peu). On utilise alors la dispersion des valeur de 10% parce qu’on est pas sûr de la valeur de f’. Ce n’est donc pas une vraie dispersion <strong>lors de la mesure</strong> mais plutôt l’utilisation du fait que f’ possède une gamme de valeurs possibles. En pratique, <em>si on avait le temps</em>, il serait sage de réaliser une manipulation permettant de mesurer la distance focale f’ de <strong>notre</strong> lentille (car nous sommes capables d’améliorer une incertitude de 10% !!). Si on n’a pas le temps, on prend l’étude du constructeur sur son processus de fabrication (les 10%) à la place.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="remarques-generales">
+<h4><span class="section-number">3.1.2.3. </span>Remarques générales<a class="headerlink" href="#remarques-generales" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>On remarquera que la première source d’incertitude (plage de valeur à la place d’une valeur précise) nécessite <strong>une réflexion propre à la manipulation</strong> pour l’estimer. Par exemple, dans le cas des fluctuations du multimètre, c’est pendant la mesure qu’on peut déterminer les valeurs minimales et maximales affichées pour <span class="math notranslate nohighlight">\(U\)</span>. Après c’est trop tard. Ce qui signifie que <strong>le bilan des sources d’incertitude et leur estimation (écart-type, choix de la distribution associée)</strong> est l’objet d’une réflexion constante DURANT la manipulation. C’est un réflexe à avoir…</p></li>
+<li><p>Il n’est pas nécessaire de passer trop de temps sur le choix de la distribution à notre niveau.</p></li>
+<li><p>Ce sont des exemples qui ne sont pas forcément exhaustifs.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="combiner-plusieurs-sources-d-incertitude">
+<h2><span class="section-number">3.2. </span>Combiner plusieurs sources d’incertitude<a class="headerlink" href="#combiner-plusieurs-sources-d-incertitude" title="Permalink to this headline">¶</a></h2>
+<p>Il arrive fréquemment qu’il existe plusieurs sources d’incertitudes pour un même mesurande.</p>
+<div class="tip admonition">
+<p class="admonition-title">Exemple</p>
+<p>C’est le cas de la mesure de la tension U : il y a une incertitude sur la lecture de la valeur et une incertitude liée à l’instrument.</p>
+</div>
+<p>Pour estimer l’incertitude-type totale sur le mesurande <span class="math notranslate nohighlight">\(U\)</span>, on dispose de deux méthodes :</p>
+<ol class="simple">
+<li><p>On simule les deux processus aléatoire de chaque sources d’incertitude grâce aux distributions choisie un grand nombre de fois et on simule ainsi la variabilité du mesurande. On pourra alors obtenir sa distribution statistique ainsi que son incertitude-type (comme l’écart-type de cette distribution). On parle de <strong>simulation de Monte-Carlo</strong>.</p></li>
+<li><p>On réalise une <strong>propagation des variances</strong> (application des propriétés de la variance mathématique sur des lois statistiques) ce qui nous donne l’incertitude-type (mais pas la distribution).</p></li>
+</ol>
+<div class="section" id="simulation-de-monte-carlo">
+<h3><span class="section-number">3.2.1. </span>Simulation de Monte-Carlo.<a class="headerlink" href="#simulation-de-monte-carlo" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="principe">
+<h4><span class="section-number">3.2.1.1. </span>Principe<a class="headerlink" href="#principe" title="Permalink to this headline">¶</a></h4>
+<p>Le principe est le suivant :</p>
+<ol class="simple">
+<li><p>Pour chaque sources d’incertitude  <strong>indépendante</strong>, on a choisi une distribution statistique. On peut donc simuler la variabilité causée par chaque source en réalisant un tirage aléatoire de N échantillons suivant la loi statistique choisie.</p></li>
+<li><p>On somme alors les tirages ce qui nous donne la valeur simulée du mesurande soumise à la variabilité de TOUTES les sources.</p></li>
+<li><p>On peut alors tracer l’histogramme des valeurs pour observer la distribution obtenus et calculer l’écart-type associé pour estimer l’incertitude-type totale.</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Il y a juste une petite <strong>subtilité</strong>. En effet, si l’on centre la distribution des sources sur le résultat de mesurage (2.455 V dans l’exemple de U), on va en sommant obtenir un mesurande qui n’est pas “centré” sur le résultat de mesurage ! (Dans le cas de U où il y a deux sources, on sera centré sur <span class="math notranslate nohighlight">\(2.455 * 2 = 4.91\)</span>) : c’est un problème. L’<em>astuce</em> consiste à centrer toutes nos lois de distribution autour de 0 ! On pourra ensuite ajouter à l’ensemble la valeur mesurée.</p>
+</div>
+</div>
+<div class="section" id="exemple">
+<h4><span class="section-number">3.2.1.2. </span>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p><font color="blue">Exemple : Dans le cas de la tension U, la procédure sera :</font></p>
+<ol class="simple">
+<li><p>On simule N échantillons d’une distribution uniforme entre <span class="math notranslate nohighlight">\(-0.014 V\)</span> et <span class="math notranslate nohighlight">\(0.014 V\)</span> (simulation de l’incertitude liée à la lecture de la valeur).</p></li>
+<li><p>On simule N échantillons d’une distribution gaussienne d’écart-type <span class="math notranslate nohighlight">\(0.049 V\)</span> centrée en 0 (simulation de l’incertitude liée à la variabilité de l’appareil de mesure).</p></li>
+<li><p>On somme les échantillons des deux distributions et on ajoute la valeur mesurée (ici 2.455). On obtient ainsi N échantillons simulés de <span class="math notranslate nohighlight">\(U\)</span>.</p></li>
+<li><p>On étudie la distribution statistique ainsi obtenue et on déterminer l’incertitude-type sur U grâce à l’écart-type des N tirages.</p></li>
+</ol>
+</div></blockquote>
+<blockquote>
+<div><p>Lire et comprendre le code ci-dessous de manière à pouvoir le refaire et l’adapter à d’autre cas. Observer ensuite ce qu’on obtient dans le cas de l’étude de <span class="math notranslate nohighlight">\(U\)</span>.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Importation des bibliothèques</span>
+
+<span class="sd">On commence par importer les bibliothèques utiles matplotlib.pyplot, numpy et numpy.random.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+
+<span class="sd">&quot;&quot;&quot;Simulation des composantes</span>
+
+<span class="sd">On simule chaque composante</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000000</span>  <span class="c1"># Nombre d&#39;échantillons</span>
+<span class="n">Uval</span> <span class="o">=</span> <span class="mf">2.455</span>  <span class="c1"># Résultat de mesurage pour Uval</span>
+<span class="n">llec</span> <span class="o">=</span> <span class="mf">0.025</span>  <span class="c1"># Demie-largeur de la distribution uniforme associée à la lecture de la valeur</span>
+<span class="n">lins</span> <span class="o">=</span> <span class="mf">0.049</span>  <span class="c1"># Ecart-type de la distribution gaussienne associée à la fidélité de l&#39;instrument</span>
+<span class="n">echlec</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">llec</span><span class="p">,</span> <span class="n">llec</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>  <span class="c1"># La fonction uniform génèrera un vecteur de taille N</span>
+<span class="n">echins</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">lins</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On simule U et on calcule son incertitude-type</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">echU</span> <span class="o">=</span> <span class="n">echlec</span> <span class="o">+</span> <span class="n">echins</span> <span class="o">+</span> <span class="n">Uval</span>  <span class="c1"># On simule U en ajoutant le résultat de mesurage</span>
+<span class="n">uU</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">echU</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># std est une fonction de numpy. L&#39;option ddof=1 permet de diviser par N-1 et non par N ce qui est plus précis.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;On a donc : U = </span><span class="si">{:.3f}</span><span class="s2"> +/- </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Uval</span><span class="p">,</span> <span class="n">uU</span><span class="p">))</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On réalise le tracé de la distribution des U simulés.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>  <span class="c1"># Création de la figure f est des axes ax dans la figure f</span>
+<span class="n">f</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Simulation de Monte-Carlo pour la grandeur U&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Valeur de U (V)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Fréquence&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">echU</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="s1">&#39;rice&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>On a donc : U = 2.455 +/- 0.051
+</pre></div>
+</div>
+<img alt="../_images/sources_16_1.png" src="../_images/sources_16_1.png" />
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On remarquera que l’allure finale ressemble beaucoup à une distribution gaussienne malgé la présence de la distribution uniforme. C’est fréquent.</p>
+</div>
+</div>
+</div>
+<div class="section" id="propagation-des-variances">
+<h3><span class="section-number">3.2.2. </span>Propagation des variances<a class="headerlink" href="#propagation-des-variances" title="Permalink to this headline">¶</a></h3>
+<p>Cette méthode sera présentée plus tard.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebook"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="distribution.html" title="previous page"><span class="section-number">2. </span>Distributions statistiques usuelles.</a>
+    <a class='right-next' id="next-link" href="indirecte.html" title="next page"><span class="section-number">4. </span>Incertitude des mesurandes indirectes.</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By C. Lacpatia<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4. Incertitude des mesurandes indirectes. &#8212; Etude de systèmes optiques</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp2_optique/notebook/indirecte.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Rendre compte de résultats expérimentaux" href="rcgeneral.html" />
+    <link rel="prev" title="3. Sources d’incertitudes et bilan." href="sources.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://pcsi3physiquestan.github.io/tp2_optique/notebook/indirecte.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Incertitude des mesurandes indirectes." />
+<meta property="og:description" content="Incertitude des mesurandes indirectes.  Position du problème.  On a mesuré des grandeurs X_i dont on a estimé l’incertitude-type (et la distibution statistique " />
+
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Etude de systèmes optiques</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tp_incertitude.html">
+   Incertitudes de mesure et méthodes expérimentales.
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Vocabulaire et étapes d'une manipulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="vocabulaire.html">
+   1. Vocabulaire et étapes : Généralités
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Incertitudes
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="incertitude.html">
+   1. Les incertitudes de mesure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="distribution.html">
+   2. Distributions statistiques usuelles.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sources.html">
+   3. Sources d’incertitudes et bilan.
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Incertitude des mesurandes indirectes.
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Rendre compte d'un résultat
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="rcgeneral.html">
+   1. Rendre compte de résultats expérimentaux
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Exploiter les mesures
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="comparaison.html">
+   1. Comparer un résultat expérimental avec un résultat théorique.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="verifier_loi.html">
+   2. Vérifier une loi physique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression.html">
+   3. Ajustement d’un modèle affine
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/notebook/indirecte.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebook/indirecte.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebook/indirecte.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#position-du-probleme">
+   4.1. Position du problème.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methodes">
+   4.2. Méthodes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simulation-de-monte-carlo">
+   4.3. Simulation de Monte-Carlo.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#principe">
+     4.3.1. Principe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple">
+     4.3.2. Exemple
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#propagation-des-variances">
+   4.4. Propagation des variances
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>Dans cette partie, vous allez apprendre à propager des incertitudes vers des mesurandes indirects.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Pour rappel un mesurande <em>direct</em> est obtenu par lecture sur un instrument de mesure alors qu’un mesurande <em>indirect</em> est obtenue par calcul à partir des mesurandes directs.</p>
+</div>
+<p>Cette fois, on ne peut évaluer des composantes de l’incertitude d’un mesurande indirect liés au processus de lecture du résultat de mesurage,
+puisqu’on le calcule.</p>
+<div class="section" id="incertitude-des-mesurandes-indirectes">
+<h1><span class="section-number">4. </span>Incertitude des mesurandes indirectes.<a class="headerlink" href="#incertitude-des-mesurandes-indirectes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="position-du-probleme">
+<h2><span class="section-number">4.1. </span>Position du problème.<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">¶</a></h2>
+<p>On a mesuré des grandeurs <span class="math notranslate nohighlight">\(X_i\)</span> dont on a estimé l’incertitude-type (et la distibution statistique possiblement) et on considère un mesurande Y qu’on recherche et qu’on peut estimer grâce à une relation :</p>
+<div class="math notranslate nohighlight">
+\[
+Y = f(X_i)
+\]</div>
+<div class="tip admonition">
+<p class="admonition-title">Exemple</p>
+<p>On veut mesurer la valeur <span class="math notranslate nohighlight">\(R\)</span> d’une résistance électrique. On a mesuré la tension <span class="math notranslate nohighlight">\(U\)</span> à ses bornes et l’intensité <span class="math notranslate nohighlight">\(I\)</span> qui la traverse. On va estimer la résistance en utilisant la loi d’Ohm :  <span class="math notranslate nohighlight">\(R = U / I\)</span>.</p>
+</div>
+<p>On veut estimer l’incertitude-type sur Y et possiblement aussi sa distribution statistique.</p>
+</div>
+<div class="section" id="methodes">
+<h2><span class="section-number">4.2. </span>Méthodes<a class="headerlink" href="#methodes" title="Permalink to this headline">¶</a></h2>
+<p>Il existe deux méthodes :</p>
+<ol class="simple">
+<li><p>La <strong>simulation de Monte-Carlo</strong>. Le principe est exactement le même que précédemment. La différence est qu’on a plus besoin de centrer les distributions des <span class="math notranslate nohighlight">\(X_i\)</span> autour de 0.</p></li>
+<li><p>La <strong>propagation des variances</strong>. On utilise des relations entre les variances de grandeurs liés entre elles.</p></li>
+</ol>
+<p><strong>Remarque : Dans les deux cas, on est obligé de supposer que les mesurandes <span class="math notranslate nohighlight">\(X_i\)</span> sont tous indépendants. Sinon, les deux méthodes ne sont pas valables.</strong></p>
+</div>
+<div class="section" id="simulation-de-monte-carlo">
+<h2><span class="section-number">4.3. </span>Simulation de Monte-Carlo.<a class="headerlink" href="#simulation-de-monte-carlo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="principe">
+<h3><span class="section-number">4.3.1. </span>Principe<a class="headerlink" href="#principe" title="Permalink to this headline">¶</a></h3>
+<p>On rappelle brièvement le principe de la simulation de Monte-Carlo. On connaît la distribution statistique de chaque mesurande <span class="math notranslate nohighlight">\(X_i\)</span>. On va simuler N échantillons de chaque <span class="math notranslate nohighlight">\(X_i\)</span> puis on calcule ainsi N échantillons <span class="math notranslate nohighlight">\(Y\)</span>. On obtient ainsi la distribution des valeurs de <span class="math notranslate nohighlight">\(Y\)</span> et on peut calculr son incertitude de mesure.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dans l’exemple qui suit, on a supposé pour simplifier que les incertitude-type et distribution des mesurandes directs ont déjà été déterminées (ou viennent d’information extérieures). En pratique, elles sont souvent déterminées à partir d’une ou plusieurs sources d’incertitudes. On peut alors combiner la méthode présentée précédemment et celle présentée ici (ce sera fait par la suite).</p>
+</div>
+<p><img alt="Principe de la simulation de Monte-Carlo" src="../_images/simulation_mc.png" /></p>
+</div>
+<div class="section" id="exemple">
+<h3><span class="section-number">4.3.2. </span>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">¶</a></h3>
+<div class="tip admonition">
+<p class="admonition-title">Résistance électrique</p>
+<p>On reprend l’exemple précédent de l’estimation de l’incertitude de la résistance R. On a mesuré tension et intensité. On a trouvé :</p>
+<ul class="simple">
+<li><p>Un tension <span class="math notranslate nohighlight">\(U = 4.53 V\)</span> avec une incertitude <span class="math notranslate nohighlight">\(u(U) = 0.03 V\)</span>. On a estimé que la loi de probabilité étant gaussienne.</p></li>
+<li><p>Une intensité <span class="math notranslate nohighlight">\(I = 12.14 mA\)</span> avec une incertitude <span class="math notranslate nohighlight">\(u(I) = 0.08 mA\)</span>. On a estimé que la loi de probabilité étant gaussienne.</p></li>
+</ul>
+</div>
+<p>La cellule ci-dessous permet d’observer la méthode de Monte-Carlo. La méthode est :</p>
+<ol class="simple">
+<li><p>On créer deux vecteurs de taille N contenant des tirages aléatoires de U et I basés sur les distibutions choisies.</p></li>
+<li><p>On obtient un vecteur de taille N contenant des valeurs simulés de R.</p></li>
+<li><p>On trace l’histogramme et on calcule la moyenne et l’écart-type de la distribution qui nous donnerons le résultat de mesurage et l’incertitude-type.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>  <span class="c1"># La bibliothèque numpy.random contient les fonctions générant des échantillons aléatoires.</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1"># La biliothèque numpy permettra de calculer la moyenne et l&#39;écart-type d&#39;un ensemble des valeurs.</span>
+
+<span class="sd">&quot;&quot;&quot;On importe aussi matplotlib.pyplot pour les tracés&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On commence par créer les N échantillons de U et I.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000000</span>  <span class="c1"># Nombre d&#39;échantillons à réaliser.</span>
+<span class="n">U</span> <span class="o">=</span> <span class="mf">4.53</span>
+<span class="n">uU</span> <span class="o">=</span> <span class="mf">0.03</span>
+<span class="n">I</span> <span class="o">=</span> <span class="mf">12.14</span>  <span class="c1"># On travaille en mA pour ne pas gérer des nombres trop petits.</span>
+<span class="n">uI</span> <span class="o">=</span> <span class="mf">0.08</span>  <span class="c1"># Même remarque</span>
+
+<span class="n">Uech</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">uU</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>  <span class="c1"># Création des échantillons pour U</span>
+<span class="n">Iech</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">uI</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>  <span class="c1"># Création des échantillons pour I</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On va créer les échantillons de R.</span>
+<span class="sd">Ici, l&#39;opération est une simple division et Uech et Iech sont des vecteurs numpy. On peut donc</span>
+<span class="sd">écrire directement Uech / Iech pour diviser les éléments termes à termes (vectorialisation).</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">Rech</span> <span class="o">=</span> <span class="n">Uech</span> <span class="o">/</span> <span class="n">Iech</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On va tracer l&#39;histogramme des fréquences des valeurs de R. On pourra l&#39;analyser par la suite.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>  <span class="c1"># On crée une fenêtre graphique et des axes.</span>
+<span class="n">f</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Distribution des valeurs simulées de R&quot;</span><span class="p">)</span>  <span class="c1"># On titre le graphique</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Valeurs de R&quot;</span><span class="p">)</span>  <span class="c1"># On légende l&#39;axe des abscisses</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Fréquences&quot;</span><span class="p">)</span>  <span class="c1"># On légende l&#39;axe des ordonnées</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">Rech</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="s1">&#39;rice&#39;</span><span class="p">)</span>  <span class="c1"># On créer l&#39;histogramme des valeurs.</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># On affiche le graphique</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On calcule la moyenne et l&#39;écart comme valeur mesurée et incertitude-type&quot;&quot;&quot;</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Rech</span><span class="p">)</span>
+<span class="n">uR</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">Rech</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Calcul de l&#39;écart-type. L&#39;option ddof permet de diviser par N-1 et non par N.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La résistance vaut </span><span class="si">{:.1f}</span><span class="s2"> +/- </span><span class="si">{:.1f}</span><span class="s2"> Ohm&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">uR</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">))</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-1-4c7b80b5e1e2&gt;&quot;</span><span class="gt">, line </span><span class="mi">46</span>
+    <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">       ^</span>
+<span class="ne">SyntaxError</span>: EOF while scanning triple-quoted string literal
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>La syntaxe précédente permet d’arrondir à 1 décimale. Il n’est pas nécessaire de la connaître.</p>
+<p>Par contre, il <strong>est fondamental de prendre du recul sur les valeurs données par Python qui possèderont par défaut beaucoup de chiffres significatifs.</strong> Ce sera <strong>à vous</strong> de tronquer les valeurs numériques.</p>
+<p>La règle est :</p>
+<ul class="simple">
+<li><p>on ne garde que 2 chiffres significatifs pour l’incertitude de mesure</p></li>
+<li><p>on arrondi le résultat de mesurage avec la même précision (même puissance de dix pour le chiffre de rang le plus faible) que l’incertitude de mesure ainsi tronqué.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="propagation-des-variances">
+<h2><span class="section-number">4.4. </span>Propagation des variances<a class="headerlink" href="#propagation-des-variances" title="Permalink to this headline">¶</a></h2>
+<p>Cette méthode sera présentée plus tard dans l’année.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebook"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="sources.html" title="previous page"><span class="section-number">3. </span>Sources d’incertitudes et bilan.</a>
+    <a class='right-next' id="next-link" href="rcgeneral.html" title="next page"><span class="section-number">1. </span>Rendre compte de résultats expérimentaux</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By C. Lacpatia<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

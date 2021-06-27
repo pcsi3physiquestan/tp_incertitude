@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Vérifier une loi physique &#8212; Etude de systèmes optiques</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp2_optique/notebook/verifier_loi.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. Ajustement d’un modèle affine" href="regression.html" />
+    <link rel="prev" title="1. Comparer un résultat expérimental avec un résultat théorique." href="comparaison.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://pcsi3physiquestan.github.io/tp2_optique/notebook/verifier_loi.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Vérifier une loi physique" />
+<meta property="og:description" content="Vérifier une loi physique  Principe général  Note  Par la suite, on considère qu’on a mesurée plusieurs couples (x_i, y_i) avec leurs incertitudes u(X_i), u(Y_i" />
+
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Etude de systèmes optiques</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tp_incertitude.html">
+   Incertitudes de mesure et méthodes expérimentales.
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Vocabulaire et étapes d'une manipulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="vocabulaire.html">
+   1. Vocabulaire et étapes : Généralités
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Incertitudes
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="incertitude.html">
+   1. Les incertitudes de mesure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="distribution.html">
+   2. Distributions statistiques usuelles.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sources.html">
+   3. Sources d’incertitudes et bilan.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="indirecte.html">
+   4. Incertitude des mesurandes indirectes.
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Rendre compte d'un résultat
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="rcgeneral.html">
+   1. Rendre compte de résultats expérimentaux
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Exploiter les mesures
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="comparaison.html">
+   1. Comparer un résultat expérimental avec un résultat théorique.
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Vérifier une loi physique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression.html">
+   3. Ajustement d’un modèle affine
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/notebook/verifier_loi.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebook/verifier_loi.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebook/verifier_loi.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#principe-general">
+   2.1. Principe général
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verification-qualitative">
+   2.2. Vérification qualitative.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methode">
+     2.2.1. Méthode
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemples">
+     2.2.2. Exemples
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemple-1">
+       2.2.2.1. Exemple 1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exemple-2">
+       2.2.2.2. Exemple 2
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparaison-semi-quantitative">
+   2.3. Comparaison semi-quantitative.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ecarts-normalises">
+   2.4. Ecarts normalisés.
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p>Une autre exploitation possible de résultats expérimentaux fréquentes consiste à la vérification d’une loi physique, c’est-à-dire <strong>d’une relation <span class="math notranslate nohighlight">\(Y=f(X)\)</span> entre deux grandeurs physiques Y et X</strong>.</p>
+<div class="section" id="verifier-une-loi-physique">
+<h1><span class="section-number">2. </span>Vérifier une loi physique<a class="headerlink" href="#verifier-une-loi-physique" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="principe-general">
+<h2><span class="section-number">2.1. </span>Principe général<a class="headerlink" href="#principe-general" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Par la suite, on considère qu’on a mesurée plusieurs couples <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> avec leurs incertitudes <span class="math notranslate nohighlight">\(u(X_i), u(Y_i)\)</span>. On dispose d’un modèle théorique de l’expérience qui prévoit une relation du type <span class="math notranslate nohighlight">\(Y=f(X)\)</span> entre les deux grandeurs.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>On ne vérifie pas une loi physique avec un seul couple <span class="math notranslate nohighlight">\(Y, X\)</span>. Cela n’a pas de sens.</p>
+</div>
+</div>
+<p>Suivant la fonction <span class="math notranslate nohighlight">\(f\)</span>, il existe des méthodes plus ou moins complexes de validation. On se limitera à trois méthodes, qu’on utilisera généralement conjointement :</p>
+<ol class="simple">
+<li><p>Méthode qualitative “à l’oeil” sans le modèle (<strong>uniquement pour une relation affine</strong>).</p></li>
+<li><p>Méthode semi-quantitative “à l’oeil” avec le modèle</p></li>
+<li><p>Méthode quantitative avec les résidus et les écarts normalisés.</p></li>
+</ol>
+</div>
+<div class="section" id="verification-qualitative">
+<h2><span class="section-number">2.2. </span>Vérification qualitative.<a class="headerlink" href="#verification-qualitative" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="methode">
+<h3><span class="section-number">2.2.1. </span>Méthode<a class="headerlink" href="#methode" title="Permalink to this headline">¶</a></h3>
+<p>Avant de se lancer dans des méthodes numériques et calculs plus ou moins complexes, il est important de vérifier <strong>à l’oeil</strong> que l’ensemble des mesures <em>semblent</em> compatibles avec la loi proposés. MAIS, <strong>le seul lien mathématique appréciable à l’oeil entre deux grandeurs est la droite.</strong></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Pour déterminer à l’oeil si deux grandeurs sont relisées entre elle, il faudrait nécessaire se ramener à une relation <span class="math notranslate nohighlight">\(Y'=g(X')\)</span> où g est l’équation d’une droite. On peut alors représenter les points <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> avec leurs croix d’incertitudes et décider s’il est possible à l’oeil de faire passer une droite par les croix d’incertitudes.</p>
+<p>Si c’est le cas, on peut espérer avec une relation du type <span class="math notranslate nohighlight">\(Y' = aX' + b\)</span> et procéder à une vérification plus précise, voire (cf. suite) à une détermination de <span class="math notranslate nohighlight">\(a\)</span> et <span class="math notranslate nohighlight">\(b\)</span> si on ne les connait pas.</p>
+<p>Si ce n’est pas le cas, il faut soit revoir le modèle, soit revoir les mesures.</p>
+</div>
+<p><em>La vérification “à l’oeil” est surtout utile quand on ne connait pas tous les paramètres du modèle (la pente a par exemple) car on ne peut alors tracer un modèle et le comparer. En général, elle est suivant d’une méthode pour déterminer les paramètres inconnus.</em></p>
+</div>
+<div class="section" id="exemples">
+<h3><span class="section-number">2.2.2. </span>Exemples<a class="headerlink" href="#exemples" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exemple-1">
+<h4><span class="section-number">2.2.2.1. </span>Exemple 1<a class="headerlink" href="#exemple-1" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>On veut mesurer la résistance <span class="math notranslate nohighlight">\(R\)</span> d’une résistance électrique en utilisant des valeur de <span class="math notranslate nohighlight">\(U\)</span> et <span class="math notranslate nohighlight">\(I\)</span>. Mais avant de mesurer <span class="math notranslate nohighlight">\(R\)</span>, on veut vérifier que les couples <span class="math notranslate nohighlight">\((i_k, u_k)\)</span> vérifient bien la loi d’Ohm <span class="math notranslate nohighlight">\(U=RI\)</span> (sinon, son utilisation est remise en question !). On a donc tracer les couples <span class="math notranslate nohighlight">\((i_k, u_k)\)</span> <strong>avec leur croix d’incertitude</strong>.
+Comme on ne peut tracer de droite modèle (on ne connait pas R, on le cherche !), on va simplement vérifier que les points semblent alignés, c’est-à-dire <em>qu’on peut tracer une droite qui passe par toutes les croix d’incertitude.</em></p>
+</div></blockquote>
+</div>
+<div class="section" id="exemple-2">
+<h4><span class="section-number">2.2.2.2. </span>Exemple 2<a class="headerlink" href="#exemple-2" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>On veut déterminer l’indice de réfraction <span class="math notranslate nohighlight">\(n_v\)</span> d’un verre. Pour cela on envoie un faisceau Laser dans l’air (<span class="math notranslate nohighlight">\(n_{air} = 1,000\)</span>) à la rencontre du dioptre air-verre avec un angle <span class="math notranslate nohighlight">\(i_1\)</span> qu’on mesure et on mesure l’angle de réfraction <span class="math notranslate nohighlight">\(i_2\)</span> ainsi que les incertitudes sur les angles. On ne peut pas :</p>
+<ul class="simple">
+<li><p>simplement tracer <span class="math notranslate nohighlight">\(i_2\)</span> en fonction de <span class="math notranslate nohighlight">\(i_1\)</span> et le comparer à un tracé modèle puisqu’on ne connait pas <span class="math notranslate nohighlight">\(n_v\)</span></p></li>
+<li><p>simplement tracer <span class="math notranslate nohighlight">\(i_2\)</span> en fonction de <span class="math notranslate nohighlight">\(i_1\)</span> et vérifier qualitativement si la relation entre les deux est respectées car la relation <span class="math notranslate nohighlight">\(n_{air} \sin i_1 = n_v \sin i_2\)</span> n’est pas représentée par une droite.</p></li>
+</ul>
+<p>On va alors tracer <span class="math notranslate nohighlight">\(\sin i_2\)</span> en fonction de <span class="math notranslate nohighlight">\(\sin i_2\)</span>. Le modèle théorique prévoit alors une droite qu’on pourrait cette fois appréciser à l’oeil.</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+<div class="section" id="comparaison-semi-quantitative">
+<h2><span class="section-number">2.3. </span>Comparaison semi-quantitative.<a class="headerlink" href="#comparaison-semi-quantitative" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>On va tracer le nuage de points <strong>avec les croix d’incertitude</strong> ET le modèle théorique (ou semi-théorique). Si le modèle passe par les croix d’incertitude, alors on peut considérer que les résultats expérimentaux sont compatibles avec le modèle théorique.</p>
+</div>
+<p><em>Le modèle de comparaison n’est pas toujours complètement théorique. On peut par exemple avoir déterminé expérimentalement certaines paramètres du modèle (<span class="math notranslate nohighlight">\(R\)</span> et <span class="math notranslate nohighlight">\(n_v\)</span> pour les exemples précédents) puis on tracer le modèle ainsi obtenus pour <strong>vérifier qu’il est effectivement compatible ave les résultats</strong> .</em></p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Si la croix d’un point de mesure ne passe pas tout à fait par le modèle, cela ne veut pas dire forcément qu’il y a incompatibilité. En effet, on rappelle que l’intervalle associée à l’incertitude (écart-type) ne recouvre qu’environ 2/3 de la dispersion des résultats de mesurage.</p>
+<p>Un point dont la croix d’incertitude ne passe pas trop loin des résultats de mesure peut être valable. Si on est confronté à cette situation, la seule façon de décider est alors d’utiliser <strong>les écarts normalisés</strong>.</p>
+</div>
+</div>
+<div class="section" id="ecarts-normalises">
+<h2><span class="section-number">2.4. </span>Ecarts normalisés.<a class="headerlink" href="#ecarts-normalises" title="Permalink to this headline">¶</a></h2>
+<p>Les écarts normalisés ont déjà été présentés <a class="reference internal" href="comparaison.html"><span class="doc std std-doc">précédemment</span></a>. L’idée reste la même :</p>
+<ol class="simple">
+<li><p>On calcule les écarts normalisés pour chaque ensemble <span class="math notranslate nohighlight">\((y_{i, exp}(x_i), y_{i, th}(x_i), u(y_{i, exp}(x_i)), u(y_{i, th}(x_i))\)</span>.</p></li>
+<li><p>On représente les écarts normalisés en fonction des <span class="math notranslate nohighlight">\(x_i\)</span> et on repère les points dans l’écart normalisé est supérieur à 2 : ce sont les points problématiques qui peuvent remettre en cause la cohérence théorie-expérience.</p></li>
+</ol>
+<p><em>C’est donc le même principe que celui exposé avec les mesures de focales.</em></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebook"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="comparaison.html" title="previous page"><span class="section-number">1. </span>Comparer un résultat expérimental avec un résultat théorique.</a>
+    <a class='right-next' id="next-link" href="regression.html" title="next page"><span class="section-number">3. </span>Ajustement d’un modèle affine</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By C. Lacpatia<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
