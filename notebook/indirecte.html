@@ -409,20 +409,18 @@ Y = f(X_i)
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># On affiche le graphique</span>
 
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">On calcule la moyenne et l&#39;écart comme valeur mesurée et incertitude-type&quot;&quot;&quot;</span>
+<span class="sd">On calcule la moyenne et l&#39;écart comme valeur mesurée et incertitude-type</span>
+<span class="sd">&quot;&quot;&quot;</span>
 <span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Rech</span><span class="p">)</span>
 <span class="n">uR</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">Rech</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Calcul de l&#39;écart-type. L&#39;option ddof permet de diviser par N-1 et non par N.</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La résistance vaut </span><span class="si">{:.1f}</span><span class="s2"> +/- </span><span class="si">{:.1f}</span><span class="s2"> Ohm&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">uR</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">))</span>
-<span class="s2">&quot;&quot;&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-1-4c7b80b5e1e2&gt;&quot;</span><span class="gt">, line </span><span class="mi">46</span>
-    <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">       ^</span>
-<span class="ne">SyntaxError</span>: EOF while scanning triple-quoted string literal
+<img alt="../_images/indirecte_6_0.png" src="../_images/indirecte_6_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La résistance vaut 373.2 +/- 3.5 Ohm
 </pre></div>
 </div>
 </div>

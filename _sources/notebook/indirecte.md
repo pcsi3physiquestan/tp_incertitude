@@ -121,12 +121,13 @@ ax.hist(Rech, bins='rice')  # On créer l'histogramme des valeurs.
 plt.show()  # On affiche le graphique
 
 """
-On calcule la moyenne et l'écart comme valeur mesurée et incertitude-type"""
+On calcule la moyenne et l'écart comme valeur mesurée et incertitude-type
+"""
 R = np.mean(Rech)
 uR = np.std(Rech, ddof=1)  # Calcul de l'écart-type. L'option ddof permet de diviser par N-1 et non par N.
 
 print("La résistance vaut {:.1f} +/- {:.1f} Ohm".format(R * 1000, uR * 1000))
-"""
+
 ```
 
 ```{important}
