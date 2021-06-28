@@ -17,27 +17,62 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import pandas as pd
-import numpy as np
-Vser = np.array([18, 24, 30, 34, 40, 50, 60])
-Umin = np.array([5.67 4.36 3.58 3.22 2.85 2.34 2.02])
-Umax = np.array([5.74 4.46 3.75 3.34 2.91 2.48 2.18])
+"""On réalise maintenant l'ajustement linéaire pour chaque groupe d'échantillons simulés."""
+nRTs = []  # On va stocker les pentes
+ordo = []  # On av stocker les ordonnées à l'origine
+for i in range(N):
+	invV = [x[i] for x in invVs]  # On utilise la compréhension de liste pour sélectionner le ième élément pour chaque volume.
+	P = [x[i] for x in Ps]  # On utilise la compréhension de liste pour sélectionner le ième élément pour chaque pression.
+	par = np.polyfit(invV, P, 1)  # Régression linéaire
+	nRTs.append(par[0])  # Stockage de la pente
+	ordo.append(par[1])  # Stockage de l'ordonnée à l'origine
 
-donnees = pd.DataFrame(
-    {
-        "Vser(mL)": ["{:.0f}".format(val) for val in Vser],
-        "Umin(V)": ["{:.2f}".format(val) for val in Umin],
-        "Umax(V)": ["{:.2f}".format(val) for val in Umax],
-    }
-)
+"""Calcul de la moyenne et écart-type"""
+nRT_moy = np.mean(nRTs)  # Moyenne (Estimation de nRT)
+nRT_inc = np.std(nRTs, ddof=1)  # Ecart-type (Estimation de l'incertitude sur nRT)
+ordo_moy = np.mean(ordo)
+ordo_inc = np.std(ordo, ddof=1)
 
-donnees.style
+print("L'ordonnée à l'origine est {:.1f} +/- {:.1f} hPa".format(ordo_moy, ordo_inc))
+
+P_adj = nRT_moy * np.array(invV_moy) + ordo_moy  # Estimation des valeurs ajustés pour le tracé
+"""Remarque : On doit transformer invV_moy en un vecteur numpy pour appliquer une opération à chaque élément."""
+en = (P_moy - P_adj) / P_inc  # Ecarts normalisés
+
+"""Tracé de P=f(1/V)"""
+f, ax = plt.subplots(1, 2)  # On trace deux graphiques : P(1/V) avec le modèle ajusté et les écarts normalisés
+f.suptitle("Test de la loi de Mariotte")
+ax[0].set_xlabel("1/V (mL^-1)")
+ax[0].set_ylabel("P(hPa)")
+
+ax[0].errorbar(invV_moy, P_moy, xerr=invV_inc, yerr=P_inc, label="P(1/V)", marker='+', linestyle='', color='red') # Tracé sans relier les points
+ax[0].plot(invV_moy, P_adj, label="Ajustement", linestyle=':', color='blue') # Tracé sans relier les points
+ax[0].legend()
+
+ax[1].plot(invV_moy, en, label="EN", marker="+", linestyle='')
+ax[1].legend()
+plt.show()
+
 ------------------
 
-[0;36m  File [0;32m"<ipython-input-1-fe7b39152687>"[0;36m, line [0;32m4[0m
-[0;31m    Umin = np.array([5.67 4.36 3.58 3.22 2.85 2.34 2.02])[0m
-[0m                          ^[0m
-[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-4-7d8454ea0a26>[0m in [0;36m<module>[0;34m[0m
+[1;32m      5[0m         [0minvV[0m [0;34m=[0m [0;34m[[0m[0mx[0m[0;34m[[0m[0mi[0m[0;34m][0m [0;32mfor[0m [0mx[0m [0;32min[0m [0minvVs[0m[0;34m][0m  [0;31m# On utilise la compréhension de liste pour sélectionner le ième élément pour chaque volume.[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      6[0m         [0mP[0m [0;34m=[0m [0;34m[[0m[0mx[0m[0;34m[[0m[0mi[0m[0;34m][0m [0;32mfor[0m [0mx[0m [0;32min[0m [0mPs[0m[0;34m][0m  [0;31m# On utilise la compréhension de liste pour sélectionner le ième élément pour chaque pression.[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 7[0;31m         [0mpar[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mpolyfit[0m[0;34m([0m[0minvV[0m[0;34m,[0m [0mP[0m[0;34m,[0m [0;36m1[0m[0;34m)[0m  [0;31m# Régression linéaire[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      8[0m         [0mnRTs[0m[0;34m.[0m[0mappend[0m[0;34m([0m[0mpar[0m[0;34m[[0m[0;36m0[0m[0;34m][0m[0;34m)[0m  [0;31m# Stockage de la pente[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      9[0m         [0mordo[0m[0;34m.[0m[0mappend[0m[0;34m([0m[0mpar[0m[0;34m[[0m[0;36m1[0m[0;34m][0m[0;34m)[0m  [0;31m# Stockage de l'ordonnée à l'origine[0m[0;34m[0m[0;34m[0m[0m
 
-SyntaxError: invalid syntax (<ipython-input-1-fe7b39152687>, line 4)
+[0;32m<__array_function__ internals>[0m in [0;36mpolyfit[0;34m(*args, **kwargs)[0m
+
+[0;32m~/miniconda3/envs/jupybook/lib/python3.9/site-packages/numpy/lib/polynomial.py[0m in [0;36mpolyfit[0;34m(x, y, deg, rcond, full, w, cov)[0m
+[1;32m    601[0m         [0;32mraise[0m [0mTypeError[0m[0;34m([0m[0;34m"expected 1D or 2D array for y"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    602[0m     [0;32mif[0m [0mx[0m[0;34m.[0m[0mshape[0m[0;34m[[0m[0;36m0[0m[0;34m][0m [0;34m!=[0m [0my[0m[0;34m.[0m[0mshape[0m[0;34m[[0m[0;36m0[0m[0;34m][0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 603[0;31m         [0;32mraise[0m [0mTypeError[0m[0;34m([0m[0;34m"expected x and y to have same length"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    604[0m [0;34m[0m[0m
+[1;32m    605[0m     [0;31m# set rcond[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mTypeError[0m: expected x and y to have same length
+TypeError: expected x and y to have same length
 

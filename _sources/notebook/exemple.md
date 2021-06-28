@@ -22,7 +22,7 @@ Nous allons, à travers un exemple montrer l'étude complète, du protocole à l
 
 * __Objectif__ : On désire tester la loi de Mariotte qui relie Pression, Volume et Température d'un gaz : $PV = nRT$ pour l'air dans les conditions de température ambiante et de pression de quelques centaines d'hectoPascal. On déterminera aussi le nomber de mole d'air du système étudié.
 * __Principe__ : On va procéder à la mesure de couples $(P, V)$ pour plusieurs valeurs de $V$ à la température ambiante et on testera la loi $P(V)$ ainsi obtenue.
-* __Mode opératoire__ : On va utiliser [une seringue](mariotte_photo) contenant de l'air pour controler le volume. L'embout de la seringue sera branché sur un manomètre. Ce manomètre mesure une pression et renvoie une tension $U$ qu'on mesure grâce à un microcontrolleur Arduino programmé pour renvoyé les mesures vers un système de traitement informatique.
+* __Mode opératoire__ : On va utiliser [une seringue](mariotte_photo) contenant de l'air pour controler le volume. L'embout de la seringue sera branché sur un manomètre. Ce manomètre mesure une pression et renvoie une tension $U$ qu'on mesure grâce à un microcontrolleur Arduino programmé pour renvoyer les mesures vers un système de traitement informatique.
 
 ````{panels}
 ```{figure} ./images/mariotte.png
@@ -47,7 +47,7 @@ On veut tester une relation, il faudra bien réfléchir aux incertitudes.
 
 ### Mesurandes directs
 On dispose de trois mesurandes directs :
-* la température $T$ mesurée par un thermomètre numérique dont le constructeur annonce une _tolérance_ de $5%$ sur la mesure en Celsius. On considèrera qu'il s'agit d'une incertitude-type (associé à une distribution uniforme). Cette source étant grande devant la résolution de l'affichage (1/10 de degré pour des températures d'environ 30°C), on considèrera qu'il s'agit de la seule source.
+* la température $T$ mesurée par un thermomètre numérique dont le constructeur annonce une _tolérance_ de 5% sur la mesure en Celsius. On considèrera qu'il s'agit d'une incertitude-type (associé à une distribution uniforme). Cette source étant grande devant la résolution de l'affichage (1/10 de degré pour des températures d'environ 30°C), on considèrera qu'il s'agit de la seule source.
 * le volume $V$. Il y a deux sources d'incertitudes :
 	* la lecture du volume de la seringue $V_{ser}$ souffre de la précision des graduations. La photo montre que les mesures seront incertaines à 2mL près. On choisira une distribution uniforme de largeur 2mL.
 	* On doit corriger $V$ par le volume du petit tuyau $V_{tuyau}$ (identique pour tous les volumes). On a mesuré la longueur du tuyau $L = 4.0 \pm 0.2 cm$ (distribution uniforme) à la règle et son diamètre $d = 1.000 \pm 0.005 mm$ avec un pieds à coulisse micrométrique électronique. Vu la faible incertitude __relative ET absolue__ sur $d$, on la négligera par la suite.
@@ -58,8 +58,14 @@ En toute rigueur, $V_{ser}$ et $V_{tuyau}$ sont des mesurandes directs et $V$ un
 ```
 
 * la tension $U$ délivrée par Arduino. Il y a deux sources d'incertitude:
-	* la valeur renvoyé fluctue au cours du temps, on n'a uniquement pu mesurer des intervalles $[U_{min}, U_{max}] de valeurs (autour de $10^{-2}V$). On associera à ces intervalles une distribution uniforme).
-	* la valeur renvoyé (entre 0 et 5V) est codée numérique entre 0 et 1023 bits. Il y a donc une résolution de $5 / 1023 = 0.0049 V$. On la considèrera négligeable devant l'incertitude liée aux fluctuations.
+	* la valeur renvoyée fluctue au cours du temps, on n'a uniquement pu mesurer des intervalles $[U_{min}, U_{max}]$ de valeurs (autour de $10^{-2}V$). On associera à ces intervalles une distribution uniforme).
+	* la valeur renvoyé (entre 0 et 5V) est codée numérique entre 0 et 1023 bits. Il y a donc une résolution de $5 / 1023 = 0.0049 V$. Elle est cependant négligeable devant l'incertitude liée aux fluctuations.
+
+```{note} 
+On sera souvent amené à considérer certaines sources d'incertitude comme négligeable. Il est important de réfléchir aux ordres de grandeurs de ces sources.
+
+Cette réflexion est importante et doit se faire assez tôt pour savoir quelles incertitudes prendre en compte.
+```
 
 ### Mesurandes indirects
 Le seul mesurande indirect est la pression $P$. L'étalonnage du manomètre donne la relation $P(hPa) = 218.5 U(V) - 107.3$ avec des incertitudes sur les coefficients négligeables devant l'incertitude sur $U$.
@@ -75,8 +81,8 @@ On ne donne que les résultats de mesure bruts : $V_{ser}, U_{min}, U_{max}$ et 
 import pandas as pd
 import numpy as np
 Vser = np.array([18, 24, 30, 34, 40, 50, 60])
-Umin = np.array([5.67 4.36 3.58 3.22 2.85 2.34 2.02])
-Umax = np.array([5.74 4.46 3.75 3.34 2.91 2.48 2.18])
+Umin = np.array([5.67, 4.36, 3.58, 3.22, 2.85, 2.34, 2.02])
+Umax = np.array([5.74, 4.46, 3.75, 3.34, 2.91, 2.48, 2.18])
 
 donnees = pd.DataFrame(
     {
