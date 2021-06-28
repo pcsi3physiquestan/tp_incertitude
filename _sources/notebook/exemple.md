@@ -163,6 +163,7 @@ for i in range(Nmes):  # Parcours des valeurs mesurées.
 
 	U_sim = rd.uniform(-dU[i], dU[i], N) + Umoy[i]  # Calcul des valeurs simulées de U
 	P_sim = a * U_sim + b  #Calcul des valeurs simulées
+	Ps.append(P_sim)
 	P_moy.append(np.mean(P_sim))
 	P_inc.append(np.std(P_sim, ddof=1))
 
@@ -178,7 +179,7 @@ ax.legend()
 plt.show()
 ```
 
-On observe que le tracé $P = f(1/V)$ est visuellement cohérent avec une relation linéaire (au moins affine). On va donc poursuivre l'étude avec un ajustement par un modèle affine. Avant, on rend compte des résultats de mesure.
+On observe que le tracé $P = f(1/V)$ est visuellement cohérent avec une relation linéaire (au moins affine). On va donc poursuivre l'étude avec un ajustement par un modèle affine. Avant, on rend compte des résultats de mesure (en pratique, il faudrait mieux arrondir mais l'affichage par Python a ici ses limites).
 
 ```{code-cell}
 :tags: [remove-input]
@@ -201,12 +202,12 @@ uinvV_aff = get_aff(invV_inc,invV_inc)
 
 donnees2 = pd.DataFrame(
     {
-        "V(mL)": V_aff,
-        "u(V)(mL)": uV_aff,
-        "1/V(mL^-1)": invV_aff,
-        "u(1/V)(mL^-1)": uinvV_aff,
-        "P(hPa)": P_aff,
-        "u(P)(hPa)": uP_aff,
+        "V(mL)": ["{:.2f}".format(x) for x in V_aff],
+        "u(V)(mL)": ["{:.2f}".format(x) for x in uV_aff],
+        "1/V(mL^-1)": ["{:.5f}".format(x) for x in invV_aff],
+        "u(1/V)(mL^-1)": ["{:.5f}".format(x) for x in uinvV_aff],
+        "P(hPa)": ["{:.1f}".format(x) for x in P_aff],
+        "u(P)(hPa)": ["{:.1f}".format(x) for x in uP_aff],
     }
 )
 
