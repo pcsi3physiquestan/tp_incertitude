@@ -289,7 +289,9 @@ n_sim = nRTs / (R * T_sim) * 1e-4
 n_moy = np.mean(n_sim)
 n_inc = np.std(n_sim, ddof=1)
 
+print("---------------------------------------")
 print("Nombre de mole. n = {:.2e} +/- {:.1e} mol".format(n_moy, n_inc))
+print("---------------------------------------")
 
 ```
 
