@@ -148,24 +148,27 @@ Nmes = len(Vser)  # Nombre de mesures réalisées.
 N = 10000  # Nombre de simulations
 
 for i in range(Nmes):  # Parcours des valeurs mesurées.
+	"""Simulation des valeurs pour estimer les volumes"""
 	L_sim = rd.uniform(-uL, uL, N)  # Valeurs simulées de L
 	Vser_sim = rd.uniform(-uVser, uVser, N) + Vser[i]  # Valeurs simulées de Vser
 
 	V_sim = Vser_sim + np.pi * d ** 2 / 4 * L_sim  # Calcul des valeurs simulées de V
-	Vs.append(V_sim)  # Ajout des valeurs au tableau
-	V_moy.append(np.mean(V_sim))
-	V_inc.append(np.std(V_sim, ddof=1))
+	Vs.append(V_sim)  # Ajout des valeurs au tableau Vs
+	V_moy.append(np.mean(V_sim))  # Ajout de la moyenne de V
+	V_inc.append(np.std(V_sim, ddof=1))  # Ajout de l'écart-type de V
 	
+	"""Estimation des 1/V"""
 	invV_sim = 1 / V_sim  # Calcul des valeurs simulées de 1/V
-	invVs.append(invV_sim)  # Ajout des valeurs au tableau
-	invV_moy.append(np.mean(invV_sim))
-	invV_inc.append(np.std(invV_sim, ddof=1))
+	invVs.append(invV_sim)  # Ajout des valeurs au tableau invVs
+	invV_moy.append(np.mean(invV_sim))  # Ajout de la moyenne de 1/V
+	invV_inc.append(np.std(invV_sim, ddof=1))  # Ajout de l'écart-type de 1/V
 
+	"""Estimation des pressions"""
 	U_sim = rd.uniform(-dU[i], dU[i], N) + Umoy[i]  # Calcul des valeurs simulées de U
-	P_sim = a * U_sim + b  #Calcul des valeurs simulées
-	Ps.append(P_sim)
-	P_moy.append(np.mean(P_sim))
-	P_inc.append(np.std(P_sim, ddof=1))
+	P_sim = a * U_sim + b  #Calcul des valeurs simulées de P
+	Ps.append(P_sim)  # Ajout des valeurs au tableau Ps
+	P_moy.append(np.mean(P_sim))  # Ajout de la moyenne de P
+	P_inc.append(np.std(P_sim, ddof=1))  # Ajout de l'écart-type de P
 
 """Tracé de P=f(1/V)"""
 f, ax = plt.subplots()
@@ -179,7 +182,7 @@ ax.legend()
 plt.show()
 ```
 
-On observe que le tracé $P = f(1/V)$ est visuellement cohérent avec une relation linéaire (au moins affine). On va donc poursuivre l'étude avec un ajustement par un modèle affine. Avant, on rend compte des résultats de mesure (en pratique, il faudrait mieux arrondir mais l'affichage par Python a ici ses limites).
+On observe que le tracé $P = f(1/V)$ est visuellement cohérent avec une relation linéaire (au moins affine). On va donc poursuivre l'étude avec un ajustement par un modèle affine. Avant, on rend compte des résultats de mesure (en pratique, il faudrait mieux arrondir mais l'affichage par Python a ici ses limites : quelques valeurs pour les incertitudes de 1/V et P ont 3 chiffres significatifs au lieu de 2). _Pour des valeurs intermédiaires, ce n'est pas trop critique_.
 
 ```{code-cell}
 :tags: [remove-input]
@@ -233,9 +236,11 @@ nRT_inc = np.std(nRTs, ddof=1)  # Ecart-type (Estimation de l'incertitude sur nR
 ordo_moy = np.mean(ordo)
 ordo_inc = np.std(ordo, ddof=1)
 
-print("L'ordonnée à l'origine est {:.1f} +/- {:.1f} hPa".format(ordo_moy, ordo_inc))
+print("---------------------------------------")
+print("L'ordonnée à l'origine est {:.0f} +/- {:.0f} hPa".format(ordo_moy, ordo_inc))
+print("---------------------------------------")
 
-P_adj = nRT_moy * np.array(invV_moy) + ordo_moy  # Estimation des valeurs ajustés pour le tracé
+P_adj = nRT_moy * np.array(invV_moy) + ordo_moy  # Estimation des valeurs ajustées pour le tracé
 """Remarque : On doit transformer invV_moy en un vecteur numpy pour appliquer une opération à chaque élément."""
 en = (P_moy - P_adj) / P_inc  # Ecarts normalisés
 
@@ -245,10 +250,12 @@ f.suptitle("Test de la loi de Mariotte")
 ax[0].set_xlabel("1/V (mL^-1)")
 ax[0].set_ylabel("P(hPa)")
 
+"""Comparaison graphique entre les points de mesure et le modèle ajusté"""
 ax[0].errorbar(invV_moy, P_moy, xerr=invV_inc, yerr=P_inc, label="P(1/V)", marker='+', linestyle='', color='red') # Tracé sans relier les points
 ax[0].plot(invV_moy, P_adj, label="Ajustement", linestyle=':', color='blue') # Tracé sans relier les points
 ax[0].legend()
 
+"""Calcul des écarts normalisés"""
 ax[1].plot(invV_moy, en, label="EN", marker="+", linestyle='')
 ax[1].legend()
 plt.show()
