@@ -1,0 +1,644 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Construire une droite d’étalonnage &#8212; Incertitudes de mesure</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp2_optique/notebook/comp_reglin.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="1. Un exemple complet" href="exemple.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://pcsi3physiquestan.github.io/tp2_optique/notebook/comp_reglin.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Construire une droite d’étalonnage" />
+<meta property="og:description" content="Construire une droite d’étalonnage  On se propose de donner quelques éléments supplémentaires pour la régression linéaire, notamment pour son utilisation pour e" />
+
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Incertitudes de mesure</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tp_incertitude.html">
+   Incertitudes de mesure et méthodes expérimentales.
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Vocabulaire et étapes d'une manipulation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="vocabulaire.html">
+   1. Vocabulaire et étapes : Généralités
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Incertitudes
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="incertitude.html">
+   1. Les incertitudes de mesure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="distribution.html">
+   2. Distributions statistiques usuelles.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sources.html">
+   3. Sources d’incertitudes et bilan.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="indirecte.html">
+   4. Incertitude des mesurandes indirectes.
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Rendre compte d'un résultat
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="rcgeneral.html">
+   1. Rendre compte de résultats expérimentaux
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Exploiter les mesures
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="comparaison.html">
+   1. Comparer un résultat expérimental avec un résultat théorique.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="verifier_loi.html">
+   2. Vérifier une loi physique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression.html">
+   3. Ajustement d’un modèle affine
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Un exemple complet
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exemple.html">
+   1. Un exemple complet
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Pour aller plus loin
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Construire une droite d’étalonnage
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/notebook/comp_reglin.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebook/comp_reglin.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebook/comp_reglin.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#donnees-de-mesures">
+   1.1. Données de mesures
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#verification-visuelle-de-la-loi-lineaire">
+   1.2. Vérification visuelle de la loi linéaire
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mise-en-place-de-la-simulation-de-monte-carlo">
+   1.3. Mise en place de la simulation de Monte-Carlo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parametres-d-ajustement">
+   1.4. Paramètres d’ajustement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#utilisation-de-la-droite-d-ajustement">
+   1.5. Utilisation de la droite d’ajustement.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#determination-la-concentration-pour-une-mesure">
+     1.5.1. Détermination la concentration pour une mesure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#courbe-d-etalonnage-avec-incertitude">
+     1.5.2. Courbe d’étalonnage avec incertitude
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="construire-une-droite-d-etalonnage">
+<h1><span class="section-number">1. </span>Construire une droite d’étalonnage<a class="headerlink" href="#construire-une-droite-d-etalonnage" title="Permalink to this headline">¶</a></h1>
+<p>On se propose de donner quelques éléments supplémentaires pour la régression linéaire, notamment pour son utilisation pour estimer une valeur (comme avec une courbe d’étalonnage). On se base ici sur un exemple de chimie : l’utilisation d’une courbe d’étalonnage reliant l’absorbance à la concentration d’une espèce colorée.</p>
+<p>Cette partie est plus optionnelle et demande déjà une bonne compréhension des éléments précédents, notamment sur la régression linéaire et l’utilisation des fonctions Python.</p>
+<div class="section" id="donnees-de-mesures">
+<h2><span class="section-number">1.1. </span>Données de mesures<a class="headerlink" href="#donnees-de-mesures" title="Permalink to this headline">¶</a></h2>
+<p>Les données déjà utilisées sont disponibles en ligne. On va directement charger les données depuis le fichier en ligne.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+
+
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/pcsi3physiquestan/donnees_exp/blob/main/lambert.dat?raw=true&quot;</span>  <span class="c1"># Lien vers le fichier de données</span>
+<span class="n">A</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">uC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Importation des données</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="verification-visuelle-de-la-loi-lineaire">
+<h2><span class="section-number">1.2. </span>Vérification visuelle de la loi linéaire<a class="headerlink" href="#verification-visuelle-de-la-loi-lineaire" title="Permalink to this headline">¶</a></h2>
+<p>Avant de se lancer dans une régression linéaire et la simulation de Monte-Carlo, on va vérifier que le modèle affine est acceptable visuellement.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Détermination des moyennes et écart-type pour la simulation de Monte-Carlo puis création des N échantillons</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">n_mes</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Nombre de mesures réalisées</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Vérification visuelle de l&#39;alignement (approximatifs) des points de mesure.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Test visuel de l&#39;alignement des points&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;A(SI)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;C(10^-5 mol/L)&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">uC</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/comp_reglin_3_0.png" src="../_images/comp_reglin_3_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="mise-en-place-de-la-simulation-de-monte-carlo">
+<h2><span class="section-number">1.3. </span>Mise en place de la simulation de Monte-Carlo<a class="headerlink" href="#mise-en-place-de-la-simulation-de-monte-carlo" title="Permalink to this headline">¶</a></h2>
+<p>On commence par réaliser les N échantillons simulées pour A et C. Sans plus d’information, on a choisi des distributions gaussiennes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulation des N tirages</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000000</span>
+<span class="n">C_sim</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">uC</span><span class="p">,</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">n_mes</span><span class="p">))</span>  <span class="c1"># On génère directement un tableau où les colonnes correspondent à une mesure de C.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="parametres-d-ajustement">
+<h2><span class="section-number">1.4. </span>Paramètres d’ajustement<a class="headerlink" href="#parametres-d-ajustement" title="Permalink to this headline">¶</a></h2>
+<p>On va donc réaliser N régressions linéaires et ainsi estimer la pente et l’ordonnée à l’origine avec leurs incertitudes. On obtiendra aussi un jeu simulé de N valeurs de la pente et de l’ordonnée à l’origine qui nous servirons ensuite.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Réalisation des régression linéaire. polyfit peut faire les N régressions, tant que les abscisses ne changent pas</span>
+<span class="c1"># Ce qui est le cas ici</span>
+<span class="c1"># On doit par contre transposer le tableau des valeurs de C (inverser lignes et colonnes)</span>
+<span class="n">p_sim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">C_sim</span><span class="o">.</span><span class="n">transpose</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
+
+
+<span class="n">pente_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p_sim</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ordo_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">p_sim</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">pente_u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">p_sim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ordo_u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">p_sim</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pente = </span><span class="si">{:.4f}</span><span class="s2"> +/- </span><span class="si">{:.4f}</span><span class="s2"> 10^-5 mol/L&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pente_m</span><span class="p">,</span> <span class="n">pente_u</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ordonnée à l&#39;origine = </span><span class="si">{:.4f}</span><span class="s2"> +/- </span><span class="si">{:.4f}</span><span class="s2"> 10^-5 mol/L&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ordo_m</span><span class="p">,</span> <span class="n">ordo_u</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Histogrammes des valeurs simulées</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">f</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Distribution des valeurs simulées&quot;</span><span class="p">)</span>
+
+<span class="c1"># Pente</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Pente(1e-5 mol/L)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">p_sim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="s1">&#39;rice&#39;</span><span class="p">)</span>
+
+<span class="c1"># Pente</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Ordonnée(1e-5 mol/L)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">p_sim</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="s1">&#39;rice&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------------
+Pente = 1.1399 +/- 0.0095 10^-5 mol/L
+Ordonnée à l&#39;origine = 0.0529 +/- 0.0088 10^-5 mol/L
+-----------------------------
+</pre></div>
+</div>
+<img alt="../_images/comp_reglin_7_1.png" src="../_images/comp_reglin_7_1.png" />
+</div>
+</div>
+<p>On remarque que la droite ajustée ne passe pas par l’origine, même en tenant compte des incertitudes de mesures. Heureusement, la régression linéaire permet de travailler malgré le biais.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Vérification de l&#39;ajustement par tracé graphique et calcul des écarts normalisés.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;col&#39;</span><span class="p">)</span>  <span class="c1"># Tracé en partageant les abscisses sur les deux axes.</span>
+<span class="n">f</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Ajustement linéaire&quot;</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Tracé de la droite d&#39;ajustment</span>
+<span class="sd">On va pousser plus loin l&#39;analyse en estimant l&#39;incertitude sur les points ajustés.</span>
+<span class="sd">On s&#39;en servira dans les écarts normalisés notamment.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">C_adj_sim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">n_mes</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_mes</span><span class="p">):</span>
+    <span class="n">C_adj_sim</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">p_sim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">p_sim</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Calcul des N valeurs ajustées pour chaque distance</span>
+
+
+<span class="n">C_adj_m</span> <span class="o">=</span> <span class="n">C_adj_sim</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Moyenne sur les N valeurs (suivant les colonnes :  axis = 0)</span>
+<span class="n">C_adj_u</span> <span class="o">=</span> <span class="n">C_adj_sim</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Moyenne sur les N valeurs (suivant les colonnes :  axis = 0)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;C(1e-5 mol/L)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">uC</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">C_adj_m</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+
+<span class="sd">&quot;&quot;&quot;Tracé des écarts normalisés&quot;&quot;&quot;</span>
+<span class="n">en</span> <span class="o">=</span> <span class="p">(</span><span class="n">C</span> <span class="o">-</span> <span class="n">C_adj_m</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">uC</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">C_adj_u</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;EN&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">en</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/comp_reglin_9_0.png" src="../_images/comp_reglin_9_0.png" />
+</div>
+</div>
+<p>L’analyse de la droite d’ajustement est délicate car les incertitudes sont très faibles. L’analyse des écarts normalisés ne laisse par contre pas de doute, le modèle ajusté est compatible avec les résultats. One ne cherche pas vraiment une valeur particulière de la pente (même si le coefficient du bleu de patenté est tabulé). On va maintenant pouvoir utiliser cette droite d’ajustement.</p>
+</div>
+<div class="section" id="utilisation-de-la-droite-d-ajustement">
+<h2><span class="section-number">1.5. </span>Utilisation de la droite d’ajustement.<a class="headerlink" href="#utilisation-de-la-droite-d-ajustement" title="Permalink to this headline">¶</a></h2>
+<p>On se propose d’utiliser la droite d’ajustement comme courbe d’étalonnage pour déterminer une concentration à partir dela mesure d’une absorbance</p>
+<p>Si la détermination de <span class="math notranslate nohighlight">\(C\)</span> connaissant la pente et l’ordonnée à l’origine précédente ne pose pas de problème. On va voir comme utiliser les valeurs simulées précédentes pour estimer les incertitudes de mesure.</p>
+<p>On montrera aussi graphiquement ces incertitudes de mesure sur la droite d’étalonnage. Pour produire une courbe d’étalonnage <strong>avec incertitudes de mesures</strong>.</p>
+<div class="section" id="determination-la-concentration-pour-une-mesure">
+<h3><span class="section-number">1.5.1. </span>Détermination la concentration pour une mesure<a class="headerlink" href="#determination-la-concentration-pour-une-mesure" title="Permalink to this headline">¶</a></h3>
+<p>On commence par supposer qu’on a mesuré l’abosrbance <span class="math notranslate nohighlight">\(A\)</span>. On prendra <span class="math notranslate nohighlight">\(A = 0.523\)</span> pour l’exemple. On va simuler le calcul de <span class="math notranslate nohighlight">\(C\)</span> N fois à partir des valeurs simulées de la pente et de l’ordonnées à l’origine (<span class="math notranslate nohighlight">\(C = aA + b\)</span>). Les statistiques obtenues nous permettront d’obtenir une estimation de <span class="math notranslate nohighlight">\(C\)</span> et de son incertitude.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A_test</span> <span class="o">=</span> <span class="mf">0.523</span>  <span class="c1"># Distance en centimètre</span>
+<span class="n">C_sim</span> <span class="o">=</span> <span class="n">p_sim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">A_test</span> <span class="o">+</span> <span class="n">p_sim</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Simulation des concentrations</span>
+
+<span class="n">C_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">C_sim</span><span class="p">)</span>  <span class="c1"># Estimation de la concentration moyenne</span>
+<span class="n">C_u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">C_sim</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Estimation de l&#39;écart-type</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Concentration estimée = (</span><span class="si">{:.3f}</span><span class="s2"> +/- </span><span class="si">{:.3f}</span><span class="s2">) 10^-5 mol/L&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">C_m</span><span class="p">,</span> <span class="n">C_u</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------------
+Concentration estimée = (0.649 +/- 0.006) 10^-5 mol/L
+-----------------------------
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="courbe-d-etalonnage-avec-incertitude">
+<h3><span class="section-number">1.5.2. </span>Courbe d’étalonnage avec incertitude<a class="headerlink" href="#courbe-d-etalonnage-avec-incertitude" title="Permalink to this headline">¶</a></h3>
+<p>Pour représenter la courbe avec incertitude (on imagine qu’elle serait donnée ensuite à un autre expérimentateur qui n’aurait pas à faire cet étalonnage), on va représenter les <em>fuseaux</em> donnant les valeurs <span class="math notranslate nohighlight">\(C_{mes} \pm u(C)\)</span> estimé pour chaque valeur d’absorbance <strong>dans la zone d’étude</strong>.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Il est délicat d’extrapoler en dessous de <span class="math notranslate nohighlight">\(A_{min}\)</span> et au dessus de <span class="math notranslate nohighlight">\(A_{max}\)</span>, des phénomènes supplémentaires peuvent rendre faux le modèle affine. On ne l’a pas testé.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NA</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Nombre de valeurs d&#39;absorbance qu&#39;on va tester</span>
+<span class="n">A_courbe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">A</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">A</span><span class="p">),</span> <span class="n">NA</span><span class="p">)</span>  <span class="c1"># On trace les fuseaux pour la zone d&#39;étude.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On reprend la même méthode que précédemment mais pour chaque valeur de A. On va donc obtenir </span>
+<span class="sd">un vecteur de valeurs pour C et son incertitude</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">C_courbe_sim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">NA</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>  <span class="c1"># Tableau de 0 où on va stocker les valeurs simulées de C pour chaque absorbance</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NA</span><span class="p">):</span>
+    <span class="n">C_courbe_sim</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">p_sim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">A_courbe</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">p_sim</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Simulation des concentrations pour chaque valeur de A</span>
+
+<span class="n">C_courbe_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">C_courbe_sim</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Estimation de la concentration moyenne pour chaque valeur de A (par colonne)</span>
+<span class="n">C_courbe_u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">C_courbe_sim</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Estimation de l&#39;écart-type pour chaque valeur de A (par colonne=)</span>
+
+<span class="n">C_mean</span> <span class="o">=</span> <span class="n">pente_m</span> <span class="o">*</span> <span class="n">A_courbe</span> <span class="o">+</span> <span class="n">ordo_m</span>  <span class="c1"># Droite ajustée</span>
+<span class="n">C_min</span> <span class="o">=</span> <span class="n">C_courbe_m</span> <span class="o">-</span> <span class="n">C_courbe_u</span> <span class="c1"># Limite basse des valeurs données par l&#39;incertitude</span>
+<span class="n">C_max</span> <span class="o">=</span> <span class="n">C_courbe_m</span> <span class="o">+</span> <span class="n">C_courbe_u</span> <span class="c1"># Limite basse des valeurs données par l&#39;incertitude</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Tracé graphique de la droite d&#39;étalonnage avec le fuseau donnant les incertitudes</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Courbe d&#39;étalonnage pour dosage par absorbance&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;C(10^-5 mol/L)&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">A_courbe</span><span class="p">,</span> <span class="n">C_mean</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Droite étalon&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Droite d&#39;ajustement</span>
+
+<span class="c1"># Première méthode : on trace les deux courbes hautes et basses</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">A_courbe</span><span class="p">,</span> <span class="n">C_min</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Cmes - u(C)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">A_courbe</span><span class="p">,</span> <span class="n">C_max</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Cmes + u(C)</span>
+
+<span class="c1"># Deuxième méthode : la fonction fill_between, remplit de couleur l&#39;espace entre 2 courbes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">A_courbe</span><span class="p">,</span> <span class="n">C_min</span><span class="p">,</span> <span class="n">C_max</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cyan&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Incertitudes sur la concentration&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/comp_reglin_13_0.png" src="../_images/comp_reglin_13_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebook"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="exemple.html" title="previous page"><span class="section-number">1. </span>Un exemple complet</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By C. Lacpatia<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
