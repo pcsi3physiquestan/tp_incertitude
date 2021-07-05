@@ -352,41 +352,8 @@
 
 
 <span class="c1"># filename = &quot;https://github.com/pcsi3physiquestan/donnees_exp/blob/main/lambert.dat?raw=true&quot;  # Lien vers le fichier de données</span>
-<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;../../../../../approche_numeriques/donnees_exp/lambert.dat&quot;</span>  <span class="c1"># Lien vers le fichier de données</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;../../../../approche_numeriques/donnees_exp/lambert.dat&quot;</span>  <span class="c1"># Lien vers le fichier de données</span>
 <span class="n">A</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">uC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Importation des données</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">a8ada5890861</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># filename = &quot;https://github.com/pcsi3physiquestan/donnees_exp/blob/main/lambert.dat?raw=true&quot;  # Lien vers le fichier de données</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;../../../../../approche_numeriques/donnees_exp/lambert.dat&quot;</span>  <span class="c1"># Lien vers le fichier de données</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">A</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">uC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Importation des données</span>
-
-<span class="nn">~/miniconda3/envs/jupybook/lib/python3.9/site-packages/numpy/lib/npyio.py</span> in <span class="ni">loadtxt</span><span class="nt">(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin, encoding, max_rows)</span>
-<span class="g g-Whitespace">    </span><span class="mi">959</span>             <span class="n">fname</span> <span class="o">=</span> <span class="n">os_fspath</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">960</span>         <span class="k">if</span> <span class="n">_is_string_like</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">961</span>             <span class="n">fh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">_datasource</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">962</span>             <span class="n">fencoding</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fh</span><span class="p">,</span> <span class="s1">&#39;encoding&#39;</span><span class="p">,</span> <span class="s1">&#39;latin1&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">963</span>             <span class="n">fh</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">fh</span><span class="p">)</span>
-
-<span class="nn">~/miniconda3/envs/jupybook/lib/python3.9/site-packages/numpy/lib/_datasource.py</span> in <span class="ni">open</span><span class="nt">(path, mode, destpath, encoding, newline)</span>
-<span class="g g-Whitespace">    </span><span class="mi">193</span> 
-<span class="g g-Whitespace">    </span><span class="mi">194</span>     <span class="n">ds</span> <span class="o">=</span> <span class="n">DataSource</span><span class="p">(</span><span class="n">destpath</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">195</span>     <span class="k">return</span> <span class="n">ds</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span> 
-<span class="g g-Whitespace">    </span><span class="mi">197</span> 
-
-<span class="nn">~/miniconda3/envs/jupybook/lib/python3.9/site-packages/numpy/lib/_datasource.py</span> in <span class="ni">open</span><span class="nt">(self, path, mode, encoding, newline)</span>
-<span class="g g-Whitespace">    </span><span class="mi">533</span>                                       <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">534</span>         <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">535</span>             <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> not found.&quot;</span> <span class="o">%</span> <span class="n">path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">536</span> 
-<span class="g g-Whitespace">    </span><span class="mi">537</span> 
-
-<span class="ne">OSError</span>: ../../../../../approche_numeriques/donnees_exp/lambert.dat not found.
 </pre></div>
 </div>
 </div>
@@ -417,6 +384,9 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/comp_reglin_3_0.png" src="../_images/comp_reglin_3_0.png" />
 </div>
 </div>
 </div>
@@ -472,6 +442,15 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------------
+Pente = 1.1398 +/- 0.0288 10^-5 mol/L
+Ordonnée à l&#39;origine = 0.0529 +/- 0.0267 10^-5 mol/L
+-----------------------------
+</pre></div>
+</div>
+<img alt="../_images/comp_reglin_7_1.png" src="../_images/comp_reglin_7_1.png" />
+</div>
 </div>
 <p>On remarque que la droite ajustée ne passe pas par l’origine, même en tenant compte des incertitudes de mesures. Heureusement, la régression linéaire permet de travailler malgré le biais.</p>
 <div class="cell docutils container">
@@ -515,6 +494,9 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/comp_reglin_9_0.png" src="../_images/comp_reglin_9_0.png" />
+</div>
 </div>
 <p>L’analyse de la droite d’ajustement est délicate car les incertitudes sont très faibles. L’analyse des écarts normalisés ne laisse par contre pas de doute, le modèle ajusté est compatible avec les résultats. One ne cherche pas vraiment une valeur particulière de la pente (même si le coefficient du bleu de patenté est tabulé). On va maintenant pouvoir utiliser cette droite d’ajustement.</p>
 </div>
@@ -537,6 +519,13 @@
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Concentration estimée = (</span><span class="si">{:.3f}</span><span class="s2"> +/- </span><span class="si">{:.3f}</span><span class="s2">) 10^-5 mol/L&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">C_m</span><span class="p">,</span> <span class="n">C_u</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-----------------------------
+Concentration estimée = (0.649 +/- 0.017) 10^-5 mol/L
+-----------------------------
 </pre></div>
 </div>
 </div>
@@ -591,6 +580,9 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/comp_reglin_13_0.png" src="../_images/comp_reglin_13_0.png" />
 </div>
 </div>
 </div>
