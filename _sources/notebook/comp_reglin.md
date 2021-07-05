@@ -29,7 +29,8 @@ import matplotlib.pyplot as plt
 import numpy.random as rd
 
 
-filename = "https://github.com/pcsi3physiquestan/donnees_exp/blob/main/lambert.dat?raw=true"  # Lien vers le fichier de données
+# filename = "https://github.com/pcsi3physiquestan/donnees_exp/blob/main/lambert.dat?raw=true"  # Lien vers le fichier de données
+filename = "../../../../../approche_numeriques/donnees_exp/lambert.dat"  # Lien vers le fichier de données
 A, C, uC = np.loadtxt(filename, skiprows=1, delimiter=",", unpack=True)  # Importation des données
 ```
 
