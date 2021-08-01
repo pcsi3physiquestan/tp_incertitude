@@ -5,9 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. Ajustement d’un modèle affine &#8212; Incertitudes de mesure</title>
+    <title>9. Ajustement d’un modèle affine &#8212; Incertitudes de mesure</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,25 +54,16 @@
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp2_optique/notebook/regression.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Un exemple complet" href="exemple.html" />
-    <link rel="prev" title="2. Vérifier une loi physique" href="verifier_loi.html" />
-
+    <link rel="next" title="10. Un exemple complet" href="exemple.html" />
+    <link rel="prev" title="8. Vérifier une loi physique" href="verifier_loi.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://pcsi3physiquestan.github.io/tp2_optique/notebook/regression.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Ajustement d’un modèle affine" />
-<meta property="og:description" content="Ajustement d’un modèle affine  Important  On peut réaliser l’ajustement d’un modèle quelconque a priori. Mais dans le cadre du programme, on se limitera à des m" />
-
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -84,122 +72,123 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  
-  <h1 class="site-logo" id="site-title">Incertitudes de mesure</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Incertitudes de mesure</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../tp_incertitude.html">
    Incertitudes de mesure et méthodes expérimentales.
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Vocabulaire et étapes d'une manipulation
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="vocabulaire.html">
    1. Vocabulaire et étapes : Généralités
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Incertitudes
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="incertitude.html">
-   1. Les incertitudes de mesure
+   2. Les incertitudes de mesure
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="distribution.html">
-   2. Distributions statistiques usuelles.
+   3. Distributions statistiques usuelles.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="sources.html">
-   3. Sources d’incertitudes et bilan.
+   4. Sources d’incertitudes et bilan.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="indirecte.html">
-   4. Incertitude des mesurandes indirectes.
+   5. Incertitude des mesurandes indirectes.
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Rendre compte d'un résultat
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="rcgeneral.html">
-   1. Rendre compte de résultats expérimentaux
+   6. Rendre compte de résultats expérimentaux
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Exploiter les mesures
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="comparaison.html">
-   1. Comparer un résultat expérimental avec un résultat théorique.
+   7. Comparer un résultat expérimental avec un résultat théorique.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="verifier_loi.html">
-   2. Vérifier une loi physique
+   8. Vérifier une loi physique
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   3. Ajustement d’un modèle affine
+   9. Ajustement d’un modèle affine
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Un exemple complet
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="exemple.html">
-   1. Un exemple complet
+   10. Un exemple complet
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Pour aller plus loin
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="comp_reglin.html">
-   1. Construire une droite d’étalonnage
+   11. Construire une droite d’étalonnage
   </a>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -252,12 +241,12 @@
 
             <!-- Source interaction buttons -->
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -283,50 +272,49 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#methode-generale">
-   3.1. Méthode générale
+   9.1. Méthode générale
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#regression-lineaire-methode-des-moindres-carres">
-   3.2. Régression linéaire : Méthode des moindres carrés.
+   9.2. Régression linéaire : Méthode des moindres carrés.
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#explication-de-la-methode">
-     3.2.1. Explication de la méthode.
+     9.2.1. Explication de la méthode.
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mise-en-pratique">
-     3.2.2. Mise en pratique.
+     9.2.2. Mise en pratique.
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple-d-utilisation">
-     3.2.3. Exemple d’utilisation
+     9.2.3. Exemple d’utilisation
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#verification-sommaire">
-       3.2.3.1. Vérification sommaire
+       9.2.3.1. Vérification sommaire
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#ajustement-lineaire">
-       3.2.3.2. Ajustement linéaire
+       9.2.3.2. Ajustement linéaire
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#residus-et-ecarts-normalises">
-       3.2.3.3. Résidus et écarts normalisés
+       9.2.3.3. Résidus et écarts normalisés
       </a>
      </li>
     </ul>
@@ -335,20 +323,19 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#regression-lineaire-et-incertitude">
-   3.3. Régression linéaire et incertitude.
+   9.3. Régression linéaire et incertitude.
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#methode-de-monte-carlo">
-     3.3.1. Méthode de Monte-Carlo.
+     9.3.1. Méthode de Monte-Carlo.
     </a>
    </li>
   </ul>
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -359,13 +346,13 @@
                 
   <p>Comme évoqué précédement, on est souvent dans la situation où l’on ne connait pas tous les paramètres d’une loi physique à vérifier. On doit donc déterminer, à partir des données expérimentales, les paramètres inconnues de la loi de sorte que la loi obtenus soit “la plus cohérente” avec les résultats expérimentaux. On parle <strong>d’ajustement ou de régression.</strong></p>
 <div class="section" id="ajustement-d-un-modele-affine">
-<h1><span class="section-number">3. </span>Ajustement d’un modèle affine<a class="headerlink" href="#ajustement-d-un-modele-affine" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">9. </span>Ajustement d’un modèle affine<a class="headerlink" href="#ajustement-d-un-modele-affine" title="Permalink to this headline">¶</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>On peut réaliser l’ajustement d’un modèle quelconque a priori. Mais dans le cadre du programme, on se limitera à des méthodes d’ajustement de modèle affine (appelé par abus de langage modèle linéaire) : <span class="math notranslate nohighlight">\(Y = aX + b\)</span>.</p>
 </div>
 <div class="section" id="methode-generale">
-<h2><span class="section-number">3.1. </span>Méthode générale<a class="headerlink" href="#methode-generale" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.1. </span>Méthode générale<a class="headerlink" href="#methode-generale" title="Permalink to this headline">¶</a></h2>
 <p>Avant de rentrer dans la méthodes d’ajustment du modèle, il convient d’être méthodique. On suppose qu’on a un ensemble de mesures qui amène à construire deux mesurandes <span class="math notranslate nohighlight">\(Y\)</span> et <span class="math notranslate nohighlight">\(X\)</span> dont le modèle théorique les reliant est de la forme:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -386,10 +373,10 @@ Y = aX + b
 <p>Seul le point 2. n’a pas encore été développés. On va voir comment on s’y prend.</p>
 </div>
 <div class="section" id="regression-lineaire-methode-des-moindres-carres">
-<h2><span class="section-number">3.2. </span>Régression linéaire : Méthode des moindres carrés.<a class="headerlink" href="#regression-lineaire-methode-des-moindres-carres" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.2. </span>Régression linéaire : Méthode des moindres carrés.<a class="headerlink" href="#regression-lineaire-methode-des-moindres-carres" title="Permalink to this headline">¶</a></h2>
 <p>Pour déterminer <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, on va utiliser une méthode particulière appelée <strong>méthode des moindres carrés</strong>, cette méthode est démontrées comme étant l’une meilleures estimations de <span class="math notranslate nohighlight">\(a\)</span> et <span class="math notranslate nohighlight">\(b\)</span> dans de nombreux cas. Leurs incertitudes <span class="math notranslate nohighlight">\(u(a)\)</span> et <span class="math notranslate nohighlight">\(u(b)\)</span> seront déterminées par une méthode de Monte-Carlo (en répétant donc la méthode des moindres carrés avec des échantillons tirés aléatoirement à partir des distributions statistiques).</p>
 <div class="section" id="explication-de-la-methode">
-<h3><span class="section-number">3.2.1. </span>Explication de la méthode.<a class="headerlink" href="#explication-de-la-methode" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.2.1. </span>Explication de la méthode.<a class="headerlink" href="#explication-de-la-methode" title="Permalink to this headline">¶</a></h3>
 <p>Cf. <a class="reference external" href="https://pcsi3physiquestan.github.io/intro_python/notebook/np_polyfit.html">explications ici</a></p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
@@ -397,7 +384,7 @@ Y = aX + b
 </div>
 </div>
 <div class="section" id="mise-en-pratique">
-<h3><span class="section-number">3.2.2. </span>Mise en pratique.<a class="headerlink" href="#mise-en-pratique" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.2.2. </span>Mise en pratique.<a class="headerlink" href="#mise-en-pratique" title="Permalink to this headline">¶</a></h3>
 <p>On va présenter l’utilisation de la méthode des moindres carrés uniquement sous Python au moyen de la fonction <code class="docutils literal notranslate"><span class="pre">numpy.polyfit</span></code>. Cf. <a class="reference external" href="https://pcsi3physiquestan.github.io/intro_python/notebook/np_polyfit.html">explications ici</a> pour son utilisation.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -405,7 +392,7 @@ Y = aX + b
 </div>
 </div>
 <div class="section" id="exemple-d-utilisation">
-<h3><span class="section-number">3.2.3. </span>Exemple d’utilisation<a class="headerlink" href="#exemple-d-utilisation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.2.3. </span>Exemple d’utilisation<a class="headerlink" href="#exemple-d-utilisation" title="Permalink to this headline">¶</a></h3>
 <p>On étudie une chute d’un corps dans l’air partant d’une vitesse <span class="math notranslate nohighlight">\(v_0\)</span>. On veut le modéliser par un point matériel et supposer les frottements négligeables et le champ de pesanteur uniforme. L’objectif est :</p>
 <ul class="simple">
 <li><p>de valider les hypothèses qu’on vient de donner</p></li>
@@ -469,15 +456,15 @@ Y = aX + b
 </tbody>
 </table>
 <div class="section" id="verification-sommaire">
-<h4><span class="section-number">3.2.3.1. </span>Vérification sommaire<a class="headerlink" href="#verification-sommaire" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">9.2.3.1. </span>Vérification sommaire<a class="headerlink" href="#verification-sommaire" title="Permalink to this headline">¶</a></h4>
 <p>On commence par <a class="reference internal" href="#chute-fig1"><span class="std std-ref">représenter les points</span></a> <span class="math notranslate nohighlight">\((t_i,v_i)\)</span> avec leurs incertitudes de mesure. On observe une tendance des points à s’aligner. On va donc poursuivre l’étude en recherchant des paramètres d’ajustement linéaire.</p>
 <div class="figure align-center" id="chute-fig1">
 <img alt="../_images/chute_grossier.png" src="../_images/chute_grossier.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Analyse brute des résultats.</span><a class="headerlink" href="#chute-fig1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 9.1 </span><span class="caption-text">Analyse brute des résultats.</span><a class="headerlink" href="#chute-fig1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="ajustement-lineaire">
-<h4><span class="section-number">3.2.3.2. </span>Ajustement linéaire<a class="headerlink" href="#ajustement-lineaire" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">9.2.3.2. </span>Ajustement linéaire<a class="headerlink" href="#ajustement-lineaire" title="Permalink to this headline">¶</a></h4>
 <p>On a réalisé un ajustement linéaire. On trouve pour le modèle <span class="math notranslate nohighlight">\(V = a t + b\)</span> :</p>
 <table class="colwidths-auto table">
 <thead>
@@ -505,11 +492,11 @@ Y = aX + b
 <p>C’est pourquoi on va tracer les résidus (écart modèle-mesure) et les écarts normalisés.</p>
 <div class="figure align-center" id="chute-fig2">
 <img alt="../_images/chute_comparaison.png" src="../_images/chute_comparaison.png" />
-<p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Comparaison au modèle</span><a class="headerlink" href="#chute-fig2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 9.2 </span><span class="caption-text">Comparaison au modèle</span><a class="headerlink" href="#chute-fig2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="residus-et-ecarts-normalises">
-<h4><span class="section-number">3.2.3.3. </span>Résidus et écarts normalisés<a class="headerlink" href="#residus-et-ecarts-normalises" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">9.2.3.3. </span>Résidus et écarts normalisés<a class="headerlink" href="#residus-et-ecarts-normalises" title="Permalink to this headline">¶</a></h4>
 <p>On a maintenant <a class="reference internal" href="#chute-fig3"><span class="std std-ref">tracé</span></a> les résidus (gauche). On remarque que les points 3 et 8 semblent poser problème. On s’intéresse donc aux résidus normalisés (droite). Au final, l’ensemble des résidus est inférieur à 2, on va donc pouvoir considérer que l’ensemble des points sont compatibles avec le modèle ajusté ce qui permet :</p>
 <ul class="simple">
 <li><p>de valider la cohérence entre le modèle théorique et l’expérience</p></li>
@@ -517,17 +504,17 @@ Y = aX + b
 </ul>
 <div class="figure align-center" id="chute-fig3">
 <img alt="../_images/chute_residus.png" src="../_images/chute_residus.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3 </span><span class="caption-text">Résidus et écarts normalisés</span><a class="headerlink" href="#chute-fig3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 9.3 </span><span class="caption-text">Résidus et écarts normalisés</span><a class="headerlink" href="#chute-fig3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="regression-lineaire-et-incertitude">
-<h2><span class="section-number">3.3. </span>Régression linéaire et incertitude.<a class="headerlink" href="#regression-lineaire-et-incertitude" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.3. </span>Régression linéaire et incertitude.<a class="headerlink" href="#regression-lineaire-et-incertitude" title="Permalink to this headline">¶</a></h2>
 <p>L’estimation du champ de pesanteur précédent a peu d’utilité si on ne peut le comparer à une valeur attendue (<span class="math notranslate nohighlight">\(g \approx (9.81 \pm 0.10)\rm{m.s^{-2}}\)</span>). Mais pour réaliser une comparaison, il faut estimer l’incertitude sur <span class="math notranslate nohighlight">\(g_{experimental}\)</span>, donc sur la pente de la régression linéaire.</p>
 <p>Nous allons donc utiliser une méthode de Monte-Carlo pour cela. On va voir son application sur l’exemple du champ de pesanteur.</p>
 <div class="section" id="methode-de-monte-carlo">
-<h3><span class="section-number">3.3.1. </span>Méthode de Monte-Carlo.<a class="headerlink" href="#methode-de-monte-carlo" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">9.3.1. </span>Méthode de Monte-Carlo.<a class="headerlink" href="#methode-de-monte-carlo" title="Permalink to this headline">¶</a></h3>
 <p>Le principe est donc :</p>
 <ol class="simple">
 <li><p>De créer N échantillons des <span class="math notranslate nohighlight">\(v_i\)</span> suivant une loi (normale ici) d’écart-type <span class="math notranslate nohighlight">\(u(v_i)\)</span>.</p></li>
@@ -625,9 +612,9 @@ Y = aX + b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Champ de pesanteur : g = 9.477902793593678 m/s^2
-Incertitude : u(g) =0.5321295874963139 m/s^2
-Ecart normalisé : eta = -0.7332244279900603
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Champ de pesanteur : g = 9.478974984540152 m/s^2
+Incertitude : u(g) =0.5309575708898859 m/s^2
+Ecart normalisé : eta = 0.9262726599235668
 </pre></div>
 </div>
 <img alt="../_images/regression_11_1.png" src="../_images/regression_11_1.png" />
@@ -678,8 +665,8 @@ Ecart normalisé : eta = -0.7332244279900603
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="verifier_loi.html" title="previous page"><span class="section-number">2. </span>Vérifier une loi physique</a>
-    <a class='right-next' id="next-link" href="exemple.html" title="next page"><span class="section-number">1. </span>Un exemple complet</a>
+    <a class='left-prev' id="prev-link" href="verifier_loi.html" title="previous page"><span class="section-number">8. </span>Vérifier une loi physique</a>
+    <a class='right-next' id="next-link" href="exemple.html" title="next page"><span class="section-number">10. </span>Un exemple complet</a>
 
         </div>
         
@@ -700,11 +687,9 @@ Ecart normalisé : eta = -0.7332244279900603
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>

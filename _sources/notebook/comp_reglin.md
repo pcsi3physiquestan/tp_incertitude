@@ -21,7 +21,7 @@ On se propose de donner quelques éléments supplémentaires pour la régression
 Cette partie est plus optionnelle et demande déjà une bonne compréhension des éléments précédents, notamment sur la régression linéaire et l'utilisation des fonctions Python.
 
 ## Données de mesures
-Les données déjà utilisées sont disponibles en ligne. On va directement charger les données depuis le fichier en ligne.
+Les données déjà utilisées sont disponibles en ligne. Il faudra changer le lien vers le fichier après l'avoir téléchargé
 
 ```{code-cell}
 import numpy as np
@@ -29,8 +29,7 @@ import matplotlib.pyplot as plt
 import numpy.random as rd
 
 
-# filename = "https://github.com/pcsi3physiquestan/donnees_exp/blob/main/lambert.dat?raw=true"  # Lien vers le fichier de données
-filename = "../../../../approche_numeriques/donnees_exp/lambert.dat"  # Lien vers le fichier de données
+filename = "github.com/pcsi3physiquestan/donnees_exp/blob/main/lambert.dat"  # Lien vers le fichier de données
 A, C, uC = np.loadtxt(filename, skiprows=1, delimiter=",", unpack=True)  # Importation des données
 ```
 

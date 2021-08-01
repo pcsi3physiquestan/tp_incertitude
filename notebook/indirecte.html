@@ -5,9 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. Incertitude des mesurandes indirectes. &#8212; Incertitudes de mesure</title>
+    <title>5. Incertitude des mesurandes indirectes. &#8212; Incertitudes de mesure</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,25 +54,16 @@
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp2_optique/notebook/indirecte.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Rendre compte de résultats expérimentaux" href="rcgeneral.html" />
-    <link rel="prev" title="3. Sources d’incertitudes et bilan." href="sources.html" />
-
+    <link rel="next" title="6. Rendre compte de résultats expérimentaux" href="rcgeneral.html" />
+    <link rel="prev" title="4. Sources d’incertitudes et bilan." href="sources.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://pcsi3physiquestan.github.io/tp2_optique/notebook/indirecte.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Incertitude des mesurandes indirectes." />
-<meta property="og:description" content="Incertitude des mesurandes indirectes.  Position du problème.  On a mesuré des grandeurs X_i dont on a estimé l’incertitude-type (et la distibution statistique " />
-
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -84,122 +72,123 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  
-  <h1 class="site-logo" id="site-title">Incertitudes de mesure</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Incertitudes de mesure</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../tp_incertitude.html">
    Incertitudes de mesure et méthodes expérimentales.
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Vocabulaire et étapes d'une manipulation
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="vocabulaire.html">
    1. Vocabulaire et étapes : Généralités
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Incertitudes
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="incertitude.html">
-   1. Les incertitudes de mesure
+   2. Les incertitudes de mesure
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="distribution.html">
-   2. Distributions statistiques usuelles.
+   3. Distributions statistiques usuelles.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="sources.html">
-   3. Sources d’incertitudes et bilan.
+   4. Sources d’incertitudes et bilan.
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   4. Incertitude des mesurandes indirectes.
+   5. Incertitude des mesurandes indirectes.
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Rendre compte d'un résultat
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="rcgeneral.html">
-   1. Rendre compte de résultats expérimentaux
+   6. Rendre compte de résultats expérimentaux
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Exploiter les mesures
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="comparaison.html">
-   1. Comparer un résultat expérimental avec un résultat théorique.
+   7. Comparer un résultat expérimental avec un résultat théorique.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="verifier_loi.html">
-   2. Vérifier une loi physique
+   8. Vérifier une loi physique
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="regression.html">
-   3. Ajustement d’un modèle affine
+   9. Ajustement d’un modèle affine
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Un exemple complet
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="exemple.html">
-   1. Un exemple complet
+   10. Un exemple complet
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Pour aller plus loin
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="comp_reglin.html">
-   1. Construire une droite d’étalonnage
+   11. Construire une droite d’étalonnage
   </a>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -252,12 +241,12 @@
 
             <!-- Source interaction buttons -->
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -283,48 +272,46 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#position-du-probleme">
-   4.1. Position du problème.
+   5.1. Position du problème.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#methodes">
-   4.2. Méthodes
+   5.2. Méthodes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#simulation-de-monte-carlo">
-   4.3. Simulation de Monte-Carlo.
+   5.3. Simulation de Monte-Carlo.
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#principe">
-     4.3.1. Principe
+     5.3.1. Principe
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exemple">
-     4.3.2. Exemple
+     5.3.2. Exemple
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#propagation-des-variances">
-   4.4. Propagation des variances
+   5.4. Propagation des variances
   </a>
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -341,9 +328,9 @@
 <p>Cette fois, on ne peut évaluer des composantes de l’incertitude d’un mesurande indirect liés au processus de lecture du résultat de mesurage,
 puisqu’on le calcule.</p>
 <div class="section" id="incertitude-des-mesurandes-indirectes">
-<h1><span class="section-number">4. </span>Incertitude des mesurandes indirectes.<a class="headerlink" href="#incertitude-des-mesurandes-indirectes" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5. </span>Incertitude des mesurandes indirectes.<a class="headerlink" href="#incertitude-des-mesurandes-indirectes" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="position-du-probleme">
-<h2><span class="section-number">4.1. </span>Position du problème.<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1. </span>Position du problème.<a class="headerlink" href="#position-du-probleme" title="Permalink to this headline">¶</a></h2>
 <p>On a mesuré des grandeurs <span class="math notranslate nohighlight">\(X_i\)</span> dont on a estimé l’incertitude-type (et la distibution statistique possiblement) et on considère un mesurande Y qu’on recherche et qu’on peut estimer grâce à une relation :</p>
 <div class="math notranslate nohighlight">
 \[
@@ -356,7 +343,7 @@ Y = f(X_i)
 <p>On veut estimer l’incertitude-type sur Y et possiblement aussi sa distribution statistique.</p>
 </div>
 <div class="section" id="methodes">
-<h2><span class="section-number">4.2. </span>Méthodes<a class="headerlink" href="#methodes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.2. </span>Méthodes<a class="headerlink" href="#methodes" title="Permalink to this headline">¶</a></h2>
 <p>Il existe deux méthodes :</p>
 <ol class="simple">
 <li><p>La <strong>simulation de Monte-Carlo</strong>. Le principe est exactement le même que précédemment. La différence est qu’on a plus besoin de centrer les distributions des <span class="math notranslate nohighlight">\(X_i\)</span> autour de 0.</p></li>
@@ -365,9 +352,9 @@ Y = f(X_i)
 <p><strong>Remarque : Dans les deux cas, on est obligé de supposer que les mesurandes <span class="math notranslate nohighlight">\(X_i\)</span> sont tous indépendants. Sinon, les deux méthodes ne sont pas valables.</strong></p>
 </div>
 <div class="section" id="simulation-de-monte-carlo">
-<h2><span class="section-number">4.3. </span>Simulation de Monte-Carlo.<a class="headerlink" href="#simulation-de-monte-carlo" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.3. </span>Simulation de Monte-Carlo.<a class="headerlink" href="#simulation-de-monte-carlo" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="principe">
-<h3><span class="section-number">4.3.1. </span>Principe<a class="headerlink" href="#principe" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.1. </span>Principe<a class="headerlink" href="#principe" title="Permalink to this headline">¶</a></h3>
 <p>On rappelle brièvement le principe de la simulation de Monte-Carlo. On connaît la distribution statistique de chaque mesurande <span class="math notranslate nohighlight">\(X_i\)</span>. On va simuler N échantillons de chaque <span class="math notranslate nohighlight">\(X_i\)</span> puis on calcule ainsi N échantillons <span class="math notranslate nohighlight">\(Y\)</span>. On obtient ainsi la distribution des valeurs de <span class="math notranslate nohighlight">\(Y\)</span> et on peut calculr son incertitude de mesure.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -376,7 +363,7 @@ Y = f(X_i)
 <p><img alt="Principe de la simulation de Monte-Carlo" src="../_images/simulation_mc.png" /></p>
 </div>
 <div class="section" id="exemple">
-<h3><span class="section-number">4.3.2. </span>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.2. </span>Exemple<a class="headerlink" href="#exemple" title="Permalink to this headline">¶</a></h3>
 <div class="tip admonition">
 <p class="admonition-title">Résistance électrique</p>
 <p>On reprend l’exemple précédent de l’estimation de l’incertitude de la résistance R. On a mesuré tension et intensité. On a trouvé :</p>
@@ -462,7 +449,7 @@ Y = f(X_i)
 </div>
 </div>
 <div class="section" id="propagation-des-variances">
-<h2><span class="section-number">4.4. </span>Propagation des variances<a class="headerlink" href="#propagation-des-variances" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4. </span>Propagation des variances<a class="headerlink" href="#propagation-des-variances" title="Permalink to this headline">¶</a></h2>
 <p>Cette méthode sera présentée plus tard dans l’année.</p>
 </div>
 </div>
@@ -492,8 +479,8 @@ Y = f(X_i)
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="sources.html" title="previous page"><span class="section-number">3. </span>Sources d’incertitudes et bilan.</a>
-    <a class='right-next' id="next-link" href="rcgeneral.html" title="next page"><span class="section-number">1. </span>Rendre compte de résultats expérimentaux</a>
+    <a class='left-prev' id="prev-link" href="sources.html" title="previous page"><span class="section-number">4. </span>Sources d’incertitudes et bilan.</a>
+    <a class='right-next' id="next-link" href="rcgeneral.html" title="next page"><span class="section-number">6. </span>Rendre compte de résultats expérimentaux</a>
 
         </div>
         
@@ -514,11 +501,9 @@ Y = f(X_i)
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>

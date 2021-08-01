@@ -5,9 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Rendre compte de résultats expérimentaux &#8212; Incertitudes de mesure</title>
+    <title>6. Rendre compte de résultats expérimentaux &#8212; Incertitudes de mesure</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,25 +54,16 @@
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp2_optique/notebook/rcgeneral.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Comparer un résultat expérimental avec un résultat théorique." href="comparaison.html" />
-    <link rel="prev" title="4. Incertitude des mesurandes indirectes." href="indirecte.html" />
-
+    <link rel="next" title="7. Comparer un résultat expérimental avec un résultat théorique." href="comparaison.html" />
+    <link rel="prev" title="5. Incertitude des mesurandes indirectes." href="indirecte.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://pcsi3physiquestan.github.io/tp2_optique/notebook/rcgeneral.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Rendre compte de résultats expérimentaux" />
-<meta property="og:description" content="Rendre compte de résultats expérimentaux  Résultat unique  Pour rappel, un résultat de mesure unique avec incertitude doit s’écrire sous la forme :   G = (G_{me" />
-
-
-<meta name="twitter:card" content="summary" />
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -84,122 +72,123 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  
-  <h1 class="site-logo" id="site-title">Incertitudes de mesure</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Incertitudes de mesure</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../tp_incertitude.html">
    Incertitudes de mesure et méthodes expérimentales.
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Vocabulaire et étapes d'une manipulation
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="vocabulaire.html">
    1. Vocabulaire et étapes : Généralités
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Incertitudes
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="incertitude.html">
-   1. Les incertitudes de mesure
+   2. Les incertitudes de mesure
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="distribution.html">
-   2. Distributions statistiques usuelles.
+   3. Distributions statistiques usuelles.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="sources.html">
-   3. Sources d’incertitudes et bilan.
+   4. Sources d’incertitudes et bilan.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="indirecte.html">
-   4. Incertitude des mesurandes indirectes.
+   5. Incertitude des mesurandes indirectes.
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Rendre compte d'un résultat
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1. Rendre compte de résultats expérimentaux
+   6. Rendre compte de résultats expérimentaux
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Exploiter les mesures
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="comparaison.html">
-   1. Comparer un résultat expérimental avec un résultat théorique.
+   7. Comparer un résultat expérimental avec un résultat théorique.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="verifier_loi.html">
-   2. Vérifier une loi physique
+   8. Vérifier une loi physique
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="regression.html">
-   3. Ajustement d’un modèle affine
+   9. Ajustement d’un modèle affine
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Un exemple complet
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="exemple.html">
-   1. Un exemple complet
+   10. Un exemple complet
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Pour aller plus loin
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="comp_reglin.html">
-   1. Construire une droite d’étalonnage
+   11. Construire une droite d’étalonnage
   </a>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -252,12 +241,12 @@
 
             <!-- Source interaction buttons -->
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -283,58 +272,56 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#resultat-unique">
-   1.1. Résultat unique
+   6.1. Résultat unique
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ensemble-de-resultats">
-   1.2. Ensemble de résultats
+   6.2. Ensemble de résultats
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#representation-graphique">
-   1.3. Représentation graphique
+   6.3. Représentation graphique
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#moyens-techniques">
-     1.3.1. Moyens techniques
+     6.3.1. Moyens techniques
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#rappel-consignes-de-traces">
-     1.3.2. (Rappel) Consignes de tracés
+     6.3.2. (Rappel) Consignes de tracés
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#types-de-traces-sous-matplotlib">
-     1.3.3. Types de tracés sous matplotlib
+     6.3.3. Types de tracés sous matplotlib
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#un-exemple-de-script-sous-matplotlib">
-     1.3.4. Un exemple de script sous matplotlib
+     6.3.4. Un exemple de script sous matplotlib
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#remarques">
-     1.3.5. Remarques
+     6.3.5. Remarques
     </a>
    </li>
   </ul>
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -345,9 +332,9 @@
                 
   <p>Nous avons déjà commencé à voir comment rendre compte d’une mesure unique avec son incertitude, nous allons maintenant voir comment rendre compte d’un groupe de résultat.</p>
 <div class="section" id="rendre-compte-de-resultats-experimentaux">
-<h1><span class="section-number">1. </span>Rendre compte de résultats expérimentaux<a class="headerlink" href="#rendre-compte-de-resultats-experimentaux" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6. </span>Rendre compte de résultats expérimentaux<a class="headerlink" href="#rendre-compte-de-resultats-experimentaux" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="resultat-unique">
-<h2><span class="section-number">1.1. </span>Résultat unique<a class="headerlink" href="#resultat-unique" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.1. </span>Résultat unique<a class="headerlink" href="#resultat-unique" title="Permalink to this headline">¶</a></h2>
 <p>Pour rappel, <strong>un résultat de mesure unique avec incertitude doit s’écrire sous la forme :</strong></p>
 <div class="math notranslate nohighlight">
 \[
@@ -364,7 +351,7 @@ G = (G_{mes} \pm u(G)) Unités
 </div>
 </div>
 <div class="section" id="ensemble-de-resultats">
-<h2><span class="section-number">1.2. </span>Ensemble de résultats<a class="headerlink" href="#ensemble-de-resultats" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.2. </span>Ensemble de résultats<a class="headerlink" href="#ensemble-de-resultats" title="Permalink to this headline">¶</a></h2>
 <p>Pour rendre compte (afficher proprement) d’un ensemble de résultats, on peut utiliser plusieurs moyens techniques:</p>
 <ul class="simple">
 <li><p>tableau markdown dans un notebook (<em>très verbeux et ne permet pas directement de manipuler les résultats</em>)</p></li>
@@ -385,14 +372,14 @@ Les méthodes de compte-rendu seront alors souvent guidées. Etudiez ces méthod
 </div>
 </div>
 <div class="section" id="representation-graphique">
-<h2><span class="section-number">1.3. </span>Représentation graphique<a class="headerlink" href="#representation-graphique" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.3. </span>Représentation graphique<a class="headerlink" href="#representation-graphique" title="Permalink to this headline">¶</a></h2>
 <p>Les représentations graphiques sont très utiles pour :</p>
 <ul class="simple">
 <li><p>Faire une synthèse rapide et visuelle des résultats. Possiblement des comparaisons.</p></li>
 <li><p>Tester visuellement une relation possible entre deux mesurandes.</p></li>
 </ul>
 <div class="section" id="moyens-techniques">
-<h3><span class="section-number">1.3.1. </span>Moyens techniques<a class="headerlink" href="#moyens-techniques" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.1. </span>Moyens techniques<a class="headerlink" href="#moyens-techniques" title="Permalink to this headline">¶</a></h3>
 <p>Vous disposerez principalement de trois méthodes pour obtenir des représentations graphiques :</p>
 <ul class="simple">
 <li><p>Logiciel métier associé à un instrument de mesure (console d’acquisition, oscilloscope, spectromètre…)</p></li>
@@ -406,7 +393,7 @@ Les méthodes de compte-rendu seront alors souvent guidées. Etudiez ces méthod
 </div>
 </div>
 <div class="section" id="rappel-consignes-de-traces">
-<h3><span class="section-number">1.3.2. </span>(Rappel) Consignes de tracés<a class="headerlink" href="#rappel-consignes-de-traces" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.2. </span>(Rappel) Consignes de tracés<a class="headerlink" href="#rappel-consignes-de-traces" title="Permalink to this headline">¶</a></h3>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>Par la suite, les fonctions utilisées viennent de la bibliothèque <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> et soit:</p>
@@ -437,7 +424,7 @@ variable <code class="docutils literal notranslate"><span class="pre">f</span></
 </ul>
 </div>
 <div class="section" id="types-de-traces-sous-matplotlib">
-<h3><span class="section-number">1.3.3. </span>Types de tracés sous matplotlib<a class="headerlink" href="#types-de-traces-sous-matplotlib" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.3. </span>Types de tracés sous matplotlib<a class="headerlink" href="#types-de-traces-sous-matplotlib" title="Permalink to this headline">¶</a></h3>
 <p>On sera amenés à tracer trois types de graphiques :</p>
 <ul>
 <li><p>des histogrammes (pour les distribution de valeur) : <code class="docutils literal notranslate"><span class="pre">ax.hist(valeurs,</span> <span class="pre">bins=...)</span></code></p>
@@ -485,7 +472,7 @@ variable <code class="docutils literal notranslate"><span class="pre">f</span></
 </div>
 </div>
 <div class="section" id="un-exemple-de-script-sous-matplotlib">
-<h3><span class="section-number">1.3.4. </span>Un exemple de script sous matplotlib<a class="headerlink" href="#un-exemple-de-script-sous-matplotlib" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.4. </span>Un exemple de script sous matplotlib<a class="headerlink" href="#un-exemple-de-script-sous-matplotlib" title="Permalink to this headline">¶</a></h3>
 <p>Vous trouverez dans la cellule ci-dessous un exemple de structure de code permettant de tracé un nuage de points de mesures avec leurs incertitudes. Nous allons ainsi voir l’utilisation des croix d’incertitudes et des barres d’incertitudes.</p>
 <p>Essayez de garder une structure similaire pour éviter de perdre du temps à retrouver les commandes.</p>
 <div class="cell docutils container">
@@ -547,7 +534,7 @@ variable <code class="docutils literal notranslate"><span class="pre">f</span></
 </div>
 </div>
 <div class="section" id="remarques">
-<h3><span class="section-number">1.3.5. </span>Remarques<a class="headerlink" href="#remarques" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.5. </span>Remarques<a class="headerlink" href="#remarques" title="Permalink to this headline">¶</a></h3>
 <p>Dans un traitement plus évolué, on peut même ajouter du texte, des flèches pour montrer certains points, faire des tracés semi-logarithmiques… Ces éléments avancés seront rarement utilisés et lorsque c’est le cas, le code à utiliser sera donné.</p>
 <p>On peut aussi tracer des barre d’incertitude si l’on n’a que des incertitudes sur les ordonnées (ou si celle sur les abscisses sont considérées comme négligeable). La cellule ci-dessous en donne un exemple avec les données précédentes si les x n’avait pas d’incertitude.</p>
 <div class="cell docutils container">
@@ -619,8 +606,8 @@ variable <code class="docutils literal notranslate"><span class="pre">f</span></
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="indirecte.html" title="previous page"><span class="section-number">4. </span>Incertitude des mesurandes indirectes.</a>
-    <a class='right-next' id="next-link" href="comparaison.html" title="next page"><span class="section-number">1. </span>Comparer un résultat expérimental avec un résultat théorique.</a>
+    <a class='left-prev' id="prev-link" href="indirecte.html" title="previous page"><span class="section-number">5. </span>Incertitude des mesurandes indirectes.</a>
+    <a class='right-next' id="next-link" href="comparaison.html" title="next page"><span class="section-number">7. </span>Comparer un résultat expérimental avec un résultat théorique.</a>
 
         </div>
         
@@ -641,11 +628,9 @@ variable <code class="docutils literal notranslate"><span class="pre">f</span></
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>
