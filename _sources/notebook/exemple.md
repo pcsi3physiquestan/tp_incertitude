@@ -80,7 +80,7 @@ On ne donne que les résultats de mesure bruts : $V_{ser}, U_{min}, U_{max}$ et 
 :tags: [remove-input]
 import pandas as pd
 import numpy as np
-from IPython.core.display import HTML
+
 Vser = np.array([18, 24, 30, 34, 40, 50, 60])
 Umin = np.array([5.67, 4.36, 3.58, 3.22, 2.85, 2.34, 2.02])
 Umax = np.array([5.74, 4.46, 3.75, 3.34, 2.91, 2.48, 2.18])
@@ -93,7 +93,7 @@ donnees = pd.DataFrame(
     }
 )
 
-HTML(donnees.style)
+donnees.style
 ```
 
 ### Exploitation des résultats.
