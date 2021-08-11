@@ -210,7 +210,7 @@ C_max = C_courbe_m + C_courbe_u # Limite basse des valeurs données par l'incert
 """
 Tracé graphique de la droite d'étalonnage avec le fuseau donnant les incertitudes
 """
-f, ax = plt.subplots()
+f, ax = plt.subplots(figsize=(12,12), dpi=100)
 f.suptitle("Courbe d'étalonnage pour dosage par absorbance")
 ax.set_xlabel("A")
 ax.set_ylabel("C(10^-5 mol/L)")
