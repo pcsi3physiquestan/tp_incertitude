@@ -269,7 +269,7 @@ On observe que :
 
 On peut donc conclure que __le modèle de Mariotte est acceptable pour l'air dans les conditions de température et de pression du laboratoire.__
 
-On va donc pouvoir utiliser ces données pour mesurer le nombre de moles.
+On va donc pouvoir utiliser ces données pour mesurer le nombre de moles d'air dans la seringue.
 
 ```{code-cell}
 """Estimation du nombre de moles.
