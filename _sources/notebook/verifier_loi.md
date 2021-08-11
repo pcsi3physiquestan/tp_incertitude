@@ -44,17 +44,17 @@ Suivant la fonction $f$, il existe des méthodes plus ou moins complexes de vali
 
 ### Méthode
 
-Avant de se lancer dans des méthodes numériques et calculs plus ou moins complexes, il est important de vérifier __à l'oeil__ que l'ensemble des mesures _semblent_ compatibles avec la loi proposés. MAIS, __le seul lien mathématique appréciable à l'oeil entre deux grandeurs est la droite.__
+Avant de se lancer dans des méthodes numériques et calculs plus ou moins complexes, il est important de vérifier __à l'oeil__ que l'ensemble des mesures _semblent_ compatibles avec la loi proposée. MAIS, __le seul lien mathématique appréciable à l'oeil entre deux grandeurs est la droite.__
 
 ```{important}
-Pour déterminer à l'oeil si deux grandeurs sont relisées entre elle, il faudrait nécessaire se ramener à une relation $Y'=g(X')$ où g est l'équation d'une droite. On peut alors représenter les points $(x_i, y_i)$ avec leurs croix d'incertitudes et décider s'il est possible à l'oeil de faire passer une droite par les croix d'incertitudes.
+Pour déterminer à l'oeil si deux grandeurs sont reliées entre elles, il faud nécessairement se ramener à une relation $Y'=g(X')$ où g est l'équation d'une droite. On peut alors représenter les points $(x_i, y_i)$ avec leurs croix d'incertitudes et décider s'il est possible à l'oeil de faire passer une droite par les croix d'incertitudes.
 
 Si c'est le cas, on peut espérer avec une relation du type $Y' = aX' + b$ et procéder à une vérification plus précise, voire (cf. suite) à une détermination de $a$ et $b$ si on ne les connait pas.
 
 Si ce n'est pas le cas, il faut soit revoir le modèle, soit revoir les mesures.
 ```
 
-_La vérification "à l'oeil" est surtout utile quand on ne connait pas tous les paramètres du modèle (la pente a par exemple) car on ne peut alors tracer un modèle et le comparer. En général, elle est suivant d'une méthode pour déterminer les paramètres inconnus._
+_La vérification "à l'oeil" est surtout utile quand on ne connait pas tous les paramètres du modèle (la pente a par exemple) car on ne peut alors tracer un modèle et le comparer. En général, elle est suivie d'une méthode pour déterminer les paramètres inconnus._
 
 +++
 

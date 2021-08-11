@@ -36,7 +36,7 @@ $$
 où $a$ et $b$ ne sont pas connus. On a alors réalisé une série de mesure amenant au calcul des couples $(x_i, y_i)$ (on considèrera qu'il y a k mesures en tout : $i \in \{1, 2, \ldots, k\}$ avec leurs incertitudes.
 
 On doit alors :
-1. Tracer les croix d'incertitude autour des points $(x_i, y_i)$ et vérifier qu'on peut espérer faire passer une droite par les croix d'incertitude (__vérification qualitative_).
+1. Tracer les croix d'incertitude autour des points $(x_i, y_i)$ et vérifier qu'on peut espérer faire passer une droite par les croix d'incertitude (__vérification qualitative__).
 2. Estimer au moins les paramètres $a$ et $b$ compatibles avec les points de mesures et si nécessaire l'incertitude sur les paramètres $a$ et $b$.
 3. Tracer les points de mesures ET le modèle pour vérifier que le modèle passe par les croix d'incertitude (__vérification semi-qualitative__).
 4. Si ce n'est pas le cas, on calculera les __écarts normalisés__ pour voir s'il y a effectivement incompatibilité.
@@ -61,7 +61,7 @@ Cf. [explications ici](https://pcsi3physiquestan.github.io/intro_python/notebook
 
 
 ```{attention}
-La méthode des moindres carrés proposées ci-dessus n'est optimale que si les incertitudes sur les abscisses sont faibles voire nulle. On veillera donc __toujours à placer en abscisses les grandeurs les moins incertaines__, quitte à inverser $X$ et $Y$.
+La méthode des moindres carrés proposées ci-dessus n'est optimale que si les incertitudes sur les abscisses sont faibles voire nulles. On veillera donc __toujours à placer en abscisses les grandeurs les moins incertaines__, quitte à inverser $X$ et $Y$.
 ```
 
 +++
@@ -236,7 +236,7 @@ Résidus et écarts normalisés
 
 ## Régression linéaire et incertitude.
 
-L'estimation du champ de pesanteur précédent a peu d'utilité si on ne peut le comparer à une valeur attendue ($g \approx (9.81 \pm 0.10)\rm{m.s^{-2}}$). Mais pour réaliser une comparaison, il faut estimer l'incertitude sur $g_{experimental}$, donc sur la pente de la régression linéaire.
+L'estimation du champ de pesanteur précédent a peu d'utilité si on ne peut le comparer à une valeur attendue ($g = (9.81 \pm 0.10)\rm{m.s^{-2}}$). Mais pour réaliser une comparaison, il faut estimer l'incertitude sur $g_{experimental}$, donc sur la pente de la régression linéaire.
 
 Nous allons donc utiliser une méthode de Monte-Carlo pour cela. On va voir son application sur l'exemple du champ de pesanteur.
 

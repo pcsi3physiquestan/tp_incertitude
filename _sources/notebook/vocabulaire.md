@@ -57,7 +57,7 @@ On distingue trois étapes lors d'une manipulation et du compte-rendu de celle-c
 
 ### Généralités
 ```{important}
-La mise en place d'un protocole dépend beaucoup du domaine étudiée. On va se contenter ici de présenter les éléments clés d'un compte-rendu à savoir :
+La mise en place d'un protocole dépend beaucoup du domaine étudié. On va se contenter ici de présenter les éléments clés d'un compte-rendu à savoir :
 1. Déterminer le __but__ de la manipulation (Que veut-on obtenir ?)
 2. Choisir le __principe__ de mesure (Sur quelle idée _théorique_ va-t-on baser notre manipulation ?)
 3. Elaborer le __mode opératoire__ (Quelle sont les successions d'étape à réaliser pour mettre en _pratique_ le principe de mesure et atteindre le but recherché).
@@ -84,12 +84,13 @@ Une fois qu'on a réfléchi à ces trois points, le compte-rendu du protocole en
 > $$Z(t) = H - \frac{1}{2}g t^2$$
 > 
 > 3. Le __mode opératoire__ demande une connaissance du matériel à utiliser (soit c'est un matériel classique, soit une documentation est proposée) et devra être précis.
->  * Il faut bien faire la différence entre les grandeurs qu'on mesure directement et celle qu'on veut utiliser.Ici, le logiciel donnera les mesures de la position de la bille _sur l'image_ : il faudra déterminer une loi d'échelle entre le pointage et la distance réelle
+>  * Il faut bien faire la différence entre les grandeurs qu'on mesure directement et celle qu'on veut utiliser. Ici, le logiciel donnera les mesures de la position de la bille _sur l'image_ : il faudra déterminer une loi d'échelle entre le pointage et la distance réelle
 >  * Il faut aussi penser à comment on utilisera les mesurandes directes pour obtenir ce qu'on veut. Ici, on disposera de nombreux couples $(t, Z)$, on pourra donc utiliser une méthode dite de régression linéaire (cf. suite) pour à la fois vérifier que le modèle théorique est valide ET déterminer $g$.
 >
 
 #### Synthèse : rédaction du compte-rendu
 > _Remarque : C'est la seule partie qui apparaît dans un compte-rendu._
+> 
 > __But__ : On veut déterminer l'intensité du champ de pesanteur.
 > 
 > __Principe__ : En déterminant les positions $Z$ d'une bille en chute libre à des instants $t$, on a la relation $Z = {gt^2 \over 2}$. On pourra donc obtenir g grâce aux couples $(Z,t)$
@@ -113,7 +114,9 @@ L'utilisation d'un schéma du montage est presque __indispensable__ à chaque pr
 
 ## Réalisation d'un protocole et observations.
 La réalisation d'un protocole demande en général l'entraînement à l'utilisation de matériel spécifique et dépend du domaine étudié. On ne peut détailler ici chaque thème abordé dans l'année.  
+
 Les observations qu'on est amené à réaliser sont de deux types : qualitatives (description d'un phénomène, souvent par un dessin) et quantitatives (mesure de grandeurs (directes puis indirectes).  
+
 Lorsqu'on réalise le mesurage d'une grandeur, la valeur qu'on observe n'est pas toujours celle qu'on espère avoir (_même en réalisant correctement le mode opératoire_) et elle peut fluctuer si l'on réalise plusieurs fois le mesurage. C'est de ce dernier points que nous allons parler en particulier.
 
 +++
@@ -132,6 +135,12 @@ La fidélité d'un résultat de mesure est caractérisé par la dispersion des r
 
 ```{important}
 L'__incertitude__ du résultat d'un mesurage est un paramètre positif qui caractérise la dispersion des valeurs attribuées à un mesurande, à partir des informations utilisées.
+```
+
+```{figure} ./images/dispersion_inc.png
+:name: dispersion
+:align: center
+Dispersion des résultats de mesure
 ```
 
 >Elle reflète l'impossibilité de connaître exactement la valeur du mesurande. Le résultat d'un mesurande après correction des effets systématiques reconnus _(note :  les biais)_ reste encore seulement une estimation de la valeur du mesurande en raison de l'incertitude provenant des effets aléatoires et de la correction imparfaite du résultat pour les effets systématiques. `(GUM. p.6 3.3.1)`

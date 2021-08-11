@@ -47,7 +47,10 @@ Il existe deux méthodes :
 1. La __simulation de Monte-Carlo__. Le principe est exactement le même que précédemment. La différence est qu'on a plus besoin de centrer les distributions des $X_i$ autour de 0.
 2. La __propagation des variances__. On utilise des relations entre les variances de grandeurs liés entre elles.
 
-__Remarque : Dans les deux cas, on est obligé de supposer que les mesurandes $X_i$ sont tous indépendants. Sinon, les deux méthodes ne sont pas valables.__
+````{attention} 
+Dans les deux cas, on est obligé de supposer que les mesurandes $X_i$ sont tous indépendants. Sinon, les deux méthodes ne sont pas valables.
+
+````
 
 +++
 

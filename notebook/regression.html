@@ -361,7 +361,7 @@ Y = aX + b
 <p>où <span class="math notranslate nohighlight">\(a\)</span> et <span class="math notranslate nohighlight">\(b\)</span> ne sont pas connus. On a alors réalisé une série de mesure amenant au calcul des couples <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> (on considèrera qu’il y a k mesures en tout : <span class="math notranslate nohighlight">\(i \in \{1, 2, \ldots, k\}\)</span> avec leurs incertitudes.</p>
 <p>On doit alors :</p>
 <ol class="simple">
-<li><p>Tracer les croix d’incertitude autour des points <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> et vérifier qu’on peut espérer faire passer une droite par les croix d’incertitude (_<em>vérification qualitative</em>).</p></li>
+<li><p>Tracer les croix d’incertitude autour des points <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> et vérifier qu’on peut espérer faire passer une droite par les croix d’incertitude (<strong>vérification qualitative</strong>).</p></li>
 <li><p>Estimer au moins les paramètres <span class="math notranslate nohighlight">\(a\)</span> et <span class="math notranslate nohighlight">\(b\)</span> compatibles avec les points de mesures et si nécessaire l’incertitude sur les paramètres <span class="math notranslate nohighlight">\(a\)</span> et <span class="math notranslate nohighlight">\(b\)</span>.</p></li>
 <li><p>Tracer les points de mesures ET le modèle pour vérifier que le modèle passe par les croix d’incertitude (<strong>vérification semi-qualitative</strong>).</p></li>
 <li><p>Si ce n’est pas le cas, on calculera les <strong>écarts normalisés</strong> pour voir s’il y a effectivement incompatibilité.</p></li>
@@ -380,7 +380,7 @@ Y = aX + b
 <p>Cf. <a class="reference external" href="https://pcsi3physiquestan.github.io/intro_python/notebook/np_polyfit.html">explications ici</a></p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>La méthode des moindres carrés proposées ci-dessus n’est optimale que si les incertitudes sur les abscisses sont faibles voire nulle. On veillera donc <strong>toujours à placer en abscisses les grandeurs les moins incertaines</strong>, quitte à inverser <span class="math notranslate nohighlight">\(X\)</span> et <span class="math notranslate nohighlight">\(Y\)</span>.</p>
+<p>La méthode des moindres carrés proposées ci-dessus n’est optimale que si les incertitudes sur les abscisses sont faibles voire nulles. On veillera donc <strong>toujours à placer en abscisses les grandeurs les moins incertaines</strong>, quitte à inverser <span class="math notranslate nohighlight">\(X\)</span> et <span class="math notranslate nohighlight">\(Y\)</span>.</p>
 </div>
 </div>
 <div class="section" id="mise-en-pratique">
@@ -511,7 +511,7 @@ Y = aX + b
 </div>
 <div class="section" id="regression-lineaire-et-incertitude">
 <h2><span class="section-number">9.3. </span>Régression linéaire et incertitude.<a class="headerlink" href="#regression-lineaire-et-incertitude" title="Permalink to this headline">¶</a></h2>
-<p>L’estimation du champ de pesanteur précédent a peu d’utilité si on ne peut le comparer à une valeur attendue (<span class="math notranslate nohighlight">\(g \approx (9.81 \pm 0.10)\rm{m.s^{-2}}\)</span>). Mais pour réaliser une comparaison, il faut estimer l’incertitude sur <span class="math notranslate nohighlight">\(g_{experimental}\)</span>, donc sur la pente de la régression linéaire.</p>
+<p>L’estimation du champ de pesanteur précédent a peu d’utilité si on ne peut le comparer à une valeur attendue (<span class="math notranslate nohighlight">\(g = (9.81 \pm 0.10)\rm{m.s^{-2}}\)</span>). Mais pour réaliser une comparaison, il faut estimer l’incertitude sur <span class="math notranslate nohighlight">\(g_{experimental}\)</span>, donc sur la pente de la régression linéaire.</p>
 <p>Nous allons donc utiliser une méthode de Monte-Carlo pour cela. On va voir son application sur l’exemple du champ de pesanteur.</p>
 <div class="section" id="methode-de-monte-carlo">
 <h3><span class="section-number">9.3.1. </span>Méthode de Monte-Carlo.<a class="headerlink" href="#methode-de-monte-carlo" title="Permalink to this headline">¶</a></h3>
@@ -612,9 +612,9 @@ Y = aX + b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Champ de pesanteur : g = 9.478974984540152 m/s^2
-Incertitude : u(g) =0.5309575708898859 m/s^2
-Ecart normalisé : eta = 0.9262726599235668
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Champ de pesanteur : g = 9.47775900203139 m/s^2
+Incertitude : u(g) =0.5299052174183037 m/s^2
+Ecart normalisé : eta = 0.6798340592254039
 </pre></div>
 </div>
 <img alt="../_images/regression_11_1.png" src="../_images/regression_11_1.png" />

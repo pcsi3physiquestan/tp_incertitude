@@ -118,7 +118,7 @@ _Dans le cadre des TPs, on pourra aussi chercher à mesurer __la valeur d'un com
 
 On désire étudier un phénomène physique reliant certaines grandeurs ou faisant intervenir une grandeur dont on connaît théoriquement (ou par des expériences réalisées en laboratoire) une valeur relativement précise.
 
-> Quantifier la dispersion des mesures qu'on obtient en répétant la manipulation (ou qu'on aurait obtenu en répétant la manipulation) permet d'__avoir un intervalle de valeur acceptables qu'on va comparer avec la valeur (ou un intervale de valeurs) théorique/précise attendue ou avec la relation théorique prévue__. On peut ainsi vérifier la cohérence entre la théorie ou la valeur d'une grandeur théorique et l'expérience réalisée.
+> Quantifier la dispersion des mesures qu'on obtient en répétant la manipulation (ou qu'on aurait obtenu en répétant la manipulation) permet d'__avoir un intervalle de valeurs acceptables qu'on va comparer avec la valeur (ou un intervale de valeurs) théorique/précise attendue ou avec la relation théorique prévue__. On peut ainsi vérifier la cohérence entre la théorie ou la valeur d'une grandeur théorique et l'expérience réalisée.
 
 ```{admonition} Exemple
 :class: tip
@@ -197,6 +197,6 @@ $$ u(G) = \sqrt{{1 \over k(k-1)} \sum_{i=1}^{k}(g_i - G_{mes})^2}$$
 L'évaluation de type A prend beaucoup de temps et nous devrons plus souvent évaluer une incertitude à partir d'une mesure unique. La méthode consiste alors à :
 1. faire un bilan des __sources d'incertitudes__ qui provoquent la variabilité de la mesure.
 2. associer à chaque sources d'incertitude des __éléments statistiques__ : forme de la distribution, largeur de la distribution, écart-type...
-3. combiner les sources d'incertitudes précédentes pour estimer l'incertitude totale sur le mesurande considérer.
+3. combiner les sources d'incertitudes précédentes pour estimer l'incertitude totale sur le mesurande considéré.
 
 Nous allons voir par la suite comment réaliser ces étapes qu'on appelle __bilan d'incertitude__

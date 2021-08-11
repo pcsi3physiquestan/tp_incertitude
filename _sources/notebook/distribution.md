@@ -164,7 +164,7 @@ normale d'espérance m et d'écart-type s.
 N = 100000
 s = 2  # Espérance
 m = 0.3  # Ecart-type
-datsim = rd.normal(s, m, N)
+datsim = rd.normal(m, s, N)
 
 """
 Pour vérifier qu'on retombe bien sur les grandeurs, on va estimer
@@ -210,6 +210,6 @@ La distribution gaussienne possède deux intérêts :
 manière gaussienne autour desa valeur à l'équilibre
 * La distribution statistique d'un mesurande direct est souvent la combinaison de plusieurs sources
 d'incertitude possédant chacun une distribution statistique propre.
-En général, lorsqu'on combine plusieurs distribution (sous certaines conditions non précisées ici)
+En général, lorsqu'on combine plusieurs distributions (sous certaines conditions non précisées ici)
 on tend vers une distribution gaussienne de sorte qu'en général, l'hypothèse d'une telle distribution
 pour le mesurande direct est assez acceptable. _Il s'agit d'une application du théorème central limite._
