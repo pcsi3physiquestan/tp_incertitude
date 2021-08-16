@@ -1,0 +1,509 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Points à retenir &#8212; Incertitudes de mesure</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp2_optique/notebook/aretenir.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Vocabulaire et étapes : Généralités" href="vocabulaire.html" />
+    <link rel="prev" title="Incertitudes de mesure et méthodes expérimentales." href="../tp_incertitude.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Incertitudes de mesure</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tp_incertitude.html">
+   Incertitudes de mesure et méthodes expérimentales.
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Points à retenir
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Points à retenir
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Vocabulaire et étapes d'une manipulation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="vocabulaire.html">
+   2. Vocabulaire et étapes : Généralités
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Incertitudes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="incertitude.html">
+   3. Les incertitudes de mesure
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="distribution.html">
+   4. Distributions statistiques usuelles.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sources.html">
+   5. Sources d’incertitudes et bilan.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="indirecte.html">
+   6. Incertitude des mesurandes indirectes.
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Rendre compte d'un résultat
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="rcgeneral.html">
+   7. Rendre compte de résultats expérimentaux
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Exploiter les mesures
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="comparaison.html">
+   8. Comparer un résultat expérimental avec un résultat théorique.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="verifier_loi.html">
+   9. Vérifier une loi physique
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression.html">
+   10. Ajustement d’un modèle affine
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Un exemple complet
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exemple.html">
+   11. Un exemple complet
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Pour aller plus loin
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="comp_reglin.html">
+   12. Construire une droite d’étalonnage
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../_sources/notebook/aretenir.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebook/aretenir.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/notebook/aretenir.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concepts">
+   1.1. Concepts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distribution">
+   1.2. Distribution
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distribuion-uniforme">
+     1.2.1. Distribuion uniforme
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distribution-gaussienne">
+     1.2.2. Distribution gaussienne
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methode-de-monte-carlo">
+   1.3. Méthode de Monte-Carlo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rendre-compte">
+   1.4. Rendre-compte
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resultat-unique">
+     1.4.1. Résultat unique
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#representation-graphique">
+     1.4.2. Représentation graphique
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploitation">
+   1.5. Exploitation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ecart-normalise">
+     1.5.1. Ecart normalisé :
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regression-lineaire">
+     1.5.2. Régression linéaire
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="points-a-retenir">
+<h1><span class="section-number">1. </span>Points à retenir<a class="headerlink" href="#points-a-retenir" title="Permalink to this headline">¶</a></h1>
+<p>Cette partie résume les méthodes à connaître. Les explications sont données dans les chapitres suivants.</p>
+<div class="section" id="concepts">
+<h2><span class="section-number">1.1. </span>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Mesurande</strong> : Grandeur que l’on veut mesurer. Le <em>résultat de mesure</em> est soumis à une variabilité dû aux conditions expérimentales, à la méthode, à l’opérateur. Cette variabilité est quantifité par une <strong>incertitude</strong> de mesure.</p></li>
+<li><p><strong>Incertitude-Type</strong> : Estimation de l’incertitude comme l’écart-type de la distribution des résultats de mesurage possibles.</p></li>
+</ul>
+</div>
+<div class="section" id="distribution">
+<h2><span class="section-number">1.2. </span>Distribution<a class="headerlink" href="#distribution" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="distribuion-uniforme">
+<h3><span class="section-number">1.2.1. </span>Distribuion uniforme<a class="headerlink" href="#distribuion-uniforme" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Loi de probabilité : $<span class="math notranslate nohighlight">\(p(x) = \frac{1}{b-a}\)</span>$</p></li>
+<li><p>Espérance de la distribution : <span class="math notranslate nohighlight">\(\mu = \frac{a+b}{2}\)</span></p></li>
+<li><p>Ecart-type de la distribution : <span class="math notranslate nohighlight">\(\sigma = \frac{b-a}{\sqrt{12}}\)</span></p></li>
+<li><p><em>PYTHON</em> (bibliothèque <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code>) - Vecteur de N tirages :<code class="docutils literal notranslate"><span class="pre">uniform(a,</span> <span class="pre">b,</span> <span class="pre">N)</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="distribution-gaussienne">
+<h3><span class="section-number">1.2.2. </span>Distribution gaussienne<a class="headerlink" href="#distribution-gaussienne" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Loi de probabilité : $<span class="math notranslate nohighlight">\(p(x) = \frac{1}{\sigma \sqrt{2\pi}}\exp^{- {1 \over 2} {\left(\frac{x - \mu}{\sigma}\right)}^2}\)</span>$</p></li>
+<li><p>Espérance de la distribution : <span class="math notranslate nohighlight">\(\mu\)</span></p></li>
+<li><p>Ecart-type de la distribution : <span class="math notranslate nohighlight">\(\sigma\)</span></p></li>
+<li><p><em>PYTHON</em> (bibliothèque <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code>) - Vecteur de N tirages :<code class="docutils literal notranslate"><span class="pre">normal(a,</span> <span class="pre">b,</span> <span class="pre">N)</span></code></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="methode-de-monte-carlo">
+<h2><span class="section-number">1.3. </span>Méthode de Monte-Carlo<a class="headerlink" href="#methode-de-monte-carlo" title="Permalink to this headline">¶</a></h2>
+<p>Pour un mesurande <span class="math notranslate nohighlight">\(Y = f(X_i)\)</span>.</p>
+<ol class="simple">
+<li><p>Pour chaque mesurande directe <span class="math notranslate nohighlight">\(X_i\)</span></p>
+<ol class="simple">
+<li><p>Pour chaque source d’incertitude estimée <span class="math notranslate nohighlight">\(u_i\)</span> : Simulation de N tirages suivant la distribution estimée (<strong>autour de 0</strong>).</p></li>
+<li><p>Somme des composantes</p></li>
+</ol>
+</li>
+<li><p>Calcul des N simulations de Y.</p></li>
+<li><p>Calcul de la moyenne (<code class="docutils literal notranslate"><span class="pre">mean(V)</span></code>) des N valeurs (<strong>résultat de mesurage</strong>) et de l’écart-type (<code class="docutils literal notranslate"><span class="pre">std(V,</span> <span class="pre">ddof=1)</span></code>) (<strong>incertitude-type</strong>).</p></li>
+</ol>
+</div>
+<div class="section" id="rendre-compte">
+<h2><span class="section-number">1.4. </span>Rendre-compte<a class="headerlink" href="#rendre-compte" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="resultat-unique">
+<h3><span class="section-number">1.4.1. </span>Résultat unique<a class="headerlink" href="#resultat-unique" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[
+G = (G_{mes} \pm u(G)) Unités
+\]</div>
+<p>Vous devez respectez les contraintes suivantes :</p>
+<ul class="simple">
+<li><p>L’incertitude de mesure doit avoir 2 chiffres significatifs</p></li>
+<li><p>La valeur mesure doit avoir la même précision que l’incertitude ne mesure.</p></li>
+</ul>
+</div>
+<div class="section" id="representation-graphique">
+<h3><span class="section-number">1.4.2. </span>Représentation graphique<a class="headerlink" href="#representation-graphique" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Avec les incertitudes de mesure.</strong></p></li>
+<li><p><em>PYTHON</em> (bibliothèque <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>) - Croix d’incertitude : <code class="docutils literal notranslate"><span class="pre">errorbar(x,</span> <span class="pre">y,</span> <span class="pre">xerr=ux,</span> <span class="pre">yerr=uy,</span> <span class="pre">marker='+',</span> <span class="pre">linestyle='',</span> <span class="pre">label='Légende')</span></code></p></li>
+<li><p><em>PYTHON</em> (bibliothèque <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>) - Croix d’incertitude : <code class="docutils literal notranslate"><span class="pre">hist(v,</span> <span class="pre">bins='rice')</span></code></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="exploitation">
+<h2><span class="section-number">1.5. </span>Exploitation<a class="headerlink" href="#exploitation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ecart-normalise">
+<h3><span class="section-number">1.5.1. </span>Ecart normalisé :<a class="headerlink" href="#ecart-normalise" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[\eta = \frac{g_{mes} - g_{att}}{\sqrt{u^2(g_{mes}) + u^2(g_{att})}}\]</div>
+<ul class="simple">
+<li><p>Si l’écart normalisé est inférieur à 2, on considérera que valeur attendue et expérience sont compatibles.</p></li>
+<li><p>Si l’écart normalisé est supérieur à 2, on considérera que valeur attendue et expérience ne sont pas compatibles.</p></li>
+</ul>
+<p><strong>On peut utiliser l’écart normalisé sur une série de données pour vérifier leur compatibilité entre elles.</strong></p>
+</div>
+<div class="section" id="regression-lineaire">
+<h3><span class="section-number">1.5.2. </span>Régression linéaire<a class="headerlink" href="#regression-lineaire" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Tester l’alignement visuellement.</p></li>
+<li><p>Faire la régression linéaire N fois : boucle + <code class="docutils literal notranslate"><span class="pre">polyfit(x,</span> <span class="pre">y,</span> <span class="pre">1)</span></code> (bibliothèque <code class="docutils literal notranslate"><span class="pre">numpy</span></code>)</p></li>
+<li><p>Moyenne et écart-type sur la pente et l’ordonnée à l’origine</p></li>
+<li><p>Vérification graphique de la droite modèle avec les croix d’incertitude</p></li>
+<li><p>Vérification par les carts normalisées entre le modèle et les mesures</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebook"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../tp_incertitude.html" title="previous page">Incertitudes de mesure et méthodes expérimentales.</a>
+    <a class='right-next' id="next-link" href="vocabulaire.html" title="next page"><span class="section-number">2. </span>Vocabulaire et étapes : Généralités</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By C. Lacpatia<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

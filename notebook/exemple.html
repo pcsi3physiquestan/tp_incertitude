@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>10. Un exemple complet &#8212; Incertitudes de mesure</title>
+    <title>11. Un exemple complet &#8212; Incertitudes de mesure</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,8 @@
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp2_optique/notebook/exemple.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="11. Construire une droite d’étalonnage" href="comp_reglin.html" />
-    <link rel="prev" title="9. Ajustement d’un modèle affine" href="regression.html" />
+    <link rel="next" title="12. Construire une droite d’étalonnage" href="comp_reglin.html" />
+    <link rel="prev" title="10. Ajustement d’un modèle affine" href="regression.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -92,13 +92,25 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Points à retenir
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="aretenir.html">
+   1. Points à retenir
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Vocabulaire et étapes d'une manipulation
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="vocabulaire.html">
-   1. Vocabulaire et étapes : Généralités
+   2. Vocabulaire et étapes : Généralités
   </a>
  </li>
 </ul>
@@ -110,22 +122,22 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="incertitude.html">
-   2. Les incertitudes de mesure
+   3. Les incertitudes de mesure
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="distribution.html">
-   3. Distributions statistiques usuelles.
+   4. Distributions statistiques usuelles.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="sources.html">
-   4. Sources d’incertitudes et bilan.
+   5. Sources d’incertitudes et bilan.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="indirecte.html">
-   5. Incertitude des mesurandes indirectes.
+   6. Incertitude des mesurandes indirectes.
   </a>
  </li>
 </ul>
@@ -137,7 +149,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="rcgeneral.html">
-   6. Rendre compte de résultats expérimentaux
+   7. Rendre compte de résultats expérimentaux
   </a>
  </li>
 </ul>
@@ -149,17 +161,17 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="comparaison.html">
-   7. Comparer un résultat expérimental avec un résultat théorique.
+   8. Comparer un résultat expérimental avec un résultat théorique.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="verifier_loi.html">
-   8. Vérifier une loi physique
+   9. Vérifier une loi physique
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="regression.html">
-   9. Ajustement d’un modèle affine
+   10. Ajustement d’un modèle affine
   </a>
  </li>
 </ul>
@@ -171,7 +183,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   10. Un exemple complet
+   11. Un exemple complet
   </a>
  </li>
 </ul>
@@ -183,7 +195,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="comp_reglin.html">
-   11. Construire une droite d’étalonnage
+   12. Construire une droite d’étalonnage
   </a>
  </li>
 </ul>
@@ -279,44 +291,44 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#protocole">
-   10.1. Protocole
+   11.1. Protocole
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#analyse-des-sources-d-incertitudes">
-   10.2. Analyse des sources d’incertitudes
+   11.2. Analyse des sources d’incertitudes
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mesurandes-directs">
-     10.2.1. Mesurandes directs
+     11.2.1. Mesurandes directs
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mesurandes-indirects">
-     10.2.2. Mesurandes indirects
+     11.2.2. Mesurandes indirects
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#resultats-de-mesure">
-   10.3. Résultats de mesure.
+   11.3. Résultats de mesure.
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exploitation-des-resultats">
-     10.3.1. Exploitation des résultats.
+     11.3.1. Exploitation des résultats.
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#estimation-des-volumes-et-pression">
-       10.3.1.1. Estimation des volumes et pression.
+       11.3.1.1. Estimation des volumes et pression.
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#ajustement-lineaire">
-       10.3.1.2. Ajustement linéaire
+       11.3.1.2. Ajustement linéaire
       </a>
      </li>
     </ul>
@@ -335,10 +347,10 @@
               <div>
                 
   <div class="section" id="un-exemple-complet">
-<h1><span class="section-number">10. </span>Un exemple complet<a class="headerlink" href="#un-exemple-complet" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">11. </span>Un exemple complet<a class="headerlink" href="#un-exemple-complet" title="Permalink to this headline">¶</a></h1>
 <p>Nous allons, à travers un exemple montrer l’étude complète, du protocole à l’exploitation, comment utiliser Python pour estimer les incertitudes, ajuster une loi affine et exploiter les résultats obtenus.</p>
 <div class="section" id="protocole">
-<h2><span class="section-number">10.1. </span>Protocole<a class="headerlink" href="#protocole" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.1. </span>Protocole<a class="headerlink" href="#protocole" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Objectif</strong> : On désire tester la loi de Mariotte qui relie Pression, Volume et Température d’un gaz : <span class="math notranslate nohighlight">\(PV = nRT\)</span> pour l’air dans les conditions de température ambiante et de pression de quelques centaines d’hectoPascal. On déterminera aussi le nomber de mole d’air du système étudié.</p></li>
 <li><p><strong>Principe</strong> : On va procéder à la mesure de couples <span class="math notranslate nohighlight">\((P, V)\)</span> pour plusieurs valeurs de <span class="math notranslate nohighlight">\(V\)</span> à la température ambiante et on testera la loi <span class="math notranslate nohighlight">\(P(V)\)</span> ainsi obtenue.</p></li>
@@ -351,13 +363,13 @@
 <div class="card-body docutils">
 <div class="figure align-center" id="mariotte-photo">
 <img alt="../_images/mariotte.png" src="../_images/mariotte.png" />
-<p class="caption"><span class="caption-number">Fig. 10.1 </span><span class="caption-text">Photo du montage</span><a class="headerlink" href="#mariotte-photo" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11.1 </span><span class="caption-text">Photo du montage</span><a class="headerlink" href="#mariotte-photo" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="card-footer docutils">
 <div class="figure align-center" id="mariotte-montage">
 <img alt="../_images/mariotte_montage.png" src="../_images/mariotte_montage.png" />
-<p class="caption"><span class="caption-number">Fig. 10.2 </span><span class="caption-text">Schéma du montage</span><a class="headerlink" href="#mariotte-montage" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11.2 </span><span class="caption-text">Schéma du montage</span><a class="headerlink" href="#mariotte-montage" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -368,10 +380,10 @@
 <p>En mesurant la température grâce à un thermomètre, on utilisera le coefficient de la droite ajustée sur la relation <span class="math notranslate nohighlight">\(P=f(1/V)\)</span> pour déterminer le nombre de mole d’air emprisonné.</p>
 </div>
 <div class="section" id="analyse-des-sources-d-incertitudes">
-<h2><span class="section-number">10.2. </span>Analyse des sources d’incertitudes<a class="headerlink" href="#analyse-des-sources-d-incertitudes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.2. </span>Analyse des sources d’incertitudes<a class="headerlink" href="#analyse-des-sources-d-incertitudes" title="Permalink to this headline">¶</a></h2>
 <p>On veut tester une relation, il faudra bien réfléchir aux incertitudes.</p>
 <div class="section" id="mesurandes-directs">
-<h3><span class="section-number">10.2.1. </span>Mesurandes directs<a class="headerlink" href="#mesurandes-directs" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.2.1. </span>Mesurandes directs<a class="headerlink" href="#mesurandes-directs" title="Permalink to this headline">¶</a></h3>
 <p>On dispose de trois mesurandes directs :</p>
 <ul class="simple">
 <li><p>la température <span class="math notranslate nohighlight">\(T\)</span> mesurée par un thermomètre numérique dont le constructeur annonce une <em>tolérance</em> de 5% sur la mesure en Celsius. On considèrera qu’il s’agit d’une incertitude-type (associé à une distribution uniforme). Cette source étant grande devant la résolution de l’affichage (1/10 de degré pour des températures d’environ 30°C), on considèrera qu’il s’agit de la seule source.</p></li>
@@ -402,12 +414,12 @@
 </div>
 </div>
 <div class="section" id="mesurandes-indirects">
-<h3><span class="section-number">10.2.2. </span>Mesurandes indirects<a class="headerlink" href="#mesurandes-indirects" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.2.2. </span>Mesurandes indirects<a class="headerlink" href="#mesurandes-indirects" title="Permalink to this headline">¶</a></h3>
 <p>Le seul mesurande indirect est la pression <span class="math notranslate nohighlight">\(P\)</span>. L’étalonnage du manomètre donne la relation <span class="math notranslate nohighlight">\(P(hPa) = 218.5 U(V) - 107.3\)</span> avec des incertitudes sur les coefficients négligeables devant l’incertitude sur <span class="math notranslate nohighlight">\(U\)</span>.</p>
 </div>
 </div>
 <div class="section" id="resultats-de-mesure">
-<h2><span class="section-number">10.3. </span>Résultats de mesure.<a class="headerlink" href="#resultats-de-mesure" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.3. </span>Résultats de mesure.<a class="headerlink" href="#resultats-de-mesure" title="Permalink to this headline">¶</a></h2>
 <p>La mesure de la température donne <span class="math notranslate nohighlight">\(T = 30.1 \pm 1.5 °C\)</span>.</p>
 <p>On ne donne que les résultats de mesure bruts : <span class="math notranslate nohighlight">\(V_{ser}, U_{min}, U_{max}\)</span> et <span class="math notranslate nohighlight">\(T\)</span>. L’estimation des autres grandeurs et de leur incertitude se fera grâce à Python.</p>
 <div class="cell tag_remove-input docutils container">
@@ -459,7 +471,7 @@
     </tbody></table></div></div>
 </div>
 <div class="section" id="exploitation-des-resultats">
-<h3><span class="section-number">10.3.1. </span>Exploitation des résultats.<a class="headerlink" href="#exploitation-des-resultats" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.3.1. </span>Exploitation des résultats.<a class="headerlink" href="#exploitation-des-resultats" title="Permalink to this headline">¶</a></h3>
 <p>Puisqu’on doit estimer les incertitudes de mesures sur <span class="math notranslate nohighlight">\(V\)</span> et <span class="math notranslate nohighlight">\(P\)</span> pour les tracés, on va réaliser une simulation de Monte-Carlo. On va donc :</p>
 <ul class="simple">
 <li><p>Pour chaque (=boucle) volume d’air, estimer N fois le volume <span class="math notranslate nohighlight">\(V\)</span> et la pression <span class="math notranslate nohighlight">\(P\)</span> et <span class="math notranslate nohighlight">\(1/V\)</span> puis en déduire leurs valeurs mesurées (moyenne) et leur incertitude (écart-type). On stockera toutes les valeurs simulées et on rendra compte dans un tableau des résultats de mesure avec leurs incertitudes.</p></li>
@@ -468,7 +480,7 @@
 <li><p>On déduira <span class="math notranslate nohighlight">\(n\)</span> de l’estimation de la pente (on prolonge la simulation de Monte-Carlo pour composer l’incertitude sur la pente avec celle sur <span class="math notranslate nohighlight">\(T\)</span>).</p></li>
 </ul>
 <div class="section" id="estimation-des-volumes-et-pression">
-<h4><span class="section-number">10.3.1.1. </span>Estimation des volumes et pression.<a class="headerlink" href="#estimation-des-volumes-et-pression" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">11.3.1.1. </span>Estimation des volumes et pression.<a class="headerlink" href="#estimation-des-volumes-et-pression" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -625,7 +637,7 @@
 </div>
 </div>
 <div class="section" id="ajustement-lineaire">
-<h4><span class="section-number">10.3.1.2. </span>Ajustement linéaire<a class="headerlink" href="#ajustement-lineaire" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">11.3.1.2. </span>Ajustement linéaire<a class="headerlink" href="#ajustement-lineaire" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;On réalise maintenant l&#39;ajustement linéaire pour chaque groupe d&#39;échantillons simulés.&quot;&quot;&quot;</span>
@@ -751,8 +763,8 @@ Nombre de mole. n = -9.99e-04 +/- 4.2e-05 mol
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="regression.html" title="previous page"><span class="section-number">9. </span>Ajustement d’un modèle affine</a>
-    <a class='right-next' id="next-link" href="comp_reglin.html" title="next page"><span class="section-number">11. </span>Construire une droite d’étalonnage</a>
+    <a class='left-prev' id="prev-link" href="regression.html" title="previous page"><span class="section-number">10. </span>Ajustement d’un modèle affine</a>
+    <a class='right-next' id="next-link" href="comp_reglin.html" title="next page"><span class="section-number">12. </span>Construire une droite d’étalonnage</a>
 
         </div>
         

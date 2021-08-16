@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. Distributions statistiques usuelles. &#8212; Incertitudes de mesure</title>
+    <title>4. Distributions statistiques usuelles. &#8212; Incertitudes de mesure</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,8 +54,8 @@
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp2_optique/notebook/distribution.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="4. Sources d’incertitudes et bilan." href="sources.html" />
-    <link rel="prev" title="2. Les incertitudes de mesure" href="incertitude.html" />
+    <link rel="next" title="5. Sources d’incertitudes et bilan." href="sources.html" />
+    <link rel="prev" title="3. Les incertitudes de mesure" href="incertitude.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -92,13 +92,25 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Points à retenir
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="aretenir.html">
+   1. Points à retenir
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Vocabulaire et étapes d'une manipulation
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="vocabulaire.html">
-   1. Vocabulaire et étapes : Généralités
+   2. Vocabulaire et étapes : Généralités
   </a>
  </li>
 </ul>
@@ -110,22 +122,22 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="incertitude.html">
-   2. Les incertitudes de mesure
+   3. Les incertitudes de mesure
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   3. Distributions statistiques usuelles.
+   4. Distributions statistiques usuelles.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="sources.html">
-   4. Sources d’incertitudes et bilan.
+   5. Sources d’incertitudes et bilan.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="indirecte.html">
-   5. Incertitude des mesurandes indirectes.
+   6. Incertitude des mesurandes indirectes.
   </a>
  </li>
 </ul>
@@ -137,7 +149,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="rcgeneral.html">
-   6. Rendre compte de résultats expérimentaux
+   7. Rendre compte de résultats expérimentaux
   </a>
  </li>
 </ul>
@@ -149,17 +161,17 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="comparaison.html">
-   7. Comparer un résultat expérimental avec un résultat théorique.
+   8. Comparer un résultat expérimental avec un résultat théorique.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="verifier_loi.html">
-   8. Vérifier une loi physique
+   9. Vérifier une loi physique
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="regression.html">
-   9. Ajustement d’un modèle affine
+   10. Ajustement d’un modèle affine
   </a>
  </li>
 </ul>
@@ -171,7 +183,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="exemple.html">
-   10. Un exemple complet
+   11. Un exemple complet
   </a>
  </li>
 </ul>
@@ -183,7 +195,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="comp_reglin.html">
-   11. Construire une droite d’étalonnage
+   12. Construire une droite d’étalonnage
   </a>
  </li>
 </ul>
@@ -279,44 +291,44 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#distribution-uniforme">
-   3.1. Distribution uniforme
+   4.1. Distribution uniforme
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#caracteristique">
-     3.1.1. Caractéristique
+     4.1.1. Caractéristique
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#simulation">
-     3.1.2. Simulation
+     4.1.2. Simulation
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#la-distribution-gaussienne">
-   3.2. La distribution gaussienne
+   4.2. La distribution gaussienne
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#definition">
-     3.2.1. Définition
+     4.2.1. Définition
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#caracteristiques">
-     3.2.2. Caractéristiques
+     4.2.2. Caractéristiques
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#simulation-d-un-tirage">
-     3.2.3. Simulation d’un tirage
+     4.2.3. Simulation d’un tirage
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#interet-de-la-distribution-gaussienne">
-     3.2.4. Intérêt de la distribution gaussienne
+     4.2.4. Intérêt de la distribution gaussienne
     </a>
    </li>
   </ul>
@@ -339,13 +351,13 @@
 <li><p>Ce notebook permet de revenir sur les méthode d’implémentation du tirage aléatoire suivant ces deux lois.</p></li>
 </ul>
 <div class="section" id="distributions-statistiques-usuelles">
-<h1><span class="section-number">3. </span>Distributions statistiques usuelles.<a class="headerlink" href="#distributions-statistiques-usuelles" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4. </span>Distributions statistiques usuelles.<a class="headerlink" href="#distributions-statistiques-usuelles" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="distribution-uniforme">
-<span id="dist-unif"></span><h2><span class="section-number">3.1. </span>Distribution uniforme<a class="headerlink" href="#distribution-uniforme" title="Permalink to this headline">¶</a></h2>
+<span id="dist-unif"></span><h2><span class="section-number">4.1. </span>Distribution uniforme<a class="headerlink" href="#distribution-uniforme" title="Permalink to this headline">¶</a></h2>
 <p>Une distribution uniforme entre deux valeurs <span class="math notranslate nohighlight">\(a\)</span> et <span class="math notranslate nohighlight">\(b\)</span> consiste à associer à toutes les valeurs entre <span class="math notranslate nohighlight">\(a\)</span> et <span class="math notranslate nohighlight">\(b\)</span>
 la même probabilité.</p>
 <div class="section" id="caracteristique">
-<h3><span class="section-number">3.1.1. </span>Caractéristique<a class="headerlink" href="#caracteristique" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.1. </span>Caractéristique<a class="headerlink" href="#caracteristique" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>La loi de probabilité est donc:</p></li>
 </ul>
@@ -364,7 +376,7 @@ la même probabilité.</p>
 </div>
 </div>
 <div class="section" id="simulation">
-<h3><span class="section-number">3.1.2. </span>Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.1.2. </span>Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">¶</a></h3>
 <p>Nous aurons régulièrement besoin de simuler des lois statistiques avec Python et notamment la loi uniforme.
 Nous allons voir comment le faire dans la cellule suivante.</p>
 <p>Lisez le code et chercher à le comprendre pour pouvoir l’utiliser ensuite.</p>
@@ -444,9 +456,9 @@ Ecart-type :  0.8660254037844387
 </div>
 </div>
 <div class="section" id="la-distribution-gaussienne">
-<h2><span class="section-number">3.2. </span>La distribution gaussienne<a class="headerlink" href="#la-distribution-gaussienne" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2. </span>La distribution gaussienne<a class="headerlink" href="#la-distribution-gaussienne" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="definition">
-<h3><span class="section-number">3.2.1. </span>Définition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.1. </span>Définition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h3>
 <p>La <strong>loi gaussienne (ou loi normale)</strong> suit une loi de probabilité de la forme:</p>
 <div class="math notranslate nohighlight">
 \[p(x) = \frac{1}{\sigma \sqrt{2\pi}}\exp^{- {1 \over 2} {\left(\frac{x - \mu}{\sigma}\right)}^2}\]</div>
@@ -456,7 +468,7 @@ Ecart-type :  0.8660254037844387
 </ul>
 </div>
 <div class="section" id="caracteristiques">
-<h3><span class="section-number">3.2.2. </span>Caractéristiques<a class="headerlink" href="#caracteristiques" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.2. </span>Caractéristiques<a class="headerlink" href="#caracteristiques" title="Permalink to this headline">¶</a></h3>
 <p>Observer graphiquement les caractéristiques d’une distribution normale :</p>
 <ul class="simple">
 <li><p>Elle est centrée sur son espérance <span class="math notranslate nohighlight">\(m\)</span> (résultat de mesurage pour nous)</p></li>
@@ -474,7 +486,7 @@ les résultats de mesurage possibles pour un mesurande : <span class="math notra
 </div>
 </div>
 <div class="section" id="simulation-d-un-tirage">
-<h3><span class="section-number">3.2.3. </span>Simulation d’un tirage<a class="headerlink" href="#simulation-d-un-tirage" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.3. </span>Simulation d’un tirage<a class="headerlink" href="#simulation-d-un-tirage" title="Permalink to this headline">¶</a></h3>
 <p>Nous aurons régulièrement besoin de simuler des lois statistiques avec Python et notamment la loi normale.
 Nous allons voir comment le faire dans la cellule suivante.</p>
 <p>Lisez le code et chercher à le comprendre pour pouvoir l’utiliser ensuite.</p>
@@ -548,7 +560,7 @@ Ecart-type :  2
 </div>
 </div>
 <div class="section" id="interet-de-la-distribution-gaussienne">
-<h3><span class="section-number">3.2.4. </span>Intérêt de la distribution gaussienne<a class="headerlink" href="#interet-de-la-distribution-gaussienne" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">4.2.4. </span>Intérêt de la distribution gaussienne<a class="headerlink" href="#interet-de-la-distribution-gaussienne" title="Permalink to this headline">¶</a></h3>
 <p>La distribution gaussienne possède deux intérêts :</p>
 <ul class="simple">
 <li><p>L’étude des fluctuations statistique des grandeur tend à montrer qu’une grandeur flucture généralement de
@@ -588,8 +600,8 @@ pour le mesurande direct est assez acceptable. <em>Il s’agit d’une applicati
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="incertitude.html" title="previous page"><span class="section-number">2. </span>Les incertitudes de mesure</a>
-    <a class='right-next' id="next-link" href="sources.html" title="next page"><span class="section-number">4. </span>Sources d’incertitudes et bilan.</a>
+    <a class='left-prev' id="prev-link" href="incertitude.html" title="previous page"><span class="section-number">3. </span>Les incertitudes de mesure</a>
+    <a class='right-next' id="next-link" href="sources.html" title="next page"><span class="section-number">5. </span>Sources d’incertitudes et bilan.</a>
 
         </div>
         

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>11. Construire une droite d’étalonnage &#8212; Incertitudes de mesure</title>
+    <title>12. Construire une droite d’étalonnage &#8212; Incertitudes de mesure</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,7 +54,7 @@
     <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp2_optique/notebook/comp_reglin.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="10. Un exemple complet" href="exemple.html" />
+    <link rel="prev" title="11. Un exemple complet" href="exemple.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -91,13 +91,25 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
+  Points à retenir
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="aretenir.html">
+   1. Points à retenir
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
   Vocabulaire et étapes d'une manipulation
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="vocabulaire.html">
-   1. Vocabulaire et étapes : Généralités
+   2. Vocabulaire et étapes : Généralités
   </a>
  </li>
 </ul>
@@ -109,22 +121,22 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="incertitude.html">
-   2. Les incertitudes de mesure
+   3. Les incertitudes de mesure
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="distribution.html">
-   3. Distributions statistiques usuelles.
+   4. Distributions statistiques usuelles.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="sources.html">
-   4. Sources d’incertitudes et bilan.
+   5. Sources d’incertitudes et bilan.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="indirecte.html">
-   5. Incertitude des mesurandes indirectes.
+   6. Incertitude des mesurandes indirectes.
   </a>
  </li>
 </ul>
@@ -136,7 +148,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="rcgeneral.html">
-   6. Rendre compte de résultats expérimentaux
+   7. Rendre compte de résultats expérimentaux
   </a>
  </li>
 </ul>
@@ -148,17 +160,17 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="comparaison.html">
-   7. Comparer un résultat expérimental avec un résultat théorique.
+   8. Comparer un résultat expérimental avec un résultat théorique.
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="verifier_loi.html">
-   8. Vérifier une loi physique
+   9. Vérifier une loi physique
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="regression.html">
-   9. Ajustement d’un modèle affine
+   10. Ajustement d’un modèle affine
   </a>
  </li>
 </ul>
@@ -170,7 +182,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="exemple.html">
-   10. Un exemple complet
+   11. Un exemple complet
   </a>
  </li>
 </ul>
@@ -182,7 +194,7 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   11. Construire une droite d’étalonnage
+   12. Construire une droite d’étalonnage
   </a>
  </li>
 </ul>
@@ -278,37 +290,37 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#donnees-de-mesures">
-   11.1. Données de mesures
+   12.1. Données de mesures
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#verification-visuelle-de-la-loi-lineaire">
-   11.2. Vérification visuelle de la loi linéaire
+   12.2. Vérification visuelle de la loi linéaire
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mise-en-place-de-la-simulation-de-monte-carlo">
-   11.3. Mise en place de la simulation de Monte-Carlo
+   12.3. Mise en place de la simulation de Monte-Carlo
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#parametres-d-ajustement">
-   11.4. Paramètres d’ajustement
+   12.4. Paramètres d’ajustement
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#utilisation-de-la-droite-d-ajustement">
-   11.5. Utilisation de la droite d’ajustement.
+   12.5. Utilisation de la droite d’ajustement.
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#determination-la-concentration-pour-une-mesure">
-     11.5.1. Détermination la concentration pour une mesure
+     12.5.1. Détermination la concentration pour une mesure
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#courbe-d-etalonnage-avec-incertitude">
-     11.5.2. Courbe d’étalonnage avec incertitude
+     12.5.2. Courbe d’étalonnage avec incertitude
     </a>
    </li>
   </ul>
@@ -325,11 +337,11 @@
               <div>
                 
   <div class="section" id="construire-une-droite-d-etalonnage">
-<h1><span class="section-number">11. </span>Construire une droite d’étalonnage<a class="headerlink" href="#construire-une-droite-d-etalonnage" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">12. </span>Construire une droite d’étalonnage<a class="headerlink" href="#construire-une-droite-d-etalonnage" title="Permalink to this headline">¶</a></h1>
 <p>On se propose de donner quelques éléments supplémentaires pour la régression linéaire, notamment pour son utilisation pour estimer une valeur (comme avec une courbe d’étalonnage). On se base ici sur un exemple de chimie : l’utilisation d’une courbe d’étalonnage reliant l’absorbance à la concentration d’une espèce colorée.</p>
 <p>Cette partie est plus optionnelle et demande déjà une bonne compréhension des éléments précédents, notamment sur la régression linéaire et l’utilisation des fonctions Python.</p>
 <div class="section" id="donnees-de-mesures">
-<h2><span class="section-number">11.1. </span>Données de mesures<a class="headerlink" href="#donnees-de-mesures" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.1. </span>Données de mesures<a class="headerlink" href="#donnees-de-mesures" title="Permalink to this headline">¶</a></h2>
 <p>Les données déjà utilisées sont disponibles en ligne. Il faudra changer le lien vers le fichier après l’avoir téléchargé</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -347,7 +359,7 @@
 </div>
 </div>
 <div class="section" id="verification-visuelle-de-la-loi-lineaire">
-<h2><span class="section-number">11.2. </span>Vérification visuelle de la loi linéaire<a class="headerlink" href="#verification-visuelle-de-la-loi-lineaire" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.2. </span>Vérification visuelle de la loi linéaire<a class="headerlink" href="#verification-visuelle-de-la-loi-lineaire" title="Permalink to this headline">¶</a></h2>
 <p>Avant de se lancer dans une régression linéaire et la simulation de Monte-Carlo, on va vérifier que le modèle affine est acceptable visuellement.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -378,7 +390,7 @@
 </div>
 </div>
 <div class="section" id="mise-en-place-de-la-simulation-de-monte-carlo">
-<h2><span class="section-number">11.3. </span>Mise en place de la simulation de Monte-Carlo<a class="headerlink" href="#mise-en-place-de-la-simulation-de-monte-carlo" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.3. </span>Mise en place de la simulation de Monte-Carlo<a class="headerlink" href="#mise-en-place-de-la-simulation-de-monte-carlo" title="Permalink to this headline">¶</a></h2>
 <p>On commence par réaliser les N échantillons simulées pour A et C. Sans plus d’information, on a choisi des distributions gaussiennes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -391,7 +403,7 @@
 </div>
 </div>
 <div class="section" id="parametres-d-ajustement">
-<h2><span class="section-number">11.4. </span>Paramètres d’ajustement<a class="headerlink" href="#parametres-d-ajustement" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.4. </span>Paramètres d’ajustement<a class="headerlink" href="#parametres-d-ajustement" title="Permalink to this headline">¶</a></h2>
 <p>On va donc réaliser N régressions linéaires et ainsi estimer la pente et l’ordonnée à l’origine avec leurs incertitudes. On obtiendra aussi un jeu simulé de N valeurs de la pente et de l’ordonnée à l’origine qui nous servirons ensuite.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -488,12 +500,12 @@ Ordonnée à l&#39;origine = 0.1119 +/- 0.0283 10^-5 mol/L
 <p>L’analyse de la droite d’ajustement est délicate car les incertitudes sont très faibles. L’analyse des écarts normalisés ne laisse par contre pas de doute, le modèle ajusté est compatible avec les résultats. One ne cherche pas vraiment une valeur particulière de la pente (même si le coefficient du bleu de patenté est tabulé). On va maintenant pouvoir utiliser cette droite d’ajustement.</p>
 </div>
 <div class="section" id="utilisation-de-la-droite-d-ajustement">
-<h2><span class="section-number">11.5. </span>Utilisation de la droite d’ajustement.<a class="headerlink" href="#utilisation-de-la-droite-d-ajustement" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">12.5. </span>Utilisation de la droite d’ajustement.<a class="headerlink" href="#utilisation-de-la-droite-d-ajustement" title="Permalink to this headline">¶</a></h2>
 <p>On se propose d’utiliser la droite d’ajustement comme courbe d’étalonnage pour déterminer une concentration à partir dela mesure d’une absorbance</p>
 <p>Si la détermination de <span class="math notranslate nohighlight">\(C\)</span> connaissant la pente et l’ordonnée à l’origine précédente ne pose pas de problème. On va voir comme utiliser les valeurs simulées précédentes pour estimer les incertitudes de mesure.</p>
 <p>On montrera aussi graphiquement ces incertitudes de mesure sur la droite d’étalonnage. Pour produire une courbe d’étalonnage <strong>avec incertitudes de mesures</strong>.</p>
 <div class="section" id="determination-la-concentration-pour-une-mesure">
-<h3><span class="section-number">11.5.1. </span>Détermination la concentration pour une mesure<a class="headerlink" href="#determination-la-concentration-pour-une-mesure" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.5.1. </span>Détermination la concentration pour une mesure<a class="headerlink" href="#determination-la-concentration-pour-une-mesure" title="Permalink to this headline">¶</a></h3>
 <p>On commence par supposer qu’on a mesuré l’abosrbance <span class="math notranslate nohighlight">\(A\)</span>. On prendra <span class="math notranslate nohighlight">\(A = 0.523\)</span> pour l’exemple. On va simuler le calcul de <span class="math notranslate nohighlight">\(C\)</span> N fois à partir des valeurs simulées de la pente et de l’ordonnées à l’origine (<span class="math notranslate nohighlight">\(C = aA + b\)</span>). Les statistiques obtenues nous permettront d’obtenir une estimation de <span class="math notranslate nohighlight">\(C\)</span> et de son incertitude.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -519,7 +531,7 @@ Concentration estimée = (0.674 +/- 0.019) 10^-5 mol/L
 </div>
 </div>
 <div class="section" id="courbe-d-etalonnage-avec-incertitude">
-<h3><span class="section-number">11.5.2. </span>Courbe d’étalonnage avec incertitude<a class="headerlink" href="#courbe-d-etalonnage-avec-incertitude" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">12.5.2. </span>Courbe d’étalonnage avec incertitude<a class="headerlink" href="#courbe-d-etalonnage-avec-incertitude" title="Permalink to this headline">¶</a></h3>
 <p>Pour représenter la courbe avec incertitude (on imagine qu’elle serait donnée ensuite à un autre expérimentateur qui n’aurait pas à faire cet étalonnage), on va représenter les <em>fuseaux</em> donnant les valeurs <span class="math notranslate nohighlight">\(C_{mes} \pm u(C)\)</span> estimé pour chaque valeur d’absorbance <strong>dans la zone d’étude</strong>.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -601,7 +613,7 @@ Concentration estimée = (0.674 +/- 0.019) 10^-5 mol/L
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="exemple.html" title="previous page"><span class="section-number">10. </span>Un exemple complet</a>
+    <a class='left-prev' id="prev-link" href="exemple.html" title="previous page"><span class="section-number">11. </span>Un exemple complet</a>
 
         </div>
         
