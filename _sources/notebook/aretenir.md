@@ -23,13 +23,13 @@ Cette partie résume les méthodes à connaître. Les explications sont données
 
 ## Distribution
 ### Distribuion uniforme
-* Loi de probabilité : $$p(x) = \frac{1}{b-a}$$
+* Loi de probabilité : $p(x) = \frac{1}{b-a}$
 * Espérance de la distribution : $\mu = \frac{a+b}{2}$
 * Ecart-type de la distribution : $\sigma = \frac{b-a}{\sqrt{12}}$
 * _PYTHON_ (bibliothèque `numpy.random`) - Vecteur de N tirages :`uniform(a, b, N)`
 
 ### Distribution gaussienne
-* Loi de probabilité : $$p(x) = \frac{1}{\sigma \sqrt{2\pi}}\exp^{- {1 \over 2} {\left(\frac{x - \mu}{\sigma}\right)}^2}$$
+* Loi de probabilité : $p(x) = \frac{1}{\sigma \sqrt{2\pi}}\exp^{- {1 \over 2} {\left(\frac{x - \mu}{\sigma}\right)}^2}$
 * Espérance de la distribution : $\mu$
 * Ecart-type de la distribution : $\sigma$
 * _PYTHON_ (bibliothèque `numpy.random`) - Vecteur de N tirages :`normal(a, b, N)`
