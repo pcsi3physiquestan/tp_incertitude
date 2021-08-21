@@ -46,7 +46,7 @@ Pour k mesures $g_k$ du mesurande $G$.
 
 $$g_{mes} = \frac{1}{N}\sum\limits_{i=0}^{k}g_k$$
 
-* Incertitude :
+* Incertitude de mesure :
 
 $$u(g) = \frac{1}{\sqrt{N}} \sigma_G = \sqrt{\frac{1}{N(N-1)} \sum\limits_{i=0}^{k}{(g_k - g_{mes})}^2}$$
 
