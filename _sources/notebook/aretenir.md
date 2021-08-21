@@ -34,6 +34,22 @@ Cette partie résume les méthodes à connaître. Les explications sont données
 * Ecart-type de la distribution : $\sigma$
 * _PYTHON_ (bibliothèque `numpy.random`) - Vecteur de N tirages :`normal(a, b, N)`
 
+## Sources d'incertitudes usuelles
+* Fluctuation de l'affichage de mesure : intervalle min-max
+* Epaisseur du repérage entre deux graduations : intervalle min-max
+* Variabilité de la mesure d'un appareil ou d'un composant : se référer aux données constructeur
+* Variabilité sur plusieurs mesures (ex: entre binômes) : Méthode de Type A
+
+## Méthode de Type A
+Pour k mesures $g_k$ du mesurande $G$.
+* Valeur mesurée : 
+
+$$g_{mes} = \frac{1}{N}\sum\limits_{i=0}^{k}g_k$$
+
+* Incertitude :
+
+$$u(g) = \frac{1}{\sqrt{N}} \sigma_G = \sqrt{\frac{1}{N(N-1)} \sum\limits_{i=0}^{k}{(g_k - g_{mes})}^2}
+
 ## Méthode de Monte-Carlo
 Pour un mesurande $Y = f(X_i)$.
 1. Pour chaque mesurande directe $X_i$
@@ -53,9 +69,9 @@ Vous devez respectez les contraintes suivantes :
 * La valeur mesure doit avoir la même précision que l'incertitude ne mesure.
 
 ### Représentation graphique
-* __Avec les incertitudes de mesure.__
+* __Pensez aux incertitudes de mesure.__
 * _PYTHON_ (bibliothèque `matplotlib.pyplot`) - Croix d'incertitude : `errorbar(x, y, xerr=ux, yerr=uy, marker='+', linestyle='', label='Légende')`
-* _PYTHON_ (bibliothèque `matplotlib.pyplot`) - Croix d'incertitude : `hist(v, bins='rice')`
+* _PYTHON_ (bibliothèque `matplotlib.pyplot`) - Histogramme de valeurs : `hist(v, bins='rice')`
 
 ## Exploitation
 ### Ecart normalisé :
@@ -72,5 +88,5 @@ __On peut utiliser l'écart normalisé sur une série de données pour vérifier
 2. Faire la régression linéaire N fois : boucle + `polyfit(x, y, 1)` (bibliothèque `numpy`)
 3. Moyenne et écart-type sur la pente et l'ordonnée à l'origine
 4. Vérification graphique de la droite modèle avec les croix d'incertitude
-5. Vérification par les carts normalisées entre le modèle et les mesures
+5. Vérification par les écarts normalisées entre le modèle et les mesures
 
