@@ -29,7 +29,7 @@ Cette partie résume les méthodes à connaître. Les explications sont données
 * _PYTHON_ (bibliothèque `numpy.random`) - Vecteur de N tirages :`uniform(a, b, N)`
 
 ### Distribution gaussienne
-* Loi de probabilité : $p(x) = \frac{1}{\sigma \sqrt{2\pi}}\exp^{- {1 \over 2} {\left(\frac{x - \mu}{\sigma}\right)}^2}$
+* Loi de probabilité : $p(x) = \frac{1}{\sigma \sqrt{2\pi}}\exp^{- \frac{1}{2} {\left(\frac{x - \mu}{\sigma}\right)}^2}$
 * Espérance de la distribution : $\mu$
 * Ecart-type de la distribution : $\sigma$
 * _PYTHON_ (bibliothèque `numpy.random`) - Vecteur de N tirages :`normal(a, b, N)`
@@ -48,7 +48,7 @@ $$g_{mes} = \frac{1}{N}\sum\limits_{i=0}^{k}g_k$$
 
 * Incertitude :
 
-$$u(g) = \frac{1}{\sqrt{N}} \sigma_G = \sqrt{\frac{1}{N(N-1)} \sum\limits_{i=0}^{k}{(g_k - g_{mes})}^2}
+$$u(g) = \frac{1}{\sqrt{N}} \sigma_G = \sqrt{\frac{1}{N(N-1)} \sum\limits_{i=0}^{k}{(g_k - g_{mes})}^2}$$
 
 ## Méthode de Monte-Carlo
 Pour un mesurande $Y = f(X_i)$.

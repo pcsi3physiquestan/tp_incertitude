@@ -119,7 +119,7 @@ plt.show()
 
 La __loi gaussienne (ou loi normale)__ suit une loi de probabilité de la forme:
 
-$$p(x) = \frac{1}{\sigma \sqrt{2\pi}}\exp^{- {1 \over 2} {\left(\frac{x - \mu}{\sigma}\right)}^2}$$
+$$p(x) = \frac{1}{\sigma \sqrt{2\pi}}\exp^{- \frac{1}{2} {\left(\frac{x - \mu}{\sigma}\right)}^2}$$
 
 * $\mu$ est l'espérance de la distribution (donc pour nous la __valeur mesurée__).
 * $\sigma$ est l'écart-type de la distribution (donc pour nous __l'incertitude-type__ associée)

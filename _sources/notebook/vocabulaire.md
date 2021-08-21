@@ -93,7 +93,7 @@ Une fois qu'on a réfléchi à ces trois points, le compte-rendu du protocole en
 > 
 > __But__ : On veut déterminer l'intensité du champ de pesanteur.
 > 
-> __Principe__ : En déterminant les positions $Z$ d'une bille en chute libre à des instants $t$, on a la relation $Z = {gt^2 \over 2}$. On pourra donc obtenir g grâce aux couples $(Z,t)$
+> __Principe__ : En déterminant les positions $Z$ d'une bille en chute libre à des instants $t$, on a la relation $Z = \frac{gt^2}{2}$. On pourra donc obtenir g grâce aux couples $(Z,t)$
 > 
 > __Mode opératoire__ : 
 > 1. On réalise le montage [ci-après](chute_libre-fig). On va lâcher la bille devant la caméra et déterminer ainsi les positions $Z$ pour plusieurs temps $t$. Une règle graduée en fond permettra de mettre l'image à l'échelle.

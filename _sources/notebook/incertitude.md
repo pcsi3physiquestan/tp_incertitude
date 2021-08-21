@@ -184,11 +184,11 @@ On suppose qu'on a réalisé $k$ mesures $\{g_i\}$ d'un mesurande $G$.
 
 __Estimation de la moyenne :__
 
-$$ G_{mes} = {1 \over k} \sum_{i=1}^{k}g_i$$
+$$ G_{mes} = \frac{1}{k} \sum_{i=1}^{k}g_i$$
 
 __Estimation de l'incertitude :__
     
-$$ u(G) = \sqrt{{1 \over k(k-1)} \sum_{i=1}^{k}(g_i - G_{mes})^2}$$
+$$ u(G) = \sqrt{\frac{1}{k(k-1)} \sum_{i=1}^{k}(g_i - G_{mes})^2}$$
 
 +++
 
