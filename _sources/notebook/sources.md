@@ -15,6 +15,7 @@ kernelspec:
 
 Dans ce notebook vous allez apprendre à faire un bilan des sources d'incertitude et à associer à chaque source une distribution statistique.
 
+(sources)=
 # Sources d'incertitudes et bilan.
 
 +++

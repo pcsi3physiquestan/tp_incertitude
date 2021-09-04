@@ -18,7 +18,7 @@ Cette partie va présenter :
 2. Les points principaux concernant la mise en place d'un protocole, d'un compte-rendu d'observation et des méthodes d'exploitation des résultats obtenus
 
 +++
-
+(vocabulaire)=
 # Vocabulaire et étapes : Généralités
 
 ## Vocabulaire
@@ -51,6 +51,7 @@ On distingue trois étapes lors d'une manipulation et du compte-rendu de celle-c
 
 +++
 
+(protocole)=
 ## Mettre en place un protocole.
 
 +++

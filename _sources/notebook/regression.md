@@ -17,6 +17,7 @@ Comme évoqué précédement, on est souvent dans la situation où l'on ne conna
 
 +++
 
+(regression)=
 # Ajustement d'un modèle affine
 
 ```{important}
