@@ -320,27 +320,42 @@
   <a class="reference internal nav-link" href="#methode-de-type-a">
    1.4. Méthode de Type A
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methode-de-monte-carlo">
+   1.5. Méthode de Monte-Carlo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rendre-compte">
+   1.6. Rendre-compte
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resultat-unique">
+     1.6.1. Résultat unique
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#representation-graphique">
-     1.4.1. Représentation graphique
+     1.6.2. Représentation graphique
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exploitation">
-   1.5. Exploitation
+   1.7. Exploitation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ecart-normalise">
-     1.5.1. Ecart normalisé :
+     1.7.1. Ecart normalisé :
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#regression-lineaire">
-     1.5.2. Régression linéaire
+     1.7.2. Régression linéaire
     </a>
    </li>
   </ul>
@@ -408,24 +423,38 @@
 <li><p>Incertitude :</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}u(g) = \frac{1}{\sqrt{N}} \sigma_G = \sqrt{\frac{1}{N(N-1)} \sum\limits_{i=0}^{k}{(g_k - g_{mes})}^2}\\## Méthode de Monte-Carlo
-Pour un mesurande $Y = f(X_i)$.
-1. Pour chaque mesurande directe $X_i$
-    1. Pour chaque source d'incertitude estimée $u_i$ : Simulation de N tirages suivant la distribution estimée (__autour de 0__).
-    2. Somme des composantes
-2. Calcul des N simulations de Y.
-3. Calcul de la moyenne (`mean(V)`) des N valeurs (__résultat de mesurage__) et de l'écart-type (`std(V, ddof=1)`) (__incertitude-type__).\\## Rendre-compte
-### Résultat unique
-\end{aligned}\end{align} \]</div>
-<p>G = (G_{mes} \pm u(G)) Unités
-$$</p>
+\[u(g) = \frac{1}{\sqrt{N}} \sigma_G = \sqrt{\frac{1}{N(N-1)} \sum\limits_{i=0}^{k}{(g_k - g_{mes})}^2}\]</div>
+</div>
+<div class="section" id="methode-de-monte-carlo">
+<h2><span class="section-number">1.5. </span>Méthode de Monte-Carlo<a class="headerlink" href="#methode-de-monte-carlo" title="Permalink to this headline">¶</a></h2>
+<p>Pour un mesurande <span class="math notranslate nohighlight">\(Y = f(X_i)\)</span>.</p>
+<ol class="simple">
+<li><p>Pour chaque mesurande directe <span class="math notranslate nohighlight">\(X_i\)</span></p>
+<ol class="simple">
+<li><p>Pour chaque source d’incertitude estimée <span class="math notranslate nohighlight">\(u_i\)</span> : Simulation de N tirages suivant la distribution estimée (<strong>autour de 0</strong>).</p></li>
+<li><p>Somme des composantes</p></li>
+</ol>
+</li>
+<li><p>Calcul des N simulations de Y.</p></li>
+<li><p>Calcul de la moyenne (<code class="docutils literal notranslate"><span class="pre">mean(V)</span></code>) des N valeurs (<strong>résultat de mesurage</strong>) et de l’écart-type (<code class="docutils literal notranslate"><span class="pre">std(V,</span> <span class="pre">ddof=1)</span></code>) (<strong>incertitude-type</strong>).</p></li>
+</ol>
+</div>
+<div class="section" id="rendre-compte">
+<h2><span class="section-number">1.6. </span>Rendre-compte<a class="headerlink" href="#rendre-compte" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="resultat-unique">
+<h3><span class="section-number">1.6.1. </span>Résultat unique<a class="headerlink" href="#resultat-unique" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[
+G = (G_{mes} \pm u(G)) Unités
+\]</div>
 <p>Vous devez respectez les contraintes suivantes :</p>
 <ul class="simple">
 <li><p>L’incertitude de mesure doit avoir 2 chiffres significatifs</p></li>
 <li><p>La valeur mesure doit avoir la même précision que l’incertitude ne mesure.</p></li>
 </ul>
+</div>
 <div class="section" id="representation-graphique">
-<h3><span class="section-number">1.4.1. </span>Représentation graphique<a class="headerlink" href="#representation-graphique" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.6.2. </span>Représentation graphique<a class="headerlink" href="#representation-graphique" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Pensez aux incertitudes de mesure.</strong></p></li>
 <li><p><em>PYTHON</em> (bibliothèque <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>) - Croix d’incertitude : <code class="docutils literal notranslate"><span class="pre">errorbar(x,</span> <span class="pre">y,</span> <span class="pre">xerr=ux,</span> <span class="pre">yerr=uy,</span> <span class="pre">marker='+',</span> <span class="pre">linestyle='',</span> <span class="pre">label='Légende')</span></code></p></li>
@@ -434,9 +463,9 @@ $$</p>
 </div>
 </div>
 <div class="section" id="exploitation">
-<h2><span class="section-number">1.5. </span>Exploitation<a class="headerlink" href="#exploitation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.7. </span>Exploitation<a class="headerlink" href="#exploitation" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="ecart-normalise">
-<h3><span class="section-number">1.5.1. </span>Ecart normalisé :<a class="headerlink" href="#ecart-normalise" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.7.1. </span>Ecart normalisé :<a class="headerlink" href="#ecart-normalise" title="Permalink to this headline">¶</a></h3>
 <div class="math notranslate nohighlight">
 \[\eta = \frac{g_{mes} - g_{att}}{\sqrt{u^2(g_{mes}) + u^2(g_{att})}}\]</div>
 <ul class="simple">
@@ -446,7 +475,7 @@ $$</p>
 <p><strong>On peut utiliser l’écart normalisé sur une série de données pour vérifier leur compatibilité entre elles.</strong></p>
 </div>
 <div class="section" id="regression-lineaire">
-<h3><span class="section-number">1.5.2. </span>Régression linéaire<a class="headerlink" href="#regression-lineaire" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.7.2. </span>Régression linéaire<a class="headerlink" href="#regression-lineaire" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Tester l’alignement visuellement.</p></li>
 <li><p>Faire la régression linéaire N fois : boucle + <code class="docutils literal notranslate"><span class="pre">polyfit(x,</span> <span class="pre">y,</span> <span class="pre">1)</span></code> (bibliothèque <code class="docutils literal notranslate"><span class="pre">numpy</span></code>)</p></li>
