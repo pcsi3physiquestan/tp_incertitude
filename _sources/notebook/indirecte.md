@@ -22,7 +22,6 @@ Pour rappel un mesurande _direct_ est obtenu par lecture sur un instrument de me
 Cette fois, on ne peut évaluer des composantes de l'incertitude d'un mesurande indirect liés au processus de lecture du résultat de mesurage, 
 puisqu'on le calcule.
 
-(indirecte)=
 # Incertitude des mesurandes indirectes.
 
 +++
