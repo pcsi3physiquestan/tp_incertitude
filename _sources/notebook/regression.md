@@ -77,7 +77,7 @@ Il existe une version "pondérée" `numpy.polyfit(x, y, deg, w=incy)` où w est 
 
 +++
 
-### Exemple d'utilisation (en ligne)
+<!-- ### Exemple d'utilisation (en ligne)
 ```{code-cell} ipython3
 :tags: [remove-cell]
 
@@ -173,7 +173,7 @@ Les données expérimentales obtenues sont données dans le tableau ci-dessous
 ```{margin}
 On a gardé la cohérence de précision entre vaeur mesurée et incertitude. On a par contre gardé plus de chiffres pour l'incertitude de manière à ce qu'il y en ait au moins 2.
 ```
-<!-- 
+
 |Echantillon|t(ms)| 	v(cm/ms) |u(v)(cm/ms)|
 |:-|:-|-:|-:|
 |0| 	100| 	-0.0052| 	0.0211|
@@ -183,7 +183,7 @@ On a gardé la cohérence de précision entre vaeur mesurée et incertitude. On 
 |4| 	300| 	0.2290 | 	0.0089|
 |5| 	350| 	0.2612 | 	0.0091|
 |6| 	400| 	0.3170 | 	0.0032|
-|7| 	450| 	0.3449 | 	0.0188| -->
+|7| 	450| 	0.3449 | 	0.0188|
 
 * __Vérification sommaire__
 On commence par [représenter les points](chute_fig1) $(t_i,v_i)$ avec leurs incertitudes de mesure. On observe une tendance des points à s'aligner. On va donc poursuivre l'étude en recherchant des paramètres d'ajustement linéaire.
@@ -228,13 +228,13 @@ On a maintenant [tracé](chute_fig3) les résidus (gauche). On remarque que les 
 :align: center
 Résidus et écarts normalisés
 ```
-````
+```` -->
 
-<!-- ## Régression linéaire et incertitude.
+## Régression linéaire et incertitude.
 
 L'estimation du champ de pesanteur précédent a peu d'utilité si on ne peut le comparer à une valeur attendue ($g = (9.81 \pm 0.10)\rm{m.s^{-2}}$). Mais pour réaliser une comparaison, il faut estimer l'incertitude sur $g_{experimental}$, donc sur la pente de la régression linéaire.
 
-Il convient d'utiliser une méthode de Monte-Carlo pour cela. Une telle méthode sera présentée plus tard. -->
+Il convient d'utiliser une méthode de Monte-Carlo pour cela. Une telle méthode sera présentée plus tard.
 
 ### Méthode de Monte-Carlo.
 Le principe est donc :
