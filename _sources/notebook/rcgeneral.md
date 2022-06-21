@@ -17,7 +17,7 @@ Nous avons déjà commencé à voir comment rendre compte d'une mesure unique av
 
 +++
 
-# Rendre compte de résultats expérimentaux
+# Rendre compte et exploiter
 
 +++
 
