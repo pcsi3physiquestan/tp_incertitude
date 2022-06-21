@@ -442,13 +442,12 @@ Y = aX + b
 </table>
 <ul class="simple">
 <li><p><strong>Vérification sommaire</strong>
-On commence par <span class="xref myst">représenter les points</span> <span class="math notranslate nohighlight">\((t_i,v_i)\)</span> avec leurs incertitudes de mesure. On observe une tendance des points à s’aligner. On va donc poursuivre l’étude en recherchant des paramètres d’ajustement linéaire.</p></li>
+On commence par <a class="reference internal" href="#chute-fig1"><span class="std std-ref">représenter les points</span></a> <span class="math notranslate nohighlight">\((t_i,v_i)\)</span> avec leurs incertitudes de mesure. On observe une tendance des points à s’aligner. On va donc poursuivre l’étude en recherchant des paramètres d’ajustement linéaire.</p></li>
 </ul>
-<!-- ```{figure} ./images/chute_grossier.png
-:name: chute_fig1
-:align: center
-Analyse brute des résultats.
-``` -->
+<div class="figure align-center" id="chute-fig1">
+<img alt="../_images/chute_grossier.png" src="../_images/chute_grossier.png" />
+<p class="caption"><span class="caption-number">Fig. 10.1 </span><span class="caption-text">Analyse brute des résultats.</span><a class="headerlink" href="#chute-fig1" title="Permalink to this image">¶</a></p>
+</div>
 <ul class="simple">
 <li><p><strong>Ajustement linéaire</strong>
 On a réalisé un ajustement linéaire. On trouve pour le modèle <span class="math notranslate nohighlight">\(V = a t + b\)</span> :</p></li>
@@ -471,16 +470,17 @@ On a réalisé un ajustement linéaire. On trouve pour le modèle <span class="m
 <p class="sidebar-title"></p>
 <p>On a fait exprès de ne pas arrondir les valeurs car on ne connait pas pour l’instant l’incertitude de mesure.</p>
 </div>
-<p>On peut tracer <a class="reference internal" href="#chute-fig2"><span class="std std-ref">la courbe modèle avec les points de mesure</span></a> et observer si toutes les croix intersectent bien la courbe modèle. Les points semblent proches mais on remarquera :</p>
+<p>On peut tracer <span class="xref myst">la courbe modèle avec les points de mesure</span> et observer si toutes les croix intersectent bien la courbe modèle. Les points semblent proches mais on remarquera :</p>
 <ul class="simple">
 <li><p>qu’il n’est pas toujours évident de vérifier s’il y a intersection ou non.</p></li>
 <li><p>que certains points semblent ne pas passer par la droite modèle.</p></li>
 </ul>
 <p>C’est pourquoi on va tracer les résidus (écart modèle-mesure) et les écarts normalisés.</p>
-<div class="figure align-center" id="chute-fig2">
-<img alt="../_images/chute_comparaison.png" src="../_images/chute_comparaison.png" />
-<p class="caption"><span class="caption-number">Fig. 10.1 </span><span class="caption-text">Comparaison au modèle</span><a class="headerlink" href="#chute-fig2" title="Permalink to this image">¶</a></p>
-</div>
+<!-- ```{figure} ./images/chute_comparaison.png
+:name: chute_fig2
+:align: center
+Comparaison au modèle
+``` -->
 <ul class="simple">
 <li><p><strong>Résidus et écarts normalisés</strong></p></li>
 </ul>
@@ -599,9 +599,9 @@ On a réalisé un ajustement linéaire. On trouve pour le modèle <span class="m
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Champ de pesanteur : g = 9.478883159630486 m/s^2
-Incertitude : u(g) =0.5317941523812774 m/s^2
-Ecart normalisé : eta = -3.0744577265721396
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Champ de pesanteur : g = 9.479821660512988 m/s^2
+Incertitude : u(g) =0.5311472799330008 m/s^2
+Ecart normalisé : eta = -0.5573880613889179
 </pre></div>
 </div>
 <img alt="../_images/regression_9_1.png" src="../_images/regression_9_1.png" />
