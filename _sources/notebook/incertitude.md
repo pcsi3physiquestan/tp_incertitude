@@ -66,15 +66,6 @@ Grâce à cette vision, on peut :
 * Utiliser les propriétés mathématiques de la variance et de l'écart-type pour calculer des incertitudes-types (puisqu'on les assimile à des écart-types).
 ````
 
-````{topic} Variabilité d'une mesure
-[Ci-dessous](rcexp_fig), on analyse les résultats du mesurage du temps caractéristique d'un circuit RC ainsi que le calcul de la valeur mesurée et de l'incertitude-type grâce à cette distribution. On a réalisé 1000 mesures grâce à un microcontroleur.
-
-```{glue:figure} rc_exp
-:name: rcexp_fig
-Répartition des mesures
-```
-La distribution des mesures a pour moyenne {glue:text}`tau:.3f` ms et pour écart-type {glue:text}`utau:.3f` ms"
-````
 ````{sidebar} Un exemple de simulation
 :class: tip
 Cette fois, on ne va pas déduire de nombreuses mesures l'écart-type et le résultat de mesurage mais on va simuler de nombreuses mesures connaissant la distribution statistique.
@@ -85,8 +76,19 @@ Observez [ci-dessous](usimul_fig) l'histogramme des valeurs obtenues. On a aussi
 
 ```{glue:figure} u_simul
 :name: usimul_fig
+:width: 50%
 Simulation de valeurs de U
 ```
+````
+````{topic} Variabilité d'une mesure
+[Ci-dessous](rcexp_fig), on analyse les résultats du mesurage du temps caractéristique d'un circuit RC ainsi que le calcul de la valeur mesurée et de l'incertitude-type grâce à cette distribution. On a réalisé 1000 mesures grâce à un microcontroleur.
+
+```{glue:figure} rc_exp
+:name: rcexp_fig
+:width: 40%
+Répartition des mesures
+```
+La distribution des mesures a pour moyenne {glue:text}`tau:.3f` ms et pour écart-type {glue:text}`utau:.3f` ms"
 ````
 
 ## Incertitude : pourquoi faire ?

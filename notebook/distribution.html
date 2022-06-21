@@ -96,14 +96,9 @@
    Points à retenir
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="vocabulaire.html">
-   Vocabulaire et étapes : Généralités
-  </a>
- </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="incertitude.html">
-   Les incertitudes de mesure
+  <a class="reference internal" href="explication.html">
+   Comprendre le contexte
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -111,47 +106,64 @@
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Distributions statistiques usuelles.
+   <li class="toctree-l2">
+    <a class="reference internal" href="vocabulaire.html">
+     Vocabulaire et étapes : Généralités
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sources.html">
-     Sources d’incertitudes et bilan.
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="incertitude.html">
+     Les incertitudes de mesure
     </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Distributions statistiques usuelles.
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="sources.html">
+       Sources d’incertitudes et bilan.
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="indirecte.html">
+       Incertitude des mesurandes indirectes.
+      </a>
+     </li>
+    </ul>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="indirecte.html">
-     Incertitude des mesurandes indirectes.
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="rcgeneral.html">
+     Rendre compte et exploiter
     </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="rcgeneral.html">
-   Rendre compte et exploiter
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="comparaison.html">
-     Comparer un résultat expérimental avec un résultat théorique.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="verifier_loi.html">
-     Vérifier une loi physique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression.html">
-     Ajustement d’un modèle affine
-    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="comparaison.html">
+       Comparer un résultat expérimental avec un résultat théorique.
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="verifier_loi.html">
+       Vérifier une loi physique
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="regression.html">
+       Ajustement d’un modèle affine
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -335,12 +347,69 @@ la même probabilité.</p>
 <div class="section" id="simulation-en-ligne">
 <h3>Simulation (en ligne)<a class="headerlink" href="#simulation-en-ligne" title="Permalink to this headline">¶</a></h3>
 <p>Nous aurons régulièrement besoin de simuler des lois statistiques avec Python et notamment la loi uniforme. Nous allons voir comment le faire dans la cellule suivante. Lisez le code et chercher à le comprendre pour pouvoir l’utiliser ensuite.</p>
-<div class="cell tag_remove-input docutils container">
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># La simulation nécessite la bibliothèque numpy.random que nous importons</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+
+<span class="c1"># On importe aussi numpy pour manipuler des vecteurs numpy</span>
+<span class="c1"># et matplotlib.pyplot pour des tracés graphiques</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">La fonction uniform(a, b, N) (bibliothèque numpy.random) va créer un vecteur</span>
+<span class="sd">de taille N simulant N tirages aléatoires suivant une distribution</span>
+<span class="sd">uniforme entre a et b</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100000</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">datsim</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Pour vérifier qu&#39;on retombe bien sur les grandeurs, on va estimer</span>
+<span class="sd">la moyenne et l&#39;écart-type de l&#39;échantillon créé précédemment.</span>
+<span class="sd">Retenez ces fonctions qui sont très utiles. Elles appartiennent à</span>
+<span class="sd">la bibliothèque numpy</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">mech</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">datsim</span><span class="p">)</span>
+<span class="n">sech</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">datsim</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># L&#39;option ddof permet de diviser par N-1 et non par N</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Estimation&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moyenne = &quot;</span><span class="p">,</span> <span class="n">mech</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ecart-type = &quot;</span><span class="p">,</span> <span class="n">sech</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valeur théorique d&#39;une distribution uniforme&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moyenne : &quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ecart-type : &quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------&quot;</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On va maintenant tracer l&#39;histogramme de l&#39;échantillons</span>
+<span class="sd">La fonction subplots créer une fenêtre graphique f avec des axes ax (ici un seul). </span>
+<span class="sd">Les options figsize et dpi ne sont pas à connaître.</span>
+<span class="sd">Elles servent juste à avoir une figure plus grande pour le cours.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Simulation de tirages uniformes&quot;</span><span class="p">)</span>  <span class="c1"># Titre du graphique</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Valeurs possibles&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Fréquences&quot;</span><span class="p">)</span>
+
+<span class="c1"># On utilise hist(valeurs, bins) (bibliothèque matplotlib.pyplot)</span>
+<span class="c1"># pour tracer l&#39;histogramme.</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">datsim</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="s1">&#39;rice&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Echantillons uniformes&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>  <span class="c1"># On ajoute la légende (le label)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---------------
 Estimation
-Moyenne =  4.498909402067946
-Ecart-type =  0.8674918654203992
+Moyenne =  4.499651015074793
+Ecart-type =  0.86720185599499
 ---------------
 Valeur théorique d&#39;une distribution uniforme
 Moyenne :  4.5
@@ -390,8 +459,8 @@ les résultats de mesurage possibles pour un mesurande : <span class="math notra
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---------------
 Estimation
-Moyenne =  0.31460951372658164
-Ecart-type =  2.0036225067208235
+Moyenne =  0.3041437164035315
+Ecart-type =  2.0011245152527457
 ---------------
 Valeur théorique d&#39;une distribution uniforme
 Moyenne :  0.3

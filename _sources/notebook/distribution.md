@@ -54,7 +54,7 @@ Nous aurons régulièrement besoin de simuler des lois statistiques avec Python 
 
 
 ```{code-cell}
-:tags: [remove-input]
+:tags: [hide-input]
 # La simulation nécessite la bibliothèque numpy.random que nous importons
 import numpy.random as rd
 
@@ -97,7 +97,7 @@ La fonction subplots créer une fenêtre graphique f avec des axes ax (ici un se
 Les options figsize et dpi ne sont pas à connaître.
 Elles servent juste à avoir une figure plus grande pour le cours.
 """
-f, ax = plt.subplots(1, 1, figsize=(9, 6), dpi=100)
+f, ax = plt.subplots(1, 1, figsize=(8, 6), dpi=100)
 f.suptitle("Simulation de tirages uniformes")  # Titre du graphique
 ax.set_xlabel("Valeurs possibles")
 ax.set_ylabel("Fréquences")

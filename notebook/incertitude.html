@@ -334,28 +334,16 @@ Le processus de mesurage présente donc <strong>une dispersion</strong> des vale
 <li><p>Utiliser les propriétés mathématiques de la variance et de l’écart-type pour calculer des incertitudes-types (puisqu’on les assimile à des écart-types).</p></li>
 </ul>
 </div>
-<div class="topic">
-<p class="topic-title">Variabilité d’une mesure</p>
-<p><a class="reference internal" href="#rcexp-fig"><span class="std std-ref">Ci-dessous</span></a>, on analyse les résultats du mesurage du temps caractéristique d’un circuit RC ainsi que le calcul de la valeur mesurée et de l’incertitude-type grâce à cette distribution. On a réalisé 1000 mesures grâce à un microcontroleur.</p>
-<div class="figure align-default" id="rcexp-fig">
-<div class="cell_output docutils container">
-<img alt="../_images/incertitude_1_0.png" src="../_images/incertitude_1_0.png" />
-</div>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Répartition des mesures</span><a class="headerlink" href="#rcexp-fig" title="Permalink to this image">¶</a></p>
-</div>
-<p>La distribution des mesures a pour moyenne <span class="pasted-text">2.286</span> ms et pour écart-type <span class="pasted-text">0.010</span> ms”</p>
-</div>
 <div class="tip sidebar">
 <p class="sidebar-title">Un exemple de simulation</p>
 <p>Cette fois, on ne va pas déduire de nombreuses mesures l’écart-type et le résultat de mesurage mais on va simuler de nombreuses mesures connaissant la distribution statistique.</p>
 <p>On suppose qu’on a réalisé la mesure d’une tension <span class="math notranslate nohighlight">\(U\)</span> et qu’on a obtenu un résultat de mesurage <span class="math notranslate nohighlight">\(U_{mes} = 3.4 V\)</span> avec une incertitude <span class="math notranslate nohighlight">\(u(U) = 0.2 V\)</span> (on verra plus tard des méthodes d’estimation de <span class="math notranslate nohighlight">\(u(U)\)</span>). On a estimé que la distribution statistique associée à cette mesure est une distribution gaussienne (ou normale). On va simuler <span class="math notranslate nohighlight">\(N = 1000000\)</span> tirages de <span class="math notranslate nohighlight">\(U\)</span> (comme si on réalisait <em>par la pensée</em> N fois l’expérience) en associant à U une distribution gaussienne d’espérance 3.4 et d’écart-type 0.2.</p>
-<p>Observez <a class="reference internal" href="#usimul-fig"><span class="std std-ref">ci-dessous</span></a> l’histogramme des valeurs obtenues. On a aussi représenté la courbe de la distribution gaussienne théorique associée.</p>
-<div class="figure align-default" id="usimul-fig">
-<div class="cell_output docutils container">
-<img alt="../_images/incertitude_2_0.png" src="../_images/incertitude_2_0.png" />
+<p>Observez <span class="xref myst">ci-dessous</span> l’histogramme des valeurs obtenues. On a aussi représenté la courbe de la distribution gaussienne théorique associée.</p>
 </div>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Simulation de valeurs de U</span><a class="headerlink" href="#usimul-fig" title="Permalink to this image">¶</a></p>
-</div>
+<div class="topic">
+<p class="topic-title">Variabilité d’une mesure</p>
+<p><span class="xref myst">Ci-dessous</span>, on analyse les résultats du mesurage du temps caractéristique d’un circuit RC ainsi que le calcul de la valeur mesurée et de l’incertitude-type grâce à cette distribution. On a réalisé 1000 mesures grâce à un microcontroleur.</p>
+<p>La distribution des mesures a pour moyenne <span class="pasted-text">2.286</span> ms et pour écart-type <span class="pasted-text">0.010</span> ms”</p>
 </div>
 </div>
 <div class="section" id="incertitude-pourquoi-faire">
