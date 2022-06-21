@@ -44,11 +44,11 @@ Cette partie résume les méthodes à connaître. Les explications sont données
 Pour k mesures $g_k$ du mesurande $G$.
 * Valeur mesurée : 
 
-$$g_{mes} = \frac{1}{N}\sum\limits_{i=0}^{k}g_k$$
+$$g_{mes} = \frac{1}{N}\sum\limits_{i=1}^{k}g_i$$
 
 * Incertitude :
 
-$$u(g) = \frac{1}{\sqrt{N}} \sigma_G = \sqrt{\frac{1}{N(N-1)} \sum\limits_{i=0}^{k}{(g_k - g_{mes})}^2}$$
+$$u(g) = \frac{1}{\sqrt{N}} \sigma_G = \sqrt{\frac{1}{N(N-1)} \sum\limits_{i=1}^{k}{(g_i - g_{mes})}^2}$$
 
 ## Méthode de Monte-Carlo
 

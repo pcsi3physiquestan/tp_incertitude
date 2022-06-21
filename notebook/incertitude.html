@@ -187,18 +187,6 @@
   </a>
  </li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  Pour aller plus loin
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="comp_reglin.html">
-   12. Construire une droite d’étalonnage
-  </a>
- </li>
-</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -293,78 +281,25 @@
   <a class="reference internal nav-link" href="#qu-est-ce-qu-une-incertitude">
    3.1. Qu’est-ce qu’une incertitude ?
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rappels">
-     3.1.1. Rappels
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#caractere-statistique">
-     3.1.2. Caractère statistique
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exemple-dispersion-de-resultat-experimentaux">
-       3.1.2.1. Exemple : dispersion de résultat expérimentaux.
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exemple-simulation-de-mesures">
-       3.1.2.2. Exemple : Simulation de mesures
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#incertitude-pourquoi-faire">
-     3.1.3. Incertitude : pourquoi faire ?
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#estimer-la-dispersion-de-la-valeur-d-un-composant">
-       3.1.3.1. Estimer la dispersion de la valeur d’un composant
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#controler-la-valeur-d-une-grandeur-connue-ou-une-loi-physique">
-       3.1.3.2. Controler la valeur d’une grandeur connue ou une loi physique
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#quand-estimer-une-incertitude">
-       3.1.3.3. Quand estimer une incertitude ?
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#incertitude-pourquoi-faire">
+   3.2. Incertitude : pourquoi faire ?
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#estimer-une-incertitude-de-mesure-type-a-et-b">
-   3.2. Estimer une incertitude de mesure : Type A et B
+   3.3. Estimer une incertitude de mesure : Type A et B
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#evaluation-de-type-a">
-     3.2.1. Evaluation de type A
+     3.3.1. Evaluation de type A
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#controle-des-mesures">
-       3.2.1.1. Contrôle des mesures
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#estimation-d-un-resultat-de-mesure-et-de-son-incertitude">
-       3.2.1.2. Estimation d’un résultat de mesure et de son incertitude
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#evalution-de-type-b">
-     3.2.2. Evalution de type B
+     3.3.2. Evalution de type B
     </a>
    </li>
   </ul>
@@ -384,13 +319,25 @@
 <h1><span class="section-number">3. </span>Les incertitudes de mesure<a class="headerlink" href="#les-incertitudes-de-mesure" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="qu-est-ce-qu-une-incertitude">
 <h2><span class="section-number">3.1. </span>Qu’est-ce qu’une incertitude ?<a class="headerlink" href="#qu-est-ce-qu-une-incertitude" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="rappels">
-<h3><span class="section-number">3.1.1. </span>Rappels<a class="headerlink" href="#rappels" title="Permalink to this headline">¶</a></h3>
-<p>L’<strong>incertitude</strong> du résultat d’un mesurage est un paramètre positif qui caractérise la dispersion des valeurs attribuées à un mesurande, à partir des informations utilisées.</p>
-<p>L’<strong>incertitude-type</strong> est une incertitude de mesure exprimée sous la <em>forme</em> d’un écart-type.</p>
+<p>Un processus de mesurage n’est jamais <em>stable</em> et <em>unique</em> :</p>
+<blockquote>
+<div><p>Le résultat de mesurage ne sera pas tout à fait le même si l’on refait plusieurs fois la mesure ou la méthode de mesurage ne nous permettra que <strong>d’encadrer</strong> le résultat entre deux valeurs.
+Le processus de mesurage présente donc <strong>une dispersion</strong> des valeurs possibles pour le résultat de mesurage.</p>
+</div></blockquote>
+<div class="figure align-center" id="dispersion">
+<img alt="../_images/dispersion_inc.png" src="../_images/dispersion_inc.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Dispersion des résultats de mesure</span><a class="headerlink" href="#dispersion" title="Permalink to this image">¶</a></p>
 </div>
-<div class="section" id="caractere-statistique">
-<h3><span class="section-number">3.1.2. </span>Caractère statistique<a class="headerlink" href="#caractere-statistique" title="Permalink to this headline">¶</a></h3>
+<p>La fidélité d’un résultat de mesure est caractérisé par la dispersion des résultats de mesure qu’on obtiendrait en répéter l’expérience. On va quantifier cette dispersion par une grandeur qu’on appelle <strong>incertitude</strong>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<ul class="simple">
+<li><p>L’<strong>incertitude</strong> du résultat d’un mesurage est un paramètre positif qui caractérise la dispersion des valeurs attribuées à un mesurande, à partir des informations utilisées.</p></li>
+<li><p>L’<strong>incertitude-type</strong> est une incertitude de mesure exprimée sous la <em>forme</em> d’un écart-type. On la notera <span class="math notranslate nohighlight">\(u(G)\)</span> pour un mesurande <span class="math notranslate nohighlight">\(G\)</span> dans la valeur mesurée sera <span class="math notranslate nohighlight">\(G_{mes}\)</span>.</p></li>
+</ul>
+</div>
+<div class="topic">
+<p class="topic-title">Caractère statistique</p>
 <p>L’incertitude-type permet d’attribuer une vision statistique à la notion de dispersion. L’idée est la suivante :</p>
 <blockquote>
 <div><p><strong>si l’on repète <span class="math notranslate nohighlight">\(N\)</span> fois la même expérience dans les mêmes conditions, on va pouvoir mesurer <span class="math notranslate nohighlight">\(N\)</span> résultats de mesurages différents d’une grandeur <span class="math notranslate nohighlight">\(X\)</span> (notés <span class="math notranslate nohighlight">\(x_i\)</span> avec <span class="math notranslate nohighlight">\(i\)</span> allant de 1 à <span class="math notranslate nohighlight">\(N\)</span>). On obtient ainsi une statistique des valeurs mesurées dont on peut associer la moyenne au</strong> résultat de mesurage et <strong>l’écart-type</strong> à l’incertitude-type.</p>
@@ -400,123 +347,114 @@
 <li><p>Visualiser (histogramme) la dispersion des mesures à partir de <em>mesures réelles</em> ou par des <em>simulations de tirages aléatoires</em> (on “simule” N expériences) et en tirer des informations.</p></li>
 <li><p>Utiliser les propriétés mathématiques de la variance et de l’écart-type pour calculer des incertitudes-types (puisqu’on les assimile à des écart-types).</p></li>
 </ul>
-<div class="section" id="exemple-dispersion-de-resultat-experimentaux">
-<h4><span class="section-number">3.1.2.1. </span>Exemple : dispersion de résultat expérimentaux.<a class="headerlink" href="#exemple-dispersion-de-resultat-experimentaux" title="Permalink to this headline">¶</a></h4>
-<div class="tip admonition">
-<p class="admonition-title">Un exemple de dispersion</p>
+</div>
+<div class="topic">
+<p class="topic-title">Variabilité d’une mesure</p>
 <p><a class="reference internal" href="#rcexp-fig"><span class="std std-ref">Ci-dessous</span></a>, on analyse les résultats du mesurage du temps caractéristique d’un circuit RC ainsi que le calcul de la valeur mesurée et de l’incertitude-type grâce à cette distribution. On a réalisé 1000 mesures grâce à un microcontroleur.</p>
 <div class="figure align-default" id="rcexp-fig">
 <div class="cell_output docutils container">
-<img alt="../_images/incertitude_4_0.png" src="../_images/incertitude_4_0.png" />
+<img alt="../_images/incertitude_1_0.png" src="../_images/incertitude_1_0.png" />
 </div>
-<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Répartition des mesures</span><a class="headerlink" href="#rcexp-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Répartition des mesures</span><a class="headerlink" href="#rcexp-fig" title="Permalink to this image">¶</a></p>
 </div>
 <p>La distribution des mesures a pour moyenne <span class="pasted-text">2.286</span> ms et pour écart-type <span class="pasted-text">0.010</span> ms”</p>
 </div>
-</div>
-<div class="section" id="exemple-simulation-de-mesures">
-<h4><span class="section-number">3.1.2.2. </span>Exemple : Simulation de mesures<a class="headerlink" href="#exemple-simulation-de-mesures" title="Permalink to this headline">¶</a></h4>
-<div class="tip admonition">
-<p class="admonition-title">Un exemple de simulation</p>
+<div class="tip sidebar">
+<p class="sidebar-title">Un exemple de simulation</p>
 <p>Cette fois, on ne va pas déduire de nombreuses mesures l’écart-type et le résultat de mesurage mais on va simuler de nombreuses mesures connaissant la distribution statistique.</p>
 <p>On suppose qu’on a réalisé la mesure d’une tension <span class="math notranslate nohighlight">\(U\)</span> et qu’on a obtenu un résultat de mesurage <span class="math notranslate nohighlight">\(U_{mes} = 3.4 V\)</span> avec une incertitude <span class="math notranslate nohighlight">\(u(U) = 0.2 V\)</span> (on verra plus tard des méthodes d’estimation de <span class="math notranslate nohighlight">\(u(U)\)</span>). On a estimé que la distribution statistique associée à cette mesure est une distribution gaussienne (ou normale). On va simuler <span class="math notranslate nohighlight">\(N = 1000000\)</span> tirages de <span class="math notranslate nohighlight">\(U\)</span> (comme si on réalisait <em>par la pensée</em> N fois l’expérience) en associant à U une distribution gaussienne d’espérance 3.4 et d’écart-type 0.2.</p>
 <p>Observez <a class="reference internal" href="#usimul-fig"><span class="std std-ref">ci-dessous</span></a> l’histogramme des valeurs obtenues. On a aussi représenté la courbe de la distribution gaussienne théorique associée.</p>
 <div class="figure align-default" id="usimul-fig">
 <div class="cell_output docutils container">
-<img alt="../_images/incertitude_6_0.png" src="../_images/incertitude_6_0.png" />
+<img alt="../_images/incertitude_2_0.png" src="../_images/incertitude_2_0.png" />
 </div>
-<p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Simulation de valeurs de U</span><a class="headerlink" href="#usimul-fig" title="Permalink to this image">¶</a></p>
-</div>
+<p class="caption"><span class="caption-number">Fig. 3.3 </span><span class="caption-text">Simulation de valeurs de U</span><a class="headerlink" href="#usimul-fig" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
 <div class="section" id="incertitude-pourquoi-faire">
-<h3><span class="section-number">3.1.3. </span>Incertitude : pourquoi faire ?<a class="headerlink" href="#incertitude-pourquoi-faire" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">3.2. </span>Incertitude : pourquoi faire ?<a class="headerlink" href="#incertitude-pourquoi-faire" title="Permalink to this headline">¶</a></h2>
 <p>Quantifier la dispersion des résultats de mesure peut avoir plusieurs intérêts. Citons-en deux:</p>
-<div class="section" id="estimer-la-dispersion-de-la-valeur-d-un-composant">
-<h4><span class="section-number">3.1.3.1. </span>Estimer la dispersion de la valeur d’un composant<a class="headerlink" href="#estimer-la-dispersion-de-la-valeur-d-un-composant" title="Permalink to this headline">¶</a></h4>
-<p>On veut produire des composants possédant une valeur particulière.</p>
 <blockquote>
-<div><p>Quantifier la dispersion des mesures sur un échantillon permet de <strong>prévoir dans quelle gamme de valeur seront les composants fabriquées ensuite</strong>.</p>
+<div><ul class="simple">
+<li><p>Quantifier la dispersion des mesures sur un échantillon permet de <strong>prévoir dans quelle gamme de valeur seront les composants fabriquées ensuite</strong>.</p></li>
+</ul>
 </div></blockquote>
-<div class="tip admonition">
-<p class="admonition-title">Exemple</p>
-<p>Un fabriquant d’électronique produit des résistances dont la valeur doit être <span class="math notranslate nohighlight">\(R\)</span></p>
-<p>La mesure des résistances d’échantillons-test donnent la dispersion des valeurs sous forme d’une incertitude <span class="math notranslate nohighlight">\(u(R)\)</span>. Il la fournit à ses clients qui pourront alors considérer que les résistances fabriquées par la suite (du moins 95 ou 99 %)  auront une valeur de résistance <span class="math notranslate nohighlight">\(R_f\)</span> comprise entre <span class="math notranslate nohighlight">\(R - k \times u(R)\)</span> et <span class="math notranslate nohighlight">\(R + k \times u(R)\)</span> (k étant connu).</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><em>Dans le cadre des TPs, on pourra aussi chercher à mesurer <strong>la valeur d’un composant qu’on compte utiliser ensuite dans un montage</strong>. L’estimation de l’incertitude sur la valeur mesurée nous donnera l’intervalle dans laquelle on peut considérer que la valeur du composant se situe durant l’expérience.</em></p>
-</div>
-</div>
-<div class="section" id="controler-la-valeur-d-une-grandeur-connue-ou-une-loi-physique">
-<h4><span class="section-number">3.1.3.2. </span>Controler la valeur d’une grandeur connue ou une loi physique<a class="headerlink" href="#controler-la-valeur-d-une-grandeur-connue-ou-une-loi-physique" title="Permalink to this headline">¶</a></h4>
-<p>On désire étudier un phénomène physique reliant certaines grandeurs ou faisant intervenir une grandeur dont on connaît théoriquement (ou par des expériences réalisées en laboratoire) une valeur relativement précise.</p>
+<div class="topic">
+<p class="topic-title">Exemple</p>
+<ul class="simple">
+<li><p>Un fabriquant d’électronique produit des résistances dont la valeur doit être <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+</ul>
 <blockquote>
-<div><p>Quantifier la dispersion des mesures qu’on obtient en répétant la manipulation (ou qu’on aurait obtenu en répétant la manipulation) permet d’<strong>avoir un intervalle de valeurs acceptables qu’on va comparer avec la valeur (ou un intervale de valeurs) théorique/précise attendue ou avec la relation théorique prévue</strong>. On peut ainsi vérifier la cohérence entre la théorie ou la valeur d’une grandeur théorique et l’expérience réalisée.</p>
+<div><p>La mesure des résistances d’échantillons-test donnent la dispersion des valeurs sous forme d’une incertitude <span class="math notranslate nohighlight">\(u(R)\)</span>. Il la fournit à ses clients qui pourront alors considérer que les résistances fabriquées par la suite (du moins 95 ou 99 %)  auront une valeur de résistance <span class="math notranslate nohighlight">\(R_f\)</span> comprise entre <span class="math notranslate nohighlight">\(R - k \times u(R)\)</span> et <span class="math notranslate nohighlight">\(R + k \times u(R)\)</span> (k étant connu).</p>
 </div></blockquote>
-<div class="tip admonition">
-<p class="admonition-title">Exemple</p>
-<p>On veut mesurer la constante des gaz parfaits.</p>
-<p>On va trouver une gamme de valeurs dans laquelle on peut considérer que les résultats de mesure se trouveraient si on réalisait un grand nombre d’expérience par la même méthode. On pourra comparer ces résultats à la valeur attendue (incertaine mais souvent connue avec moins de variabilité que par notre expérience).</p>
+<ul class="simple">
+<li><p><em>Dans le cadre des TPs, on pourra aussi chercher à mesurer <strong>la valeur d’un composant qu’on compte utiliser ensuite dans un montage</strong>. L’estimation de l’incertitude sur la valeur mesurée nous donnera l’intervalle dans laquelle on peut considérer que la valeur du composant se situe durant l’expérience.</em></p></li>
+</ul>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><em>Dans le cas des TPs, les relations théoriques et les valeurs théoriques prévues sont toujours valables. Un désaccord signifie un problème au niveau de la manipulation(!) ou du choix du modèle, pas de la théorie !</em></p>
-</div>
-</div>
-<div class="section" id="quand-estimer-une-incertitude">
-<h4><span class="section-number">3.1.3.3. </span>Quand estimer une incertitude ?<a class="headerlink" href="#quand-estimer-une-incertitude" title="Permalink to this headline">¶</a></h4>
 <blockquote>
-<div><p>On remarquera qu’évaluer une incertitude répond à un but. Il n’est donc pas nécessaire de chercher systématiquement à l’estimer : il faut se demander si c’est nécessaire.</p>
+<div><ul class="simple">
+<li><p>Quantifier la dispersion des mesures qu’on obtient en répétant la manipulation (ou qu’on aurait obtenu en répétant la manipulation) permet d’<strong>avoir un intervalle de valeurs acceptables qu’on va comparer avec une valeur (ou un intervale de valeurs) théorique/précise attendue ou avec la relation théorique prévue</strong>. On peut ainsi vérifier la cohérence entre la théorie ou la valeur d’une grandeur théorique et l’expérience réalisée.</p></li>
+</ul>
 </div></blockquote>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p><em>Cela étant dit, on pourra l’estimer plus souvent que nécessaire à titre d’entraînement.</em></p>
+<p>On remarquera qu’évaluer une incertitude répond à un but. Il n’est donc pas nécessaire de chercher systématiquement à l’estimer : il faut se demander si c’est nécessaire.</p>
 </div>
-</div>
+<div class="topic">
+<p class="topic-title">Exemple</p>
+<ul class="simple">
+<li><p>On veut mesurer la constante des gaz parfaits.</p></li>
+</ul>
+<blockquote>
+<div><p>On va trouver une gamme de valeurs dans laquelle on peut considérer que les résultats de mesure se trouveraient si on réalisait un grand nombre d’expérience par la même méthode. On pourra comparer ces résultats à la valeur attendue (incertaine mais souvent connue avec moins de variabilité que par notre expérience).</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><em>Dans le cas des TPs, les relations théoriques et les valeurs théoriques prévues sont toujours valables. Un désaccord signifie un problème au niveau de la manipulation(!) ou du choix du modèle, pas de la théorie !</em></p></li>
+</ul>
 </div>
 </div>
 <div class="section" id="estimer-une-incertitude-de-mesure-type-a-et-b">
-<h2><span class="section-number">3.2. </span>Estimer une incertitude de mesure : Type A et B<a class="headerlink" href="#estimer-une-incertitude-de-mesure-type-a-et-b" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3. </span>Estimer une incertitude de mesure : Type A et B<a class="headerlink" href="#estimer-une-incertitude-de-mesure-type-a-et-b" title="Permalink to this headline">¶</a></h2>
 <p>Il existe deux méthodes pour estimer une incertitude de mesure :</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <ul class="simple">
-<li><p><strong>Evaluation de Type A</strong> : évaluation d’une composante de l’incertitude par une analyse statistique des valeurs mesurées. On réalise plusieurs mesures dans les mêmes conditions expérimentales.</p></li>
-<li><p><strong>Evaluation de Type B</strong> : évaluation d’une composante de l’incertitude par d’autres moyens qu’une évaluation de type A. Pour nous, il s’agit d’estimer une incertitude alors qu’on a réalisé qu’une seule mesure.</p></li>
+<li><p><strong>Evaluation de Type A</strong> : évaluation d’une composante de l’incertitude par une analyse statistique des valeurs mesurées. On réalise <strong>plusieurs mesures</strong> dans les mêmes conditions expérimentales.</p></li>
+<li><p><strong>Evaluation de Type B</strong> : évaluation d’une composante de l’incertitude par d’autres moyens qu’une évaluation de type A. Pour nous, il s’agit d’estimer une incertitude alors qu’on a réalisé qu’<strong>une seule mesure</strong>.</p></li>
 </ul>
 </div>
 <div class="section" id="evaluation-de-type-a">
-<h3><span class="section-number">3.2.1. </span>Evaluation de type A<a class="headerlink" href="#evaluation-de-type-a" title="Permalink to this headline">¶</a></h3>
-<p>Une évaluation de type A peut-être réalisée en répétant <span class="math notranslate nohighlight">\(N\)</span> fois la même expérience soit manuellement, soit de manière automatique (un micro-controlleur comme Arduino est alors très pratique), soit en regroupant les mesures de plusieurs groupes de TPs.</p>
-<p>On considère alors que le résultat de mesurage sera la <strong>moyenne des valeurs mesurées uniques</strong> et que l’incertitude sera l’écart-type sur l’<strong>estimation de cette moyenne</strong> (cf. suite).</p>
-<div class="section" id="controle-des-mesures">
-<h4><span class="section-number">3.2.1.1. </span>Contrôle des mesures<a class="headerlink" href="#controle-des-mesures" title="Permalink to this headline">¶</a></h4>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
+<h3><span class="section-number">3.3.1. </span>Evaluation de type A<a class="headerlink" href="#evaluation-de-type-a" title="Permalink to this headline">¶</a></h3>
+<p>Une évaluation de type A peut-être réalisée en répétant <span class="math notranslate nohighlight">\(N\)</span> fois la même expérience (manuellement ou automatiquement), soit en regroupant les mesures de plusieurs groupes de TPs.</p>
+<div class="topic">
+<p class="topic-title">Contrôle des mesures</p>
 <p>Avant de se lancer dans une exploitation des données, il est important de vérifier qu’il n’y a pas de mesures aberrantes dans les échantillons. C’est notamment important lorsque les mesures sont automatiques ou qu’elles viennent d’autres groupes.</p>
 <p>En général, la première analyse est <strong>graphique</strong>. On peut:</p>
 <ul class="simple">
 <li><p>tracer un histogramme des mesures (utile quand il y a beaucoup de mesures).</p></li>
 <li><p>tracer une carte de controle des mesures (résultat de mesurage avec incertitude en fonction du numéro de l’échantillon).</p></li>
+<li><p>utiliser l’écart normalisé (cf. suite)</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="estimation-d-un-resultat-de-mesure-et-de-son-incertitude">
-<h4><span class="section-number">3.2.1.2. </span>Estimation d’un résultat de mesure et de son incertitude<a class="headerlink" href="#estimation-d-un-resultat-de-mesure-et-de-son-incertitude" title="Permalink to this headline">¶</a></h4>
-<p>Il n’est pas nécessaire de connaître ces formules mais voici les méthodes de calculs du résultat de mesure et de l’incertitude que nous utiliserions :</p>
-<p>On suppose qu’on a réalisé <span class="math notranslate nohighlight">\(k\)</span> mesures <span class="math notranslate nohighlight">\(\{g_i\}\)</span> d’un mesurande <span class="math notranslate nohighlight">\(G\)</span>.</p>
-<p><strong>Estimation de la moyenne :</strong></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Estimations
+Il n’est pas nécessaire de connaître ces formules mais voici les méthodes de calculs du résultat de mesure et de l’incertitude que nous utiliserions (on suppose qu’on a réalisé <span class="math notranslate nohighlight">\(k\)</span> mesures <span class="math notranslate nohighlight">\(\{g_i\}\)</span> d’un mesurande <span class="math notranslate nohighlight">\(G\)</span>) :</p>
+<ul class="simple">
+<li><p><strong>Estimation de la moyenne :</strong></p></li>
+</ul>
 <div class="math notranslate nohighlight">
 \[ G_{mes} = \frac{1}{k} \sum_{i=1}^{k}g_i\]</div>
-<p><strong>Estimation de l’incertitude :</strong></p>
+<ul class="simple">
+<li><p><strong>Estimation de l’incertitude :</strong></p></li>
+</ul>
 <div class="math notranslate nohighlight">
 \[ u(G) = \sqrt{\frac{1}{k(k-1)} \sum_{i=1}^{k}(g_i - G_{mes})^2}\]</div>
 </div>
 </div>
 <div class="section" id="evalution-de-type-b">
-<h3><span class="section-number">3.2.2. </span>Evalution de type B<a class="headerlink" href="#evalution-de-type-b" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.3.2. </span>Evalution de type B<a class="headerlink" href="#evalution-de-type-b" title="Permalink to this headline">¶</a></h3>
 <p>L’évaluation de type A prend beaucoup de temps et nous devrons plus souvent évaluer une incertitude à partir d’une mesure unique. La méthode consiste alors à :</p>
 <ol class="simple">
 <li><p>faire un bilan des <strong>sources d’incertitudes</strong> qui provoquent la variabilité de la mesure.</p></li>

@@ -106,10 +106,12 @@ Puisqu'on doit estimer les incertitudes de mesures sur $V$ et $P$ pour les trac�
 * Si la loi de Mariotte est vérifiée, réaliser N ajustements affines à partir des valeurs simulées de $V$ et $P$ pour obtenir une estimation de la pente $nRT$ ainsi que son incertitude. On estimera aussi l'ordonnée à l'origine et son incertitude pour vérifier la validité d'un modèle linéaire et non affine.
 * On déduira $n$ de l'estimation de la pente (on prolonge la simulation de Monte-Carlo pour composer l'incertitude sur la pente avec celle sur $T$).
 
-#### Estimation des volumes et pression.
+#### Estimation des volumes et pression. 
+_Le code est en ligne._
 Si vous ne comprendez pas le principe de cette partie, reprendre la [propagation des incertitudes](indirecte).
 
 ```{code-cell}
+:tags: [hide-input]
 """
 Comme d'habitude, on commence par importer les bibliothèques scientifiques
 """
@@ -226,6 +228,7 @@ donnees2.style
 Si vous ne comprendez pas le principe la suite, reprendre [l'ajustement linéaire](regression).
 
 ```{code-cell}
+:tags: [hide-input]
 """On réalise maintenant l'ajustement linéaire pour chaque groupe d'échantillons simulés."""
 nRTs = []  # On va stocker les pentes
 ordo = []  # On av stocker les ordonnées à l'origine
@@ -277,6 +280,7 @@ On peut donc conclure que __le modèle de Mariotte est acceptable pour l'air dan
 On va donc pouvoir utiliser ces données pour mesurer le nombre de moles.
 
 ```{code-cell}
+:tags: [hide-input]
 """Estimation du nombre de moles.
 On réutilise les données simulées pour la pente nRT.
 """

@@ -58,22 +58,17 @@ _La vérification "à l'oeil" est surtout utile quand on ne connait pas tous les
 
 +++
 
-### Exemples
+### Exemples (en ligne)
 
-+++
-
-#### Exemple 1
->On veut mesurer la résistance $R$ d'une résistance électrique en utilisant des valeur de $U$ et $I$. Mais avant de mesurer $R$, on veut vérifier que les couples $(i_k, u_k)$ vérifient bien la loi d'Ohm $U=RI$ (sinon, son utilisation est remise en question !). On a donc tracer les couples $(i_k, u_k)$ __avec leur croix d'incertitude__. 
->Comme on ne peut tracer de droite modèle (on ne connait pas R, on le cherche !), on va simplement vérifier que les points semblent alignés, c'est-à-dire _qu'on peut tracer une droite qui passe par toutes les croix d'incertitude._
-
-+++
-
-#### Exemple 2
->On veut déterminer l'indice de réfraction $n_v$ d'un verre. Pour cela on envoie un faisceau Laser dans l'air ($n_{air} = 1,000$) à la rencontre du dioptre air-verre avec un angle $i_1$ qu'on mesure et on mesure l'angle de réfraction $i_2$ ainsi que les incertitudes sur les angles. On ne peut pas :
->* simplement tracer $i_2$ en fonction de $i_1$ et le comparer à un tracé modèle puisqu'on ne connait pas $n_v$
->* simplement tracer $i_2$ en fonction de $i_1$ et vérifier qualitativement si la relation entre les deux est respectées car la relation $n_{air} \sin i_1 = n_v \sin i_2$ n'est pas représentée par une droite.
+````{topic} Exemples
+> * On veut mesurer la résistance $R$ d'une résistance électrique en utilisant des valeur de $U$ et $I$. Mais avant de mesurer $R$, on veut vérifier que les couples $(i_k, u_k)$ vérifient bien la loi d'Ohm $U=RI$ (sinon, son utilisation est remise en question !). On a donc tracer les couples $(i_k, u_k)$ __avec leur croix d'incertitude__.  
+> Comme on ne peut tracer de droite modèle (on ne connait pas R, on le cherche !), on va simplement vérifier que les points semblent alignés, c'est-à-dire _qu'on peut tracer une droite qui passe par toutes les croix d'incertitude._
+> * On veut déterminer l'indice de réfraction $n_v$ d'un verre. Pour cela on envoie un faisceau Laser dans l'air ($n_{air} = 1,000$) à la rencontre du dioptre air-verre avec un angle $i_1$ qu'on mesure et on mesure l'angle de réfraction $i_2$ ainsi que les incertitudes sur les angles. On ne peut pas :
+>    * simplement tracer $i_2$ en fonction de $i_1$ et le comparer à un tracé modèle puisqu'on ne connait pas $n_v$
+>    * simplement tracer $i_2$ en fonction de $i_1$ et vérifier qualitativement si la relation entre les deux est respectées car la relation $n_{air} \sin i_1 = n_v \sin i_2$ n'est pas représentée par une droite.
 >
 >On va alors tracer $\sin i_2$ en fonction de $\sin i_2$. Le modèle théorique prévoit alors une droite qu'on pourrait cette fois appréciser à l'oeil.
+````
 
 +++
 
@@ -83,18 +78,13 @@ _La vérification "à l'oeil" est surtout utile quand on ne connait pas tous les
 On va tracer le nuage de points __avec les croix d'incertitude__ ET le modèle théorique (ou semi-théorique). Si le modèle passe par les croix d'incertitude, alors on peut considérer que les résultats expérimentaux sont compatibles avec le modèle théorique.
 ```
 
+````{margin}
 _Le modèle de comparaison n'est pas toujours complètement théorique. On peut par exemple avoir déterminé expérimentalement certaines paramètres du modèle ($R$ et $n_v$ pour les exemples précédents) puis on tracer le modèle ainsi obtenus pour __vérifier qu'il est effectivement compatible ave les résultats__ ._
+````
 
-```{attention}
-Si la croix d'un point de mesure ne passe pas tout à fait par le modèle, cela ne veut pas dire forcément qu'il y a incompatibilité. En effet, on rappelle que l'intervalle associée à l'incertitude (écart-type) ne recouvre qu'environ 2/3 de la dispersion des résultats de mesurage.
-
-Un point dont la croix d'incertitude ne passe pas trop loin des résultats de mesure peut être valable. Si on est confronté à cette situation, la seule façon de décider est alors d'utiliser __les écarts normalisés__.
-```
 +++
 
 ## Ecarts normalisés.
 Les écarts normalisés ont déjà été présentés [précédemment](comparaison.ipynb). L'idée reste la même :
 1. On calcule les écarts normalisés pour chaque ensemble $(y_{i, exp}(x_i), y_{i, th}(x_i), u(y_{i, exp}(x_i)), u(y_{i, th}(x_i))$.
 2. On représente les écarts normalisés en fonction des $x_i$ et on repère les points dans l'écart normalisé est supérieur à 2 : ce sont les points problématiques qui peuvent remettre en cause la cohérence théorie-expérience.
-
-_C'est donc le même principe que celui exposé avec les mesures de focales._

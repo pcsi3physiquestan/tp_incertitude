@@ -24,104 +24,22 @@ Obtenir une mesure n'est en général pas suffisant, il est important d'exploite
 
 ## Comparaison qualitative.
 
-### Principe
+```{sidebar}
+On peut utiliser cette méthode pour comparer une gamme de résultats à la valeur moyenne et voir si certains points ne sont pas des mesures problématiques. Un tracé graphique n'est pas obligatoire pour une seule mesure.
+```
 Une première étude peut-être réalisée en comparant les intervalles associées au couple \{résultat de mesurage + incertitude de mesure\} à la valeur théorique attendue. Si la barre d'incertitude comprend la valeur théorique, on peut considérer que la théorie et l'expérience sont compatibles.
 
-```{note}
-On peut utiliser cette méthode pour comparer une gamme de résultats à la valeur moyenne et voir si certains points ne sont pas des mesures problématiques.
-```
-
-```{margin}
-Un tracé graphique n'est pas obligatoire pour une seule mesure.
-```
-
-+++
-
-### Limites
+````{topic} Limites
 Cette comparaison a ses limites car l'intervalle défini par l'écart-type autour du résultat de mesurage exclut des valeurs qui ont une probabilité encore importante d'être réalisée.
-
-```{admonition} Exemple
-Dans le cas d'une distribution gaussienne, un valeur lors d'un tirage n'a que 63% de chance de se trouver dans l'intervalle à un écart-type. On ne tient pas compte d'un tiers des valeurs en raisonnant de cette façon.
-```
-
-De plus, on ne tient pas compte d'une possible incertitude sur la valeur théorique/constructeur.
-
-```{margin}
-Si la valeur théorique est sujette à une incertitude, on pourrait comparer deux intervalles mais la limite précédente rend le raisonnement encore plus imprécis.
-```
-
-+++
-
-## Ecart-normalisé
-
-Pour palier au problème précédent, on va utiliser une méthode très répandue aujourd'hui : le concept __d'écart normalisé.__
-
-### Explication du raisonnement.
-
-+++
-
-#### Position du problème
-On considère :
-* qu'on étudie une grandeur G possèdant une valeur attendue $G_{att}$ dont la valeur est $g_{att}$ avec une incertitude $u(G_{att})$. _On supposera que la distribution suivie est une distribution gaussienne._
-* on a réalise le mesurage de la grandeur G (appelé $G_{mes}$) dont le résultat de mesurage est $g_{mes}$ avec une incertitude $u(G_{mes})$. _On supposera aussi que la distribution est gaussienne._
-
-On veut savoir si la valeur mesurée et la valeur attendue sont cohérentes.
-
-+++
-
-#### Considérations sur les distributions statistiques
-On __espère__ avoir un écart nul $g_{mes} - g_{att} = 0$ mais il est évident que ce n'est pas possible car les __deux grandeurs sont soumises à une incertitude (variabilité ou manque d'information).__
-
-Par contre, la grandeur $\Delta G = G_{mes} - G_{att}$ est aussi un mesurande qu'on peut _voir comme_ une variable aléatoire. Et si valeur attendue et expérience sont cohérentes, alors on __attend__ l'espérance de cette distribution soit 0 (_distribution centrée_).
-
-De plus, $G_{mes}$ et $G_{att}$ étant indépendante, on peut connaître la variance de leur différence grâce aux théorèmes mathématiques sur la variance : $v_{\Delta G} = v_{G_{mes}} + v_{G_{att}}$ soit pour les écart-type:
-
-$$
-    \sigma_{\Delta G} = \sqrt{\sigma^2_{G_{mes}} + \sigma^2_{G_{att}}}
-$$
-
-En divisant $\Delta G$ par $\sigma_{\Delta G}$, on aura donc une variable aléatoire $\eta_G$ qui aura un écart-type égal à 1 (_distribution réduite_).
-
-````{important}
-Si l'expérience et les attentes (théoriques ou constructeur) sont compatibles, on attend donc que la variable aléatoire associée au mesurande ;
-
-$$
-\eta_G = \frac{G_{mes} - G_{att}}{\sqrt{\sigma^2(G_{mes}) + \sigma^2(G_{att})}}
-$$
-
-soit possède __une distribution centrée réduite.__
-```{margin}
-Vu qu'on compose en général plusieurs distributions pour arriver à $\eta_G$, il est raisonnable de penser qu'elle aura une allure gaussienne (ou au moins proche d'une gaussienne).
+> Dans le cas d'une distribution gaussienne, un valeur lors d'un tirage n'a que 63% de chance de se trouver dans l'intervalle à un écart-type. On ne tient pas compte d'un tiers des valeurs en raisonnant de cette façon.
 ````
 
-On s'est donc ramené à l'idée que pour tester la compatibilité valeur attendue-expérience, il ne faut pas attendre un écart nul mais des données compatibles avec une estimation de $\eta_G$
-
-+++
-
-#### Vers l'écart-normalisé.
-On rappelle qu'on ne possède pas l'allure de $\eta_G$ mais uniquement $g_{mes}, u(G_{mes}), g_{att}, u(G_{att})$, on ne peut donc qu'estimer $\eta_G$ par:
-
-$$
-\eta = \frac{g_{mes} - g_{att}}{\sqrt{u^2(G_{mes}) + u^2(G_{att})}}
-$$
-
-__Il faut donc un critère sur la valeur de $\eta$ pour savoir s'il y a compatibilité ou non.__
-
-Il existe des tests en statistique permettant à partir d'une estimation de décider si l'hypothèse d'une distribution centrée réduite est acceptable ou non. Ces tests ne sont pas au programme, on admet que cela revient à fixer une valeur seuil pour $\eta$ et considérer que si la valeur seuil est dépassée, il n'y a pas compatibilité. Si  $\eta$ est inférieure à cette valeur seuil, il y a compatibilité.
-
-```{margin}
-En théorie, le choix de la valeur seuil implique un pourcentage de risque d'erreur connu (ou presque...) lorsqu'on rejette la compatibilité et un risque d'erreur non connu lorsqu'on accepte la compatibilité. On doit se contenter de ce _risque d'erreur inconnu_ en cas de compatibilité car __on doit prendre une décision__.
-```
-Dans le cadre des classes préparatoires, le choix de cette valeur seuil est fixé à 2. Cela revient, dans l'hypothèse d'une distribution gaussienne à rejetter une compatibilité avec un risque d'erreur de 5%.
+## Ecart-normalisé
 
 ```{margin}
 Le choix d'une valeur de 2 est arbitraire mais régulièrement choisie en laboratoire ou dans l'industrie. On pourrait néanmoins choisir uine autre valeur (on choisit une valeur de 5 en physique des particules par exemple,le risque d'erreur en cas de rejet étant alors beaucoup plus faible).
 ```
-+++
-
-### Synthèse
-```{admonition} Ecart normalisé
-:class: important
+```{important} Ecart normalisé
 
 Pour tester la compatibilité entre une valeur attendue $g_{att}$ d'incertitude $u(g_{att})$ et un résultat de mesurage $g_{mes}$ d'incertitude $u(g_{mes})$, on calcule __l'écart normalisé__:
 
@@ -133,24 +51,43 @@ $$
 * Si l'écart normalisé est supérieur à 2, on considérera que valeur attendue et expérience ne sont pas compatibles.
 ```
 
-+++
+### Explication du raisonnement. (en ligne)
 
-## Exemples d'utilisation
+````{topic}
+On considère :
+* qu'on étudie une grandeur G possèdant une valeur attendue $G_{att}$ dont la valeur est $g_{att}$ avec une incertitude $u(G_{att})$. _On supposera que la distribution suivie est une distribution gaussienne._
+* on a réalise le mesurage de la grandeur G (appelé $G_{mes}$) dont le résultat de mesurage est $g_{mes}$ avec une incertitude $u(G_{mes})$. _On supposera aussi que la distribution est gaussienne._
 
-+++
+__On veut savoir si la valeur mesurée et la valeur attendue sont cohérentes.__ On __espère__ avoir un écart nul $g_{mes} - g_{att} = 0$ mais il est évident que ce n'est pas possible car les __deux grandeurs sont soumises à une incertitude (variabilité ou manque d'information).__
 
-### Résultat unique
-On va reprendre l'exemple de l'étude d'une résistance électrique. Cela sera aussi l'occasion de comprendre graphiquement la notion d'écart normalisé. On ne refait pas toute l'étude. On supposera :
-1. Cas 1 : 
-    * qu'on a mesuré une valeur de résistance $R = 373,1 \pm 3,5 \Omega$
-    * que le constructeur donne une valeur de résistance : $R = 370 \pm 4 \Omega$
-2. Cas 2 :
-    * qu'on a mesuré une valeur de résistance $R = 398,5 \pm 6,1 \Omega$
-    * que le constructeur donne une valeur de résistance : $R = 370 \pm 4 \Omega$
+Par contre, la grandeur $\Delta G = G_{mes} - G_{att}$ est aussi un mesurande qu'on peut _voir comme_ une variable aléatoire. Et si valeur attendue et expérience sont cohérentes, alors on __attend__ l'espérance de cette distribution soit 0 (_distribution centrée_).
 
-+++
+De plus, $G_{mes}$ et $G_{att}$ étant indépendante, on peut connaître la variance de leur différence grâce aux théorèmes mathématiques sur la variance : $v_{\Delta G} = v_{G_{mes}} + v_{G_{att}}$ soit pour les écart-type:
 
-#### Calcul de l'écart normalisé
+$$
+    \sigma_{\Delta G} = \sqrt{\sigma^2_{G_{mes}} + \sigma^2_{G_{att}}}
+$$
+
+En divisant $\Delta G$ par $\sigma_{\Delta G}$, on aura donc une variable aléatoire $\eta_G$ qui aura un écart-type égal à 1 (_distribution réduite_). Donc:
+> Si l'expérience et les attentes (théoriques ou constructeur) sont compatibles, on attend donc que la variable aléatoire associée au mesurande ;
+> $$
+\eta_G = \frac{G_{mes} - G_{att}}{\sqrt{\sigma^2(G_{mes}) + \sigma^2(G_{att})}}
+$$
+> soit __une distribution centrée réduite.__
+
+On s'est donc ramené à l'idée que pour tester la compatibilité valeur attendue-expérience, il ne faut pas attendre un écart nul mais des données compatibles avec une estimation de $\eta_G$. On rappelle qu'on ne possède pas l'allure de $\eta_G$ mais uniquement $g_{mes}, u(G_{mes}), g_{att}, u(G_{att})$, on ne peut donc qu'estimer $\eta_G$ par:
+$$
+\eta = \frac{g_{mes} - g_{att}}{\sqrt{u^2(G_{mes}) + u^2(G_{att})}}
+$$
+
+__Il faut donc un critère sur la valeur de $\eta$ pour savoir s'il y a compatibilité ou non.__
+
+Il existe des tests en statistique permettant à partir d'une estimation de décider si l'hypothèse d'une distribution centrée réduite est acceptable ou non. Ces tests ne sont pas au programme, on admet que cela revient à fixer une valeur seuil pour $\eta$ et considérer que si la valeur seuil est dépassée, il n'y a pas compatibilité. Si  $\eta$ est inférieure à cette valeur seuil, il y a compatibilité.
+
+Dans le cadre des classes préparatoires, le choix de cette valeur seuil est fixé à 2. Cela revient, dans l'hypothèse d'une distribution gaussienne à rejetter une compatibilité avec un risque d'erreur de 5%.
+````
+
+## Exemples d'utilisation (en ligne)
 
 ```{code-cell} ipython3
 :tags: [remove-cell]
@@ -169,6 +106,14 @@ eta2 = (R2 - Rth) / np.sqrt(uR2**2 + uRth**2)
 glue('eta1', eta1, display=False)
 glue('eta2', eta2, display=False)
 ```
+````{topic}  Résultat unique
+On va reprendre l'exemple de l'étude d'une résistance électrique. Cela sera aussi l'occasion de comprendre graphiquement la notion d'écart normalisé. On ne refait pas toute l'étude. On supposera :
+1. Cas 1 : 
+    * qu'on a mesuré une valeur de résistance $R = 373,1 \pm 3,5 \Omega$
+    * que le constructeur donne une valeur de résistance : $R = 370 \pm 4 \Omega$
+2. Cas 2 :
+    * qu'on a mesuré une valeur de résistance $R = 398,5 \pm 6,1 \Omega$
+    * que le constructeur donne une valeur de résistance : $R = 370 \pm 4 \Omega$
 
 On obtient :
 * Cas 1 : $\eta =${glue:text}`eta1:.1f`
@@ -176,27 +121,10 @@ On obtient :
 * Cas 2 : $\eta =${glue:text}`eta2:.1f`
     * On doit considérer que la valeur constructeur et l'expérience réalisée ne sont pas compatibles.
     * __Il ne faut pas en rester là et chercher les causes de cette incompatibilité.__
+````
 
-```{note}
-Les causes d'incompatibilité peuvent être nombreuses. Citons (non exhaustif):
-* Une expérience mal réalisée
-* Une modélisation théorique de l'expérience incorrecte. Par exemple ici, il y a peut-être une autre résistance dans le circuit (du générateur ?) qui modifie les relations théoriques à utiliser.
-* Des incertitudes sous évaluées.
-* Une valeur attendue incohérente (cette possibilité étant quand même _très rare_ en TP).
-```
-
-```{hint}
-Si la valeur théorique n'a pas d'incertitude (vitesse de la lumière par exemple), on ne divise que par l'incertitude associée à la valeur mesurée. On se ramène ainsi au z-score utilisé au lycée.
-```
-
-+++
-
-#### Analyse graphique.
+````{topic} Analyse graphique
 Puisqu'on possède les valeurs mesurées et les incertitudes, on va pouvoir faire une simulation de Monte-Carlo des grandeurs. On a réalisé N=1000000 simulations.
-
-```{margin}
-On a choisi des distributions gaussiennes pour les $R_i$
-```
 
 On représente [ci-dessous](feta_fig) (chaque ligne correspond à un cas) :
 1. Les barres d'incertitudes pour la valeur expérimentales puis pour la valeur constructeur.
@@ -206,6 +134,7 @@ On représente [ci-dessous](feta_fig) (chaque ligne correspond à un cas) :
 :name: feta_fig
 :align: center
 ```
+````
 
 ```{code-cell} ipython3
 :tags: [remove-cell]
@@ -243,9 +172,9 @@ glue("feta", f, display=False)
 +++
 
 ### Multiples résultats
-On peur aussi se servir de l'écart normalisé pour tester la compatibilité d'un ensemble de mesures entre elles. On suppose que l'on a mesure 10 fois une distance focale d'une lentille $f'$. Les mesures sont données dans le [tableau ci-dessous](focale_tbl)
-
-```{glue:figure} focales
+* On peut se servir de l'écart normalisé pour tester la compatibilité d'un ensemble de mesures entre elles. _On se limite en général à calculer l'écart normalisé entre la moyenne et chaque résultat._
+* On peut aussi tester les écarts à un modèle (théorique ou calculé) sur plusieurs valeurs grâce à l'écart normalisé.
+<!-- ```{glue:figure} focales
 :name: focale_tbl
 :align: center
 ```
@@ -306,4 +235,4 @@ glue('foc_en', f, display=False)
 
 ```{attention}
 L'utilisation de l'écart normalisé ne doit pas devenir une application d'une formule sans réflexion. Vous devez toujours vérifier que la manipulation a été réalisée correctement, même si l'écart normalisé est inférieur à 2.
-```
+``` -->

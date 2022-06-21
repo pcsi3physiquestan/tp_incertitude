@@ -32,14 +32,11 @@ On a mesuré des grandeurs $X_i$ dont on a estimé l'incertitude-type (et la dis
 $$
 Y = f(X_i)
 $$
-
-```{admonition} Exemple
-:class: tip
-On veut mesurer la valeur $R$ d'une résistance électrique. On a mesuré la tension $U$ à ses bornes et l'intensité $I$ qui la traverse. On va estimer la résistance en utilisant la loi d'Ohm :  $R = U / I$.
-```
-
 On veut estimer l'incertitude-type sur Y et possiblement aussi sa distribution statistique.
 
+```{topic} Exemple
+On veut mesurer la valeur $R$ d'une résistance électrique. On a mesuré la tension $U$ à ses bornes et l'intensité $I$ qui la traverse. On va estimer la résistance en utilisant la loi d'Ohm :  $R = U / I$.
+```
 +++
 
 ## Méthodes
@@ -49,7 +46,6 @@ Il existe deux méthodes :
 
 ````{attention} 
 Dans les deux cas, on est obligé de supposer que les mesurandes $X_i$ sont tous indépendants. Sinon, les deux méthodes ne sont pas valables.
-
 ````
 
 +++
@@ -59,10 +55,13 @@ Dans les deux cas, on est obligé de supposer que les mesurandes $X_i$ sont tous
 +++
 
 ### Principe
-On rappelle brièvement le principe de la simulation de Monte-Carlo. On connaît la distribution statistique de chaque mesurande $X_i$. On va simuler N échantillons de chaque $X_i$ puis on calcule ainsi N échantillons $Y$. On obtient ainsi la distribution des valeurs de $Y$ et on peut calculr son incertitude de mesure.
+
+````
+On rappelle brièvement le principe de la simulation de Monte-Carlo. On connaît la distribution statistique de chaque mesurande $X_i$. On va simuler N échantillons de chaque $X_i$ puis on calcule ainsi N échantillons $Y$. On obtient ainsi la distribution des valeurs de $Y$ et on peut calculer son incertitude de mesure.
 
 ```{note}
-Dans l'exemple qui suit, on a supposé pour simplifier que les incertitude-type et distribution des mesurandes directs ont déjà été déterminées (ou viennent d'information extérieures). En pratique, elles sont souvent déterminées à partir d'une ou plusieurs sources d'incertitudes. On peut alors combiner la méthode présentée précédemment et celle présentée ici (ce sera fait par la suite).
+Dans l'exemple qui suit, on a supposé pour simplifier que les incertitude-type et distribution des mesurandes directs ont déjà été déterminées (ou viennent d'information extérieures). En pratique, elles sont souvent déterminées à partir d'une ou plusieurs sources d'incertitudes. On peut alors combiner la méthode présentée précédemment et celle présentée ici (ce sera fait par la suite).  
+_C'est la raison pour laquelle les simulations ne sont pas centrées en 0._
 ```
 
 ![Principe de la simulation de Monte-Carlo](./images/simulation_mc.png)
@@ -70,20 +69,21 @@ Dans l'exemple qui suit, on a supposé pour simplifier que les incertitude-type 
 +++
 
 ### Exemple
-```{admonition} Résistance électrique
-:class: tip
+```{topic} Résistance électrique
 On reprend l'exemple précédent de l'estimation de l'incertitude de la résistance R. On a mesuré tension et intensité. On a trouvé :
  
 * Un tension $U = 4.53 V$ avec une incertitude $u(U) = 0.03 V$. On a estimé que la loi de probabilité étant gaussienne.
 * Une intensité $I = 12.14 mA$ avec une incertitude $u(I) = 0.08 mA$. On a estimé que la loi de probabilité étant gaussienne.
 ```
 
-La cellule ci-dessous permet d'observer la méthode de Monte-Carlo. La méthode est :
+La cellule (en ligne) permet d'observer la méthode de Monte-Carlo. La méthode est :
 1. On créer deux vecteurs de taille N contenant des tirages aléatoires de U et I basés sur les distibutions choisies.
 2. On obtient un vecteur de taille N contenant des valeurs simulés de R.
 3. On trace l'histogramme et on calcule la moyenne et l'écart-type de la distribution qui nous donnerons le résultat de mesurage et l'incertitude-type.
 
 ```{code-cell} ipython3
+:tags: [remove-input]
+
 import numpy.random as rd  # La bibliothèque numpy.random contient les fonctions générant des échantillons aléatoires.
 import numpy as np  # La biliothèque numpy permettra de calculer la moyenne et l'écart-type d'un ensemble des valeurs.
 
@@ -130,17 +130,6 @@ R = np.mean(Rech)
 uR = np.std(Rech, ddof=1)  # Calcul de l'écart-type. L'option ddof permet de diviser par N-1 et non par N.
 
 print("La résistance vaut {:.1f} +/- {:.1f} Ohm".format(R * 1000, uR * 1000))
-
-```
-
-```{important}
-La syntaxe précédente permet d'arrondir à 1 décimale. Il n'est pas nécessaire de la connaître.
-
-Par contre, il __est fondamental de prendre du recul sur les valeurs données par Python qui possèderont par défaut beaucoup de chiffres significatifs.__ Ce sera __à vous__ de tronquer les valeurs numériques.
-
-La règle est :
-* on ne garde que 2 chiffres significatifs pour l'incertitude de mesure
-* on arrondi le résultat de mesurage avec la même précision (même puissance de dix pour le chiffre de rang le plus faible) que l'incertitude de mesure ainsi tronqué.
 
 ```
 

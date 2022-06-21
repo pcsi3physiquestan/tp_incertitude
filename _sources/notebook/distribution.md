@@ -49,13 +49,12 @@ $$\sigma = \frac{t}{\sqrt{3}}$$
 
 +++
 
-### Simulation
-Nous aurons régulièrement besoin de simuler des lois statistiques avec Python et notamment la loi uniforme.
-Nous allons voir comment le faire dans la cellule suivante.
+### Simulation (en ligne)
+Nous aurons régulièrement besoin de simuler des lois statistiques avec Python et notamment la loi uniforme. Nous allons voir comment le faire dans la cellule suivante. Lisez le code et chercher à le comprendre pour pouvoir l'utiliser ensuite.
 
-Lisez le code et chercher à le comprendre pour pouvoir l'utiliser ensuite.
 
 ```{code-cell}
+:tags: [remove-input]
 # La simulation nécessite la bibliothèque numpy.random que nous importons
 import numpy.random as rd
 
@@ -146,14 +145,12 @@ f = gaussienne(m, s)
 plt.show()
 ```
 
-### Simulation d'un tirage
+### Simulation d'un tirage (en ligne)
 
-Nous aurons régulièrement besoin de simuler des lois statistiques avec Python et notamment la loi normale.
-Nous allons voir comment le faire dans la cellule suivante.
-
-Lisez le code et chercher à le comprendre pour pouvoir l'utiliser ensuite.
+Nous aurons régulièrement besoin de simuler des lois statistiques avec Python et notamment la loi normale. Nous allons voir comment le faire dans la cellule suivante. Lisez le code et chercher à le comprendre pour pouvoir l'utiliser ensuite.
 
 ```{code-cell}
+:tags: [remove-input]
 # La simulation nécessite la bibliothèque numpy.random qui a déjà été importée.
 
 """
@@ -204,7 +201,7 @@ ax.legend()  # On ajoute la légende (le label)
 plt.show()
 ```
 
-### Intérêt de la distribution gaussienne
+````{topic} Intérêt de la distribution gaussienne
 La distribution gaussienne possède deux intérêts :
 * L'étude des fluctuations statistique des grandeur tend à montrer qu'une grandeur flucture généralement de
 manière gaussienne autour desa valeur à l'équilibre
@@ -213,3 +210,4 @@ d'incertitude possédant chacun une distribution statistique propre.
 En général, lorsqu'on combine plusieurs distributions (sous certaines conditions non précisées ici)
 on tend vers une distribution gaussienne de sorte qu'en général, l'hypothèse d'une telle distribution
 pour le mesurande direct est assez acceptable. _Il s'agit d'une application du théorème central limite._
+````

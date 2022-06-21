@@ -187,18 +187,6 @@
   </a>
  </li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  Pour aller plus loin
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="comp_reglin.html">
-   12. Construire une droite d’étalonnage
-  </a>
- </li>
-</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -418,12 +406,12 @@
 <li><p>Valeur mesurée :</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[g_{mes} = \frac{1}{N}\sum\limits_{i=0}^{k}g_k\]</div>
+\[g_{mes} = \frac{1}{N}\sum\limits_{i=1}^{k}g_i\]</div>
 <ul class="simple">
 <li><p>Incertitude :</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[u(g) = \frac{1}{\sqrt{N}} \sigma_G = \sqrt{\frac{1}{N(N-1)} \sum\limits_{i=0}^{k}{(g_k - g_{mes})}^2}\]</div>
+\[u(g) = \frac{1}{\sqrt{N}} \sigma_G = \sqrt{\frac{1}{N(N-1)} \sum\limits_{i=1}^{k}{(g_i - g_{mes})}^2}\]</div>
 </div>
 <div class="section" id="methode-de-monte-carlo">
 <h2><span class="section-number">1.5. </span>Méthode de Monte-Carlo<a class="headerlink" href="#methode-de-monte-carlo" title="Permalink to this headline">¶</a></h2>

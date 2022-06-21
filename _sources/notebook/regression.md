@@ -77,30 +77,7 @@ Il existe une version "pondérée" `numpy.polyfit(x, y, deg, w=incy)` où w est 
 
 +++
 
-### Exemple d'utilisation
-On étudie une chute d'un corps dans l'air partant d'une vitesse $v_0$. On veut le modéliser par un point matériel et supposer les frottements négligeables et le champ de pesanteur uniforme. L'objectif est :
-* de valider les hypothèses qu'on vient de donner
-* d'estimer le champ de pesanteur sur le lieu de l'expérience.
-
-Comme, dans le modèle précédent, on attend une relation $v(t) = v_0 + gt$, on a utilisé un dispositif permettant d'obtenir des couples de mesures $(t_i, v_i)$ avec des incertitudes négligeables sur $t_i$ et des incertitudes $u(v_i)$ sur les $v_i$. On va réaliser une ajustement linéaire pour estimer le champ de pesanteur suivant le modèle proposé et vérifier la cohérence entre le modèle et l'expérience avec le champ de pesanteur estimé.
-
-Les données expérimentales obtenues sont données dans le tableau ci-dessous
-
-```{margin}
-On a gardé la cohérence de précision entre vaeur mesurée et incertitude. On a par contre gardé plus de chiffres pour l'incertitude de manière à ce qu'il y en ait au moins 2.
-```
-
-|Echantillon|t(ms)| 	v(cm/ms) |u(v)(cm/ms)|
-|:-|:-|-:|-:|
-|0| 	100| 	-0.0052| 	0.0211|
-|1| 	150| 	0.0934 | 	0.0194|
-|2| 	200| 	0.1208 | 	0.0035|
-|3| 	250| 	0.1658 | 	0.0028|
-|4| 	300| 	0.2290 | 	0.0089|
-|5| 	350| 	0.2612 | 	0.0091|
-|6| 	400| 	0.3170 | 	0.0032|
-|7| 	450| 	0.3449 | 	0.0188|
-
+### Exemple d'utilisation (en ligne)
 ```{code-cell} ipython3
 :tags: [remove-cell]
 
@@ -185,8 +162,31 @@ On a gardé la cohérence de précision entre vaeur mesurée et incertitude. On 
 # f1.savefig('./images/chute_comparaison.png')
 # f2.savefig('./images/chute_residus.png')
 ```
+````{topic} Exemple
+On étudie une chute d'un corps dans l'air partant d'une vitesse $v_0$. On veut le modéliser par un point matériel et supposer les frottements négligeables et le champ de pesanteur uniforme. L'objectif est :
+* de valider les hypothèses qu'on vient de donner
+* d'estimer le champ de pesanteur sur le lieu de l'expérience.
 
-#### Vérification sommaire
+Comme, dans le modèle précédent, on attend une relation $v(t) = v_0 + gt$, on a utilisé un dispositif permettant d'obtenir des couples de mesures $(t_i, v_i)$ avec des incertitudes négligeables sur $t_i$ et des incertitudes $u(v_i)$ sur les $v_i$. On va réaliser une ajustement linéaire pour estimer le champ de pesanteur suivant le modèle proposé et vérifier la cohérence entre le modèle et l'expérience avec le champ de pesanteur estimé.
+
+Les données expérimentales obtenues sont données dans le tableau ci-dessous
+
+```{margin}
+On a gardé la cohérence de précision entre vaeur mesurée et incertitude. On a par contre gardé plus de chiffres pour l'incertitude de manière à ce qu'il y en ait au moins 2.
+```
+
+|Echantillon|t(ms)| 	v(cm/ms) |u(v)(cm/ms)|
+|:-|:-|-:|-:|
+|0| 	100| 	-0.0052| 	0.0211|
+|1| 	150| 	0.0934 | 	0.0194|
+|2| 	200| 	0.1208 | 	0.0035|
+|3| 	250| 	0.1658 | 	0.0028|
+|4| 	300| 	0.2290 | 	0.0089|
+|5| 	350| 	0.2612 | 	0.0091|
+|6| 	400| 	0.3170 | 	0.0032|
+|7| 	450| 	0.3449 | 	0.0188|
+
+* __Vérification sommaire__
 On commence par [représenter les points](chute_fig1) $(t_i,v_i)$ avec leurs incertitudes de mesure. On observe une tendance des points à s'aligner. On va donc poursuivre l'étude en recherchant des paramètres d'ajustement linéaire.
 
 ```{figure} ./images/chute_grossier.png
@@ -194,10 +194,7 @@ On commence par [représenter les points](chute_fig1) $(t_i,v_i)$ avec leurs inc
 :align: center
 Analyse brute des résultats.
 ```
-
-+++
-
-#### Ajustement linéaire
+* __Ajustement linéaire__
 On a réalisé un ajustement linéaire. On trouve pour le modèle $V = a t + b$ : 
 
 |Grandeur | a $(cm/ms^2)$| b (cm/ms)|
@@ -221,9 +218,8 @@ C'est pourquoi on va tracer les résidus (écart modèle-mesure) et les écarts 
 Comparaison au modèle
 ```
 
-+++
+* __Résidus et écarts normalisés__
 
-#### Résidus et écarts normalisés
 On a maintenant [tracé](chute_fig3) les résidus (gauche). On remarque que les points 3 et 8 semblent poser problème. On s'intéresse donc aux résidus normalisés (droite). Au final, l'ensemble des résidus est inférieur à 2, on va donc pouvoir considérer que l'ensemble des points sont compatibles avec le modèle ajusté ce qui permet :
 * de valider la cohérence entre le modèle théorique et l'expérience
 * de considérer que le champ de pesanteur $g$ peut être estimé par la pente $a$ précédente.
@@ -233,14 +229,15 @@ On a maintenant [tracé](chute_fig3) les résidus (gauche). On remarque que les 
 :align: center
 Résidus et écarts normalisés
 ```
+````
 
 ## Régression linéaire et incertitude.
 
 L'estimation du champ de pesanteur précédent a peu d'utilité si on ne peut le comparer à une valeur attendue ($g = (9.81 \pm 0.10)\rm{m.s^{-2}}$). Mais pour réaliser une comparaison, il faut estimer l'incertitude sur $g_{experimental}$, donc sur la pente de la régression linéaire.
 
-Nous allons donc utiliser une méthode de Monte-Carlo pour cela. On va voir son application sur l'exemple du champ de pesanteur.
+Il convient d'utiliser une méthode de Monte-Carlo pour cela. Une telle méthode sera présentée plus tard.
 
-### Méthode de Monte-Carlo.
+<!-- ### Méthode de Monte-Carlo.
 Le principe est donc :
 1. De créer N échantillons des $v_i$ suivant une loi (normale ici) d'écart-type $u(v_i)$.
 2. Pour chaque échantillons $\{v_i / 1 \leq i \leq k\}$, on estime la pente $a$ puis on en déduit $g$ 
@@ -347,3 +344,4 @@ En pratique, on pourra(devra) combiner l'analyse de Monte-Carlo avec la validati
 
 _Le test de compatibilité du modèle affine se ferait donc plutôt après la simulation de Monte-Carlo._
 ```
+ -->

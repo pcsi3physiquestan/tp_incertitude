@@ -187,18 +187,6 @@
   </a>
  </li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  Pour aller plus loin
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="comp_reglin.html">
-   12. Construire une droite d’étalonnage
-  </a>
- </li>
-</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -300,8 +288,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simulation">
-     4.1.2. Simulation
+    <a class="reference internal nav-link" href="#simulation-en-ligne">
+     4.1.2. Simulation (en ligne)
     </a>
    </li>
   </ul>
@@ -322,13 +310,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simulation-d-un-tirage">
-     4.2.3. Simulation d’un tirage
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#interet-de-la-distribution-gaussienne">
-     4.2.4. Intérêt de la distribution gaussienne
+    <a class="reference internal nav-link" href="#simulation-d-un-tirage-en-ligne">
+     4.2.3. Simulation d’un tirage (en ligne)
     </a>
    </li>
   </ul>
@@ -375,74 +358,15 @@ la même probabilité.</p>
 \[\sigma = \frac{t}{\sqrt{3}}\]</div>
 </div>
 </div>
-<div class="section" id="simulation">
-<h3><span class="section-number">4.1.2. </span>Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">¶</a></h3>
-<p>Nous aurons régulièrement besoin de simuler des lois statistiques avec Python et notamment la loi uniforme.
-Nous allons voir comment le faire dans la cellule suivante.</p>
-<p>Lisez le code et chercher à le comprendre pour pouvoir l’utiliser ensuite.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># La simulation nécessite la bibliothèque numpy.random que nous importons</span>
-<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
-
-<span class="c1"># On importe aussi numpy pour manipuler des vecteurs numpy</span>
-<span class="c1"># et matplotlib.pyplot pour des tracés graphiques</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">La fonction uniform(a, b, N) (bibliothèque numpy.random) va créer un vecteur</span>
-<span class="sd">de taille N simulant N tirages aléatoires suivant une distribution</span>
-<span class="sd">uniforme entre a et b</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">100000</span>
-<span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">datsim</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Pour vérifier qu&#39;on retombe bien sur les grandeurs, on va estimer</span>
-<span class="sd">la moyenne et l&#39;écart-type de l&#39;échantillon créé précédemment.</span>
-<span class="sd">Retenez ces fonctions qui sont très utiles. Elles appartiennent à</span>
-<span class="sd">la bibliothèque numpy</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="n">mech</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">datsim</span><span class="p">)</span>
-<span class="n">sech</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">datsim</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># L&#39;option ddof permet de diviser par N-1 et non par N</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Estimation&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moyenne = &quot;</span><span class="p">,</span> <span class="n">mech</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ecart-type = &quot;</span><span class="p">,</span> <span class="n">sech</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valeur théorique d&#39;une distribution uniforme&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moyenne : &quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ecart-type : &quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------&quot;</span><span class="p">)</span>
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">On va maintenant tracer l&#39;histogramme de l&#39;échantillons</span>
-<span class="sd">La fonction subplots créer une fenêtre graphique f avec des axes ax (ici un seul). </span>
-<span class="sd">Les options figsize et dpi ne sont pas à connaître.</span>
-<span class="sd">Elles servent juste à avoir une figure plus grande pour le cours.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Simulation de tirages uniformes&quot;</span><span class="p">)</span>  <span class="c1"># Titre du graphique</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Valeurs possibles&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Fréquences&quot;</span><span class="p">)</span>
-
-<span class="c1"># On utilise hist(valeurs, bins) (bibliothèque matplotlib.pyplot)</span>
-<span class="c1"># pour tracer l&#39;histogramme.</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">datsim</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="s1">&#39;rice&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Echantillons uniformes&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>  <span class="c1"># On ajoute la légende (le label)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="section" id="simulation-en-ligne">
+<h3><span class="section-number">4.1.2. </span>Simulation (en ligne)<a class="headerlink" href="#simulation-en-ligne" title="Permalink to this headline">¶</a></h3>
+<p>Nous aurons régulièrement besoin de simuler des lois statistiques avec Python et notamment la loi uniforme. Nous allons voir comment le faire dans la cellule suivante. Lisez le code et chercher à le comprendre pour pouvoir l’utiliser ensuite.</p>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---------------
 Estimation
-Moyenne =  4.495425767594918
-Ecart-type =  0.8654237314038448
+Moyenne =  4.501334190188902
+Ecart-type =  0.865090384165525
 ---------------
 Valeur théorique d&#39;une distribution uniforme
 Moyenne :  4.5
@@ -485,69 +409,15 @@ les résultats de mesurage possibles pour un mesurande : <span class="math notra
 </div>
 </div>
 </div>
-<div class="section" id="simulation-d-un-tirage">
-<h3><span class="section-number">4.2.3. </span>Simulation d’un tirage<a class="headerlink" href="#simulation-d-un-tirage" title="Permalink to this headline">¶</a></h3>
-<p>Nous aurons régulièrement besoin de simuler des lois statistiques avec Python et notamment la loi normale.
-Nous allons voir comment le faire dans la cellule suivante.</p>
-<p>Lisez le code et chercher à le comprendre pour pouvoir l’utiliser ensuite.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># La simulation nécessite la bibliothèque numpy.random qui a déjà été importée.</span>
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">La fonction normal(m, s, N) (bibliothèque numpy.random) va créer un vecteur</span>
-<span class="sd">de taille N simulant N tirages aléatoires suivant une distribution</span>
-<span class="sd">normale d&#39;espérance m et d&#39;écart-type s.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">100000</span>
-<span class="n">s</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># Espérance</span>
-<span class="n">m</span> <span class="o">=</span> <span class="mf">0.3</span>  <span class="c1"># Ecart-type</span>
-<span class="n">datsim</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Pour vérifier qu&#39;on retombe bien sur les grandeurs, on va estimer</span>
-<span class="sd">la moyenne et l&#39;écart-type de l&#39;échantillon créé précédemment.</span>
-<span class="sd">Retenez ces fonctions qui sont très utiles. Elles appartiennent à</span>
-<span class="sd">la bibliothèque numpy</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="n">mech</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">datsim</span><span class="p">)</span>
-<span class="n">sech</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">datsim</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># L&#39;option ddof permet de diviser par N-1 et non par N</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Estimation&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moyenne = &quot;</span><span class="p">,</span> <span class="n">mech</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ecart-type = &quot;</span><span class="p">,</span> <span class="n">sech</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valeur théorique d&#39;une distribution uniforme&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Moyenne : &quot;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ecart-type : &quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------&quot;</span><span class="p">)</span>
-
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">On va maintenant tracer l&#39;histogramme de l&#39;échantillons</span>
-<span class="sd">La fonction subplots créer une fenêtre graphique f avec des axes ax (ici un seul). Les options figsize et dpi ne sont pas à connaître.</span>
-<span class="sd">Elles servent juste à avoir une figure plus grande.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Simulation de tirages gaussiens&quot;</span><span class="p">)</span>  <span class="c1"># Titre du graphique</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Valeurs possibles&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Fréquences&quot;</span><span class="p">)</span>
-
-<span class="c1"># On utilise hist(valeurs, bins) (bibliothèque matplotlib.pyplot)</span>
-<span class="c1"># pour tracer l&#39;histogramme.</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">datsim</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="s1">&#39;rice&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Echantillons gaussiens&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>  <span class="c1"># On ajoute la légende (le label)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="section" id="simulation-d-un-tirage-en-ligne">
+<h3><span class="section-number">4.2.3. </span>Simulation d’un tirage (en ligne)<a class="headerlink" href="#simulation-d-un-tirage-en-ligne" title="Permalink to this headline">¶</a></h3>
+<p>Nous aurons régulièrement besoin de simuler des lois statistiques avec Python et notamment la loi normale. Nous allons voir comment le faire dans la cellule suivante. Lisez le code et chercher à le comprendre pour pouvoir l’utiliser ensuite.</p>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---------------
 Estimation
-Moyenne =  0.29542307307876386
-Ecart-type =  1.9993466347420659
+Moyenne =  0.2885743056367158
+Ecart-type =  1.9932056616995242
 ---------------
 Valeur théorique d&#39;une distribution uniforme
 Moyenne :  0.3
@@ -558,9 +428,8 @@ Ecart-type :  2
 <img alt="../_images/distribution_11_1.png" src="../_images/distribution_11_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="interet-de-la-distribution-gaussienne">
-<h3><span class="section-number">4.2.4. </span>Intérêt de la distribution gaussienne<a class="headerlink" href="#interet-de-la-distribution-gaussienne" title="Permalink to this headline">¶</a></h3>
+<div class="topic">
+<p class="topic-title">Intérêt de la distribution gaussienne</p>
 <p>La distribution gaussienne possède deux intérêts :</p>
 <ul class="simple">
 <li><p>L’étude des fluctuations statistique des grandeur tend à montrer qu’une grandeur flucture généralement de
@@ -571,6 +440,7 @@ En général, lorsqu’on combine plusieurs distributions (sous certaines condit
 on tend vers une distribution gaussienne de sorte qu’en général, l’hypothèse d’une telle distribution
 pour le mesurande direct est assez acceptable. <em>Il s’agit d’une application du théorème central limite.</em></p></li>
 </ul>
+</div>
 </div>
 </div>
 </div>
