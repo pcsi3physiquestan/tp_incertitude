@@ -19,8 +19,6 @@ kernelspec:
 Nous allons, à travers un exemple montrer l'étude complète, du protocole à l'exploitation, comment utiliser Python pour estimer les incertitudes, ajuster une loi affine et exploiter les résultats obtenus.
 
 ## Protocole
-Si vous ne comprendez pas le principe de cette partie, reprendre l'[explication sur les protocoles](protocole).
-
 * __Objectif__ : On désire tester la loi de Mariotte qui relie Pression, Volume et Température d'un gaz : $PV = nRT$ pour l'air dans les conditions de température ambiante et de pression de quelques centaines d'hectoPascal. On déterminera aussi le nomber de mole d'air du système étudié.
 * __Principe__ : On va procéder à la mesure de couples $(P, V)$ pour plusieurs valeurs de $V$ à la température ambiante et on testera la loi $P(V)$ ainsi obtenue.
 * __Mode opératoire__ : On va utiliser [une seringue](mariotte_photo) contenant de l'air pour controler le volume. L'embout de la seringue sera branché sur un manomètre. Ce manomètre mesure une pression et renvoie une tension $U$ qu'on mesure grâce à un microcontrolleur Arduino programmé pour renvoyer les mesures vers un système de traitement informatique.
@@ -44,7 +42,7 @@ Grâce à la seringue, on va imposer un volume $V$ d'air et on mesure grâce au 
 En mesurant la température grâce à un thermomètre, on utilisera le coefficient de la droite ajustée sur la relation $P=f(1/V)$ pour déterminer le nombre de mole d'air emprisonné.
 
 ## Analyse des sources d'incertitudes
-On veut tester une relation, il faudra bien réfléchir aux incertitudes. Si vous ne comprendez pas le principe de cette partie, reprendre [les sources d'incertitudes](sources).
+On veut tester une relation, il faudra bien réfléchir aux incertitudes.
 
 ### Mesurandes directs
 On dispose de trois mesurandes directs :
@@ -98,7 +96,6 @@ donnees.style
 ```
 
 ### Exploitation des résultats.
-Si vous ne comprendez pas le principe de cette partie, reprendre la [propagation des incertitudes](indirecte) et [l'ajustement linéaire](regression).
 
 Puisqu'on doit estimer les incertitudes de mesures sur $V$ et $P$ pour les tracés, on va réaliser une simulation de Monte-Carlo. On va donc :
 * Pour chaque (=boucle) volume d'air, estimer N fois le volume $V$ et la pression $P$ et $1/V$ puis en déduire leurs valeurs mesurées (moyenne) et leur incertitude (écart-type). On stockera toutes les valeurs simulées et on rendra compte dans un tableau des résultats de mesure avec leurs incertitudes.
