@@ -340,6 +340,36 @@
 </div>
 <div class="section" id="explication-du-raisonnement-en-ligne">
 <h3><span class="section-number">8.2.1. </span>Explication du raisonnement. (en ligne)<a class="headerlink" href="#explication-du-raisonnement-en-ligne" title="Permalink to this headline">¶</a></h3>
+<div class="topic">
+<p class="topic-title">Explications</p>
+<p>On considère :</p>
+<ul class="simple">
+<li><p>qu’on étudie une grandeur G possèdant une valeur attendue <span class="math notranslate nohighlight">\(G_{att}\)</span> dont la valeur est <span class="math notranslate nohighlight">\(g_{att}\)</span> avec une incertitude <span class="math notranslate nohighlight">\(u(G_{att})\)</span>. <em>On supposera que la distribution suivie est une distribution gaussienne.</em></p></li>
+<li><p>on a réalise le mesurage de la grandeur G (appelé <span class="math notranslate nohighlight">\(G_{mes}\)</span>) dont le résultat de mesurage est <span class="math notranslate nohighlight">\(g_{mes}\)</span> avec une incertitude <span class="math notranslate nohighlight">\(u(G_{mes})\)</span>. <em>On supposera aussi que la distribution est gaussienne.</em></p></li>
+</ul>
+<p><strong>On veut savoir si la valeur mesurée et la valeur attendue sont cohérentes.</strong> On <strong>espère</strong> avoir un écart nul <span class="math notranslate nohighlight">\(g_{mes} - g_{att} = 0\)</span> mais il est évident que ce n’est pas possible car les <strong>deux grandeurs sont soumises à une incertitude (variabilité ou manque d’information).</strong></p>
+<p>Par contre, la grandeur <span class="math notranslate nohighlight">\(\Delta G = G_{mes} - G_{att}\)</span> est aussi un mesurande qu’on peut <em>voir comme</em> une variable aléatoire. Et si valeur attendue et expérience sont cohérentes, alors on <strong>attend</strong> l’espérance de cette distribution soit 0 (<em>distribution centrée</em>).</p>
+<p>De plus, <span class="math notranslate nohighlight">\(G_{mes}\)</span> et <span class="math notranslate nohighlight">\(G_{att}\)</span> étant indépendante, on peut connaître la variance de leur différence grâce aux théorèmes mathématiques sur la variance : <span class="math notranslate nohighlight">\(v_{\Delta G} = v_{G_{mes}} + v_{G_{att}}\)</span> soit pour les écart-type:</p>
+<div class="math notranslate nohighlight">
+\[
+    \sigma_{\Delta G} = \sqrt{\sigma^2_{G_{mes}} + \sigma^2_{G_{att}}}
+\]</div>
+<p>En divisant <span class="math notranslate nohighlight">\(\Delta G\)</span> par <span class="math notranslate nohighlight">\(\sigma_{\Delta G}\)</span>, on aura donc une variable aléatoire <span class="math notranslate nohighlight">\(\eta_G\)</span> qui aura un écart-type égal à 1 (<em>distribution réduite</em>). Donc:</p>
+<blockquote>
+<div><p>Si l’expérience et les attentes (théoriques ou constructeur) sont compatibles, on attend donc que la variable aléatoire associée au mesurande ;
+$<span class="math notranslate nohighlight">\(
+\eta_G = \frac{G_{mes} - G_{att}}{\sqrt{\sigma^2(G_{mes}) + \sigma^2(G_{att})}}
+\)</span>$
+soit <strong>une distribution centrée réduite.</strong></p>
+</div></blockquote>
+<p>On s’est donc ramené à l’idée que pour tester la compatibilité valeur attendue-expérience, il ne faut pas attendre un écart nul mais des données compatibles avec une estimation de <span class="math notranslate nohighlight">\(\eta_G\)</span>. On rappelle qu’on ne possède pas l’allure de <span class="math notranslate nohighlight">\(\eta_G\)</span> mais uniquement <span class="math notranslate nohighlight">\(g_{mes}, u(G_{mes}), g_{att}, u(G_{att})\)</span>, on ne peut donc qu’estimer <span class="math notranslate nohighlight">\(\eta_G\)</span> par:
+$<span class="math notranslate nohighlight">\(
+\eta = \frac{g_{mes} - g_{att}}{\sqrt{u^2(G_{mes}) + u^2(G_{att})}}
+\)</span>$</p>
+<p><strong>Il faut donc un critère sur la valeur de <span class="math notranslate nohighlight">\(\eta\)</span> pour savoir s’il y a compatibilité ou non.</strong></p>
+<p>Il existe des tests en statistique permettant à partir d’une estimation de décider si l’hypothèse d’une distribution centrée réduite est acceptable ou non. Ces tests ne sont pas au programme, on admet que cela revient à fixer une valeur seuil pour <span class="math notranslate nohighlight">\(\eta\)</span> et considérer que si la valeur seuil est dépassée, il n’y a pas compatibilité. Si  <span class="math notranslate nohighlight">\(\eta\)</span> est inférieure à cette valeur seuil, il y a compatibilité.</p>
+<p>Dans le cadre des classes préparatoires, le choix de cette valeur seuil est fixé à 2. Cela revient, dans l’hypothèse d’une distribution gaussienne à rejetter une compatibilité avec un risque d’erreur de 5%.</p>
+</div>
 </div>
 </div>
 <div class="section" id="exemples-d-utilisation-en-ligne">

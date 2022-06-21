@@ -50,7 +50,7 @@ $$
 
 ### Explication du raisonnement. (en ligne)
 
-````{topic}
+````{topic} Explications
 On considère :
 * qu'on étudie une grandeur G possèdant une valeur attendue $G_{att}$ dont la valeur est $g_{att}$ avec une incertitude $u(G_{att})$. _On supposera que la distribution suivie est une distribution gaussienne._
 * on a réalise le mesurage de la grandeur G (appelé $G_{mes}$) dont le résultat de mesurage est $g_{mes}$ avec une incertitude $u(G_{mes})$. _On supposera aussi que la distribution est gaussienne._
