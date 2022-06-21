@@ -66,7 +66,7 @@ L'incertitude-type sera $0.05 / \sqrt{12} = 0.014 V$ (cf. suite).
 
 +++
 
-### Données d'un constructeur
+<!-- ### Données d'un constructeur
 On est souvent amené à utiliser les données d'un constructeur pour estimer une incertitude.
 
 ```{margin}
@@ -166,3 +166,4 @@ plt.show()
 ### Propagation des variances
 
 Cette méthode sera présentée plus tard.
+ -->
