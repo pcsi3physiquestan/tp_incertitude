@@ -66,7 +66,7 @@ La méthode des moindres carrés proposées ci-dessus n'est optimale que si les 
 
 +++
 
-### Mise en pratique.
+<!-- ### Mise en pratique.
 
 On va présenter l'utilisation de la méthode des moindres carrés uniquement sous Python au moyen de la fonction `numpy.polyfit`. Cf. [explications ici](https://pcsi3physiquestan.github.io/intro_python/notebook/np_polyfit.html) pour son utilisation.
 
@@ -342,3 +342,4 @@ En pratique, on pourra(devra) combiner l'analyse de Monte-Carlo avec la validati
 
 _Le test de compatibilité du modèle affine se ferait donc plutôt après la simulation de Monte-Carlo._
 ```
+ -->
