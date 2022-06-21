@@ -382,57 +382,17 @@ Y = aX + b
 <p class="sidebar-title"></p>
 <p>On a gardé la cohérence de précision entre vaeur mesurée et incertitude. On a par contre gardé plus de chiffres pour l’incertitude de manière à ce qu’il y en ait au moins 2.</p>
 </div>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:left head"><p>Echantillon</p></th>
-<th class="text-align:left head"><p>t(ms)</p></th>
-<th class="text-align:right head"><p>v(cm/ms)</p></th>
-<th class="text-align:right head"><p>u(v)(cm/ms)</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:left"><p>0</p></td>
-<td class="text-align:left"><p>100</p></td>
-<td class="text-align:right"><p>-0.0052</p></td>
-<td class="text-align:right"><p>0.0211</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>1</p></td>
-<td class="text-align:left"><p>150</p></td>
-<td class="text-align:right"><p>0.0934</p></td>
-<td class="text-align:right"><p>0.0194</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p>2</p></td>
-<td class="text-align:left"><p>200</p></td>
-<td class="text-align:right"><p>0.1208</p></td>
-<td class="text-align:right"><p>0.0035</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>3</p></td>
-<td class="text-align:left"><p>250</p></td>
-<td class="text-align:right"><p>0.1658</p></td>
-<td class="text-align:right"><p>0.0028</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p>4</p></td>
-<td class="text-align:left"><p>300</p></td>
-<td class="text-align:right"><p>0.2290</p></td>
-<td class="text-align:right"><p>0.0089</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>5</p></td>
-<td class="text-align:left"><p>350</p></td>
-<td class="text-align:right"><p>0.2612</p></td>
-<td class="text-align:right"><p>0.0091</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p>6</p></td>
-<td class="text-align:left"><p>400</p></td>
-<td class="text-align:right"><p>0.3170</p></td>
-<td class="text-align:right"><p>0.0032</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>7</p></td>
-<td class="text-align:left"><p>450</p></td>
-<td class="text-align:right"><p>0.3449</p></td>
-<td class="text-align:right"><p>0.0188</p></td>
-</tr>
-</tbody>
-</table>
+<!-- 
+|Echantillon|t(ms)| 	v(cm/ms) |u(v)(cm/ms)|
+|:-|:-|-:|-:|
+|0| 	100| 	-0.0052| 	0.0211|
+|1| 	150| 	0.0934 | 	0.0194|
+|2| 	200| 	0.1208 | 	0.0035|
+|3| 	250| 	0.1658 | 	0.0028|
+|4| 	300| 	0.2290 | 	0.0089|
+|5| 	350| 	0.2612 | 	0.0091|
+|6| 	400| 	0.3170 | 	0.0032|
+|7| 	450| 	0.3449 | 	0.0188| -->
 <ul class="simple">
 <li><p><strong>Vérification sommaire</strong>
 On commence par <a class="reference internal" href="#chute-fig1"><span class="std std-ref">représenter les points</span></a> <span class="math notranslate nohighlight">\((t_i,v_i)\)</span> avec leurs incertitudes de mesure. On observe une tendance des points à s’aligner. On va donc poursuivre l’étude en recherchant des paramètres d’ajustement linéaire.</p></li>
@@ -591,9 +551,9 @@ Il convient d'utiliser une méthode de Monte-Carlo pour cela. Une telle méthode
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Champ de pesanteur : g = 9.474439087564019 m/s^2
-Incertitude : u(g) =0.5303680119596497 m/s^2
-Ecart normalisé : eta = 0.0009627194198371941
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Champ de pesanteur : g = 9.474022139754586 m/s^2
+Incertitude : u(g) =0.5316971710760883 m/s^2
+Ecart normalisé : eta = 0.4219725922108163
 </pre></div>
 </div>
 <img alt="../_images/regression_9_1.png" src="../_images/regression_9_1.png" />
