@@ -192,7 +192,7 @@ On commence par [représenter les points](chute_fig1) $(t_i,v_i)$ avec leurs inc
 :name: chute_fig1
 :align: center
 Analyse brute des résultats.
-```
+``` -->
 * __Ajustement linéaire__
 On a réalisé un ajustement linéaire. On trouve pour le modèle $V = a t + b$ : 
 
@@ -227,7 +227,7 @@ On a maintenant [tracé](chute_fig3) les résidus (gauche). On remarque que les 
 :name: chute_fig3
 :align: center
 Résidus et écarts normalisés
-``` -->
+```
 ````
 
 ## Régression linéaire et incertitude.
