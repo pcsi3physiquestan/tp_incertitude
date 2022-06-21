@@ -281,6 +281,13 @@
   <a class="reference internal nav-link" href="#methode-generale">
    10.1. Méthode générale
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methode-de-monte-carlo">
+     10.1.1. Méthode de Monte-Carlo.
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -506,114 +513,131 @@ Résidus et écarts normalisés
 L'estimation du champ de pesanteur précédent a peu d'utilité si on ne peut le comparer à une valeur attendue ($g = (9.81 \pm 0.10)\rm{m.s^{-2}}$). Mais pour réaliser une comparaison, il faut estimer l'incertitude sur $g_{experimental}$, donc sur la pente de la régression linéaire.
 
 Il convient d'utiliser une méthode de Monte-Carlo pour cela. Une telle méthode sera présentée plus tard. -->
-<!-- ### Méthode de Monte-Carlo.
-Le principe est donc :
-1. De créer N échantillons des $v_i$ suivant une loi (normale ici) d'écart-type $u(v_i)$.
-2. Pour chaque échantillons $\{v_i / 1 \leq i \leq k\}$, on estime la pente $a$ puis on en déduit $g$ 
+<div class="section" id="methode-de-monte-carlo">
+<h3><span class="section-number">10.1.1. </span>Méthode de Monte-Carlo.<a class="headerlink" href="#methode-de-monte-carlo" title="Permalink to this headline">¶</a></h3>
+<p>Le principe est donc :</p>
+<ol class="simple">
+<li><p>De créer N échantillons des <span class="math notranslate nohighlight">\(v_i\)</span> suivant une loi (normale ici) d’écart-type <span class="math notranslate nohighlight">\(u(v_i)\)</span>.</p></li>
+<li><p>Pour chaque échantillons <span class="math notranslate nohighlight">\(\{v_i / 1 \leq i \leq k\}\)</span>, on estime la pente <span class="math notranslate nohighlight">\(a\)</span> puis on en déduit <span class="math notranslate nohighlight">\(g\)</span></p></li>
+</ol>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Ici le passage de <span class="math notranslate nohighlight">\(a\)</span> à <span class="math notranslate nohighlight">\(g\)</span> sera un simple changement d’unité pour avoir des <span class="math notranslate nohighlight">\(m.s^{-2}\)</span>. Dans d’autres expériences, cela peut nécessité quelques calculs.</p>
+</div>
+<ol class="simple">
+<li><p>On a donc N simulations de <span class="math notranslate nohighlight">\(g\)</span> : on peut tracer sa distribution et calculer son écart-type qui sera l’estimation de l’incertitude de <span class="math notranslate nohighlight">\(u(g)\)</span>. On calculera alors l’écart normalisé entre <span class="math notranslate nohighlight">\(g_{theorique}\)</span> et <span class="math notranslate nohighlight">\(g_{experimental}\)</span>.</p></li>
+</ol>
+<p>La cellule de code ci-dessous montre un exemple d’implémentation de cette méthode :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Comme d&#39;habitude on commence par importer les bibliothèques utiles.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-```{margin}
-Ici le passage de $a$ à $g$ sera un simple changement d'unité pour avoir des $m.s^{-2}$. Dans d'autres expériences, cela peut nécessité quelques calculs.
-```
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On créer les vecteurs associées aux mesures</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">ti</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">450</span><span class="p">]</span>
+<span class="n">vi</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.005226</span><span class="p">,</span> <span class="mf">0.093465</span><span class="p">,</span> <span class="mf">0.120806</span><span class="p">,</span> <span class="mf">0.165883</span><span class="p">,</span> <span class="mf">0.229025</span><span class="p">,</span> <span class="mf">0.261237</span><span class="p">,</span> <span class="mf">0.317062</span><span class="p">,</span> <span class="mf">0.344937</span><span class="p">]</span>
+<span class="n">uvi</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.021124</span><span class="p">,</span> <span class="mf">0.019484</span><span class="p">,</span> <span class="mf">0.003540</span><span class="p">,</span> <span class="mf">0.002879</span><span class="p">,</span> <span class="mf">0.008954</span><span class="p">,</span> <span class="mf">0.009124</span><span class="p">,</span> <span class="mf">0.003229</span><span class="p">,</span> <span class="mf">0.018834</span><span class="p">]</span>
 
-3. On a donc N simulations de $g$ : on peut tracer sa distribution et calculer son écart-type qui sera l'estimation de l'incertitude de $u(g)$. On calculera alors l'écart normalisé entre $g_{theorique}$ et $g_{experimental}$.
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On va maintenant créer les échantillons simulés et estimer la pente puis g par régression linéaire pour chaque échantillons.</span>
 
-La cellule de code ci-dessous montre un exemple d'implémentation de cette méthode :
-
-```{code-cell} ipython3
-"""
-Comme d'habitude on commence par importer les bibliothèques utiles.
-"""
-import numpy as np
-import numpy.random as rd
-import matplotlib.pyplot as plt
-
-"""
-On créer les vecteurs associées aux mesures
-"""
-ti = [100, 150, 200, 250, 300, 350, 400, 450]
-vi = [0.005226, 0.093465, 0.120806, 0.165883, 0.229025, 0.261237, 0.317062, 0.344937]
-uvi = [0.021124, 0.019484, 0.003540, 0.002879, 0.008954, 0.009124, 0.003229, 0.018834]
-
-"""
-On va maintenant créer les échantillons simulés et estimer la pente puis g par régression linéaire pour chaque échantillons.
-
-Comment pour votre exercice sur la célérité du son, on doit construire un tableau de valeurs simulés où
-chaque colonne correspond à une valeur de vitesse vi(ti). Les arguments de la fonction rd.normal seront donc:
-- un vecteur vi pour les espérances des distributions des vi
-- un vecteur uvi pour les écart-types des distribution des vi
-- un tuple (N,k) correspondant au nombre de simulations N et au nombres de points de mesure k
-"""
-
-
-k = len(ti)  # Nombre de points de mesure
-N = 100000  # Nombre de simulations
-
-vi_sim = rd.normal(vi, uvi, (N, k))
-
-"""
-La fonction polyfit ne permet pas de faire N régressions linéaires d'un coup. On va donc devoir
-créer une boucle qui parcourt les échantillons simulés et réalise une régression linéaire pour
-chaque ensemble de k mesures simulées.
-"""
-g_sim = np.zeros(N)   # Vecteur où on stockera les champs de pesanteur estimés
-for j in range(N):
-	params = np.polyfit(ti, vi_sim[j], 1)  # Régression linéaire sur la ligne j
-	pente = params[0]
-	g = 10000 * pente  # On passe simplement de cm/ms^2 à des m/s^2
-	g_sim[j] = g
+<span class="sd">Comment pour votre exercice sur la célérité du son, on doit construire un tableau de valeurs simulés où</span>
+<span class="sd">chaque colonne correspond à une valeur de vitesse vi(ti). Les arguments de la fonction rd.normal seront donc:</span>
+<span class="sd">- un vecteur vi pour les espérances des distributions des vi</span>
+<span class="sd">- un vecteur uvi pour les écart-types des distribution des vi</span>
+<span class="sd">- un tuple (N,k) correspondant au nombre de simulations N et au nombres de points de mesure k</span>
+<span class="sd">&quot;&quot;&quot;</span>
 
 
-"""
-On va maintenant tracer l'histogramme des valeurs, calculer la moyenne des g et l'écart-type.
-"""
-g_mes = np.mean(g_sim)
-ug = np.std(g_sim, ddof=1)
+<span class="n">k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ti</span><span class="p">)</span>  <span class="c1"># Nombre de points de mesure</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">100000</span>  <span class="c1"># Nombre de simulations</span>
 
-f, ax = plt.subplots(1, 1)
-f.suptitle("Simulation de Monte-Carlo : Champ de pesanteur")
-ax.set_ylabel("g(m.s^2)")
+<span class="n">vi_sim</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">vi</span><span class="p">,</span> <span class="n">uvi</span><span class="p">,</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
 
-ax.hist(g_sim, bins="rice")  # L'option rice adapte automatiquement le nombre de bâtons.
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">La fonction polyfit ne permet pas de faire N régressions linéaires d&#39;un coup. On va donc devoir</span>
+<span class="sd">créer une boucle qui parcourt les échantillons simulés et réalise une régression linéaire pour</span>
+<span class="sd">chaque ensemble de k mesures simulées.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">g_sim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>   <span class="c1"># Vecteur où on stockera les champs de pesanteur estimés</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+	<span class="n">params</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">ti</span><span class="p">,</span> <span class="n">vi_sim</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Régression linéaire sur la ligne j</span>
+	<span class="n">pente</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="n">g</span> <span class="o">=</span> <span class="mi">10000</span> <span class="o">*</span> <span class="n">pente</span>  <span class="c1"># On passe simplement de cm/ms^2 à des m/s^2</span>
+	<span class="n">g_sim</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">g</span>
 
-print("Champ de pesanteur : g = " +  str(g_mes) + " m/s^2")
-print("Incertitude : u(g) =" +  str(ug) + " m/s^2")
 
-g_th = 9.81  # Valeur théorique
-ug_th = 0.1  # Incertitude sur la valeur théorique
-eta = (g - g_th) / np.sqrt(ug**2 + ug_th**2)
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On va maintenant tracer l&#39;histogramme des valeurs, calculer la moyenne des g et l&#39;écart-type.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">g_mes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">g_sim</span><span class="p">)</span>
+<span class="n">ug</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">g_sim</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-print("Ecart normalisé : eta = " + str(eta))
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Simulation de Monte-Carlo : Champ de pesanteur&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;g(m.s^2)&quot;</span><span class="p">)</span>
 
-"""
-Pour mieux visualiser la compatibilité, on va tterminer en traçant les barre d'incertitude pour la valeur expérimentale et la valeur théorique.
-"""
-g_mes = np.mean(g_sim)
-ug = np.std(g_sim, ddof=1)
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">g_sim</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="s2">&quot;rice&quot;</span><span class="p">)</span>  <span class="c1"># L&#39;option rice adapte automatiquement le nombre de bâtons.</span>
 
-f1, ax1 = plt.subplots(1, 1)
-f1.suptitle("Comparaison théorie-valeur tabulée")
-ax1.set_ylabel("g(m.s^2)")
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Champ de pesanteur : g = &quot;</span> <span class="o">+</span>  <span class="nb">str</span><span class="p">(</span><span class="n">g_mes</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; m/s^2&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incertitude : u(g) =&quot;</span> <span class="o">+</span>  <span class="nb">str</span><span class="p">(</span><span class="n">ug</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; m/s^2&quot;</span><span class="p">)</span>
 
-ax1.errorbar([1], [g], yerr=ug, label="Valeur expérimentale", marker="+", color="red" )  # Valeur expérimentale
-ax1.errorbar([2], [g_th], yerr=ug_th, label="Valeur expérimentale", marker="+", color="blue")  # Valeur théorique
+<span class="n">g_th</span> <span class="o">=</span> <span class="mf">9.81</span>  <span class="c1"># Valeur théorique</span>
+<span class="n">ug_th</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># Incertitude sur la valeur théorique</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span> <span class="o">-</span> <span class="n">g_th</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">ug</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">ug_th</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-plt.show()
-```
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ecart normalisé : eta = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">eta</span><span class="p">))</span>
 
-Ensuite, il faut :
-* rendre-compte de la valeur de $g$ et son incertitude avec les bons chiffres significatifs
-* analyser sa valeur et l'écart normalisé pour voir si la théorie est compatible avec l'expérience.
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Pour mieux visualiser la compatibilité, on va tterminer en traçant les barre d&#39;incertitude pour la valeur expérimentale et la valeur théorique.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">g_mes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">g_sim</span><span class="p">)</span>
+<span class="n">ug</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">g_sim</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-Nous vous laissons réfléchir à ces deux points qui ont déjà été abordés.
+<span class="n">f1</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">f1</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Comparaison théorie-valeur tabulée&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;g(m.s^2)&quot;</span><span class="p">)</span>
 
-```{note}
-En pratique, on pourra(devra) combiner l'analyse de Monte-Carlo avec la validation du modèle théorique. En effet, il faudrait plutôt :
-* tracer le modèle avec la valeur de g estimé par Monte-Carlo pour le comparer aux points de mesure.
-* calculer les écarts normalisés avec la valeur `g_sim` et en tenant compte de `ug_sim`.
+<span class="n">ax1</span><span class="o">.</span><span class="n">errorbar</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">g</span><span class="p">],</span> <span class="n">yerr</span><span class="o">=</span><span class="n">ug</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Valeur expérimentale&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span> <span class="p">)</span>  <span class="c1"># Valeur expérimentale</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">errorbar</span><span class="p">([</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="n">g_th</span><span class="p">],</span> <span class="n">yerr</span><span class="o">=</span><span class="n">ug_th</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Valeur expérimentale&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>  <span class="c1"># Valeur théorique</span>
 
-_Le test de compatibilité du modèle affine se ferait donc plutôt après la simulation de Monte-Carlo._
-```
- --></div>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Champ de pesanteur : g = 9.478354274700887 m/s^2
+Incertitude : u(g) =0.5322653637003444 m/s^2
+Ecart normalisé : eta = -0.41028975383307
+</pre></div>
+</div>
+<img alt="../_images/regression_4_1.png" src="../_images/regression_4_1.png" />
+<img alt="../_images/regression_4_2.png" src="../_images/regression_4_2.png" />
+</div>
+</div>
+<p>Ensuite, il faut :</p>
+<ul class="simple">
+<li><p>rendre-compte de la valeur de <span class="math notranslate nohighlight">\(g\)</span> et son incertitude avec les bons chiffres significatifs</p></li>
+<li><p>analyser sa valeur et l’écart normalisé pour voir si la théorie est compatible avec l’expérience.</p></li>
+</ul>
+<p>Nous vous laissons réfléchir à ces deux points qui ont déjà été abordés.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>En pratique, on pourra(devra) combiner l’analyse de Monte-Carlo avec la validation du modèle théorique. En effet, il faudrait plutôt :</p>
+<ul class="simple">
+<li><p>tracer le modèle avec la valeur de g estimé par Monte-Carlo pour le comparer aux points de mesure.</p></li>
+<li><p>calculer les écarts normalisés avec la valeur <code class="docutils literal notranslate"><span class="pre">g_sim</span></code> et en tenant compte de <code class="docutils literal notranslate"><span class="pre">ug_sim</span></code>.</p></li>
+</ul>
+<p><em>Le test de compatibilité du modèle affine se ferait donc plutôt après la simulation de Monte-Carlo.</em></p>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

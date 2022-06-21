@@ -236,7 +236,7 @@ L'estimation du champ de pesanteur précédent a peu d'utilité si on ne peut le
 
 Il convient d'utiliser une méthode de Monte-Carlo pour cela. Une telle méthode sera présentée plus tard. -->
 
-<!-- ### Méthode de Monte-Carlo.
+### Méthode de Monte-Carlo.
 Le principe est donc :
 1. De créer N échantillons des $v_i$ suivant une loi (normale ici) d'écart-type $u(v_i)$.
 2. Pour chaque échantillons $\{v_i / 1 \leq i \leq k\}$, on estime la pente $a$ puis on en déduit $g$ 
@@ -343,4 +343,3 @@ En pratique, on pourra(devra) combiner l'analyse de Monte-Carlo avec la validati
 
 _Le test de compatibilité du modèle affine se ferait donc plutôt après la simulation de Monte-Carlo._
 ```
- -->
