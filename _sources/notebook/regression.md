@@ -185,7 +185,7 @@ On a gardé la cohérence de précision entre vaeur mesurée et incertitude. On 
 |6| 	400| 	0.3170 | 	0.0032|
 |7| 	450| 	0.3449 | 	0.0188|
 
-<!-- * __Vérification sommaire__
+* __Vérification sommaire__
 On commence par [représenter les points](chute_fig1) $(t_i,v_i)$ avec leurs incertitudes de mesure. On observe une tendance des points à s'aligner. On va donc poursuivre l'étude en recherchant des paramètres d'ajustement linéaire.
 
 ```{figure} ./images/chute_grossier.png
@@ -204,7 +204,7 @@ On a réalisé un ajustement linéaire. On trouve pour le modèle $V = a t + b$ 
 On a fait exprès de ne pas arrondir les valeurs car on ne connait pas pour l'instant l'incertitude de mesure.
 ```
 
-On peut tracer [la courbe modèle avec les points de mesure](chute_fig2) et observer si toutes les croix intersectent bien la courbe modèle. Les points semblent proches mais on remarquera :
+<!-- On peut tracer [la courbe modèle avec les points de mesure](chute_fig2) et observer si toutes les croix intersectent bien la courbe modèle. Les points semblent proches mais on remarquera :
 * qu'il n'est pas toujours évident de vérifier s'il y a intersection ou non. 
 * que certains points semblent ne pas passer par la droite modèle.
 
@@ -227,8 +227,8 @@ On a maintenant [tracé](chute_fig3) les résidus (gauche). On remarque que les 
 :name: chute_fig3
 :align: center
 Résidus et écarts normalisés
-``` -->
-````
+```
+```` -->
 
 ## Régression linéaire et incertitude.
 

@@ -440,26 +440,37 @@ Y = aX + b
 </tr>
 </tbody>
 </table>
-<!-- * __Vérification sommaire__
-On commence par [représenter les points](chute_fig1) $(t_i,v_i)$ avec leurs incertitudes de mesure. On observe une tendance des points à s'aligner. On va donc poursuivre l'étude en recherchant des paramètres d'ajustement linéaire.
-
-```{figure} ./images/chute_grossier.png
-:name: chute_fig1
-:align: center
-Analyse brute des résultats.
-```
-* __Ajustement linéaire__
-On a réalisé un ajustement linéaire. On trouve pour le modèle $V = a t + b$ : 
-
-|Grandeur | a $(cm/ms^2)$| b (cm/ms)|
-|:-|-:|-:|
-|Estimation|0.0009651331|-0.074512830|
-
-```{margin}
-On a fait exprès de ne pas arrondir les valeurs car on ne connait pas pour l'instant l'incertitude de mesure.
-```
-
-On peut tracer [la courbe modèle avec les points de mesure](chute_fig2) et observer si toutes les croix intersectent bien la courbe modèle. Les points semblent proches mais on remarquera :
+<ul class="simple">
+<li><p><strong>Vérification sommaire</strong>
+On commence par <a class="reference internal" href="#chute-fig1"><span class="std std-ref">représenter les points</span></a> <span class="math notranslate nohighlight">\((t_i,v_i)\)</span> avec leurs incertitudes de mesure. On observe une tendance des points à s’aligner. On va donc poursuivre l’étude en recherchant des paramètres d’ajustement linéaire.</p></li>
+</ul>
+<div class="figure align-center" id="chute-fig1">
+<img alt="../_images/chute_grossier.png" src="../_images/chute_grossier.png" />
+<p class="caption"><span class="caption-number">Fig. 10.1 </span><span class="caption-text">Analyse brute des résultats.</span><a class="headerlink" href="#chute-fig1" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p><strong>Ajustement linéaire</strong>
+On a réalisé un ajustement linéaire. On trouve pour le modèle <span class="math notranslate nohighlight">\(V = a t + b\)</span> :</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Grandeur</p></th>
+<th class="text-align:right head"><p>a <span class="math notranslate nohighlight">\((cm/ms^2)\)</span></p></th>
+<th class="text-align:right head"><p>b (cm/ms)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Estimation</p></td>
+<td class="text-align:right"><p>0.0009651331</p></td>
+<td class="text-align:right"><p>-0.074512830</p></td>
+</tr>
+</tbody>
+</table>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>On a fait exprès de ne pas arrondir les valeurs car on ne connait pas pour l’instant l’incertitude de mesure.</p>
+</div>
+<!-- On peut tracer [la courbe modèle avec les points de mesure](chute_fig2) et observer si toutes les croix intersectent bien la courbe modèle. Les points semblent proches mais on remarquera :
 * qu'il n'est pas toujours évident de vérifier s'il y a intersection ou non. 
 * que certains points semblent ne pas passer par la droite modèle.
 
@@ -482,7 +493,8 @@ On a maintenant [tracé](chute_fig3) les résidus (gauche). On remarque que les 
 :name: chute_fig3
 :align: center
 Résidus et écarts normalisés
-``` -->
+```
+```` -->
 </div>
 </div>
 </div>
@@ -505,99 +517,6 @@ Résidus et écarts normalisés
 <li><p>On a donc N simulations de <span class="math notranslate nohighlight">\(g\)</span> : on peut tracer sa distribution et calculer son écart-type qui sera l’estimation de l’incertitude de <span class="math notranslate nohighlight">\(u(g)\)</span>. On calculera alors l’écart normalisé entre <span class="math notranslate nohighlight">\(g_{theorique}\)</span> et <span class="math notranslate nohighlight">\(g_{experimental}\)</span>.</p></li>
 </ol>
 <p>La cellule de code ci-dessous montre un exemple d’implémentation de cette méthode :</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Comme d&#39;habitude on commence par importer les bibliothèques utiles.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">On créer les vecteurs associées aux mesures</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="n">ti</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">450</span><span class="p">]</span>
-<span class="n">vi</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.005226</span><span class="p">,</span> <span class="mf">0.093465</span><span class="p">,</span> <span class="mf">0.120806</span><span class="p">,</span> <span class="mf">0.165883</span><span class="p">,</span> <span class="mf">0.229025</span><span class="p">,</span> <span class="mf">0.261237</span><span class="p">,</span> <span class="mf">0.317062</span><span class="p">,</span> <span class="mf">0.344937</span><span class="p">]</span>
-<span class="n">uvi</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.021124</span><span class="p">,</span> <span class="mf">0.019484</span><span class="p">,</span> <span class="mf">0.003540</span><span class="p">,</span> <span class="mf">0.002879</span><span class="p">,</span> <span class="mf">0.008954</span><span class="p">,</span> <span class="mf">0.009124</span><span class="p">,</span> <span class="mf">0.003229</span><span class="p">,</span> <span class="mf">0.018834</span><span class="p">]</span>
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">On va maintenant créer les échantillons simulés et estimer la pente puis g par régression linéaire pour chaque échantillons.</span>
-
-<span class="sd">Comment pour votre exercice sur la célérité du son, on doit construire un tableau de valeurs simulés où</span>
-<span class="sd">chaque colonne correspond à une valeur de vitesse vi(ti). Les arguments de la fonction rd.normal seront donc:</span>
-<span class="sd">- un vecteur vi pour les espérances des distributions des vi</span>
-<span class="sd">- un vecteur uvi pour les écart-types des distribution des vi</span>
-<span class="sd">- un tuple (N,k) correspondant au nombre de simulations N et au nombres de points de mesure k</span>
-<span class="sd">&quot;&quot;&quot;</span>
-
-
-<span class="n">k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ti</span><span class="p">)</span>  <span class="c1"># Nombre de points de mesure</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">100000</span>  <span class="c1"># Nombre de simulations</span>
-
-<span class="n">vi_sim</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">vi</span><span class="p">,</span> <span class="n">uvi</span><span class="p">,</span> <span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">La fonction polyfit ne permet pas de faire N régressions linéaires d&#39;un coup. On va donc devoir</span>
-<span class="sd">créer une boucle qui parcourt les échantillons simulés et réalise une régression linéaire pour</span>
-<span class="sd">chaque ensemble de k mesures simulées.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="n">g_sim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>   <span class="c1"># Vecteur où on stockera les champs de pesanteur estimés</span>
-<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
-	<span class="n">params</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">ti</span><span class="p">,</span> <span class="n">vi_sim</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Régression linéaire sur la ligne j</span>
-	<span class="n">pente</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-	<span class="n">g</span> <span class="o">=</span> <span class="mi">10000</span> <span class="o">*</span> <span class="n">pente</span>  <span class="c1"># On passe simplement de cm/ms^2 à des m/s^2</span>
-	<span class="n">g_sim</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">g</span>
-
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">On va maintenant tracer l&#39;histogramme des valeurs, calculer la moyenne des g et l&#39;écart-type.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="n">g_mes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">g_sim</span><span class="p">)</span>
-<span class="n">ug</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">g_sim</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">f</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Simulation de Monte-Carlo : Champ de pesanteur&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;g(m.s^2)&quot;</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">g_sim</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="s2">&quot;rice&quot;</span><span class="p">)</span>  <span class="c1"># L&#39;option rice adapte automatiquement le nombre de bâtons.</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Champ de pesanteur : g = &quot;</span> <span class="o">+</span>  <span class="nb">str</span><span class="p">(</span><span class="n">g_mes</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; m/s^2&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incertitude : u(g) =&quot;</span> <span class="o">+</span>  <span class="nb">str</span><span class="p">(</span><span class="n">ug</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; m/s^2&quot;</span><span class="p">)</span>
-
-<span class="n">g_th</span> <span class="o">=</span> <span class="mf">9.81</span>  <span class="c1"># Valeur théorique</span>
-<span class="n">ug_th</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># Incertitude sur la valeur théorique</span>
-<span class="n">eta</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span> <span class="o">-</span> <span class="n">g_th</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">ug</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">ug_th</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ecart normalisé : eta = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">eta</span><span class="p">))</span>
-
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Pour mieux visualiser la compatibilité, on va tterminer en traçant les barre d&#39;incertitude pour la valeur expérimentale et la valeur théorique.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="n">g_mes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">g_sim</span><span class="p">)</span>
-<span class="n">ug</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">g_sim</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">f1</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">f1</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Comparaison théorie-valeur tabulée&quot;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;g(m.s^2)&quot;</span><span class="p">)</span>
-
-<span class="n">ax1</span><span class="o">.</span><span class="n">errorbar</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="n">g</span><span class="p">],</span> <span class="n">yerr</span><span class="o">=</span><span class="n">ug</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Valeur expérimentale&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span> <span class="p">)</span>  <span class="c1"># Valeur expérimentale</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">errorbar</span><span class="p">([</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="n">g_th</span><span class="p">],</span> <span class="n">yerr</span><span class="o">=</span><span class="n">ug_th</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Valeur expérimentale&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>  <span class="c1"># Valeur théorique</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Champ de pesanteur : g = 9.476353792486423 m/s^2
-Incertitude : u(g) =0.5301851495171018 m/s^2
-Ecart normalisé : eta = -1.0705046474707551
-</pre></div>
-</div>
-<img alt="../_images/regression_9_1.png" src="../_images/regression_9_1.png" />
-<img alt="../_images/regression_9_2.png" src="../_images/regression_9_2.png" />
-</div>
-</div>
 <p>Ensuite, il faut :</p>
 <ul class="simple">
 <li><p>rendre-compte de la valeur de <span class="math notranslate nohighlight">\(g\)</span> et son incertitude avec les bons chiffres significatifs</p></li>
