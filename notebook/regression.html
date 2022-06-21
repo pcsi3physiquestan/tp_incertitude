@@ -376,31 +376,71 @@ Y = aX + b
 </div>
 <div class="section" id="exemple-d-utilisation-en-ligne">
 <h3><span class="section-number">10.2.3. </span>Exemple d’utilisation (en ligne)<a class="headerlink" href="#exemple-d-utilisation-en-ligne" title="Permalink to this headline">¶</a></h3>
-<!-- ````{topic} Exemple
-On étudie une chute d'un corps dans l'air partant d'une vitesse $v_0$. On veut le modéliser par un point matériel et supposer les frottements négligeables et le champ de pesanteur uniforme. L'objectif est :
-* de valider les hypothèses qu'on vient de donner
-* d'estimer le champ de pesanteur sur le lieu de l'expérience.
-
-Comme, dans le modèle précédent, on attend une relation $v(t) = v_0 + gt$, on a utilisé un dispositif permettant d'obtenir des couples de mesures $(t_i, v_i)$ avec des incertitudes négligeables sur $t_i$ et des incertitudes $u(v_i)$ sur les $v_i$. On va réaliser une ajustement linéaire pour estimer le champ de pesanteur suivant le modèle proposé et vérifier la cohérence entre le modèle et l'expérience avec le champ de pesanteur estimé.
-
-Les données expérimentales obtenues sont données dans le tableau ci-dessous
-
-```{margin}
-On a gardé la cohérence de précision entre vaeur mesurée et incertitude. On a par contre gardé plus de chiffres pour l'incertitude de manière à ce qu'il y en ait au moins 2.
-```
-
-|Echantillon|t(ms)| 	v(cm/ms) |u(v)(cm/ms)|
-|:-|:-|-:|-:|
-|0| 	100| 	-0.0052| 	0.0211|
-|1| 	150| 	0.0934 | 	0.0194|
-|2| 	200| 	0.1208 | 	0.0035|
-|3| 	250| 	0.1658 | 	0.0028|
-|4| 	300| 	0.2290 | 	0.0089|
-|5| 	350| 	0.2612 | 	0.0091|
-|6| 	400| 	0.3170 | 	0.0032|
-|7| 	450| 	0.3449 | 	0.0188|
-
-* __Vérification sommaire__
+<div class="topic">
+<p class="topic-title">Exemple</p>
+<p>On étudie une chute d’un corps dans l’air partant d’une vitesse <span class="math notranslate nohighlight">\(v_0\)</span>. On veut le modéliser par un point matériel et supposer les frottements négligeables et le champ de pesanteur uniforme. L’objectif est :</p>
+<ul class="simple">
+<li><p>de valider les hypothèses qu’on vient de donner</p></li>
+<li><p>d’estimer le champ de pesanteur sur le lieu de l’expérience.</p></li>
+</ul>
+<p>Comme, dans le modèle précédent, on attend une relation <span class="math notranslate nohighlight">\(v(t) = v_0 + gt\)</span>, on a utilisé un dispositif permettant d’obtenir des couples de mesures <span class="math notranslate nohighlight">\((t_i, v_i)\)</span> avec des incertitudes négligeables sur <span class="math notranslate nohighlight">\(t_i\)</span> et des incertitudes <span class="math notranslate nohighlight">\(u(v_i)\)</span> sur les <span class="math notranslate nohighlight">\(v_i\)</span>. On va réaliser une ajustement linéaire pour estimer le champ de pesanteur suivant le modèle proposé et vérifier la cohérence entre le modèle et l’expérience avec le champ de pesanteur estimé.</p>
+<p>Les données expérimentales obtenues sont données dans le tableau ci-dessous</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>On a gardé la cohérence de précision entre vaeur mesurée et incertitude. On a par contre gardé plus de chiffres pour l’incertitude de manière à ce qu’il y en ait au moins 2.</p>
+</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Echantillon</p></th>
+<th class="text-align:left head"><p>t(ms)</p></th>
+<th class="text-align:right head"><p>v(cm/ms)</p></th>
+<th class="text-align:right head"><p>u(v)(cm/ms)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>0</p></td>
+<td class="text-align:left"><p>100</p></td>
+<td class="text-align:right"><p>-0.0052</p></td>
+<td class="text-align:right"><p>0.0211</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>150</p></td>
+<td class="text-align:right"><p>0.0934</p></td>
+<td class="text-align:right"><p>0.0194</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>2</p></td>
+<td class="text-align:left"><p>200</p></td>
+<td class="text-align:right"><p>0.1208</p></td>
+<td class="text-align:right"><p>0.0035</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>3</p></td>
+<td class="text-align:left"><p>250</p></td>
+<td class="text-align:right"><p>0.1658</p></td>
+<td class="text-align:right"><p>0.0028</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>4</p></td>
+<td class="text-align:left"><p>300</p></td>
+<td class="text-align:right"><p>0.2290</p></td>
+<td class="text-align:right"><p>0.0089</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>5</p></td>
+<td class="text-align:left"><p>350</p></td>
+<td class="text-align:right"><p>0.2612</p></td>
+<td class="text-align:right"><p>0.0091</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>6</p></td>
+<td class="text-align:left"><p>400</p></td>
+<td class="text-align:right"><p>0.3170</p></td>
+<td class="text-align:right"><p>0.0032</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>7</p></td>
+<td class="text-align:left"><p>450</p></td>
+<td class="text-align:right"><p>0.3449</p></td>
+<td class="text-align:right"><p>0.0188</p></td>
+</tr>
+</tbody>
+</table>
+<!-- * __Vérification sommaire__
 On commence par [représenter les points](chute_fig1) $(t_i,v_i)$ avec leurs incertitudes de mesure. On observe une tendance des points à s'aligner. On va donc poursuivre l'étude en recherchant des paramètres d'ajustement linéaire.
 
 ```{figure} ./images/chute_grossier.png
@@ -442,8 +482,8 @@ On a maintenant [tracé](chute_fig3) les résidus (gauche). On remarque que les 
 :name: chute_fig3
 :align: center
 Résidus et écarts normalisés
-```
-```` -->
+``` -->
+</div>
 </div>
 </div>
 <div class="section" id="regression-lineaire-et-incertitude">
@@ -549,9 +589,9 @@ Résidus et écarts normalisés
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Champ de pesanteur : g = 9.48084261921534 m/s^2
-Incertitude : u(g) =0.5342510790974904 m/s^2
-Ecart normalisé : eta = -0.9314643489463358
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Champ de pesanteur : g = 9.476353792486423 m/s^2
+Incertitude : u(g) =0.5301851495171018 m/s^2
+Ecart normalisé : eta = -1.0705046474707551
 </pre></div>
 </div>
 <img alt="../_images/regression_9_1.png" src="../_images/regression_9_1.png" />

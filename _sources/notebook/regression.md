@@ -161,7 +161,7 @@ f.savefig('./images/chute_grossier.png')
 f1.savefig('./images/chute_comparaison.png')
 f2.savefig('./images/chute_residus.png')
 ```
-<!-- ````{topic} Exemple
+````{topic} Exemple
 On étudie une chute d'un corps dans l'air partant d'une vitesse $v_0$. On veut le modéliser par un point matériel et supposer les frottements négligeables et le champ de pesanteur uniforme. L'objectif est :
 * de valider les hypothèses qu'on vient de donner
 * d'estimer le champ de pesanteur sur le lieu de l'expérience.
@@ -185,7 +185,7 @@ On a gardé la cohérence de précision entre vaeur mesurée et incertitude. On 
 |6| 	400| 	0.3170 | 	0.0032|
 |7| 	450| 	0.3449 | 	0.0188|
 
-* __Vérification sommaire__
+<!-- * __Vérification sommaire__
 On commence par [représenter les points](chute_fig1) $(t_i,v_i)$ avec leurs incertitudes de mesure. On observe une tendance des points à s'aligner. On va donc poursuivre l'étude en recherchant des paramètres d'ajustement linéaire.
 
 ```{figure} ./images/chute_grossier.png
@@ -227,8 +227,8 @@ On a maintenant [tracé](chute_fig3) les résidus (gauche). On remarque que les 
 :name: chute_fig3
 :align: center
 Résidus et écarts normalisés
-```
-```` -->
+``` -->
+````
 
 ## Régression linéaire et incertitude.
 
