@@ -96,14 +96,9 @@
    Points à retenir
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="vocabulaire.html">
-   Vocabulaire et étapes : Généralités
-  </a>
- </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="incertitude.html">
-   Les incertitudes de mesure
+  <a class="reference internal" href="explication.html">
+   Comprendre le contexte
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -112,46 +107,63 @@
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="distribution.html">
-     Distributions statistiques usuelles.
+    <a class="reference internal" href="vocabulaire.html">
+     Vocabulaire et étapes : Généralités
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sources.html">
-     Sources d’incertitudes et bilan.
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="incertitude.html">
+     Les incertitudes de mesure
     </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="distribution.html">
+       Distributions statistiques usuelles.
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="sources.html">
+       Sources d’incertitudes et bilan.
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Incertitude des mesurandes indirectes.
+      </a>
+     </li>
+    </ul>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Incertitude des mesurandes indirectes.
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="rcgeneral.html">
+     Rendre compte et exploiter
     </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="rcgeneral.html">
-   Rendre compte et exploiter
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="comparaison.html">
-     Comparer un résultat expérimental avec un résultat théorique.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="verifier_loi.html">
-     Vérifier une loi physique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression.html">
-     Ajustement d’un modèle affine
-    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="comparaison.html">
+       Comparer un résultat expérimental avec un résultat théorique.
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="verifier_loi.html">
+       Vérifier une loi physique
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="regression.html">
+       Ajustement d’un modèle affine
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -271,7 +283,17 @@
      Principe
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-en-ligne">
+     Exemple (en ligne)
+    </a>
+   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#propagation-des-variances">
+   Propagation des variances
+  </a>
  </li>
 </ul>
 
@@ -322,87 +344,93 @@ Y = f(X_i)
 <h2>Simulation de Monte-Carlo.<a class="headerlink" href="#simulation-de-monte-carlo" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="principe">
 <h3>Principe<a class="headerlink" href="#principe" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>On rappelle brièvement le principe de la simulation de Monte-Carlo. On connaît la distribution statistique de chaque mesurande $X_i$. On va simuler N échantillons de chaque $X_i$ puis on calcule ainsi N échantillons $Y$. On obtient ainsi la distribution des valeurs de $Y$ et on peut calculer son incertitude de mesure.
+<p>On rappelle brièvement le principe de la simulation de Monte-Carlo. On connaît la distribution statistique de chaque mesurande <span class="math notranslate nohighlight">\(X_i\)</span>. On va simuler N échantillons de chaque <span class="math notranslate nohighlight">\(X_i\)</span> puis on calcule ainsi N échantillons <span class="math notranslate nohighlight">\(Y\)</span>. On obtient ainsi la distribution des valeurs de <span class="math notranslate nohighlight">\(Y\)</span> et on peut calculer son incertitude de mesure.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dans l’exemple qui suit, on a supposé pour simplifier que les incertitude-type et distribution des mesurandes directs ont déjà été déterminées (ou viennent d’information extérieures). En pratique, elles sont souvent déterminées à partir d’une ou plusieurs sources d’incertitudes. On peut alors combiner la méthode présentée précédemment et celle présentée ici (ce sera fait par la suite).<br />
+<em>C’est la raison pour laquelle les simulations ne sont pas centrées en 0.</em></p>
+</div>
+<p><img alt="Principe de la simulation de Monte-Carlo" src="../_images/simulation_mc.png" /></p>
+</div>
+<div class="section" id="exemple-en-ligne">
+<h3>Exemple (en ligne)<a class="headerlink" href="#exemple-en-ligne" title="Permalink to this headline">¶</a></h3>
+<div class="topic">
+<p class="topic-title">Résistance électrique</p>
+<p>On reprend l’exemple précédent de l’estimation de l’incertitude de la résistance R. On a mesuré tension et intensité. On a trouvé :</p>
+<ul class="simple">
+<li><p>Un tension <span class="math notranslate nohighlight">\(U = 4.53 V\)</span> avec une incertitude <span class="math notranslate nohighlight">\(u(U) = 0.03 V\)</span>. On a estimé que la loi de probabilité étant gaussienne.</p></li>
+<li><p>Une intensité <span class="math notranslate nohighlight">\(I = 12.14 mA\)</span> avec une incertitude <span class="math notranslate nohighlight">\(u(I) = 0.08 mA\)</span>. On a estimé que la loi de probabilité étant gaussienne.</p></li>
+</ul>
+<p>La cellule permet d’observer la méthode de Monte-Carlo. La méthode est :</p>
+<ol class="simple">
+<li><p>On créer deux vecteurs de taille N contenant des tirages aléatoires de U et I basés sur les distibutions choisies.</p></li>
+<li><p>On obtient un vecteur de taille N contenant des valeurs simulés de R.</p></li>
+<li><p>On trace l’histogramme et on calcule la moyenne et l’écart-type de la distribution qui nous donnerons le résultat de mesurage et l’incertitude-type.</p></li>
+</ol>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rd</span>  <span class="c1"># La bibliothèque numpy.random contient les fonctions générant des échantillons aléatoires.</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1"># La biliothèque numpy permettra de calculer la moyenne et l&#39;écart-type d&#39;un ensemble des valeurs.</span>
 
-```{note}
-Dans l&#39;exemple qui suit, on a supposé pour simplifier que les incertitude-type et distribution des mesurandes directs ont déjà été déterminées (ou viennent d&#39;information extérieures). En pratique, elles sont souvent déterminées à partir d&#39;une ou plusieurs sources d&#39;incertitudes. On peut alors combiner la méthode présentée précédemment et celle présentée ici (ce sera fait par la suite).  
-_C&#39;est la raison pour laquelle les simulations ne sont pas centrées en 0._
-```
+<span class="sd">&quot;&quot;&quot;On importe aussi matplotlib.pyplot pour les tracés&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-![Principe de la simulation de Monte-Carlo](./images/simulation_mc.png)
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On commence par créer les N échantillons de U et I.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000000</span>  <span class="c1"># Nombre d&#39;échantillons à réaliser.</span>
+<span class="n">U</span> <span class="o">=</span> <span class="mf">4.53</span>
+<span class="n">uU</span> <span class="o">=</span> <span class="mf">0.03</span>
+<span class="n">I</span> <span class="o">=</span> <span class="mf">12.14</span>  <span class="c1"># On travaille en mA pour ne pas gérer des nombres trop petits.</span>
+<span class="n">uI</span> <span class="o">=</span> <span class="mf">0.08</span>  <span class="c1"># Même remarque</span>
 
-+++
-
-### Exemple
-```{topic} Résistance électrique
-On reprend l&#39;exemple précédent de l&#39;estimation de l&#39;incertitude de la résistance R. On a mesuré tension et intensité. On a trouvé :
- 
-* Un tension $U = 4.53 V$ avec une incertitude $u(U) = 0.03 V$. On a estimé que la loi de probabilité étant gaussienne.
-* Une intensité $I = 12.14 mA$ avec une incertitude $u(I) = 0.08 mA$. On a estimé que la loi de probabilité étant gaussienne.
-```
-
-La cellule (en ligne) permet d&#39;observer la méthode de Monte-Carlo. La méthode est :
-1. On créer deux vecteurs de taille N contenant des tirages aléatoires de U et I basés sur les distibutions choisies.
-2. On obtient un vecteur de taille N contenant des valeurs simulés de R.
-3. On trace l&#39;histogramme et on calcule la moyenne et l&#39;écart-type de la distribution qui nous donnerons le résultat de mesurage et l&#39;incertitude-type.
-
-```{code-cell} ipython3
-:tags: [remove-input]
-
-import numpy.random as rd  # La bibliothèque numpy.random contient les fonctions générant des échantillons aléatoires.
-import numpy as np  # La biliothèque numpy permettra de calculer la moyenne et l&#39;écart-type d&#39;un ensemble des valeurs.
-
-&quot;&quot;&quot;On importe aussi matplotlib.pyplot pour les tracés&quot;&quot;&quot;
-import matplotlib.pyplot as plt
-
-&quot;&quot;&quot;
-On commence par créer les N échantillons de U et I.
-&quot;&quot;&quot;
-N = 1000000  # Nombre d&#39;échantillons à réaliser.
-U = 4.53
-uU = 0.03
-I = 12.14  # On travaille en mA pour ne pas gérer des nombres trop petits.
-uI = 0.08  # Même remarque
-
-Uech = rd.normal(U, uU, N)  # Création des échantillons pour U
-Iech = rd.normal(I, uI, N)  # Création des échantillons pour I
+<span class="n">Uech</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">uU</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>  <span class="c1"># Création des échantillons pour U</span>
+<span class="n">Iech</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">uI</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>  <span class="c1"># Création des échantillons pour I</span>
 
 
-&quot;&quot;&quot;
-On va créer les échantillons de R.
-Ici, l&#39;opération est une simple division et Uech et Iech sont des vecteurs numpy. On peut donc
-écrire directement Uech / Iech pour diviser les éléments termes à termes (vectorialisation).
-&quot;&quot;&quot;
-Rech = Uech / Iech
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On va créer les échantillons de R.</span>
+<span class="sd">Ici, l&#39;opération est une simple division et Uech et Iech sont des vecteurs numpy. On peut donc</span>
+<span class="sd">écrire directement Uech / Iech pour diviser les éléments termes à termes (vectorialisation).</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">Rech</span> <span class="o">=</span> <span class="n">Uech</span> <span class="o">/</span> <span class="n">Iech</span>
 
-&quot;&quot;&quot;
-On va tracer l&#39;histogramme des fréquences des valeurs de R. On pourra l&#39;analyser par la suite.
-&quot;&quot;&quot;
-f, ax = plt.subplots()  # On crée une fenêtre graphique et des axes.
-f.suptitle(&quot;Distribution des valeurs simulées de R&quot;)  # On titre le graphique
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On va tracer l&#39;histogramme des fréquences des valeurs de R. On pourra l&#39;analyser par la suite.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>  <span class="c1"># On crée une fenêtre graphique et des axes.</span>
+<span class="n">f</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Distribution des valeurs simulées de R&quot;</span><span class="p">)</span>  <span class="c1"># On titre le graphique</span>
 
-ax.set_xlabel(&quot;Valeurs de R&quot;)  # On légende l&#39;axe des abscisses
-ax.set_ylabel(&quot;Fréquences&quot;)  # On légende l&#39;axe des ordonnées
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Valeurs de R&quot;</span><span class="p">)</span>  <span class="c1"># On légende l&#39;axe des abscisses</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Fréquences&quot;</span><span class="p">)</span>  <span class="c1"># On légende l&#39;axe des ordonnées</span>
 
-ax.hist(Rech, bins=&#39;rice&#39;)  # On créer l&#39;histogramme des valeurs.
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">Rech</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="s1">&#39;rice&#39;</span><span class="p">)</span>  <span class="c1"># On créer l&#39;histogramme des valeurs.</span>
 
-plt.show()  # On affiche le graphique
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># On affiche le graphique</span>
 
-&quot;&quot;&quot;
-On calcule la moyenne et l&#39;écart comme valeur mesurée et incertitude-type
-&quot;&quot;&quot;
-R = np.mean(Rech)
-uR = np.std(Rech, ddof=1)  # Calcul de l&#39;écart-type. L&#39;option ddof permet de diviser par N-1 et non par N.
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">On calcule la moyenne et l&#39;écart comme valeur mesurée et incertitude-type</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">Rech</span><span class="p">)</span>
+<span class="n">uR</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">Rech</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Calcul de l&#39;écart-type. L&#39;option ddof permet de diviser par N-1 et non par N.</span>
 
-print(&quot;La résistance vaut {:.1f} +/- {:.1f} Ohm&quot;.format(R * 1000, uR * 1000))
-
-```
-
-## Propagation des variances
-Cette méthode sera présentée plus tard dans l&#39;année.
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La résistance vaut </span><span class="si">{:.1f}</span><span class="s2"> +/- </span><span class="si">{:.1f}</span><span class="s2"> Ohm&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">uR</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/indirecte_6_0.png" src="../_images/indirecte_6_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La résistance vaut 373.2 +/- 3.5 Ohm
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="propagation-des-variances">
+<h2>Propagation des variances<a class="headerlink" href="#propagation-des-variances" title="Permalink to this headline">¶</a></h2>
+<p>Cette méthode sera présentée plus tard dans l’année.</p>
 </div>
 </div>
 

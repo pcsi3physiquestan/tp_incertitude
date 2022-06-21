@@ -56,7 +56,7 @@ Dans les deux cas, on est obligé de supposer que les mesurandes $X_i$ sont tous
 
 ### Principe
 
-````
+
 On rappelle brièvement le principe de la simulation de Monte-Carlo. On connaît la distribution statistique de chaque mesurande $X_i$. On va simuler N échantillons de chaque $X_i$ puis on calcule ainsi N échantillons $Y$. On obtient ainsi la distribution des valeurs de $Y$ et on peut calculer son incertitude de mesure.
 
 ```{note}
@@ -68,21 +68,21 @@ _C'est la raison pour laquelle les simulations ne sont pas centrées en 0._
 
 +++
 
-### Exemple
+### Exemple (en ligne)
 ```{topic} Résistance électrique
 On reprend l'exemple précédent de l'estimation de l'incertitude de la résistance R. On a mesuré tension et intensité. On a trouvé :
  
 * Un tension $U = 4.53 V$ avec une incertitude $u(U) = 0.03 V$. On a estimé que la loi de probabilité étant gaussienne.
 * Une intensité $I = 12.14 mA$ avec une incertitude $u(I) = 0.08 mA$. On a estimé que la loi de probabilité étant gaussienne.
-```
 
-La cellule (en ligne) permet d'observer la méthode de Monte-Carlo. La méthode est :
+La cellule permet d'observer la méthode de Monte-Carlo. La méthode est :
 1. On créer deux vecteurs de taille N contenant des tirages aléatoires de U et I basés sur les distibutions choisies.
 2. On obtient un vecteur de taille N contenant des valeurs simulés de R.
 3. On trace l'histogramme et on calcule la moyenne et l'écart-type de la distribution qui nous donnerons le résultat de mesurage et l'incertitude-type.
+```
 
 ```{code-cell} ipython3
-:tags: [remove-input]
+:tags: [hide-input]
 
 import numpy.random as rd  # La bibliothèque numpy.random contient les fonctions générant des échantillons aléatoires.
 import numpy as np  # La biliothèque numpy permettra de calculer la moyenne et l'écart-type d'un ensemble des valeurs.
