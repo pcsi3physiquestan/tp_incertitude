@@ -281,10 +281,30 @@
   <a class="reference internal nav-link" href="#methode-generale">
    10.1. Méthode générale
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regression-lineaire-methode-des-moindres-carres">
+   10.2. Régression linéaire : Méthode des moindres carrés.
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#explication-de-la-methode">
+     10.2.1. Explication de la méthode.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mise-en-pratique">
+     10.2.2. Mise en pratique.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-d-utilisation-en-ligne">
+     10.2.3. Exemple d’utilisation (en ligne)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#methode-de-monte-carlo">
-     10.1.1. Méthode de Monte-Carlo.
+     10.2.4. Méthode de Monte-Carlo.
     </a>
    </li>
   </ul>
@@ -327,194 +347,153 @@ Y = aX + b
 <p>Dans les premiers TPs, les écarts normalisés seront systématiquement tracés pour s’entraîner à les calculs (sous Python notamment) et à les analyser.</p>
 </div>
 <p>Seul le point 2. n’a pas encore été développés. On va voir comment on s’y prend.</p>
-<!-- ## Régression linéaire : Méthode des moindres carrés.
-
-Pour déterminer $a$, $b$, on va utiliser une méthode particulière appelée __méthode des moindres carrés__, cette méthode est démontrées comme étant l'une meilleures estimations de $a$ et $b$ dans de nombreux cas. Leurs incertitudes $u(a)$ et $u(b)$ seront déterminées par une méthode de Monte-Carlo (en répétant donc la méthode des moindres carrés avec des échantillons tirés aléatoirement à partir des distributions statistiques).
-
-+++
-
-### Explication de la méthode.
-
-Cf. [explications ici](https://pcsi3physiquestan.github.io/intro_python/notebook/np_polyfit.html)
-
-
-```{attention}
-La méthode des moindres carrés proposées ci-dessus n'est optimale que si les incertitudes sur les abscisses sont faibles voire nulles. On veillera donc __toujours à placer en abscisses les grandeurs les moins incertaines__, quitte à inverser $X$ et $Y$.
-```
-
-+++
-
-### Mise en pratique.
-
-On va présenter l'utilisation de la méthode des moindres carrés uniquement sous Python au moyen de la fonction `numpy.polyfit`. Cf. [explications ici](https://pcsi3physiquestan.github.io/intro_python/notebook/np_polyfit.html) pour son utilisation.
-
-
-```{margin}
-Il existe une version "pondérée" `numpy.polyfit(x, y, deg, w=incy)` où w est une pondération des points en fonction de l'incertitude sur les $y_i$. `incy` est alors un vecteur numpy contenant les incertitudes sur les $y$.
-```
-
-+++
-
-### Exemple d'utilisation (en ligne)
-```{code-cell} ipython3
-:tags: [remove-cell]
-
-import numpy as np
-import pandas as pd
-import numpy.random as rd
-import matplotlib.pyplot as plt
-from myst_nb import glue
-
-dt = 50
-v0 = - 1 / 10
-h0 = 100
-g = 9.81 * 100 / (1000**2)
-ti = np.arange(100, 550, dt)
-tin = ti[:-1]
-uxi = rd.normal(0.3, 0.9, len(ti))
-sensi = rd.randint(2, size=len(ti))
-plms = [-1, 1]
-deltai = [plms[val] for val in sensi]
-xi = - h0 + v0 * ti + 1/2 * g *ti**2 + deltai * uxi
-vi = []
-uvi = []
-for i in range(len(tin)):
-   vi += [(xi[i+1] - xi[i]) / dt]
-   uvi += [1 / dt * np.sqrt((uxi[i+1])**2 + (uxi[i])**2)]
-vi = np.array(vi)
-uvi = np.array(uvi)
-
-vtbl = pd.DataFrame({
-		"t(ms)": tin,
-		"v(cm/ms)": vi,
-		"u(v)(cm/ms)": uvi,
-	})
-
-glue('chutetbl', vtbl, display=False)
-
-f, ax = plt.subplots(1, 1)
-f.suptitle("Etude d'une chute libre")
-ax.set_xlabel("t(ms)")
-ax.set_ylabel("v(cm/ms)")
-
-ax.errorbar(tin, vi, yerr=uvi, linestyle='', marker='+')
-
-glue('chutefig1', f, display=False)
-
-params = np.polyfit(tin, vi, 1)
-
-vi_adj = np.polyval(params, tin)
-glue('pente', params[0])
-glue('oorigine', params[1])
-
-f1, ax1 = plt.subplots(1, 1)
-f1.suptitle("Etude d'une chute libre")
-ax1.set_xlabel("t(ms)")
-ax1.set_ylabel("v(cm/ms)")
-
-ax1.errorbar(tin, vi, yerr=uvi, linestyle='', marker='+')
-ax1.plot(tin, vi_adj, linestyle='--', marker='', color='orange')
-
-glue('chutefig2', f1, display=False)
-
-
-residus = vi - vi_adj
-enorm = residus / uvi
-
-f2, ax2 = plt.subplots(1, 2)
-f2.suptitle("Chute libre : Analyse des résidus")
-ax21 = ax2[0]
-ax21.set_xlabel("t(ms)")
-ax21.set_ylabel("Delta v(cm/ms)")
-ax21.errorbar(tin, residus, yerr=uvi, linestyle='', marker='+')
-
-ax22 = ax2[1]
-ax22.set_xlabel("t(ms)")
-ax22.set_ylabel("EN")
-ax22.plot(tin, enorm, marker='+', linestyle='', color="black")
-
-glue('residusfig', f2, display=False)
-display(vtbl.style)
-f.savefig('./images/chute_grossier.png')
-f1.savefig('./images/chute_comparaison.png')
-f2.savefig('./images/chute_residus.png')
-```
-````{topic} Exemple
-On étudie une chute d'un corps dans l'air partant d'une vitesse $v_0$. On veut le modéliser par un point matériel et supposer les frottements négligeables et le champ de pesanteur uniforme. L'objectif est :
-* de valider les hypothèses qu'on vient de donner
-* d'estimer le champ de pesanteur sur le lieu de l'expérience.
-
-Comme, dans le modèle précédent, on attend une relation $v(t) = v_0 + gt$, on a utilisé un dispositif permettant d'obtenir des couples de mesures $(t_i, v_i)$ avec des incertitudes négligeables sur $t_i$ et des incertitudes $u(v_i)$ sur les $v_i$. On va réaliser une ajustement linéaire pour estimer le champ de pesanteur suivant le modèle proposé et vérifier la cohérence entre le modèle et l'expérience avec le champ de pesanteur estimé.
-
-Les données expérimentales obtenues sont données dans le tableau ci-dessous
-
-```{margin}
-On a gardé la cohérence de précision entre vaeur mesurée et incertitude. On a par contre gardé plus de chiffres pour l'incertitude de manière à ce qu'il y en ait au moins 2.
-```
-
-|Echantillon|t(ms)| 	v(cm/ms) |u(v)(cm/ms)|
-|:-|:-|-:|-:|
-|0| 	100| 	-0.0052| 	0.0211|
-|1| 	150| 	0.0934 | 	0.0194|
-|2| 	200| 	0.1208 | 	0.0035|
-|3| 	250| 	0.1658 | 	0.0028|
-|4| 	300| 	0.2290 | 	0.0089|
-|5| 	350| 	0.2612 | 	0.0091|
-|6| 	400| 	0.3170 | 	0.0032|
-|7| 	450| 	0.3449 | 	0.0188|
-
-* __Vérification sommaire__
-On commence par [représenter les points](chute_fig1) $(t_i,v_i)$ avec leurs incertitudes de mesure. On observe une tendance des points à s'aligner. On va donc poursuivre l'étude en recherchant des paramètres d'ajustement linéaire.
-
-```{figure} ./images/chute_grossier.png
-:name: chute_fig1
-:align: center
-Analyse brute des résultats.
-```
-* __Ajustement linéaire__
-On a réalisé un ajustement linéaire. On trouve pour le modèle $V = a t + b$ : 
-
-|Grandeur | a $(cm/ms^2)$| b (cm/ms)|
-|:-|-:|-:|
-|Estimation|0.0009651331|-0.074512830|
-
-```{margin}
-On a fait exprès de ne pas arrondir les valeurs car on ne connait pas pour l'instant l'incertitude de mesure.
-```
-
-On peut tracer [la courbe modèle avec les points de mesure](chute_fig2) et observer si toutes les croix intersectent bien la courbe modèle. Les points semblent proches mais on remarquera :
-* qu'il n'est pas toujours évident de vérifier s'il y a intersection ou non. 
-* que certains points semblent ne pas passer par la droite modèle.
-
-C'est pourquoi on va tracer les résidus (écart modèle-mesure) et les écarts normalisés.
-
-
-```{figure} ./images/chute_comparaison.png
-:name: chute_fig2
-:align: center
-Comparaison au modèle
-```
-
-* __Résidus et écarts normalisés__
-
-On a maintenant [tracé](chute_fig3) les résidus (gauche). On remarque que les points 3 et 8 semblent poser problème. On s'intéresse donc aux résidus normalisés (droite). Au final, l'ensemble des résidus est inférieur à 2, on va donc pouvoir considérer que l'ensemble des points sont compatibles avec le modèle ajusté ce qui permet :
-* de valider la cohérence entre le modèle théorique et l'expérience
-* de considérer que le champ de pesanteur $g$ peut être estimé par la pente $a$ précédente.
-
-```{figure} ./images/chute_residus.png
-:name: chute_fig3
-:align: center
-Résidus et écarts normalisés
-```
-````
-
-## Régression linéaire et incertitude.
+</div>
+<div class="section" id="regression-lineaire-methode-des-moindres-carres">
+<h2><span class="section-number">10.2. </span>Régression linéaire : Méthode des moindres carrés.<a class="headerlink" href="#regression-lineaire-methode-des-moindres-carres" title="Permalink to this headline">¶</a></h2>
+<p>Pour déterminer <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, on va utiliser une méthode particulière appelée <strong>méthode des moindres carrés</strong>, cette méthode est démontrées comme étant l’une meilleures estimations de <span class="math notranslate nohighlight">\(a\)</span> et <span class="math notranslate nohighlight">\(b\)</span> dans de nombreux cas. Leurs incertitudes <span class="math notranslate nohighlight">\(u(a)\)</span> et <span class="math notranslate nohighlight">\(u(b)\)</span> seront déterminées par une méthode de Monte-Carlo (en répétant donc la méthode des moindres carrés avec des échantillons tirés aléatoirement à partir des distributions statistiques).</p>
+<div class="section" id="explication-de-la-methode">
+<h3><span class="section-number">10.2.1. </span>Explication de la méthode.<a class="headerlink" href="#explication-de-la-methode" title="Permalink to this headline">¶</a></h3>
+<p>Cf. <a class="reference external" href="https://pcsi3physiquestan.github.io/intro_python/notebook/np_polyfit.html">explications ici</a></p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>La méthode des moindres carrés proposées ci-dessus n’est optimale que si les incertitudes sur les abscisses sont faibles voire nulles. On veillera donc <strong>toujours à placer en abscisses les grandeurs les moins incertaines</strong>, quitte à inverser <span class="math notranslate nohighlight">\(X\)</span> et <span class="math notranslate nohighlight">\(Y\)</span>.</p>
+</div>
+</div>
+<div class="section" id="mise-en-pratique">
+<h3><span class="section-number">10.2.2. </span>Mise en pratique.<a class="headerlink" href="#mise-en-pratique" title="Permalink to this headline">¶</a></h3>
+<p>On va présenter l’utilisation de la méthode des moindres carrés uniquement sous Python au moyen de la fonction <code class="docutils literal notranslate"><span class="pre">numpy.polyfit</span></code>. Cf. <a class="reference external" href="https://pcsi3physiquestan.github.io/intro_python/notebook/np_polyfit.html">explications ici</a> pour son utilisation.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Il existe une version “pondérée” <code class="docutils literal notranslate"><span class="pre">numpy.polyfit(x,</span> <span class="pre">y,</span> <span class="pre">deg,</span> <span class="pre">w=incy)</span></code> où w est une pondération des points en fonction de l’incertitude sur les <span class="math notranslate nohighlight">\(y_i\)</span>. <code class="docutils literal notranslate"><span class="pre">incy</span></code> est alors un vecteur numpy contenant les incertitudes sur les <span class="math notranslate nohighlight">\(y\)</span>.</p>
+</div>
+</div>
+<div class="section" id="exemple-d-utilisation-en-ligne">
+<h3><span class="section-number">10.2.3. </span>Exemple d’utilisation (en ligne)<a class="headerlink" href="#exemple-d-utilisation-en-ligne" title="Permalink to this headline">¶</a></h3>
+<div class="topic">
+<p class="topic-title">Exemple</p>
+<p>On étudie une chute d’un corps dans l’air partant d’une vitesse <span class="math notranslate nohighlight">\(v_0\)</span>. On veut le modéliser par un point matériel et supposer les frottements négligeables et le champ de pesanteur uniforme. L’objectif est :</p>
+<ul class="simple">
+<li><p>de valider les hypothèses qu’on vient de donner</p></li>
+<li><p>d’estimer le champ de pesanteur sur le lieu de l’expérience.</p></li>
+</ul>
+<p>Comme, dans le modèle précédent, on attend une relation <span class="math notranslate nohighlight">\(v(t) = v_0 + gt\)</span>, on a utilisé un dispositif permettant d’obtenir des couples de mesures <span class="math notranslate nohighlight">\((t_i, v_i)\)</span> avec des incertitudes négligeables sur <span class="math notranslate nohighlight">\(t_i\)</span> et des incertitudes <span class="math notranslate nohighlight">\(u(v_i)\)</span> sur les <span class="math notranslate nohighlight">\(v_i\)</span>. On va réaliser une ajustement linéaire pour estimer le champ de pesanteur suivant le modèle proposé et vérifier la cohérence entre le modèle et l’expérience avec le champ de pesanteur estimé.</p>
+<p>Les données expérimentales obtenues sont données dans le tableau ci-dessous</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>On a gardé la cohérence de précision entre vaeur mesurée et incertitude. On a par contre gardé plus de chiffres pour l’incertitude de manière à ce qu’il y en ait au moins 2.</p>
+</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Echantillon</p></th>
+<th class="text-align:left head"><p>t(ms)</p></th>
+<th class="text-align:right head"><p>v(cm/ms)</p></th>
+<th class="text-align:right head"><p>u(v)(cm/ms)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>0</p></td>
+<td class="text-align:left"><p>100</p></td>
+<td class="text-align:right"><p>-0.0052</p></td>
+<td class="text-align:right"><p>0.0211</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>150</p></td>
+<td class="text-align:right"><p>0.0934</p></td>
+<td class="text-align:right"><p>0.0194</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>2</p></td>
+<td class="text-align:left"><p>200</p></td>
+<td class="text-align:right"><p>0.1208</p></td>
+<td class="text-align:right"><p>0.0035</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>3</p></td>
+<td class="text-align:left"><p>250</p></td>
+<td class="text-align:right"><p>0.1658</p></td>
+<td class="text-align:right"><p>0.0028</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>4</p></td>
+<td class="text-align:left"><p>300</p></td>
+<td class="text-align:right"><p>0.2290</p></td>
+<td class="text-align:right"><p>0.0089</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>5</p></td>
+<td class="text-align:left"><p>350</p></td>
+<td class="text-align:right"><p>0.2612</p></td>
+<td class="text-align:right"><p>0.0091</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>6</p></td>
+<td class="text-align:left"><p>400</p></td>
+<td class="text-align:right"><p>0.3170</p></td>
+<td class="text-align:right"><p>0.0032</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>7</p></td>
+<td class="text-align:left"><p>450</p></td>
+<td class="text-align:right"><p>0.3449</p></td>
+<td class="text-align:right"><p>0.0188</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><strong>Vérification sommaire</strong>
+On commence par <a class="reference internal" href="#chute-fig1"><span class="std std-ref">représenter les points</span></a> <span class="math notranslate nohighlight">\((t_i,v_i)\)</span> avec leurs incertitudes de mesure. On observe une tendance des points à s’aligner. On va donc poursuivre l’étude en recherchant des paramètres d’ajustement linéaire.</p></li>
+</ul>
+<div class="figure align-center" id="chute-fig1">
+<img alt="../_images/chute_grossier.png" src="../_images/chute_grossier.png" />
+<p class="caption"><span class="caption-number">Fig. 10.1 </span><span class="caption-text">Analyse brute des résultats.</span><a class="headerlink" href="#chute-fig1" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p><strong>Ajustement linéaire</strong>
+On a réalisé un ajustement linéaire. On trouve pour le modèle <span class="math notranslate nohighlight">\(V = a t + b\)</span> :</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Grandeur</p></th>
+<th class="text-align:right head"><p>a <span class="math notranslate nohighlight">\((cm/ms^2)\)</span></p></th>
+<th class="text-align:right head"><p>b (cm/ms)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Estimation</p></td>
+<td class="text-align:right"><p>0.0009651331</p></td>
+<td class="text-align:right"><p>-0.074512830</p></td>
+</tr>
+</tbody>
+</table>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>On a fait exprès de ne pas arrondir les valeurs car on ne connait pas pour l’instant l’incertitude de mesure.</p>
+</div>
+<p>On peut tracer <a class="reference internal" href="#chute-fig2"><span class="std std-ref">la courbe modèle avec les points de mesure</span></a> et observer si toutes les croix intersectent bien la courbe modèle. Les points semblent proches mais on remarquera :</p>
+<ul class="simple">
+<li><p>qu’il n’est pas toujours évident de vérifier s’il y a intersection ou non.</p></li>
+<li><p>que certains points semblent ne pas passer par la droite modèle.</p></li>
+</ul>
+<p>C’est pourquoi on va tracer les résidus (écart modèle-mesure) et les écarts normalisés.</p>
+<div class="figure align-center" id="chute-fig2">
+<img alt="../_images/chute_comparaison.png" src="../_images/chute_comparaison.png" />
+<p class="caption"><span class="caption-number">Fig. 10.2 </span><span class="caption-text">Comparaison au modèle</span><a class="headerlink" href="#chute-fig2" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p><strong>Résidus et écarts normalisés</strong></p></li>
+</ul>
+<p>On a maintenant <a class="reference internal" href="#chute-fig3"><span class="std std-ref">tracé</span></a> les résidus (gauche). On remarque que les points 3 et 8 semblent poser problème. On s’intéresse donc aux résidus normalisés (droite). Au final, l’ensemble des résidus est inférieur à 2, on va donc pouvoir considérer que l’ensemble des points sont compatibles avec le modèle ajusté ce qui permet :</p>
+<ul class="simple">
+<li><p>de valider la cohérence entre le modèle théorique et l’expérience</p></li>
+<li><p>de considérer que le champ de pesanteur <span class="math notranslate nohighlight">\(g\)</span> peut être estimé par la pente <span class="math notranslate nohighlight">\(a\)</span> précédente.</p></li>
+</ul>
+<div class="figure align-center" id="chute-fig3">
+<img alt="../_images/chute_residus.png" src="../_images/chute_residus.png" />
+<p class="caption"><span class="caption-number">Fig. 10.3 </span><span class="caption-text">Résidus et écarts normalisés</span><a class="headerlink" href="#chute-fig3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<!-- ## Régression linéaire et incertitude.
 
 L'estimation du champ de pesanteur précédent a peu d'utilité si on ne peut le comparer à une valeur attendue ($g = (9.81 \pm 0.10)\rm{m.s^{-2}}$). Mais pour réaliser une comparaison, il faut estimer l'incertitude sur $g_{experimental}$, donc sur la pente de la régression linéaire.
 
 Il convient d'utiliser une méthode de Monte-Carlo pour cela. Une telle méthode sera présentée plus tard. -->
+</div>
 <div class="section" id="methode-de-monte-carlo">
-<h3><span class="section-number">10.1.1. </span>Méthode de Monte-Carlo.<a class="headerlink" href="#methode-de-monte-carlo" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.2.4. </span>Méthode de Monte-Carlo.<a class="headerlink" href="#methode-de-monte-carlo" title="Permalink to this headline">¶</a></h3>
 <p>Le principe est donc :</p>
 <ol class="simple">
 <li><p>De créer N échantillons des <span class="math notranslate nohighlight">\(v_i\)</span> suivant une loi (normale ici) d’écart-type <span class="math notranslate nohighlight">\(u(v_i)\)</span>.</p></li>
@@ -612,13 +591,13 @@ Il convient d'utiliser une méthode de Monte-Carlo pour cela. Une telle méthode
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Champ de pesanteur : g = 9.478354274700887 m/s^2
-Incertitude : u(g) =0.5322653637003444 m/s^2
-Ecart normalisé : eta = -0.41028975383307
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Champ de pesanteur : g = 9.474439087564019 m/s^2
+Incertitude : u(g) =0.5303680119596497 m/s^2
+Ecart normalisé : eta = 0.0009627194198371941
 </pre></div>
 </div>
-<img alt="../_images/regression_4_1.png" src="../_images/regression_4_1.png" />
-<img alt="../_images/regression_4_2.png" src="../_images/regression_4_2.png" />
+<img alt="../_images/regression_9_1.png" src="../_images/regression_9_1.png" />
+<img alt="../_images/regression_9_2.png" src="../_images/regression_9_2.png" />
 </div>
 </div>
 <p>Ensuite, il faut :</p>
