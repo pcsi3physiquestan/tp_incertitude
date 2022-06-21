@@ -24,9 +24,6 @@ Obtenir une mesure n'est en général pas suffisant, il est important d'exploite
 
 ## Comparaison qualitative.
 
-```{sidebar}
-On peut utiliser cette méthode pour comparer une gamme de résultats à la valeur moyenne et voir si certains points ne sont pas des mesures problématiques. Un tracé graphique n'est pas obligatoire pour une seule mesure.
-```
 Une première étude peut-être réalisée en comparant les intervalles associées au couple \{résultat de mesurage + incertitude de mesure\} à la valeur théorique attendue. Si la barre d'incertitude comprend la valeur théorique, on peut considérer que la théorie et l'expérience sont compatibles.
 
 ````{topic} Limites
