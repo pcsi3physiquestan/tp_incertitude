@@ -227,8 +227,8 @@ On a maintenant [tracé](chute_fig3) les résidus (gauche). On remarque que les 
 :name: chute_fig3
 :align: center
 Résidus et écarts normalisés
-```
-```` -->
+``` -->
+````
 
 ## Régression linéaire et incertitude.
 
