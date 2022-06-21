@@ -439,93 +439,82 @@ On a gardé la cohérence de précision entre vaeur mesurée et incertitude. On 
 * __Vérification sommaire__
 On commence par [représenter les points](chute_fig1) $(t_i,v_i)$ avec leurs incertitudes de mesure. On observe une tendance des points à s'aligner. On va donc poursuivre l'étude en recherchant des paramètres d'ajustement linéaire.
 
-<!-- ```{figure} ./images/chute_grossier.png
+```{figure} ./images/chute_grossier.png
 :name: chute_fig1
 :align: center
 Analyse brute des résultats.
-``` -->
-<ul class="simple">
-<li><p><strong>Ajustement linéaire</strong>
-On a réalisé un ajustement linéaire. On trouve pour le modèle <span class="math notranslate nohighlight">\(V = a t + b\)</span> :</p></li>
-</ul>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:left head"><p>Grandeur</p></th>
-<th class="text-align:right head"><p>a <span class="math notranslate nohighlight">\((cm/ms^2)\)</span></p></th>
-<th class="text-align:right head"><p>b (cm/ms)</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:left"><p>Estimation</p></td>
-<td class="text-align:right"><p>0.0009651331</p></td>
-<td class="text-align:right"><p>-0.074512830</p></td>
-</tr>
-</tbody>
-</table>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<p>On a fait exprès de ne pas arrondir les valeurs car on ne connait pas pour l’instant l’incertitude de mesure.</p>
-</div>
-<p>On peut tracer <span class="xref myst">la courbe modèle avec les points de mesure</span> et observer si toutes les croix intersectent bien la courbe modèle. Les points semblent proches mais on remarquera :</p>
-<ul class="simple">
-<li><p>qu’il n’est pas toujours évident de vérifier s’il y a intersection ou non.</p></li>
-<li><p>que certains points semblent ne pas passer par la droite modèle.</p></li>
-</ul>
-<p>C’est pourquoi on va tracer les résidus (écart modèle-mesure) et les écarts normalisés.</p>
-<!-- ```{figure} ./images/chute_comparaison.png
+``` 
+* __Ajustement linéaire__
+On a réalisé un ajustement linéaire. On trouve pour le modèle $V = a t + b$ : 
+
+|Grandeur | a $(cm/ms^2)$| b (cm/ms)|
+|:-|-:|-:|
+|Estimation|0.0009651331|-0.074512830|
+
+```{margin}
+On a fait exprès de ne pas arrondir les valeurs car on ne connait pas pour l'instant l'incertitude de mesure.
+```
+
+On peut tracer [la courbe modèle avec les points de mesure](chute_fig2) et observer si toutes les croix intersectent bien la courbe modèle. Les points semblent proches mais on remarquera :
+* qu'il n'est pas toujours évident de vérifier s'il y a intersection ou non. 
+* que certains points semblent ne pas passer par la droite modèle.
+
+C'est pourquoi on va tracer les résidus (écart modèle-mesure) et les écarts normalisés.
+
+```{figure} ./images/chute_comparaison.png
 :name: chute_fig2
 :align: center
 Comparaison au modèle
-``` -->
-<ul class="simple">
-<li><p><strong>Résidus et écarts normalisés</strong></p></li>
-</ul>
-<p>On a maintenant <span class="xref myst">tracé</span> les résidus (gauche). On remarque que les points 3 et 8 semblent poser problème. On s’intéresse donc aux résidus normalisés (droite). Au final, l’ensemble des résidus est inférieur à 2, on va donc pouvoir considérer que l’ensemble des points sont compatibles avec le modèle ajusté ce qui permet :</p>
-<ul class="simple">
-<li><p>de valider la cohérence entre le modèle théorique et l’expérience</p></li>
-<li><p>de considérer que le champ de pesanteur <span class="math notranslate nohighlight">\(g\)</span> peut être estimé par la pente <span class="math notranslate nohighlight">\(a\)</span> précédente.</p></li>
-</ul>
-<!-- ```{figure} ./images/chute_residus.png
+``` 
+
+* __Résidus et écarts normalisés__
+
+On a maintenant [tracé](chute_fig3) les résidus (gauche). On remarque que les points 3 et 8 semblent poser problème. On s'intéresse donc aux résidus normalisés (droite). Au final, l'ensemble des résidus est inférieur à 2, on va donc pouvoir considérer que l'ensemble des points sont compatibles avec le modèle ajusté ce qui permet :
+* de valider la cohérence entre le modèle théorique et l'expérience
+* de considérer que le champ de pesanteur $g$ peut être estimé par la pente $a$ précédente.
+
+```{figure} ./images/chute_residus.png
 :name: chute_fig3
 :align: center
 Résidus et écarts normalisés
-``` -->
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+```
+````
+
 ## Régression linéaire et incertitude.
 
-L&#39;estimation du champ de pesanteur précédent a peu d&#39;utilité si on ne peut le comparer à une valeur attendue ($g = (9.81 \pm 0.10)\rm{m.s^{-2}}$). Mais pour réaliser une comparaison, il faut estimer l&#39;incertitude sur $g_{experimental}$, donc sur la pente de la régression linéaire.
+L'estimation du champ de pesanteur précédent a peu d'utilité si on ne peut le comparer à une valeur attendue ($g = (9.81 \pm 0.10)\rm{m.s^{-2}}$). Mais pour réaliser une comparaison, il faut estimer l'incertitude sur $g_{experimental}$, donc sur la pente de la régression linéaire.
 
-Il convient d&#39;utiliser une méthode de Monte-Carlo pour cela. Une telle méthode sera présentée plus tard.
+Il convient d'utiliser une méthode de Monte-Carlo pour cela. Une telle méthode sera présentée plus tard.
 
 ### Méthode de Monte-Carlo.
 Le principe est donc :
-1. De créer N échantillons des $v_i$ suivant une loi (normale ici) d&#39;écart-type $u(v_i)$.
+1. De créer N échantillons des $v_i$ suivant une loi (normale ici) d'écart-type $u(v_i)$.
 2. Pour chaque échantillons $\{v_i / 1 \leq i \leq k\}$, on estime la pente $a$ puis on en déduit $g$ 
 
 ```{margin}
-Ici le passage de $a$ à $g$ sera un simple changement d&#39;unité pour avoir des $m.s^{-2}$. Dans d&#39;autres expériences, cela peut nécessité quelques calculs.
+Ici le passage de $a$ à $g$ sera un simple changement d'unité pour avoir des $m.s^{-2}$. Dans d'autres expériences, cela peut nécessité quelques calculs.
 ```
 
-3. On a donc N simulations de $g$ : on peut tracer sa distribution et calculer son écart-type qui sera l&#39;estimation de l&#39;incertitude de $u(g)$. On calculera alors l&#39;écart normalisé entre $g_{theorique}$ et $g_{experimental}$.
+3. On a donc N simulations de $g$ : on peut tracer sa distribution et calculer son écart-type qui sera l'estimation de l'incertitude de $u(g)$. On calculera alors l'écart normalisé entre $g_{theorique}$ et $g_{experimental}$.
 
-La cellule de code ci-dessous montre un exemple d&#39;implémentation de cette méthode :
+La cellule de code ci-dessous montre un exemple d'implémentation de cette méthode :
 
 ```{code-cell} ipython3
-&quot;&quot;&quot;
-Comme d&#39;habitude on commence par importer les bibliothèques utiles.
-&quot;&quot;&quot;
+"""
+Comme d'habitude on commence par importer les bibliothèques utiles.
+"""
 import numpy as np
 import numpy.random as rd
 import matplotlib.pyplot as plt
 
-&quot;&quot;&quot;
+"""
 On créer les vecteurs associées aux mesures
-&quot;&quot;&quot;
+"""
 ti = [100, 150, 200, 250, 300, 350, 400, 450]
 vi = [0.005226, 0.093465, 0.120806, 0.165883, 0.229025, 0.261237, 0.317062, 0.344937]
 uvi = [0.021124, 0.019484, 0.003540, 0.002879, 0.008954, 0.009124, 0.003229, 0.018834]
 
-&quot;&quot;&quot;
+"""
 On va maintenant créer les échantillons simulés et estimer la pente puis g par régression linéaire pour chaque échantillons.
 
 Comment pour votre exercice sur la célérité du son, on doit construire un tableau de valeurs simulés où
@@ -533,7 +522,7 @@ chaque colonne correspond à une valeur de vitesse vi(ti). Les arguments de la f
 - un vecteur vi pour les espérances des distributions des vi
 - un vecteur uvi pour les écart-types des distribution des vi
 - un tuple (N,k) correspondant au nombre de simulations N et au nombres de points de mesure k
-&quot;&quot;&quot;
+"""
 
 
 k = len(ti)  # Nombre de points de mesure
@@ -541,11 +530,11 @@ N = 100000  # Nombre de simulations
 
 vi_sim = rd.normal(vi, uvi, (N, k))
 
-&quot;&quot;&quot;
-La fonction polyfit ne permet pas de faire N régressions linéaires d&#39;un coup. On va donc devoir
+"""
+La fonction polyfit ne permet pas de faire N régressions linéaires d'un coup. On va donc devoir
 créer une boucle qui parcourt les échantillons simulés et réalise une régression linéaire pour
 chaque ensemble de k mesures simulées.
-&quot;&quot;&quot;
+"""
 g_sim = np.zeros(N)   # Vecteur où on stockera les champs de pesanteur estimés
 for j in range(N):
 	params = np.polyfit(ti, vi_sim[j], 1)  # Régression linéaire sur la ligne j
@@ -554,60 +543,57 @@ for j in range(N):
 	g_sim[j] = g
 
 
-&quot;&quot;&quot;
-On va maintenant tracer l&#39;histogramme des valeurs, calculer la moyenne des g et l&#39;écart-type.
-&quot;&quot;&quot;
+"""
+On va maintenant tracer l'histogramme des valeurs, calculer la moyenne des g et l'écart-type.
+"""
 g_mes = np.mean(g_sim)
 ug = np.std(g_sim, ddof=1)
 
 f, ax = plt.subplots(1, 1)
-f.suptitle(&quot;Simulation de Monte-Carlo : Champ de pesanteur&quot;)
-ax.set_ylabel(&quot;g(m.s^2)&quot;)
+f.suptitle("Simulation de Monte-Carlo : Champ de pesanteur")
+ax.set_ylabel("g(m.s^2)")
 
-ax.hist(g_sim, bins=&quot;rice&quot;)  # L&#39;option rice adapte automatiquement le nombre de bâtons.
+ax.hist(g_sim, bins="rice")  # L'option rice adapte automatiquement le nombre de bâtons.
 
-print(&quot;Champ de pesanteur : g = &quot; +  str(g_mes) + &quot; m/s^2&quot;)
-print(&quot;Incertitude : u(g) =&quot; +  str(ug) + &quot; m/s^2&quot;)
+print("Champ de pesanteur : g = " +  str(g_mes) + " m/s^2")
+print("Incertitude : u(g) =" +  str(ug) + " m/s^2")
 
 g_th = 9.81  # Valeur théorique
 ug_th = 0.1  # Incertitude sur la valeur théorique
 eta = (g - g_th) / np.sqrt(ug**2 + ug_th**2)
 
-print(&quot;Ecart normalisé : eta = &quot; + str(eta))
+print("Ecart normalisé : eta = " + str(eta))
 
-&quot;&quot;&quot;
-Pour mieux visualiser la compatibilité, on va tterminer en traçant les barre d&#39;incertitude pour la valeur expérimentale et la valeur théorique.
-&quot;&quot;&quot;
+"""
+Pour mieux visualiser la compatibilité, on va tterminer en traçant les barre d'incertitude pour la valeur expérimentale et la valeur théorique.
+"""
 g_mes = np.mean(g_sim)
 ug = np.std(g_sim, ddof=1)
 
 f1, ax1 = plt.subplots(1, 1)
-f1.suptitle(&quot;Comparaison théorie-valeur tabulée&quot;)
-ax1.set_ylabel(&quot;g(m.s^2)&quot;)
+f1.suptitle("Comparaison théorie-valeur tabulée")
+ax1.set_ylabel("g(m.s^2)")
 
-ax1.errorbar([1], [g], yerr=ug, label=&quot;Valeur expérimentale&quot;, marker=&quot;+&quot;, color=&quot;red&quot; )  # Valeur expérimentale
-ax1.errorbar([2], [g_th], yerr=ug_th, label=&quot;Valeur expérimentale&quot;, marker=&quot;+&quot;, color=&quot;blue&quot;)  # Valeur théorique
+ax1.errorbar([1], [g], yerr=ug, label="Valeur expérimentale", marker="+", color="red" )  # Valeur expérimentale
+ax1.errorbar([2], [g_th], yerr=ug_th, label="Valeur expérimentale", marker="+", color="blue")  # Valeur théorique
 
 plt.show()
 ```
 
 Ensuite, il faut :
 * rendre-compte de la valeur de $g$ et son incertitude avec les bons chiffres significatifs
-* analyser sa valeur et l&#39;écart normalisé pour voir si la théorie est compatible avec l&#39;expérience.
+* analyser sa valeur et l'écart normalisé pour voir si la théorie est compatible avec l'expérience.
 
 Nous vous laissons réfléchir à ces deux points qui ont déjà été abordés.
 
 ```{note}
-En pratique, on pourra(devra) combiner l&#39;analyse de Monte-Carlo avec la validation du modèle théorique. En effet, il faudrait plutôt :
+En pratique, on pourra(devra) combiner l'analyse de Monte-Carlo avec la validation du modèle théorique. En effet, il faudrait plutôt :
 * tracer le modèle avec la valeur de g estimé par Monte-Carlo pour le comparer aux points de mesure.
 * calculer les écarts normalisés avec la valeur `g_sim` et en tenant compte de `ug_sim`.
 
 _Le test de compatibilité du modèle affine se ferait donc plutôt après la simulation de Monte-Carlo._
 ```
- --&gt;
-</pre></div>
-</div>
-</div>
+ --></div>
 </div>
 </div>
 

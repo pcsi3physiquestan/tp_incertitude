@@ -188,11 +188,11 @@ On a gardé la cohérence de précision entre vaeur mesurée et incertitude. On 
 * __Vérification sommaire__
 On commence par [représenter les points](chute_fig1) $(t_i,v_i)$ avec leurs incertitudes de mesure. On observe une tendance des points à s'aligner. On va donc poursuivre l'étude en recherchant des paramètres d'ajustement linéaire.
 
-<!-- ```{figure} ./images/chute_grossier.png
+```{figure} ./images/chute_grossier.png
 :name: chute_fig1
 :align: center
 Analyse brute des résultats.
-``` -->
+``` 
 * __Ajustement linéaire__
 On a réalisé un ajustement linéaire. On trouve pour le modèle $V = a t + b$ : 
 
@@ -210,11 +210,11 @@ On peut tracer [la courbe modèle avec les points de mesure](chute_fig2) et obse
 
 C'est pourquoi on va tracer les résidus (écart modèle-mesure) et les écarts normalisés.
 
-<!-- ```{figure} ./images/chute_comparaison.png
+```{figure} ./images/chute_comparaison.png
 :name: chute_fig2
 :align: center
 Comparaison au modèle
-``` -->
+``` 
 
 * __Résidus et écarts normalisés__
 
@@ -222,11 +222,11 @@ On a maintenant [tracé](chute_fig3) les résidus (gauche). On remarque que les 
 * de valider la cohérence entre le modèle théorique et l'expérience
 * de considérer que le champ de pesanteur $g$ peut être estimé par la pente $a$ précédente.
 
-<!-- ```{figure} ./images/chute_residus.png
+```{figure} ./images/chute_residus.png
 :name: chute_fig3
 :align: center
 Résidus et écarts normalisés
-``` -->
+```
 ````
 
 ## Régression linéaire et incertitude.
