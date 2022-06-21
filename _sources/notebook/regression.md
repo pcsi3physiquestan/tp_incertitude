@@ -77,7 +77,7 @@ Il existe une version "pondérée" `numpy.polyfit(x, y, deg, w=incy)` où w est 
 
 +++
 
-<!-- ### Exemple d'utilisation (en ligne)
+### Exemple d'utilisation (en ligne)
 ```{code-cell} ipython3
 :tags: [remove-cell]
 
@@ -161,7 +161,7 @@ f.savefig('./images/chute_grossier.png')
 f1.savefig('./images/chute_comparaison.png')
 f2.savefig('./images/chute_residus.png')
 ```
-````{topic} Exemple
+<!-- ````{topic} Exemple
 On étudie une chute d'un corps dans l'air partant d'une vitesse $v_0$. On veut le modéliser par un point matériel et supposer les frottements négligeables et le champ de pesanteur uniforme. L'objectif est :
 * de valider les hypothèses qu'on vient de donner
 * d'estimer le champ de pesanteur sur le lieu de l'expérience.

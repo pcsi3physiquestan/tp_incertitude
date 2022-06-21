@@ -297,6 +297,11 @@
      10.2.2. Mise en pratique.
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exemple-d-utilisation-en-ligne">
+     10.2.3. Exemple d’utilisation (en ligne)
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -368,91 +373,10 @@ Y = aX + b
 <p class="sidebar-title"></p>
 <p>Il existe une version “pondérée” <code class="docutils literal notranslate"><span class="pre">numpy.polyfit(x,</span> <span class="pre">y,</span> <span class="pre">deg,</span> <span class="pre">w=incy)</span></code> où w est une pondération des points en fonction de l’incertitude sur les <span class="math notranslate nohighlight">\(y_i\)</span>. <code class="docutils literal notranslate"><span class="pre">incy</span></code> est alors un vecteur numpy contenant les incertitudes sur les <span class="math notranslate nohighlight">\(y\)</span>.</p>
 </div>
-<!-- ### Exemple d'utilisation (en ligne)
-```{code-cell} ipython3
-:tags: [remove-cell]
-
-import numpy as np
-import pandas as pd
-import numpy.random as rd
-import matplotlib.pyplot as plt
-from myst_nb import glue
-
-dt = 50
-v0 = - 1 / 10
-h0 = 100
-g = 9.81 * 100 / (1000**2)
-ti = np.arange(100, 550, dt)
-tin = ti[:-1]
-uxi = rd.normal(0.3, 0.9, len(ti))
-sensi = rd.randint(2, size=len(ti))
-plms = [-1, 1]
-deltai = [plms[val] for val in sensi]
-xi = - h0 + v0 * ti + 1/2 * g *ti**2 + deltai * uxi
-vi = []
-uvi = []
-for i in range(len(tin)):
-   vi += [(xi[i+1] - xi[i]) / dt]
-   uvi += [1 / dt * np.sqrt((uxi[i+1])**2 + (uxi[i])**2)]
-vi = np.array(vi)
-uvi = np.array(uvi)
-
-vtbl = pd.DataFrame({
-		"t(ms)": tin,
-		"v(cm/ms)": vi,
-		"u(v)(cm/ms)": uvi,
-	})
-
-glue('chutetbl', vtbl, display=False)
-
-f, ax = plt.subplots(1, 1)
-f.suptitle("Etude d'une chute libre")
-ax.set_xlabel("t(ms)")
-ax.set_ylabel("v(cm/ms)")
-
-ax.errorbar(tin, vi, yerr=uvi, linestyle='', marker='+')
-
-glue('chutefig1', f, display=False)
-
-params = np.polyfit(tin, vi, 1)
-
-vi_adj = np.polyval(params, tin)
-glue('pente', params[0])
-glue('oorigine', params[1])
-
-f1, ax1 = plt.subplots(1, 1)
-f1.suptitle("Etude d'une chute libre")
-ax1.set_xlabel("t(ms)")
-ax1.set_ylabel("v(cm/ms)")
-
-ax1.errorbar(tin, vi, yerr=uvi, linestyle='', marker='+')
-ax1.plot(tin, vi_adj, linestyle='--', marker='', color='orange')
-
-glue('chutefig2', f1, display=False)
-
-
-residus = vi - vi_adj
-enorm = residus / uvi
-
-f2, ax2 = plt.subplots(1, 2)
-f2.suptitle("Chute libre : Analyse des résidus")
-ax21 = ax2[0]
-ax21.set_xlabel("t(ms)")
-ax21.set_ylabel("Delta v(cm/ms)")
-ax21.errorbar(tin, residus, yerr=uvi, linestyle='', marker='+')
-
-ax22 = ax2[1]
-ax22.set_xlabel("t(ms)")
-ax22.set_ylabel("EN")
-ax22.plot(tin, enorm, marker='+', linestyle='', color="black")
-
-glue('residusfig', f2, display=False)
-display(vtbl.style)
-f.savefig('./images/chute_grossier.png')
-f1.savefig('./images/chute_comparaison.png')
-f2.savefig('./images/chute_residus.png')
-```
-````{topic} Exemple
+</div>
+<div class="section" id="exemple-d-utilisation-en-ligne">
+<h3><span class="section-number">10.2.3. </span>Exemple d’utilisation (en ligne)<a class="headerlink" href="#exemple-d-utilisation-en-ligne" title="Permalink to this headline">¶</a></h3>
+<!-- ````{topic} Exemple
 On étudie une chute d'un corps dans l'air partant d'une vitesse $v_0$. On veut le modéliser par un point matériel et supposer les frottements négligeables et le champ de pesanteur uniforme. L'objectif est :
 * de valider les hypothèses qu'on vient de donner
 * d'estimer le champ de pesanteur sur le lieu de l'expérience.
@@ -625,13 +549,13 @@ Résidus et écarts normalisés
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Champ de pesanteur : g = 9.475573156007144 m/s^2
-Incertitude : u(g) =0.532313376510571 m/s^2
-Ecart normalisé : eta = 0.46204591147887514
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Champ de pesanteur : g = 9.48084261921534 m/s^2
+Incertitude : u(g) =0.5342510790974904 m/s^2
+Ecart normalisé : eta = -0.9314643489463358
 </pre></div>
 </div>
-<img alt="../_images/regression_7_1.png" src="../_images/regression_7_1.png" />
-<img alt="../_images/regression_7_2.png" src="../_images/regression_7_2.png" />
+<img alt="../_images/regression_9_1.png" src="../_images/regression_9_1.png" />
+<img alt="../_images/regression_9_2.png" src="../_images/regression_9_2.png" />
 </div>
 </div>
 <p>Ensuite, il faut :</p>
