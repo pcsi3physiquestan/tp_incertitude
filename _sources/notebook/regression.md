@@ -222,11 +222,11 @@ On a maintenant [tracé](chute_fig3) les résidus (gauche). On remarque que les 
 * de valider la cohérence entre le modèle théorique et l'expérience
 * de considérer que le champ de pesanteur $g$ peut être estimé par la pente $a$ précédente.
 
-```{figure} ./images/chute_residus.png
+<!-- ```{figure} ./images/chute_residus.png
 :name: chute_fig3
 :align: center
 Résidus et écarts normalisés
-```
+``` -->
 ````
 
 ## Régression linéaire et incertitude.
