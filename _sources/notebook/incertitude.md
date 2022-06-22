@@ -67,7 +67,6 @@ Grâce à cette vision, on peut :
 ````
 
 ````{sidebar} Un exemple de simulation
-:class: tip
 Cette fois, on ne va pas déduire de nombreuses mesures l'écart-type et le résultat de mesurage mais on va simuler de nombreuses mesures connaissant la distribution statistique.
 
 On suppose qu'on a réalisé la mesure d'une tension $U$ et qu'on a obtenu un résultat de mesurage $U_{mes} = 3.4 V$ avec une incertitude $u(U) = 0.2 V$ (on verra plus tard des méthodes d'estimation de $u(U)$). On a estimé que la distribution statistique associée à cette mesure est une distribution gaussienne (ou normale). On va simuler $N = 1000000$ tirages de $U$ (comme si on réalisait _par la pensée_ N fois l'expérience) en associant à U une distribution gaussienne d'espérance 3.4 et d'écart-type 0.2.
