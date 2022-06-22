@@ -66,7 +66,16 @@ Grâce à cette vision, on peut :
 * Utiliser les propriétés mathématiques de la variance et de l'écart-type pour calculer des incertitudes-types (puisqu'on les assimile à des écart-types).
 ````
 
-````{sidebar} Un exemple de simulation
+````{topic} Variabilité d'une mesure
+[Ci-dessous](rcexp_fig), on analyse les résultats du mesurage du temps caractéristique d'un circuit RC ainsi que le calcul de la valeur mesurée et de l'incertitude-type grâce à cette distribution. On a réalisé 1000 mesures grâce à un microcontroleur.
+
+```{glue:figure} rc_exp
+:name: rcexp_fig
+Répartition des mesures
+```
+La distribution des mesures a pour moyenne {glue:text}`tau:.3f` ms et pour écart-type {glue:text}`utau:.3f` ms"
+````
+````{topic} Un exemple de simulation
 Cette fois, on ne va pas déduire de nombreuses mesures l'écart-type et le résultat de mesurage mais on va simuler de nombreuses mesures connaissant la distribution statistique.
 
 On suppose qu'on a réalisé la mesure d'une tension $U$ et qu'on a obtenu un résultat de mesurage $U_{mes} = 3.4 V$ avec une incertitude $u(U) = 0.2 V$ (on verra plus tard des méthodes d'estimation de $u(U)$). On a estimé que la distribution statistique associée à cette mesure est une distribution gaussienne (ou normale). On va simuler $N = 1000000$ tirages de $U$ (comme si on réalisait _par la pensée_ N fois l'expérience) en associant à U une distribution gaussienne d'espérance 3.4 et d'écart-type 0.2.
@@ -77,15 +86,6 @@ Observez [ci-dessous](usimul_fig) l'histogramme des valeurs obtenues. On a aussi
 :name: usimul_fig
 Simulation de valeurs de U
 ```
-````
-````{topic} Variabilité d'une mesure
-[Ci-dessous](rcexp_fig), on analyse les résultats du mesurage du temps caractéristique d'un circuit RC ainsi que le calcul de la valeur mesurée et de l'incertitude-type grâce à cette distribution. On a réalisé 1000 mesures grâce à un microcontroleur.
-
-```{glue:figure} rc_exp
-:name: rcexp_fig
-Répartition des mesures
-```
-La distribution des mesures a pour moyenne {glue:text}`tau:.3f` ms et pour écart-type {glue:text}`utau:.3f` ms"
 ````
 
 ## Incertitude : pourquoi faire ?
