@@ -75,7 +75,6 @@ Observez [ci-dessous](usimul_fig) l'histogramme des valeurs obtenues. On a aussi
 
 ```{glue:figure} u_simul
 :name: usimul_fig
-:width: 50%
 Simulation de valeurs de U
 ```
 ````
@@ -84,7 +83,6 @@ Simulation de valeurs de U
 
 ```{glue:figure} rc_exp
 :name: rcexp_fig
-:width: 40%
 Répartition des mesures
 ```
 La distribution des mesures a pour moyenne {glue:text}`tau:.3f` ms et pour écart-type {glue:text}`utau:.3f` ms"
