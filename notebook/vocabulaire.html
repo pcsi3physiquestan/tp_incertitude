@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vocabulaire et étapes : Généralités &#8212; Incertitudes de mesure</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -31,31 +31,34 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp2_optique/notebook/vocabulaire.html" />
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp_incertitude/notebook/vocabulaire.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Les incertitudes de mesure" href="incertitude.html" />
-    <link rel="prev" title="Points à retenir" href="aretenir.html" />
+    <link rel="prev" title="Comprendre le contexte" href="explication.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -73,13 +76,14 @@
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">Incertitudes de mesure</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -94,62 +98,74 @@
    Points à retenir
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Vocabulaire et étapes : Généralités
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="explication.html">
+   Comprendre le contexte
   </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="incertitude.html">
-   Les incertitudes de mesure
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="distribution.html">
-     Distributions statistiques usuelles.
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Vocabulaire et étapes : Généralités
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sources.html">
-     Sources d’incertitudes et bilan.
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="incertitude.html">
+     Les incertitudes de mesure
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="distribution.html">
+       Distributions statistiques usuelles.
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="sources.html">
+       Sources d’incertitudes et bilan.
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="indirecte.html">
+       Incertitude des mesurandes indirectes.
+      </a>
+     </li>
+    </ul>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="indirecte.html">
-     Incertitude des mesurandes indirectes.
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="rcgeneral.html">
+     Rendre compte et exploiter
     </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="rcgeneral.html">
-   Rendre compte et exploiter
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="comparaison.html">
-     Comparer un résultat expérimental avec un résultat théorique.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="verifier_loi.html">
-     Vérifier une loi physique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression.html">
-     Ajustement d’un modèle affine
-    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="comparaison.html">
+       Comparer un résultat expérimental avec un résultat théorique.
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="verifier_loi.html">
+       Vérifier une loi physique
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="regression.html">
+       Ajustement d’un modèle affine
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -162,10 +178,6 @@
 
     </div>
 </nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
-</div>
 
 </div>
 
@@ -247,7 +259,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
@@ -270,7 +282,7 @@
         
               <div>
                 
-  <div class="section" id="vocabulaire-et-etapes-generalites">
+  <div class="tex2jax_ignore mathjax_ignore section" id="vocabulaire-et-etapes-generalites">
 <span id="vocabulaire"></span><h1>Vocabulaire et étapes : Généralités<a class="headerlink" href="#vocabulaire-et-etapes-generalites" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2>Vocabulaire<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
@@ -302,24 +314,17 @@
 <li><p>Elaborer le <strong>mode opératoire</strong> (Quelle sont les successions d’étape à réaliser pour mettre en <em>pratique</em> le principe de mesure et atteindre le but recherché).</p></li>
 </ol>
 </li>
-<li><p>La réalisation du protocole et les <strong>observations</strong> dont on rend compte, souvent au moyen de mesures quantitatives (et leur incertitudes). Leur compte-rendu varie : un résultat avec son incertitude, un tableau de mesure, une description ou un graphique…</p></li>
+<li><p>La réalisation du protocole et les <strong>observations</strong> dont on rend compte, souvent au moyen de mesures quantitatives.</p></li>
 <li><p>L’<strong>exploitation</strong> des observations précédentes pour répondre à la problématique posée. Il peut prendre différentes formes (non exhaustif) :</p></li>
 </ol>
 <ul class="simple">
 <li><p>Comparer une valeur mesurée à une valeur théorique</p></li>
 <li><p>Vérifier une relation</p></li>
-<li><p>Ajuster une relation (linéaire) à un ensemble de mesures<br />
-Très souvent, il faudra calculer des <strong>mesurandes indirectes</strong> avant de procéder aux études précédentes.</p></li>
+<li><p>Ajuster une relation (linéaire) à un ensemble de mesures</p></li>
 </ul>
+<p>Très souvent, il faudra calculer des <strong>mesurandes indirectes</strong> avant de procéder aux études précédentes.</p>
 </div>
-<!-- ## Réalisation d'un protocole et observations.
-La réalisation d'un protocole demande en général l'entraînement à l'utilisation de matériel spécifique et dépend du domaine étudié. On ne peut détailler ici chaque thème abordé dans l'année.  
-
-Les observations qu'on est amené à réaliser sont de deux types : qualitatives (description d'un phénomène, souvent par un dessin) et quantitatives (mesure de grandeurs (directes puis indirectes).  
-
-Lorsqu'on réalise le mesurage d'une grandeur, la valeur qu'on observe n'est pas toujours celle qu'on espère avoir (_même en réalisant correctement le mode opératoire_) et elle peut fluctuer si l'on réalise plusieurs fois le mesurage. C'est de ce dernier points que nous allons parler en particulier.
-
-+++</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -345,16 +350,27 @@ Lorsqu'on réalise le mesurage d'une grandeur, la valeur qu'on observe n'est pas
               </div>
               
         
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="aretenir.html" title="previous page">Points à retenir</a>
-    <a class='right-next' id="next-link" href="incertitude.html" title="next page">Les incertitudes de mesure</a>
-
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="explication.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Comprendre le contexte</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="incertitude.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Les incertitudes de mesure</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -370,8 +386,7 @@ Lorsqu'on réalise le mesurage d'une grandeur, la valeur qu'on observe n'est pas
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

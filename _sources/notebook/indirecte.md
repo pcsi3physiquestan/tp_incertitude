@@ -39,51 +39,59 @@ On veut mesurer la valeur $R$ d'une résistance électrique. On a mesuré la ten
 ```
 +++
 
-## Méthodes
+````{topic} Méthodes
 Il existe deux méthodes :
 1. La __simulation de Monte-Carlo__. Le principe est exactement le même que précédemment. La différence est qu'on a plus besoin de centrer les distributions des $X_i$ autour de 0.
 2. La __propagation des variances__. On utilise des relations entre les variances de grandeurs liés entre elles.
-
-````{attention} 
+```{attention} 
 Dans les deux cas, on est obligé de supposer que les mesurandes $X_i$ sont tous indépendants. Sinon, les deux méthodes ne sont pas valables.
+```
 ````
+
 
 +++
 
 ## Simulation de Monte-Carlo.
 
-+++
-
-### Principe
-
-
+````{topic} Rappel
 On rappelle brièvement le principe de la simulation de Monte-Carlo. On connaît la distribution statistique de chaque mesurande $X_i$. On va simuler N échantillons de chaque $X_i$ puis on calcule ainsi N échantillons $Y$. On obtient ainsi la distribution des valeurs de $Y$ et on peut calculer son incertitude de mesure.
 
-```{note}
-Dans l'exemple qui suit, on a supposé pour simplifier que les incertitude-type et distribution des mesurandes directs ont déjà été déterminées (ou viennent d'information extérieures). En pratique, elles sont souvent déterminées à partir d'une ou plusieurs sources d'incertitudes. On peut alors combiner la méthode présentée précédemment et celle présentée ici (ce sera fait par la suite).  
-_C'est la raison pour laquelle les simulations ne sont pas centrées en 0._
-```
 
 ![Principe de la simulation de Monte-Carlo](./images/simulation_mc.png)
+````
+
+
 
 +++
 
-### Exemple (en ligne)
-```{topic} Résistance électrique
+### Exemple
+```{margin}
+On a supposé pour simplifier que les incertitude-type et distribution des mesurandes directs ont déjà été déterminées. En pratique, elles sont souvent déterminées à partir d'une ou plusieurs sources d'incertitudes. On peut alors combiner la méthode présentée précédemment et celle présentée ici.
+```
+````{topic} Résistance électrique
 On reprend l'exemple précédent de l'estimation de l'incertitude de la résistance R. On a mesuré tension et intensité. On a trouvé :
  
 * Un tension $U = 4.53 V$ avec une incertitude $u(U) = 0.03 V$. On a estimé que la loi de probabilité étant gaussienne.
 * Une intensité $I = 12.14 mA$ avec une incertitude $u(I) = 0.08 mA$. On a estimé que la loi de probabilité étant gaussienne.
 
-La cellule permet d'observer la méthode de Monte-Carlo. La méthode est :
+La méthode est :
 1. On créer deux vecteurs de taille N contenant des tirages aléatoires de U et I basés sur les distibutions choisies.
 2. On obtient un vecteur de taille N contenant des valeurs simulés de R.
 3. On trace l'histogramme et on calcule la moyenne et l'écart-type de la distribution qui nous donnerons le résultat de mesurage et l'incertitude-type.
+
+
+```{glue:figure} R_graph
+:name: label_image
+:align: center
+Titre
 ```
 
-```{code-cell} ipython3
-:tags: [hide-input]
+On obtient R = {glue:text}`R_val:.1f` $\pm$ {glue:text}`R_u:.1f` $\Omega$.
+````
 
+```{code-cell} ipython3
+:tags: [remove-cell]
+from myst_nb import glue
 import numpy.random as rd  # La bibliothèque numpy.random contient les fonctions générant des échantillons aléatoires.
 import numpy as np  # La biliothèque numpy permettra de calculer la moyenne et l'écart-type d'un ensemble des valeurs.
 
@@ -111,7 +119,7 @@ Ici, l'opération est une simple division et Uech et Iech sont des vecteurs nump
 Rech = Uech / Iech
 
 """
-On va tracer l'histogramme des fréquences des valeurs de R. On pourra l'analyser par la suite.
+On va tracer l'histogramme en fréquences des valeurs de R. On pourra l'analyser par la suite.
 """
 f, ax = plt.subplots()  # On crée une fenêtre graphique et des axes.
 f.suptitle("Distribution des valeurs simulées de R")  # On titre le graphique
@@ -121,16 +129,15 @@ ax.set_ylabel("Fréquences")  # On légende l'axe des ordonnées
 
 ax.hist(Rech, bins='rice')  # On créer l'histogramme des valeurs.
 
-plt.show()  # On affiche le graphique
-
 """
 On calcule la moyenne et l'écart comme valeur mesurée et incertitude-type
 """
 R = np.mean(Rech)
 uR = np.std(Rech, ddof=1)  # Calcul de l'écart-type. L'option ddof permet de diviser par N-1 et non par N.
 
-print("La résistance vaut {:.1f} +/- {:.1f} Ohm".format(R * 1000, uR * 1000))
-
+glue("R_graph", f, display=False)
+glue("R_val", R * 1000, display=False)
+glue("R_u", uR * 1000, display=False)
 ```
 
 ## Propagation des variances

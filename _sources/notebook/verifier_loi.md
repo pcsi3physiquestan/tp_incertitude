@@ -58,8 +58,6 @@ _La vérification "à l'oeil" est surtout utile quand on ne connait pas tous les
 
 +++
 
-### Exemples (en ligne)
-
 ````{topic} Exemples
 > * On veut mesurer la résistance $R$ d'une résistance électrique en utilisant des valeur de $U$ et $I$. Mais avant de mesurer $R$, on veut vérifier que les couples $(i_k, u_k)$ vérifient bien la loi d'Ohm $U=RI$ (sinon, son utilisation est remise en question !). On a donc tracer les couples $(i_k, u_k)$ __avec leur croix d'incertitude__.  
 > Comme on ne peut tracer de droite modèle (on ne connait pas R, on le cherche !), on va simplement vérifier que les points semblent alignés, c'est-à-dire _qu'on peut tracer une droite qui passe par toutes les croix d'incertitude._

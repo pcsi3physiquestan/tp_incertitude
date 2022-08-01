@@ -44,21 +44,11 @@ On distingue trois étapes lors d'une manipulation et du compte-rendu de celle-c
    1. Déterminer le __but__ de la manipulation (Que veut-on obtenir ?)
    2. Choisir le __principe__ de mesure (Sur quelle idée _théorique_ va-t-on baser notre manipulation ?)
    3. Elaborer le __mode opératoire__ (Quelle sont les successions d'étape à réaliser pour mettre en _pratique_ le principe de mesure et atteindre le but recherché).
-2. La réalisation du protocole et les __observations__ dont on rend compte, souvent au moyen de mesures quantitatives (et leur incertitudes). Leur compte-rendu varie : un résultat avec son incertitude, un tableau de mesure, une description ou un graphique...
+2. La réalisation du protocole et les __observations__ dont on rend compte, souvent au moyen de mesures quantitatives.
 3. L'__exploitation__ des observations précédentes pour répondre à la problématique posée. Il peut prendre différentes formes (non exhaustif) :
   * Comparer une valeur mesurée à une valeur théorique
   * Vérifier une relation
-  * Ajuster une relation (linéaire) à un ensemble de mesures  
+  * Ajuster une relation (linéaire) à un ensemble de mesures
+
 Très souvent, il faudra calculer des __mesurandes indirectes__ avant de procéder aux études précédentes.
 ```
-
-
-<!-- ## Réalisation d'un protocole et observations.
-La réalisation d'un protocole demande en général l'entraînement à l'utilisation de matériel spécifique et dépend du domaine étudié. On ne peut détailler ici chaque thème abordé dans l'année.  
-
-Les observations qu'on est amené à réaliser sont de deux types : qualitatives (description d'un phénomène, souvent par un dessin) et quantitatives (mesure de grandeurs (directes puis indirectes).  
-
-Lorsqu'on réalise le mesurage d'une grandeur, la valeur qu'on observe n'est pas toujours celle qu'on espère avoir (_même en réalisant correctement le mode opératoire_) et elle peut fluctuer si l'on réalise plusieurs fois le mesurage. C'est de ce dernier points que nous allons parler en particulier.
-
-+++
-

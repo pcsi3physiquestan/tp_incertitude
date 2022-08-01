@@ -20,6 +20,7 @@ kernelspec:
 # Les incertitudes de mesure
 
 ## Qu'est-ce qu'une incertitude ?
+````{topic} Variabilité des mesures
 Un processus de mesurage n'est jamais _stable_ et _unique_ :
 > Le résultat de mesurage ne sera pas tout à fait le même si l'on refait plusieurs fois la mesure ou la méthode de mesurage ne nous permettra que __d'encadrer__ le résultat entre deux valeurs.
 > Le processus de mesurage présente donc __une dispersion__ des valeurs possibles pour le résultat de mesurage.
@@ -30,7 +31,8 @@ Un processus de mesurage n'est jamais _stable_ et _unique_ :
 Dispersion des résultats de mesure
 ```
 
-La fidélité d'un résultat de mesure est caractérisé par la dispersion des résultats de mesure qu'on obtiendrait en répéter l'expérience. On va quantifier cette dispersion par une grandeur qu'on appelle __incertitude__.
+La _fidélité_ d'un résultat de mesure est caractérisé par la dispersion des résultats de mesure qu'on obtiendrait en répéter l'expérience. On va quantifier cette dispersion par une grandeur qu'on appelle __incertitude__.
+````
 
 ```{code-cell} ipython3
 :tags: [remove-cell]
@@ -66,19 +68,8 @@ Grâce à cette vision, on peut :
 * Utiliser les propriétés mathématiques de la variance et de l'écart-type pour calculer des incertitudes-types (puisqu'on les assimile à des écart-types).
 ````
 
-````{topic} Variabilité d'une mesure
-[Ci-dessous](rcexp_fig), on analyse les résultats du mesurage du temps caractéristique d'un circuit RC ainsi que le calcul de la valeur mesurée et de l'incertitude-type grâce à cette distribution. On a réalisé 1000 mesures grâce à un microcontroleur.
-
-```{glue:figure} rc_exp
-:name: rcexp_fig
-Répartition des mesures
-```
-La distribution des mesures a pour moyenne {glue:text}`tau:.3f` ms et pour écart-type {glue:text}`utau:.3f` ms"
-````
-````{topic} Un exemple de simulation
-Cette fois, on ne va pas déduire de nombreuses mesures l'écart-type et le résultat de mesurage mais on va simuler de nombreuses mesures connaissant la distribution statistique.
-
-On suppose qu'on a réalisé la mesure d'une tension $U$ et qu'on a obtenu un résultat de mesurage $U_{mes} = 3.4 V$ avec une incertitude $u(U) = 0.2 V$ (on verra plus tard des méthodes d'estimation de $u(U)$). On a estimé que la distribution statistique associée à cette mesure est une distribution gaussienne (ou normale). On va simuler $N = 1000000$ tirages de $U$ (comme si on réalisait _par la pensée_ N fois l'expérience) en associant à U une distribution gaussienne d'espérance 3.4 et d'écart-type 0.2.
+````{sidebar} Un exemple de simulation
+On suppose qu'on a réalisé la mesure d'une tension $U$ et qu'on a obtenu un résultat de mesurage $U_{mes} = 3.4 V$ avec une incertitude $u(U) = 0.2 V$. La distribution statistique est supposée être une distribution gaussienne. On va simuler $N = 1000000$ tirages de $U$ (comme si on réalisait _par la pensée_ N fois l'expérience) en associant à U une distribution gaussienne d'espérance 3.4 et d'écart-type 0.2.
 
 Observez [ci-dessous](usimul_fig) l'histogramme des valeurs obtenues. On a aussi représenté la courbe de la distribution gaussienne théorique associée.
 
@@ -86,6 +77,15 @@ Observez [ci-dessous](usimul_fig) l'histogramme des valeurs obtenues. On a aussi
 :name: usimul_fig
 Simulation de valeurs de U
 ```
+````
+````{topic} Variabilité réelle d'une mesure
+[Ci-dessous](rcexp_fig), on analyse les résultats du mesurage du temps caractéristique d'un circuit RC ainsi que le calcul de la valeur mesurée et de l'incertitude-type grâce à cette distribution. On a réalisé 1000 mesures grâce à un microcontroleur.
+
+```{glue:figure} rc_exp
+:name: rcexp_fig
+Répartition des mesures
+```
+La distribution des mesures a pour moyenne {glue:text}`tau:.3f` ms et pour écart-type {glue:text}`utau:.3f` ms.
 ````
 
 ## Incertitude : pourquoi faire ?
@@ -130,13 +130,13 @@ En général, la première analyse est __graphique__. On peut:
 * utiliser l'écart normalisé (cf. suite)
 ```
 
-````{important} Estimations
+````{important} __Estimations__  
 Il n'est pas nécessaire de connaître ces formules mais voici les méthodes de calculs du résultat de mesure et de l'incertitude que nous utiliserions (on suppose qu'on a réalisé $k$ mesures $\{g_i\}$ d'un mesurande $G$) :
-* __Estimation de la moyenne :__
+* __Estimation de la valeur mesurée :__
 
 $$ G_{mes} = \frac{1}{k} \sum_{i=1}^{k}g_i$$
 
-* __Estimation de l'incertitude :__
+* __Estimation de l'incertitude sur la valeur mesurée:__
     
 $$ u(G) = \sqrt{\frac{1}{k(k-1)} \sum_{i=1}^{k}(g_i - G_{mes})^2}$$
 ````

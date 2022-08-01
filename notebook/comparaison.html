@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Comparer un résultat expérimental avec un résultat théorique. &#8212; Incertitudes de mesure</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -31,33 +31,36 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp2_optique/notebook/comparaison.html" />
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp_incertitude/notebook/comparaison.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Vérifier une loi physique" href="verifier_loi.html" />
     <link rel="prev" title="Rendre compte et exploiter" href="rcgeneral.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -75,13 +78,14 @@
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">Incertitudes de mesure</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -96,62 +100,74 @@
    Points à retenir
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="vocabulaire.html">
-   Vocabulaire et étapes : Généralités
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="explication.html">
+   Comprendre le contexte
   </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="incertitude.html">
-   Les incertitudes de mesure
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="distribution.html">
-     Distributions statistiques usuelles.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sources.html">
-     Sources d’incertitudes et bilan.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="indirecte.html">
-     Incertitude des mesurandes indirectes.
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="rcgeneral.html">
-   Rendre compte et exploiter
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
   <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Comparer un résultat expérimental avec un résultat théorique.
+   <li class="toctree-l2">
+    <a class="reference internal" href="vocabulaire.html">
+     Vocabulaire et étapes : Généralités
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="verifier_loi.html">
-     Vérifier une loi physique
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="incertitude.html">
+     Les incertitudes de mesure
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="distribution.html">
+       Distributions statistiques usuelles.
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="sources.html">
+       Sources d’incertitudes et bilan.
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="indirecte.html">
+       Incertitude des mesurandes indirectes.
+      </a>
+     </li>
+    </ul>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression.html">
-     Ajustement d’un modèle affine
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="rcgeneral.html">
+     Rendre compte et exploiter
     </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Comparer un résultat expérimental avec un résultat théorique.
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="verifier_loi.html">
+       Vérifier une loi physique
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="regression.html">
+       Ajustement d’un modèle affine
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -164,10 +180,6 @@
 
     </div>
 </nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
-</div>
 
 </div>
 
@@ -249,7 +261,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#comparaison-qualitative">
@@ -292,13 +304,13 @@
               <div>
                 
   <p>Obtenir une mesure n’est en général pas suffisant, il est important d’exploiter les résultats obtenus en vue de répondre à la problématique fixée. Vous aller apprendre ici à comparer un résultat expérimental à un résultat attendu (théorique, valeur constructeur…)</p>
-<div class="section" id="comparer-un-resultat-experimental-avec-un-resultat-theorique">
+<div class="tex2jax_ignore mathjax_ignore section" id="comparer-un-resultat-experimental-avec-un-resultat-theorique">
 <h1>Comparer un résultat expérimental avec un résultat théorique.<a class="headerlink" href="#comparer-un-resultat-experimental-avec-un-resultat-theorique" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="comparaison-qualitative">
 <h2>Comparaison qualitative.<a class="headerlink" href="#comparaison-qualitative" title="Permalink to this headline">¶</a></h2>
 <p>Une première étude peut-être réalisée en comparant les intervalles associées au couple {résultat de mesurage + incertitude de mesure} à la valeur théorique attendue. Si la barre d’incertitude comprend la valeur théorique, on peut considérer que la théorie et l’expérience sont compatibles.</p>
 <div class="topic">
-<p class="topic-title">Limites</p>
+<p class="topic-title first">Limites</p>
 <p>Cette comparaison a ses limites car l’intervalle défini par l’écart-type autour du résultat de mesurage exclut des valeurs qui ont une probabilité encore importante d’être réalisée.</p>
 <blockquote>
 <div><p>Dans le cas d’une distribution gaussienne, un valeur lors d’un tirage n’a que 63% de chance de se trouver dans l’intervalle à un écart-type. On ne tient pas compte d’un tiers des valeurs en raisonnant de cette façon.</p>
@@ -327,7 +339,7 @@
 <div class="section" id="explication-du-raisonnement-en-ligne">
 <h3>Explication du raisonnement. (en ligne)<a class="headerlink" href="#explication-du-raisonnement-en-ligne" title="Permalink to this headline">¶</a></h3>
 <div class="topic">
-<p class="topic-title">Explications</p>
+<p class="topic-title first">Explications</p>
 <p>On considère :</p>
 <ul class="simple">
 <li><p>qu’on étudie une grandeur G possèdant une valeur attendue <span class="math notranslate nohighlight">\(G_{att}\)</span> dont la valeur est <span class="math notranslate nohighlight">\(g_{att}\)</span> avec une incertitude <span class="math notranslate nohighlight">\(u(G_{att})\)</span>. <em>On supposera que la distribution suivie est une distribution gaussienne.</em></p></li>
@@ -342,26 +354,28 @@
 \]</div>
 <p>En divisant <span class="math notranslate nohighlight">\(\Delta G\)</span> par <span class="math notranslate nohighlight">\(\sigma_{\Delta G}\)</span>, on aura donc une variable aléatoire <span class="math notranslate nohighlight">\(\eta_G\)</span> qui aura un écart-type égal à 1 (<em>distribution réduite</em>). Donc:</p>
 <blockquote>
-<div><p>Si l’expérience et les attentes (théoriques ou constructeur) sont compatibles, on attend donc que la variable aléatoire associée au mesurande ;
-$<span class="math notranslate nohighlight">\(
+<div><p>Si l’expérience et les attentes (théoriques ou constructeur) sont compatibles, on attend donc que la variable aléatoire associée au mesurande ;</p>
+<div class="math notranslate nohighlight">
+\[
 \eta_G = \frac{G_{mes} - G_{att}}{\sqrt{\sigma^2(G_{mes}) + \sigma^2(G_{att})}}
-\)</span>$
-soit <strong>une distribution centrée réduite.</strong></p>
+\]</div>
+<p>soit <strong>une distribution centrée réduite.</strong></p>
 </div></blockquote>
-<p>On s’est donc ramené à l’idée que pour tester la compatibilité valeur attendue-expérience, il ne faut pas attendre un écart nul mais des données compatibles avec une estimation de <span class="math notranslate nohighlight">\(\eta_G\)</span>. On rappelle qu’on ne possède pas l’allure de <span class="math notranslate nohighlight">\(\eta_G\)</span> mais uniquement <span class="math notranslate nohighlight">\(g_{mes}, u(G_{mes}), g_{att}, u(G_{att})\)</span>, on ne peut donc qu’estimer <span class="math notranslate nohighlight">\(\eta_G\)</span> par:
-$<span class="math notranslate nohighlight">\(
+<p>On s’est donc ramené à l’idée que pour tester la compatibilité valeur attendue-expérience, il ne faut pas attendre un écart nul mais des données compatibles avec une estimation de <span class="math notranslate nohighlight">\(\eta_G\)</span>. On rappelle qu’on ne possède pas l’allure de <span class="math notranslate nohighlight">\(\eta_G\)</span> mais uniquement <span class="math notranslate nohighlight">\(g_{mes}, u(G_{mes}), g_{att}, u(G_{att})\)</span>, on ne peut donc qu’estimer <span class="math notranslate nohighlight">\(\eta_G\)</span> par:</p>
+<div class="math notranslate nohighlight">
+\[
 \eta = \frac{g_{mes} - g_{att}}{\sqrt{u^2(G_{mes}) + u^2(G_{att})}}
-\)</span>$</p>
+\]</div>
 <p><strong>Il faut donc un critère sur la valeur de <span class="math notranslate nohighlight">\(\eta\)</span> pour savoir s’il y a compatibilité ou non.</strong></p>
 <p>Il existe des tests en statistique permettant à partir d’une estimation de décider si l’hypothèse d’une distribution centrée réduite est acceptable ou non. Ces tests ne sont pas au programme, on admet que cela revient à fixer une valeur seuil pour <span class="math notranslate nohighlight">\(\eta\)</span> et considérer que si la valeur seuil est dépassée, il n’y a pas compatibilité. Si  <span class="math notranslate nohighlight">\(\eta\)</span> est inférieure à cette valeur seuil, il y a compatibilité.</p>
-<p>Dans le cadre des classes préparatoires, le choix de cette valeur seuil est fixé à 2. Cela revient, dans l’hypothèse d’une distribution gaussienne à rejetter une compatibilité avec un risque d’erreur de 5%.</p>
+<p>Dans le cadre des classes préparatoires, le choix de cette valeur seuil est fixé à 2. Cela revient, dans l’hypothèse d’une distribution gaussienne, à rejeter une compatibilité avec un risque d’erreur de 5%.</p>
 </div>
 </div>
 </div>
 <div class="section" id="exemples-d-utilisation-en-ligne">
 <h2>Exemples d’utilisation (en ligne)<a class="headerlink" href="#exemples-d-utilisation-en-ligne" title="Permalink to this headline">¶</a></h2>
 <div class="topic">
-<p class="topic-title">Résultat unique</p>
+<p class="topic-title first">Résultat unique</p>
 <p>On va reprendre l’exemple de l’étude d’une résistance électrique. Cela sera aussi l’occasion de comprendre graphiquement la notion d’écart normalisé. On ne refait pas toute l’étude. On supposera :</p>
 <ol class="simple">
 <li><p>Cas 1 :</p>
@@ -393,7 +407,7 @@ $<span class="math notranslate nohighlight">\(
 </ul>
 </div>
 <div class="topic">
-<p class="topic-title">Analyse graphique</p>
+<p class="topic-title first">Analyse graphique</p>
 <p>Puisqu’on possède les valeurs mesurées et les incertitudes, on va pouvoir faire une simulation de Monte-Carlo des grandeurs. On a réalisé N=1000000 simulations.</p>
 <p>On représente <a class="reference internal" href="#feta-fig"><span class="std std-ref">ci-dessous</span></a> (chaque ligne correspond à un cas) :</p>
 <ol class="simple">
@@ -500,16 +514,27 @@ L'utilisation de l'écart normalisé ne doit pas devenir une application d'une f
               </div>
               
         
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="rcgeneral.html" title="previous page">Rendre compte et exploiter</a>
-    <a class='right-next' id="next-link" href="verifier_loi.html" title="next page">Vérifier une loi physique</a>
-
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="rcgeneral.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Rendre compte et exploiter</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="verifier_loi.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Vérifier une loi physique</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -525,8 +550,7 @@ L'utilisation de l'écart normalisé ne doit pas devenir une application d'une f
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

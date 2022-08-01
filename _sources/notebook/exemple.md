@@ -20,9 +20,17 @@ Nous allons, à travers un exemple montrer l'étude complète, du protocole à l
 
 ## Protocole
 * __Objectif__ : On désire tester la loi de Mariotte qui relie Pression, Volume et Température d'un gaz : $PV = nRT$ pour l'air dans les conditions de température ambiante et de pression de quelques centaines d'hectoPascal. On déterminera aussi le nomber de mole d'air du système étudié.
-* __Principe__ : On va procéder à la mesure de couples $(P, V)$ pour plusieurs valeurs de $V$ à la température ambiante et on testera la loi $P(V)$ ainsi obtenue.
-* __Mode opératoire__ : On va utiliser [une seringue](mariotte_photo) contenant de l'air pour controler le volume. L'embout de la seringue sera branché sur un manomètre. Ce manomètre mesure une pression et renvoie une tension $U$ qu'on mesure grâce à un microcontrolleur Arduino programmé pour renvoyer les mesures vers un système de traitement informatique.
+* __Principe__ : On va procéder à la mesure de couples $(P, V)$ pour plusieurs valeurs de $V$ à la température ambiante et on testera la loi $P(V)$ ainsi obtenue. Le modèle ajusté obtenu permettra de déterminer $n$.
+* __Mode opératoire__ : On va utiliser [une seringue](mariotte_photo) contenant de l'air pour controler le volume. L'embout de la seringue sera branché sur un manomètre. Ce manomètre mesure une pression et renvoie une tension $U$ qu'on mesure grâce à un microcontrolleur Arduino programmé pour renvoyer les mesures vers un système de traitement informatique.  
+```{margin}
+Donnez bien la relation qui doit être une droite (ici $P = f(1/V)$)
+```
+Grâce à la seringue, on va imposer un volume $V$ d'air et on mesure grâce au manomètre la pression $P$. On réalisera plusieurs mesures successives de $P$ pour différents volumes imposés $V$. On testera alors la relation $P = f(1/V)$ pour vérifier qu'il s'agit d'une droite.  
+En mesurant la température grâce à un thermomètre, on utilisera le coefficient $nRT$ de la droite ajustée sur la relation $P=f(1/V)$ pour déterminer le nombre de mole d'air emprisonné.
 
+```{margin}
+Le schéma suffirait dans un compte-rendu.
+```
 ````{panels}
 ```{figure} ./images/mariotte.png
 :name: mariotte_photo
@@ -37,12 +45,9 @@ Schéma du montage
 ```
 ````
 
-Grâce à la seringue, on va imposer un volume $V$ d'air et on mesure grâce au manomètre la pression $P$. On réalisera plusieurs mesures successives de $P$ pour différents volumes imposés $V$. On testera alors la relation $P = f(1/V)$ pour vérifier qu'il s'agit d'une droite.
-
-En mesurant la température grâce à un thermomètre, on utilisera le coefficient de la droite ajustée sur la relation $P=f(1/V)$ pour déterminer le nombre de mole d'air emprisonné.
 
 ## Analyse des sources d'incertitudes
-On veut tester une relation, il faudra bien réfléchir aux incertitudes.
+On veut tester une relation, il faudra bien réfléchir aux incertitudes. __Elle a été faite durant la mesure.__
 
 ### Mesurandes directs
 On dispose de trois mesurandes directs :
@@ -57,7 +62,7 @@ En toute rigueur, $V_{ser}$ et $V_{tuyau}$ sont des mesurandes directs et $V$ un
 ```
 
 * la tension $U$ délivrée par Arduino. Il y a deux sources d'incertitude:
-	* la valeur renvoyée fluctue au cours du temps, on n'a uniquement pu mesurer des intervalles $[U_{min}, U_{max}]$ de valeurs (autour de $10^{-2}V$). On associera à ces intervalles une distribution uniforme).
+	* la valeur renvoyée fluctue au cours du temps, on n'a uniquement pu mesurer des intervalles $[U_{min}, U_{max}]$ de valeurs (autour de $10^{-2}V$). On associera à ces intervalles une distribution uniforme.
 	* la valeur renvoyé (entre 0 et 5V) est codée numérique entre 0 et 1023 bits. Il y a donc une résolution de $5 / 1023 = 0.0049 V$. Elle est cependant négligeable devant l'incertitude liée aux fluctuations.
 
 ```{note} 
@@ -67,7 +72,8 @@ Cette réflexion est importante et doit se faire assez tôt pour savoir quelles 
 ```
 
 ### Mesurandes indirects
-Le seul mesurande indirect est la pression $P$. L'étalonnage du manomètre donne la relation $P(hPa) = 218.5 U(V) - 107.3$ avec des incertitudes sur les coefficients négligeables devant l'incertitude sur $U$.
+Les mesurandes indirects sont la pression $P$ et $1/V$.
+* L'étalonnage du manomètre donne la relation $P(hPa) = 218.5 U(V) - 107.3$ avec des incertitudes sur les coefficients négligeables devant l'incertitude sur $U$.
 
 ## Résultats de mesure.
 

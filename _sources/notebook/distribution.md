@@ -97,7 +97,7 @@ La fonction subplots créer une fenêtre graphique f avec des axes ax (ici un se
 Les options figsize et dpi ne sont pas à connaître.
 Elles servent juste à avoir une figure plus grande pour le cours.
 """
-f, ax = plt.subplots(1, 1, figsize=(8, 6), dpi=100)
+f, ax = plt.subplots(1, 1, figsize=(8, 6), dpi=60)
 f.suptitle("Simulation de tirages uniformes")  # Titre du graphique
 ax.set_xlabel("Valeurs possibles")
 ax.set_ylabel("Fréquences")
@@ -150,7 +150,7 @@ plt.show()
 Nous aurons régulièrement besoin de simuler des lois statistiques avec Python et notamment la loi normale. Nous allons voir comment le faire dans la cellule suivante. Lisez le code et chercher à le comprendre pour pouvoir l'utiliser ensuite.
 
 ```{code-cell}
-:tags: [remove-input]
+:tags: [hide-input]
 # La simulation nécessite la bibliothèque numpy.random qui a déjà été importée.
 
 """
@@ -188,7 +188,7 @@ On va maintenant tracer l'histogramme de l'échantillons
 La fonction subplots créer une fenêtre graphique f avec des axes ax (ici un seul). Les options figsize et dpi ne sont pas à connaître.
 Elles servent juste à avoir une figure plus grande.
 """
-f, ax = plt.subplots(1, 1, figsize=(9, 6), dpi=100)
+f, ax = plt.subplots(1, 1, figsize=(9, 6), dpi=60)
 f.suptitle("Simulation de tirages gaussiens")  # Titre du graphique
 ax.set_xlabel("Valeurs possibles")
 ax.set_ylabel("Fréquences")

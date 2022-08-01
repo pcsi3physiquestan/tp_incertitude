@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Un exemple complet &#8212; Incertitudes de mesure</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -31,32 +31,35 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp2_optique/notebook/exemple.html" />
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp_incertitude/notebook/exemple.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Ajustement d’un modèle affine" href="regression.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -74,13 +77,14 @@
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">Incertitudes de mesure</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -176,10 +180,6 @@
     </div>
 </nav> <!-- To handle the deprecated key -->
 
-<div class="navbar_extra_footer">
-  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
-</div>
-
 </div>
 
 
@@ -260,7 +260,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#protocole">
@@ -319,16 +319,26 @@
         
               <div>
                 
-  <div class="section" id="un-exemple-complet">
+  <div class="tex2jax_ignore mathjax_ignore section" id="un-exemple-complet">
 <h1>Un exemple complet<a class="headerlink" href="#un-exemple-complet" title="Permalink to this headline">¶</a></h1>
 <p>Nous allons, à travers un exemple montrer l’étude complète, du protocole à l’exploitation, comment utiliser Python pour estimer les incertitudes, ajuster une loi affine et exploiter les résultats obtenus.</p>
 <div class="section" id="protocole">
 <h2>Protocole<a class="headerlink" href="#protocole" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Objectif</strong> : On désire tester la loi de Mariotte qui relie Pression, Volume et Température d’un gaz : <span class="math notranslate nohighlight">\(PV = nRT\)</span> pour l’air dans les conditions de température ambiante et de pression de quelques centaines d’hectoPascal. On déterminera aussi le nomber de mole d’air du système étudié.</p></li>
-<li><p><strong>Principe</strong> : On va procéder à la mesure de couples <span class="math notranslate nohighlight">\((P, V)\)</span> pour plusieurs valeurs de <span class="math notranslate nohighlight">\(V\)</span> à la température ambiante et on testera la loi <span class="math notranslate nohighlight">\(P(V)\)</span> ainsi obtenue.</p></li>
+<li><p><strong>Principe</strong> : On va procéder à la mesure de couples <span class="math notranslate nohighlight">\((P, V)\)</span> pour plusieurs valeurs de <span class="math notranslate nohighlight">\(V\)</span> à la température ambiante et on testera la loi <span class="math notranslate nohighlight">\(P(V)\)</span> ainsi obtenue. Le modèle ajusté obtenu permettra de déterminer <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
 <li><p><strong>Mode opératoire</strong> : On va utiliser <a class="reference internal" href="#mariotte-photo"><span class="std std-ref">une seringue</span></a> contenant de l’air pour controler le volume. L’embout de la seringue sera branché sur un manomètre. Ce manomètre mesure une pression et renvoie une tension <span class="math notranslate nohighlight">\(U\)</span> qu’on mesure grâce à un microcontrolleur Arduino programmé pour renvoyer les mesures vers un système de traitement informatique.</p></li>
 </ul>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Donnez bien la relation qui doit être une droite (ici <span class="math notranslate nohighlight">\(P = f(1/V)\)</span>)</p>
+</div>
+<p>Grâce à la seringue, on va imposer un volume <span class="math notranslate nohighlight">\(V\)</span> d’air et on mesure grâce au manomètre la pression <span class="math notranslate nohighlight">\(P\)</span>. On réalisera plusieurs mesures successives de <span class="math notranslate nohighlight">\(P\)</span> pour différents volumes imposés <span class="math notranslate nohighlight">\(V\)</span>. On testera alors la relation <span class="math notranslate nohighlight">\(P = f(1/V)\)</span> pour vérifier qu’il s’agit d’une droite.<br />
+En mesurant la température grâce à un thermomètre, on utilisera le coefficient <span class="math notranslate nohighlight">\(nRT\)</span> de la droite ajustée sur la relation <span class="math notranslate nohighlight">\(P=f(1/V)\)</span> pour déterminer le nombre de mole d’air emprisonné.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Le schéma suffirait dans un compte-rendu.</p>
+</div>
 <div class="sphinx-bs container pb-4 docutils">
 <div class="row docutils">
 <div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
@@ -336,25 +346,23 @@
 <div class="card-body docutils">
 <div class="figure align-center" id="mariotte-photo">
 <img alt="../_images/mariotte.png" src="../_images/mariotte.png" />
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Photo du montage</span><a class="headerlink" href="#mariotte-photo" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Photo du montage</span><a class="headerlink" href="#mariotte-photo" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="card-footer docutils">
 <div class="figure align-center" id="mariotte-montage">
 <img alt="../_images/mariotte_montage.png" src="../_images/mariotte_montage.png" />
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Schéma du montage</span><a class="headerlink" href="#mariotte-montage" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Schéma du montage</span><a class="headerlink" href="#mariotte-montage" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<p>Grâce à la seringue, on va imposer un volume <span class="math notranslate nohighlight">\(V\)</span> d’air et on mesure grâce au manomètre la pression <span class="math notranslate nohighlight">\(P\)</span>. On réalisera plusieurs mesures successives de <span class="math notranslate nohighlight">\(P\)</span> pour différents volumes imposés <span class="math notranslate nohighlight">\(V\)</span>. On testera alors la relation <span class="math notranslate nohighlight">\(P = f(1/V)\)</span> pour vérifier qu’il s’agit d’une droite.</p>
-<p>En mesurant la température grâce à un thermomètre, on utilisera le coefficient de la droite ajustée sur la relation <span class="math notranslate nohighlight">\(P=f(1/V)\)</span> pour déterminer le nombre de mole d’air emprisonné.</p>
 </div>
 <div class="section" id="analyse-des-sources-d-incertitudes">
 <h2>Analyse des sources d’incertitudes<a class="headerlink" href="#analyse-des-sources-d-incertitudes" title="Permalink to this headline">¶</a></h2>
-<p>On veut tester une relation, il faudra bien réfléchir aux incertitudes.</p>
+<p>On veut tester une relation, il faudra bien réfléchir aux incertitudes. <strong>Elle a été faite durant la mesure.</strong></p>
 <div class="section" id="mesurandes-directs">
 <h3>Mesurandes directs<a class="headerlink" href="#mesurandes-directs" title="Permalink to this headline">¶</a></h3>
 <p>On dispose de trois mesurandes directs :</p>
@@ -375,7 +383,7 @@
 <ul class="simple">
 <li><p>la tension <span class="math notranslate nohighlight">\(U\)</span> délivrée par Arduino. Il y a deux sources d’incertitude:</p>
 <ul>
-<li><p>la valeur renvoyée fluctue au cours du temps, on n’a uniquement pu mesurer des intervalles <span class="math notranslate nohighlight">\([U_{min}, U_{max}]\)</span> de valeurs (autour de <span class="math notranslate nohighlight">\(10^{-2}V\)</span>). On associera à ces intervalles une distribution uniforme).</p></li>
+<li><p>la valeur renvoyée fluctue au cours du temps, on n’a uniquement pu mesurer des intervalles <span class="math notranslate nohighlight">\([U_{min}, U_{max}]\)</span> de valeurs (autour de <span class="math notranslate nohighlight">\(10^{-2}V\)</span>). On associera à ces intervalles une distribution uniforme.</p></li>
 <li><p>la valeur renvoyé (entre 0 et 5V) est codée numérique entre 0 et 1023 bits. Il y a donc une résolution de <span class="math notranslate nohighlight">\(5 / 1023 = 0.0049 V\)</span>. Elle est cependant négligeable devant l’incertitude liée aux fluctuations.</p></li>
 </ul>
 </li>
@@ -388,7 +396,10 @@
 </div>
 <div class="section" id="mesurandes-indirects">
 <h3>Mesurandes indirects<a class="headerlink" href="#mesurandes-indirects" title="Permalink to this headline">¶</a></h3>
-<p>Le seul mesurande indirect est la pression <span class="math notranslate nohighlight">\(P\)</span>. L’étalonnage du manomètre donne la relation <span class="math notranslate nohighlight">\(P(hPa) = 218.5 U(V) - 107.3\)</span> avec des incertitudes sur les coefficients négligeables devant l’incertitude sur <span class="math notranslate nohighlight">\(U\)</span>.</p>
+<p>Les mesurandes indirects sont la pression <span class="math notranslate nohighlight">\(P\)</span> et <span class="math notranslate nohighlight">\(1/V\)</span>.</p>
+<ul class="simple">
+<li><p>L’étalonnage du manomètre donne la relation <span class="math notranslate nohighlight">\(P(hPa) = 218.5 U(V) - 107.3\)</span> avec des incertitudes sur les coefficients négligeables devant l’incertitude sur <span class="math notranslate nohighlight">\(U\)</span>.</p></li>
+</ul>
 </div>
 </div>
 <div class="section" id="resultats-de-mesure">
@@ -397,51 +408,63 @@
 <p>On ne donne que les résultats de mesure bruts : <span class="math notranslate nohighlight">\(V_{ser}, U_{min}, U_{max}\)</span> et <span class="math notranslate nohighlight">\(T\)</span>. L’estimation des autres grandeurs et de leur incertitude se fera grâce à Python.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><style  type="text/css" >
-</style><table id="T_06a71_" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >Vser(mL)</th>        <th class="col_heading level0 col1" >Umin(V)</th>        <th class="col_heading level0 col2" >Umax(V)</th>    </tr></thead><tbody>
-                <tr>
-                        <th id="T_06a71_level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_06a71_row0_col0" class="data row0 col0" >18</td>
-                        <td id="T_06a71_row0_col1" class="data row0 col1" >5.67</td>
-                        <td id="T_06a71_row0_col2" class="data row0 col2" >5.74</td>
-            </tr>
-            <tr>
-                        <th id="T_06a71_level0_row1" class="row_heading level0 row1" >1</th>
-                        <td id="T_06a71_row1_col0" class="data row1 col0" >24</td>
-                        <td id="T_06a71_row1_col1" class="data row1 col1" >4.36</td>
-                        <td id="T_06a71_row1_col2" class="data row1 col2" >4.46</td>
-            </tr>
-            <tr>
-                        <th id="T_06a71_level0_row2" class="row_heading level0 row2" >2</th>
-                        <td id="T_06a71_row2_col0" class="data row2 col0" >30</td>
-                        <td id="T_06a71_row2_col1" class="data row2 col1" >3.58</td>
-                        <td id="T_06a71_row2_col2" class="data row2 col2" >3.75</td>
-            </tr>
-            <tr>
-                        <th id="T_06a71_level0_row3" class="row_heading level0 row3" >3</th>
-                        <td id="T_06a71_row3_col0" class="data row3 col0" >34</td>
-                        <td id="T_06a71_row3_col1" class="data row3 col1" >3.22</td>
-                        <td id="T_06a71_row3_col2" class="data row3 col2" >3.34</td>
-            </tr>
-            <tr>
-                        <th id="T_06a71_level0_row4" class="row_heading level0 row4" >4</th>
-                        <td id="T_06a71_row4_col0" class="data row4 col0" >40</td>
-                        <td id="T_06a71_row4_col1" class="data row4 col1" >2.85</td>
-                        <td id="T_06a71_row4_col2" class="data row4 col2" >2.91</td>
-            </tr>
-            <tr>
-                        <th id="T_06a71_level0_row5" class="row_heading level0 row5" >5</th>
-                        <td id="T_06a71_row5_col0" class="data row5 col0" >50</td>
-                        <td id="T_06a71_row5_col1" class="data row5 col1" >2.34</td>
-                        <td id="T_06a71_row5_col2" class="data row5 col2" >2.48</td>
-            </tr>
-            <tr>
-                        <th id="T_06a71_level0_row6" class="row_heading level0 row6" >6</th>
-                        <td id="T_06a71_row6_col0" class="data row6 col0" >60</td>
-                        <td id="T_06a71_row6_col1" class="data row6 col1" >2.02</td>
-                        <td id="T_06a71_row6_col2" class="data row6 col2" >2.18</td>
-            </tr>
-    </tbody></table></div></div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_068d1_">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th class="col_heading level0 col0" >Vser(mL)</th>
+      <th class="col_heading level0 col1" >Umin(V)</th>
+      <th class="col_heading level0 col2" >Umax(V)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_068d1_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_068d1_row0_col0" class="data row0 col0" >18</td>
+      <td id="T_068d1_row0_col1" class="data row0 col1" >5.67</td>
+      <td id="T_068d1_row0_col2" class="data row0 col2" >5.74</td>
+    </tr>
+    <tr>
+      <th id="T_068d1_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_068d1_row1_col0" class="data row1 col0" >24</td>
+      <td id="T_068d1_row1_col1" class="data row1 col1" >4.36</td>
+      <td id="T_068d1_row1_col2" class="data row1 col2" >4.46</td>
+    </tr>
+    <tr>
+      <th id="T_068d1_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_068d1_row2_col0" class="data row2 col0" >30</td>
+      <td id="T_068d1_row2_col1" class="data row2 col1" >3.58</td>
+      <td id="T_068d1_row2_col2" class="data row2 col2" >3.75</td>
+    </tr>
+    <tr>
+      <th id="T_068d1_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_068d1_row3_col0" class="data row3 col0" >34</td>
+      <td id="T_068d1_row3_col1" class="data row3 col1" >3.22</td>
+      <td id="T_068d1_row3_col2" class="data row3 col2" >3.34</td>
+    </tr>
+    <tr>
+      <th id="T_068d1_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_068d1_row4_col0" class="data row4 col0" >40</td>
+      <td id="T_068d1_row4_col1" class="data row4 col1" >2.85</td>
+      <td id="T_068d1_row4_col2" class="data row4 col2" >2.91</td>
+    </tr>
+    <tr>
+      <th id="T_068d1_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_068d1_row5_col0" class="data row5 col0" >50</td>
+      <td id="T_068d1_row5_col1" class="data row5 col1" >2.34</td>
+      <td id="T_068d1_row5_col2" class="data row5 col2" >2.48</td>
+    </tr>
+    <tr>
+      <th id="T_068d1_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_068d1_row6_col0" class="data row6 col0" >60</td>
+      <td id="T_068d1_row6_col1" class="data row6 col1" >2.02</td>
+      <td id="T_068d1_row6_col2" class="data row6 col2" >2.18</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <div class="section" id="exploitation-des-resultats">
 <h3>Exploitation des résultats.<a class="headerlink" href="#exploitation-des-resultats" title="Permalink to this headline">¶</a></h3>
@@ -543,72 +566,87 @@ Si vous ne comprendez pas le principe de cette partie, reprendre la <a class="re
 <p>On observe que le tracé <span class="math notranslate nohighlight">\(P = f(1/V)\)</span> est visuellement cohérent avec une relation linéaire (au moins affine). On va donc poursuivre l’étude avec un ajustement par un modèle affine. Avant, on rend compte des résultats de mesure (en pratique, il faudrait mieux arrondir mais l’affichage par Python a ici ses limites : quelques valeurs pour les incertitudes de 1/V et P ont 3 chiffres significatifs au lieu de 2). <em>Pour des valeurs intermédiaires, ce n’est pas trop critique</em>.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><style  type="text/css" >
-</style><table id="T_67418_" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >V(mL)</th>        <th class="col_heading level0 col1" >u(V)(mL)</th>        <th class="col_heading level0 col2" >1/V(mL^-1)</th>        <th class="col_heading level0 col3" >u(1/V)(mL^-1)</th>        <th class="col_heading level0 col4" >P(hPa)</th>        <th class="col_heading level0 col5" >u(P)(hPa)</th>    </tr></thead><tbody>
-                <tr>
-                        <th id="T_67418_level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_67418_row0_col0" class="data row0 col0" >18.01</td>
-                        <td id="T_67418_row0_col1" class="data row0 col1" >0.58</td>
-                        <td id="T_67418_row0_col2" class="data row0 col2" >0.05560</td>
-                        <td id="T_67418_row0_col3" class="data row0 col3" >0.00180</td>
-                        <td id="T_67418_row0_col4" class="data row0 col4" >1353.9</td>
-                        <td id="T_67418_row0_col5" class="data row0 col5" >4.4</td>
-            </tr>
-            <tr>
-                        <th id="T_67418_level0_row1" class="row_heading level0 row1" >1</th>
-                        <td id="T_67418_row1_col0" class="data row1 col0" >24.00</td>
-                        <td id="T_67418_row1_col1" class="data row1 col1" >0.58</td>
-                        <td id="T_67418_row1_col2" class="data row1 col2" >0.04170</td>
-                        <td id="T_67418_row1_col3" class="data row1 col3" >0.00100</td>
-                        <td id="T_67418_row1_col4" class="data row1 col4" >1070.8</td>
-                        <td id="T_67418_row1_col5" class="data row1 col5" >6.4</td>
-            </tr>
-            <tr>
-                        <th id="T_67418_level0_row2" class="row_heading level0 row2" >2</th>
-                        <td id="T_67418_row2_col0" class="data row2 col0" >30.00</td>
-                        <td id="T_67418_row2_col1" class="data row2 col1" >0.58</td>
-                        <td id="T_67418_row2_col2" class="data row2 col2" >0.03334</td>
-                        <td id="T_67418_row2_col3" class="data row2 col3" >0.00065</td>
-                        <td id="T_67418_row2_col4" class="data row2 col4" >908.0</td>
-                        <td id="T_67418_row2_col5" class="data row2 col5" >11.0</td>
-            </tr>
-            <tr>
-                        <th id="T_67418_level0_row3" class="row_heading level0 row3" >3</th>
-                        <td id="T_67418_row3_col0" class="data row3 col0" >34.00</td>
-                        <td id="T_67418_row3_col1" class="data row3 col1" >0.57</td>
-                        <td id="T_67418_row3_col2" class="data row3 col2" >0.02942</td>
-                        <td id="T_67418_row3_col3" class="data row3 col3" >0.00050</td>
-                        <td id="T_67418_row3_col4" class="data row3 col4" >823.9</td>
-                        <td id="T_67418_row3_col5" class="data row3 col5" >7.6</td>
-            </tr>
-            <tr>
-                        <th id="T_67418_level0_row4" class="row_heading level0 row4" >4</th>
-                        <td id="T_67418_row4_col0" class="data row4 col0" >40.00</td>
-                        <td id="T_67418_row4_col1" class="data row4 col1" >0.58</td>
-                        <td id="T_67418_row4_col2" class="data row4 col2" >0.02501</td>
-                        <td id="T_67418_row4_col3" class="data row4 col3" >0.00036</td>
-                        <td id="T_67418_row4_col4" class="data row4 col4" >736.6</td>
-                        <td id="T_67418_row4_col5" class="data row4 col5" >3.8</td>
-            </tr>
-            <tr>
-                        <th id="T_67418_level0_row5" class="row_heading level0 row5" >5</th>
-                        <td id="T_67418_row5_col0" class="data row5 col0" >50.00</td>
-                        <td id="T_67418_row5_col1" class="data row5 col1" >0.58</td>
-                        <td id="T_67418_row5_col2" class="data row5 col2" >0.02000</td>
-                        <td id="T_67418_row5_col3" class="data row5 col3" >0.00023</td>
-                        <td id="T_67418_row5_col4" class="data row5 col4" >633.8</td>
-                        <td id="T_67418_row5_col5" class="data row5 col5" >8.8</td>
-            </tr>
-            <tr>
-                        <th id="T_67418_level0_row6" class="row_heading level0 row6" >6</th>
-                        <td id="T_67418_row6_col0" class="data row6 col0" >60.00</td>
-                        <td id="T_67418_row6_col1" class="data row6 col1" >0.57</td>
-                        <td id="T_67418_row6_col2" class="data row6 col2" >0.01667</td>
-                        <td id="T_67418_row6_col3" class="data row6 col3" >0.00016</td>
-                        <td id="T_67418_row6_col4" class="data row6 col4" >566.0</td>
-                        <td id="T_67418_row6_col5" class="data row6 col5" >10.0</td>
-            </tr>
-    </tbody></table></div></div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_20e1d_">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th class="col_heading level0 col0" >V(mL)</th>
+      <th class="col_heading level0 col1" >u(V)(mL)</th>
+      <th class="col_heading level0 col2" >1/V(mL^-1)</th>
+      <th class="col_heading level0 col3" >u(1/V)(mL^-1)</th>
+      <th class="col_heading level0 col4" >P(hPa)</th>
+      <th class="col_heading level0 col5" >u(P)(hPa)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_20e1d_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_20e1d_row0_col0" class="data row0 col0" >18.00</td>
+      <td id="T_20e1d_row0_col1" class="data row0 col1" >0.57</td>
+      <td id="T_20e1d_row0_col2" class="data row0 col2" >0.05560</td>
+      <td id="T_20e1d_row0_col3" class="data row0 col3" >0.00180</td>
+      <td id="T_20e1d_row0_col4" class="data row0 col4" >1353.9</td>
+      <td id="T_20e1d_row0_col5" class="data row0 col5" >4.4</td>
+    </tr>
+    <tr>
+      <th id="T_20e1d_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_20e1d_row1_col0" class="data row1 col0" >24.00</td>
+      <td id="T_20e1d_row1_col1" class="data row1 col1" >0.58</td>
+      <td id="T_20e1d_row1_col2" class="data row1 col2" >0.04170</td>
+      <td id="T_20e1d_row1_col3" class="data row1 col3" >0.00100</td>
+      <td id="T_20e1d_row1_col4" class="data row1 col4" >1070.8</td>
+      <td id="T_20e1d_row1_col5" class="data row1 col5" >6.3</td>
+    </tr>
+    <tr>
+      <th id="T_20e1d_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_20e1d_row2_col0" class="data row2 col0" >29.99</td>
+      <td id="T_20e1d_row2_col1" class="data row2 col1" >0.58</td>
+      <td id="T_20e1d_row2_col2" class="data row2 col2" >0.03336</td>
+      <td id="T_20e1d_row2_col3" class="data row2 col3" >0.00064</td>
+      <td id="T_20e1d_row2_col4" class="data row2 col4" >908.0</td>
+      <td id="T_20e1d_row2_col5" class="data row2 col5" >11.0</td>
+    </tr>
+    <tr>
+      <th id="T_20e1d_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_20e1d_row3_col0" class="data row3 col0" >34.00</td>
+      <td id="T_20e1d_row3_col1" class="data row3 col1" >0.58</td>
+      <td id="T_20e1d_row3_col2" class="data row3 col2" >0.02942</td>
+      <td id="T_20e1d_row3_col3" class="data row3 col3" >0.00050</td>
+      <td id="T_20e1d_row3_col4" class="data row3 col4" >824.0</td>
+      <td id="T_20e1d_row3_col5" class="data row3 col5" >7.5</td>
+    </tr>
+    <tr>
+      <th id="T_20e1d_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_20e1d_row4_col0" class="data row4 col0" >39.99</td>
+      <td id="T_20e1d_row4_col1" class="data row4 col1" >0.58</td>
+      <td id="T_20e1d_row4_col2" class="data row4 col2" >0.02501</td>
+      <td id="T_20e1d_row4_col3" class="data row4 col3" >0.00036</td>
+      <td id="T_20e1d_row4_col4" class="data row4 col4" >736.6</td>
+      <td id="T_20e1d_row4_col5" class="data row4 col5" >3.8</td>
+    </tr>
+    <tr>
+      <th id="T_20e1d_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_20e1d_row5_col0" class="data row5 col0" >50.00</td>
+      <td id="T_20e1d_row5_col1" class="data row5 col1" >0.58</td>
+      <td id="T_20e1d_row5_col2" class="data row5 col2" >0.02000</td>
+      <td id="T_20e1d_row5_col3" class="data row5 col3" >0.00023</td>
+      <td id="T_20e1d_row5_col4" class="data row5 col4" >633.9</td>
+      <td id="T_20e1d_row5_col5" class="data row5 col5" >8.9</td>
+    </tr>
+    <tr>
+      <th id="T_20e1d_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_20e1d_row6_col0" class="data row6 col0" >59.99</td>
+      <td id="T_20e1d_row6_col1" class="data row6 col1" >0.58</td>
+      <td id="T_20e1d_row6_col2" class="data row6 col2" >0.01667</td>
+      <td id="T_20e1d_row6_col3" class="data row6 col3" >0.00016</td>
+      <td id="T_20e1d_row6_col4" class="data row6 col4" >566.0</td>
+      <td id="T_20e1d_row6_col5" class="data row6 col5" >10.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 </div>
 <div class="section" id="ajustement-lineaire">
@@ -702,7 +740,7 @@ L&#39;ordonnée à l&#39;origine est 231 +/- 22 hPa
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---------------------------------------
-Nombre de mole. n = -9.98e-04 +/- 4.2e-05 mol
+Nombre de mole. n = -9.98e-04 +/- 4.1e-05 mol
 ---------------------------------------
 </pre></div>
 </div>
@@ -737,15 +775,20 @@ Nombre de mole. n = -9.98e-04 +/- 4.2e-05 mol
               </div>
               
         
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="regression.html" title="previous page">Ajustement d’un modèle affine</a>
-
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="regression.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Ajustement d’un modèle affine</p>
         </div>
+    </a>
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -761,8 +804,7 @@ Nombre de mole. n = -9.98e-04 +/- 4.2e-05 mol
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

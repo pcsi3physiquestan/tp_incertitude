@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rendre compte et exploiter &#8212; Incertitudes de mesure</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -31,33 +31,36 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp2_optique/notebook/rcgeneral.html" />
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp_incertitude/notebook/rcgeneral.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Comparer un résultat expérimental avec un résultat théorique." href="comparaison.html" />
     <link rel="prev" title="Incertitude des mesurandes indirectes." href="indirecte.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -75,13 +78,14 @@
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">Incertitudes de mesure</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -96,62 +100,74 @@
    Points à retenir
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="vocabulaire.html">
-   Vocabulaire et étapes : Généralités
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="explication.html">
+   Comprendre le contexte
   </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="incertitude.html">
-   Les incertitudes de mesure
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="distribution.html">
-     Distributions statistiques usuelles.
+    <a class="reference internal" href="vocabulaire.html">
+     Vocabulaire et étapes : Généralités
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sources.html">
-     Sources d’incertitudes et bilan.
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="incertitude.html">
+     Les incertitudes de mesure
     </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="distribution.html">
+       Distributions statistiques usuelles.
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="sources.html">
+       Sources d’incertitudes et bilan.
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="indirecte.html">
+       Incertitude des mesurandes indirectes.
+      </a>
+     </li>
+    </ul>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="indirecte.html">
-     Incertitude des mesurandes indirectes.
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
+     Rendre compte et exploiter
     </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
-   Rendre compte et exploiter
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="comparaison.html">
-     Comparer un résultat expérimental avec un résultat théorique.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="verifier_loi.html">
-     Vérifier une loi physique
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="regression.html">
-     Ajustement d’un modèle affine
-    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="comparaison.html">
+       Comparer un résultat expérimental avec un résultat théorique.
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="verifier_loi.html">
+       Vérifier une loi physique
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="regression.html">
+       Ajustement d’un modèle affine
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -164,10 +180,6 @@
 
     </div>
 </nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
-</div>
 
 </div>
 
@@ -249,7 +261,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#resultat-unique">
@@ -260,18 +272,6 @@
   <a class="reference internal nav-link" href="#ensemble-de-resultats">
    Ensemble de résultats
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#representation-graphique">
-   Représentation graphique
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#consignes-de-traces">
-     Consignes de tracés
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -285,71 +285,74 @@
               <div>
                 
   <p>Nous avons déjà commencé à voir comment rendre compte d’une mesure unique avec son incertitude, nous allons maintenant voir comment rendre compte d’un groupe de résultat.</p>
-<div class="section" id="rendre-compte-et-exploiter">
+<div class="tex2jax_ignore mathjax_ignore section" id="rendre-compte-et-exploiter">
 <h1>Rendre compte et exploiter<a class="headerlink" href="#rendre-compte-et-exploiter" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="resultat-unique">
 <h2>Résultat unique<a class="headerlink" href="#resultat-unique" title="Permalink to this headline">¶</a></h2>
-<p>Pour rappel, <strong>un résultat de mesure unique avec incertitude doit s’écrire sous la forme :</strong></p>
-<div class="math notranslate nohighlight">
-\[
-G = (G_{mes} \pm u(G)) Unités
-\]</div>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Vous pouvez utiliser des puissances de 10 en facteur si c’est nécessaire.</p>
 </div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Un résultat de mesure unique avec incertitude doit s’écrire sous la forme :__</p>
+<div class="math notranslate nohighlight">
+\[
+G = (G_{mes} \pm u(G)) Unités
+\]</div>
 <p>Vous devez respectez les contraintes suivantes :</p>
 <ul class="simple">
 <li><p>L’incertitude de mesure doit avoir 2 chiffres significatifs</p></li>
-<li><p>La valeur mesure doit avoir la même précision que l’incertitude ne mesure.</p></li>
+<li><p>La valeur mesurée doit avoir la même précision que l’incertitude ne mesure.</p></li>
 </ul>
+</div>
+<div class="topic">
+<p class="topic-title first">Exemples</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Mise en forme</p></th>
+<th class="text-align:center head"><p>Correct/Incorrect</p></th>
+<th class="text-align:center head"><p>Explication</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(U = 3.2 \pm 2.1 V\)</span></p></td>
+<td class="text-align:center"><p>Correct</p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(R = (3.2 \pm 2.1) \times 10^6 \Omega\)</span></p></td>
+<td class="text-align:center"><p>Correct</p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(R = 3.215 \pm 2.112 \Omega\)</span></p></td>
+<td class="text-align:center"><p>Incorrect</p></td>
+<td class="text-align:center"><p>Trop de chiffres significatifs</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(R = 3.2 \pm 2 \Omega\)</span></p></td>
+<td class="text-align:center"><p>Incorrect</p></td>
+<td class="text-align:center"><p>Incohérence dans les précisions (mesure/incertitude)</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(R = 1 \pm 2.1 \Omega\)</span></p></td>
+<td class="text-align:center"><p>Incorrect</p></td>
+<td class="text-align:center"><p>Incohérence dans les précisions (mesure/incertitude)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="section" id="ensemble-de-resultats">
 <h2>Ensemble de résultats<a class="headerlink" href="#ensemble-de-resultats" title="Permalink to this headline">¶</a></h2>
-<p>Pour rendre compte (afficher proprement) d’un ensemble de résultats, on peut utiliser plusieurs moyens techniques:</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>Dans les premiers TP, l’utilisation des notebook vous obligera à surtout utiliser numpy pour manipuler un ensemble de résultat.
-Les méthodes de compte-rendu seront alors souvent guidées. Etudiez ces méthodes pour pouvoir les reproduire.</p>
+<p>Dans les premiers TP, l’utilisation des notebook vous obligera à surtout utiliser <code class="docutils literal notranslate"><span class="pre">numpy</span></code> et <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> pour manipuler un ensemble de résultat.</p>
 </div>
+<p>Pour rendre compte d’un ensemble de résultats, on peut utiliser plusieurs moyens techniques:</p>
 <ul class="simple">
-<li><p>tableau markdown dans un notebook (<em>très verbeux et ne permet pas directement de manipuler les résultats</em>)</p></li>
-<li><p><strong>tableur (LibreOffice Calc, Excel…) : pratique pour l’affichage ET la manipulation des résultats</strong></p></li>
+<li><p>Un tableau de valeurs. <em>En général en utilisant un tableur.</em></p></li>
+<li><p>Un graphique avec si elles sont calculer des <em>croix ou barres d’incertitude.</em></p></li>
 </ul>
-<p>Dans tous les cas, plusieurs points sont à respecter :</p>
-<ul class="simple">
-<li><p>Bien préciser le contenu des colonnes et les <strong>unités</strong> des grandeurs (en-tête c’est plus simple).</p></li>
-<li><p>Si la détermination des <strong>incertitudes de mesure</strong> est importante, réservez une colonne pour ces dernières.</p></li>
-<li><p>Pour un tableur, utilisez les <strong>formules de calcul du logiciel</strong> plutôt que tout calculer “à la main”.</p></li>
-</ul>
-<p><strong>Dans tous les cas, préfèrez un système (tableur ou numpy) qui permet d’automatiser les calculs à faire sur les résultats.</strong></p>
-</div>
-<div class="section" id="representation-graphique">
-<h2>Représentation graphique<a class="headerlink" href="#representation-graphique" title="Permalink to this headline">¶</a></h2>
-<p>Les représentations graphiques sont très utiles pour :</p>
-<ul class="simple">
-<li><p>Faire une synthèse rapide et visuelle des résultats. Possiblement des comparaisons.</p></li>
-<li><p>Tester visuellement une relation possible entre deux mesurandes.</p></li>
-</ul>
-<div class="topic">
-<p class="topic-title">Moyens techniques</p>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<p>L’utilisation de <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> n’impose pas l’utilisation de <code class="docutils literal notranslate"><span class="pre">numpy</span></code> mais c’est fortement recommandé.</p>
-</div>
-<p>Vous disposerez principalement de trois méthodes pour obtenir des représentations graphiques :</p>
-<ul class="simple">
-<li><p>Logiciel métier associé à un instrument de mesure (console d’acquisition, oscilloscope, spectromètre…)</p></li>
-<li><p>Tableur (LibreOffice, Excel)</p></li>
-<li><p><strong>matplotlib</strong></p></li>
-</ul>
-<p>La bibliothèque <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> sera utilisée en priorité dans un premier temps, c’est pourquoi les exemples d’applications seront présentés avec ce moyen.</p>
-</div>
-<div class="section" id="consignes-de-traces">
-<h3>Consignes de tracés<a class="headerlink" href="#consignes-de-traces" title="Permalink to this headline">¶</a></h3>
 <p>Se reporter au <a class="reference external" href="https://pcsi3physiquestan.github.io/intro_python/notebook/plt_presentation.html#methode-generale">document sur Python</a> pour revoir la structure pour créer un graphique sous Python.</p>
 <p><strong>On se rappellera l’utilisation de <code class="docutils literal notranslate"><span class="pre">errorbar</span></code> pour créer des croix d’incertitudes.</strong></p>
-</div>
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -378,16 +381,27 @@ Les méthodes de compte-rendu seront alors souvent guidées. Etudiez ces méthod
               </div>
               
         
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="indirecte.html" title="previous page">Incertitude des mesurandes indirectes.</a>
-    <a class='right-next' id="next-link" href="comparaison.html" title="next page">Comparer un résultat expérimental avec un résultat théorique.</a>
-
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="indirecte.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Incertitude des mesurandes indirectes.</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="comparaison.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Comparer un résultat expérimental avec un résultat théorique.</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -403,8 +417,7 @@ Les méthodes de compte-rendu seront alors souvent guidées. Etudiez ces méthod
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

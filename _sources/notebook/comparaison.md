@@ -67,12 +67,14 @@ $$
 
 En divisant $\Delta G$ par $\sigma_{\Delta G}$, on aura donc une variable aléatoire $\eta_G$ qui aura un écart-type égal à 1 (_distribution réduite_). Donc:
 > Si l'expérience et les attentes (théoriques ou constructeur) sont compatibles, on attend donc que la variable aléatoire associée au mesurande ;
+>
 > $$
 \eta_G = \frac{G_{mes} - G_{att}}{\sqrt{\sigma^2(G_{mes}) + \sigma^2(G_{att})}}
 $$
 > soit __une distribution centrée réduite.__
 
 On s'est donc ramené à l'idée que pour tester la compatibilité valeur attendue-expérience, il ne faut pas attendre un écart nul mais des données compatibles avec une estimation de $\eta_G$. On rappelle qu'on ne possède pas l'allure de $\eta_G$ mais uniquement $g_{mes}, u(G_{mes}), g_{att}, u(G_{att})$, on ne peut donc qu'estimer $\eta_G$ par:
+
 $$
 \eta = \frac{g_{mes} - g_{att}}{\sqrt{u^2(G_{mes}) + u^2(G_{att})}}
 $$
@@ -81,7 +83,7 @@ __Il faut donc un critère sur la valeur de $\eta$ pour savoir s'il y a compatib
 
 Il existe des tests en statistique permettant à partir d'une estimation de décider si l'hypothèse d'une distribution centrée réduite est acceptable ou non. Ces tests ne sont pas au programme, on admet que cela revient à fixer une valeur seuil pour $\eta$ et considérer que si la valeur seuil est dépassée, il n'y a pas compatibilité. Si  $\eta$ est inférieure à cette valeur seuil, il y a compatibilité.
 
-Dans le cadre des classes préparatoires, le choix de cette valeur seuil est fixé à 2. Cela revient, dans l'hypothèse d'une distribution gaussienne à rejetter une compatibilité avec un risque d'erreur de 5%.
+Dans le cadre des classes préparatoires, le choix de cette valeur seuil est fixé à 2. Cela revient, dans l'hypothèse d'une distribution gaussienne, à rejeter une compatibilité avec un risque d'erreur de 5%.
 ````
 
 ## Exemples d'utilisation (en ligne)

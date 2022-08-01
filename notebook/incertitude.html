@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Les incertitudes de mesure &#8212; Incertitudes de mesure</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -31,33 +31,36 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp2_optique/notebook/incertitude.html" />
+    <link rel="canonical" href="https://pcsi3physiquestan.github.io/tp_incertitude/notebook/incertitude.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Distributions statistiques usuelles." href="distribution.html" />
     <link rel="prev" title="Vocabulaire et étapes : Généralités" href="vocabulaire.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -75,13 +78,14 @@
     <a class="navbar-brand text-wrap" href="../index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">Incertitudes de mesure</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -177,10 +181,6 @@
     </div>
 </nav> <!-- To handle the deprecated key -->
 
-<div class="navbar_extra_footer">
-  <a href="https://www.cedriclacpatia.fr">Site de la classe</a>
-</div>
-
 </div>
 
 
@@ -261,7 +261,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#qu-est-ce-qu-une-incertitude">
@@ -301,10 +301,12 @@
         
               <div>
                 
-  <div class="section" id="les-incertitudes-de-mesure">
+  <div class="tex2jax_ignore mathjax_ignore section" id="les-incertitudes-de-mesure">
 <h1>Les incertitudes de mesure<a class="headerlink" href="#les-incertitudes-de-mesure" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="qu-est-ce-qu-une-incertitude">
 <h2>Qu’est-ce qu’une incertitude ?<a class="headerlink" href="#qu-est-ce-qu-une-incertitude" title="Permalink to this headline">¶</a></h2>
+<div class="topic">
+<p class="topic-title first">Variabilité des mesures</p>
 <p>Un processus de mesurage n’est jamais <em>stable</em> et <em>unique</em> :</p>
 <blockquote>
 <div><p>Le résultat de mesurage ne sera pas tout à fait le même si l’on refait plusieurs fois la mesure ou la méthode de mesurage ne nous permettra que <strong>d’encadrer</strong> le résultat entre deux valeurs.
@@ -314,7 +316,8 @@ Le processus de mesurage présente donc <strong>une dispersion</strong> des vale
 <img alt="../_images/dispersion_inc.png" src="../_images/dispersion_inc.png" />
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Dispersion des résultats de mesure</span><a class="headerlink" href="#dispersion" title="Permalink to this image">¶</a></p>
 </div>
-<p>La fidélité d’un résultat de mesure est caractérisé par la dispersion des résultats de mesure qu’on obtiendrait en répéter l’expérience. On va quantifier cette dispersion par une grandeur qu’on appelle <strong>incertitude</strong>.</p>
+<p>La <em>fidélité</em> d’un résultat de mesure est caractérisé par la dispersion des résultats de mesure qu’on obtiendrait en répéter l’expérience. On va quantifier cette dispersion par une grandeur qu’on appelle <strong>incertitude</strong>.</p>
+</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <ul class="simple">
@@ -323,7 +326,7 @@ Le processus de mesurage présente donc <strong>une dispersion</strong> des vale
 </ul>
 </div>
 <div class="topic">
-<p class="topic-title">Caractère statistique</p>
+<p class="topic-title first">Caractère statistique</p>
 <p>L’incertitude-type permet d’attribuer une vision statistique à la notion de dispersion. L’idée est la suivante :</p>
 <blockquote>
 <div><p><strong>si l’on repète <span class="math notranslate nohighlight">\(N\)</span> fois la même expérience dans les mêmes conditions, on va pouvoir mesurer <span class="math notranslate nohighlight">\(N\)</span> résultats de mesurages différents d’une grandeur <span class="math notranslate nohighlight">\(X\)</span> (notés <span class="math notranslate nohighlight">\(x_i\)</span> avec <span class="math notranslate nohighlight">\(i\)</span> allant de 1 à <span class="math notranslate nohighlight">\(N\)</span>). On obtient ainsi une statistique des valeurs mesurées dont on peut associer la moyenne au</strong> résultat de mesurage et <strong>l’écart-type</strong> à l’incertitude-type.</p>
@@ -334,28 +337,27 @@ Le processus de mesurage présente donc <strong>une dispersion</strong> des vale
 <li><p>Utiliser les propriétés mathématiques de la variance et de l’écart-type pour calculer des incertitudes-types (puisqu’on les assimile à des écart-types).</p></li>
 </ul>
 </div>
-<div class="topic">
-<p class="topic-title">Variabilité d’une mesure</p>
-<p><a class="reference internal" href="#rcexp-fig"><span class="std std-ref">Ci-dessous</span></a>, on analyse les résultats du mesurage du temps caractéristique d’un circuit RC ainsi que le calcul de la valeur mesurée et de l’incertitude-type grâce à cette distribution. On a réalisé 1000 mesures grâce à un microcontroleur.</p>
-<div class="figure align-default" id="rcexp-fig">
-<div class="cell_output docutils container">
-<img alt="../_images/incertitude_1_0.png" src="../_images/incertitude_1_0.png" />
-</div>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Répartition des mesures</span><a class="headerlink" href="#rcexp-fig" title="Permalink to this image">¶</a></p>
-</div>
-<p>La distribution des mesures a pour moyenne <span class="pasted-text">2.286</span> ms et pour écart-type <span class="pasted-text">0.010</span> ms”</p>
-</div>
-<div class="topic">
-<p class="topic-title">Un exemple de simulation</p>
-<p>Cette fois, on ne va pas déduire de nombreuses mesures l’écart-type et le résultat de mesurage mais on va simuler de nombreuses mesures connaissant la distribution statistique.</p>
-<p>On suppose qu’on a réalisé la mesure d’une tension <span class="math notranslate nohighlight">\(U\)</span> et qu’on a obtenu un résultat de mesurage <span class="math notranslate nohighlight">\(U_{mes} = 3.4 V\)</span> avec une incertitude <span class="math notranslate nohighlight">\(u(U) = 0.2 V\)</span> (on verra plus tard des méthodes d’estimation de <span class="math notranslate nohighlight">\(u(U)\)</span>). On a estimé que la distribution statistique associée à cette mesure est une distribution gaussienne (ou normale). On va simuler <span class="math notranslate nohighlight">\(N = 1000000\)</span> tirages de <span class="math notranslate nohighlight">\(U\)</span> (comme si on réalisait <em>par la pensée</em> N fois l’expérience) en associant à U une distribution gaussienne d’espérance 3.4 et d’écart-type 0.2.</p>
+<div class="sidebar">
+<p class="sidebar-title">Un exemple de simulation</p>
+<p>On suppose qu’on a réalisé la mesure d’une tension <span class="math notranslate nohighlight">\(U\)</span> et qu’on a obtenu un résultat de mesurage <span class="math notranslate nohighlight">\(U_{mes} = 3.4 V\)</span> avec une incertitude <span class="math notranslate nohighlight">\(u(U) = 0.2 V\)</span>. La distribution statistique est supposée être une distribution gaussienne. On va simuler <span class="math notranslate nohighlight">\(N = 1000000\)</span> tirages de <span class="math notranslate nohighlight">\(U\)</span> (comme si on réalisait <em>par la pensée</em> N fois l’expérience) en associant à U une distribution gaussienne d’espérance 3.4 et d’écart-type 0.2.</p>
 <p>Observez <a class="reference internal" href="#usimul-fig"><span class="std std-ref">ci-dessous</span></a> l’histogramme des valeurs obtenues. On a aussi représenté la courbe de la distribution gaussienne théorique associée.</p>
 <div class="figure align-default" id="usimul-fig">
 <div class="cell_output docutils container">
 <img alt="../_images/incertitude_2_0.png" src="../_images/incertitude_2_0.png" />
 </div>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Simulation de valeurs de U</span><a class="headerlink" href="#usimul-fig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Simulation de valeurs de U</span><a class="headerlink" href="#usimul-fig" title="Permalink to this image">¶</a></p>
 </div>
+</div>
+<div class="topic">
+<p class="topic-title first">Variabilité réelle d’une mesure</p>
+<p><a class="reference internal" href="#rcexp-fig"><span class="std std-ref">Ci-dessous</span></a>, on analyse les résultats du mesurage du temps caractéristique d’un circuit RC ainsi que le calcul de la valeur mesurée et de l’incertitude-type grâce à cette distribution. On a réalisé 1000 mesures grâce à un microcontroleur.</p>
+<div class="figure align-default" id="rcexp-fig">
+<div class="cell_output docutils container">
+<img alt="../_images/incertitude_1_0.png" src="../_images/incertitude_1_0.png" />
+</div>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Répartition des mesures</span><a class="headerlink" href="#rcexp-fig" title="Permalink to this image">¶</a></p>
+</div>
+<p>La distribution des mesures a pour moyenne <span class="pasted-text">2.286</span> ms et pour écart-type <span class="pasted-text">0.010</span> ms.</p>
 </div>
 </div>
 <div class="section" id="incertitude-pourquoi-faire">
@@ -367,7 +369,7 @@ Le processus de mesurage présente donc <strong>une dispersion</strong> des vale
 </ul>
 </div></blockquote>
 <div class="topic">
-<p class="topic-title">Exemple</p>
+<p class="topic-title first">Exemple</p>
 <ul class="simple">
 <li><p>Un fabriquant d’électronique produit des résistances dont la valeur doit être <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
 </ul>
@@ -388,7 +390,7 @@ Le processus de mesurage présente donc <strong>une dispersion</strong> des vale
 <p>On remarquera qu’évaluer une incertitude répond à un but. Il n’est donc pas nécessaire de chercher systématiquement à l’estimer : il faut se demander si c’est nécessaire.</p>
 </div>
 <div class="topic">
-<p class="topic-title">Exemple</p>
+<p class="topic-title first">Exemple</p>
 <ul class="simple">
 <li><p>On veut mesurer la constante des gaz parfaits.</p></li>
 </ul>
@@ -414,7 +416,7 @@ Le processus de mesurage présente donc <strong>une dispersion</strong> des vale
 <h3>Evaluation de type A<a class="headerlink" href="#evaluation-de-type-a" title="Permalink to this headline">¶</a></h3>
 <p>Une évaluation de type A peut-être réalisée en répétant <span class="math notranslate nohighlight">\(N\)</span> fois la même expérience (manuellement ou automatiquement), soit en regroupant les mesures de plusieurs groupes de TPs.</p>
 <div class="topic">
-<p class="topic-title">Contrôle des mesures</p>
+<p class="topic-title first">Contrôle des mesures</p>
 <p>Avant de se lancer dans une exploitation des données, il est important de vérifier qu’il n’y a pas de mesures aberrantes dans les échantillons. C’est notamment important lorsque les mesures sont automatiques ou qu’elles viennent d’autres groupes.</p>
 <p>En général, la première analyse est <strong>graphique</strong>. On peut:</p>
 <ul class="simple">
@@ -425,15 +427,15 @@ Le processus de mesurage présente donc <strong>une dispersion</strong> des vale
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Estimations
+<p><strong>Estimations</strong><br />
 Il n’est pas nécessaire de connaître ces formules mais voici les méthodes de calculs du résultat de mesure et de l’incertitude que nous utiliserions (on suppose qu’on a réalisé <span class="math notranslate nohighlight">\(k\)</span> mesures <span class="math notranslate nohighlight">\(\{g_i\}\)</span> d’un mesurande <span class="math notranslate nohighlight">\(G\)</span>) :</p>
 <ul class="simple">
-<li><p><strong>Estimation de la moyenne :</strong></p></li>
+<li><p><strong>Estimation de la valeur mesurée :</strong></p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[ G_{mes} = \frac{1}{k} \sum_{i=1}^{k}g_i\]</div>
 <ul class="simple">
-<li><p><strong>Estimation de l’incertitude :</strong></p></li>
+<li><p><strong>Estimation de l’incertitude sur la valeur mesurée:</strong></p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[ u(G) = \sqrt{\frac{1}{k(k-1)} \sum_{i=1}^{k}(g_i - G_{mes})^2}\]</div>
@@ -477,16 +479,27 @@ Il n’est pas nécessaire de connaître ces formules mais voici les méthodes d
               </div>
               
         
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="vocabulaire.html" title="previous page">Vocabulaire et étapes : Généralités</a>
-    <a class='right-next' id="next-link" href="distribution.html" title="next page">Distributions statistiques usuelles.</a>
-
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="vocabulaire.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Vocabulaire et étapes : Généralités</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="distribution.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Distributions statistiques usuelles.</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -502,8 +515,7 @@ Il n’est pas nécessaire de connaître ces formules mais voici les méthodes d
       </div>
     </div>
   
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
