@@ -372,7 +372,7 @@
 <li><p>Loi de probabilité : <span class="math notranslate nohighlight">\(p(x) = \frac{1}{\sigma \sqrt{2\pi}}\exp^{- \frac{1}{2} {\left(\frac{x - \mu}{\sigma}\right)}^2}\)</span></p></li>
 <li><p>Espérance de la distribution : <span class="math notranslate nohighlight">\(\mu\)</span></p></li>
 <li><p>Ecart-type de la distribution : <span class="math notranslate nohighlight">\(\sigma\)</span></p></li>
-<li><p><em>PYTHON</em> (bibliothèque <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code>) - Vecteur de N tirages :<code class="docutils literal notranslate"><span class="pre">normal(a,</span> <span class="pre">b,</span> <span class="pre">N)</span></code></p></li>
+<li><p><em>PYTHON</em> (bibliothèque <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code>) - Vecteur de N tirages :<code class="docutils literal notranslate"><span class="pre">normal(mu,</span> <span class="pre">sigma,</span> <span class="pre">N)</span></code></p></li>
 </ul>
 </div>
 </div>
@@ -406,7 +406,7 @@
 <li><p>Pour chaque mesurande directe <span class="math notranslate nohighlight">\(X_i\)</span></p>
 <ol class="simple">
 <li><p>Pour chaque source d’incertitude estimée <span class="math notranslate nohighlight">\(u_i\)</span> : Simulation de N tirages suivant la distribution estimée (<strong>autour de 0</strong>).</p></li>
-<li><p>Somme des composantes</p></li>
+<li><p>Somme des composantes avec la valeur mesurée</p></li>
 </ol>
 </li>
 <li><p>Calcul des N simulations de Y.</p></li>

@@ -32,7 +32,7 @@ Cette partie résume les méthodes à connaître. Les explications sont données
 * Loi de probabilité : $p(x) = \frac{1}{\sigma \sqrt{2\pi}}\exp^{- \frac{1}{2} {\left(\frac{x - \mu}{\sigma}\right)}^2}$
 * Espérance de la distribution : $\mu$
 * Ecart-type de la distribution : $\sigma$
-* _PYTHON_ (bibliothèque `numpy.random`) - Vecteur de N tirages :`normal(a, b, N)`
+* _PYTHON_ (bibliothèque `numpy.random`) - Vecteur de N tirages :`normal(mu, sigma, N)`
 
 ## Sources d'incertitudes usuelles
 * Fluctuation de l'affichage de mesure : intervalle min-max
@@ -55,7 +55,7 @@ $$u(g) = \frac{1}{\sqrt{N}} \sigma_G = \sqrt{\frac{1}{N(N-1)} \sum\limits_{i=1}^
 Pour un mesurande $Y = f(X_i)$.
 1. Pour chaque mesurande directe $X_i$
     1. Pour chaque source d'incertitude estimée $u_i$ : Simulation de N tirages suivant la distribution estimée (__autour de 0__).
-    2. Somme des composantes
+    2. Somme des composantes avec la valeur mesurée
 2. Calcul des N simulations de Y.
 3. Calcul de la moyenne (`mean(V)`) des N valeurs (__résultat de mesurage__) et de l'écart-type (`std(V, ddof=1)`) (__incertitude-type__).
 
