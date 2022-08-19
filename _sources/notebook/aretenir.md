@@ -15,7 +15,7 @@ kernelspec:
 ---
 
 # Points à retenir
-Cette partie résume les méthodes à connaître. Les explications sont données dans les chapitres suivants.
+Cette partie résume les méthodes à connaître. Les explications sont données dans les chapitres suivants. Un poster est disponible [en ligne](https://stanislas.edunao.com/mod/resource/view.php?id=15168)
 
 ## Concepts
 * __Mesurande__ : Grandeur que l'on veut mesurer. Le _résultat de mesure_ est soumis à une variabilité dû aux conditions expérimentales, à la méthode, à l'opérateur. Cette variabilité est quantifité par une __incertitude__ de mesure.
