@@ -26,7 +26,7 @@ Nous avons déjà commencé à voir comment rendre compte d'une mesure unique av
 Vous pouvez utiliser des puissances de 10 en facteur si c'est nécessaire.
 ```
 ````{important}
-Un résultat de mesure unique avec incertitude doit s'écrire sous la forme :__
+Un résultat de mesure unique avec incertitude doit s'écrire sous la forme :
 
 $$
 G = (G_{mes} \pm u(G)) Unités

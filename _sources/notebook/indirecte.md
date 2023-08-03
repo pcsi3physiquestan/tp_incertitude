@@ -81,7 +81,7 @@ La méthode est :
 
 
 ```{glue:figure} R_graph
-:name: label_image
+:name: r_graph
 :align: center
 Titre
 ```

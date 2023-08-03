@@ -31,19 +31,22 @@ En mesurant la température grâce à un thermomètre, on utilisera le coefficie
 ```{margin}
 Le schéma suffirait dans un compte-rendu.
 ```
-````{panels}
+`````{grid}
+````{grid-item}
 ```{figure} ./images/mariotte.png
 :name: mariotte_photo
 :align: center
 Photo du montage
 ```
-+++
+````
+````{grid-item}
 ```{figure} ./images/mariotte_montage.png
 :name: mariotte_montage
 :align: center
 Schéma du montage
 ```
 ````
+`````
 
 
 ## Analyse des sources d'incertitudes

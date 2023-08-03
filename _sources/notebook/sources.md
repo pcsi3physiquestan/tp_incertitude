@@ -81,9 +81,9 @@ On est souvent amené à utiliser les données d'un constructeur pour estimer un
 ```
 ```{topic} Exemples
 * On utilise une lentille mince en optique de distance focale $f' = 10 cm$, le constructeur nous dit que sa distance focale est connue à 10%.
-    * __Sans plus d'informations__, on considèrera qu'il s'agit de l'incertitude-type associée à une distribution gaussienne . On va donc associer à la valeur f' une incertitude de distribution uniforme centrée en $10 cm$ et d'écart-type $\frac{10}{100} \times 10 = 1 cm$.
+    * __Sans plus d'informations__, on considèrera qu'il s'agit de l'incertitude-type associée à une distribution uniforme. On va donc associer à la valeur f' une incertitude de distribution uniforme centrée en $10 cm$ et de demie-largeur $\frac{10}{100} \times 10 = 1 cm$.
 * Le multimètre numérique utilisé précédemment pour la mesure de U (dont la valeur mesurée est donc $\frac{2.43 + 2.48}{2} = 2.455 V$) est sujet à une dispersion des valeurs données, même si l'affichage est stable. Ainsi, le constructeur nous dit que la valeur mesurée, sur le calibre utilisé, possède une incertitude de 2%.
-    * A nouveau peu d'information, on va à nouveau considérer une distribution uniforme centrée sur 2.455 V et d'écart-type $\frac{2}{100} \times 2.455 = 0.049 V$.
+    * A nouveau peu d'information, on va à nouveau considérer une distribution uniforme centrée sur 2.455 V et de demie-largeur $\frac{2}{100} \times 2.455 = 0.049 V$.
 
 ```
 ```{margin}
@@ -151,7 +151,7 @@ Uval = 2.455  # Résultat de mesurage pour Uval
 llec = 0.025  # Demie-largeur de la distribution uniforme associée à la lecture de la valeur
 lins = 0.049  # Ecart-type de la distribution gaussienne associée à la fidélité de l'instrument
 echlec = rd.uniform(-llec, llec, N)  # La fonction uniform génèrera un vecteur de taille N
-echins = rd.normal(0, lins, N)
+echins = rd.uniform(-lins, lins, N)
 
 """
 On simule U et on calcule son incertitude-type
@@ -163,11 +163,27 @@ uU = np.std(echU, ddof=1)  # std est une fonction de numpy. L'option ddof=1 perm
 """
 On réalise le tracé de la distribution des U simulés.
 """
-f, ax = plt.subplots()  # Création de la figure f est des axes ax dans la figure f
-f.suptitle("Simulation de Monte-Carlo pour la grandeur U")
-ax.set_xlabel("Valeur de U (V)")
-ax.set_ylabel("Fréquence")
-ax.hist(echU, bins='rice')
+f, ax = plt.subplots(2,2)  # Création de la figure f est des axes ax dans la figure f
+ax[0,0].set_title("Ecart - lecture")
+ax[0,0].set_xlabel("Ecart (V)")
+ax[0,0].set_ylabel("Fréquence")
+ax[0,0].hist(echlec, bins='rice')
+
+ax[0,1].set_title("Ecart - instrument")
+ax[0,1].set_xlabel("Ecart (V)")
+ax[0,1].set_ylabel("Fréquence")
+ax[0,1].hist(echins, bins='rice')
+
+ax[1,0].set_title("Valeurs simulées")
+ax[1,0].text(0,0.5, "U_simule = Valeur_mesuree \n + Ecart_lecture + Ecart_instrument")
+ax[1,0].axis('off')
+
+ax[1,1].set_title("Grandeur U")
+ax[1,1].set_xlabel("Valeur de U (V)")
+ax[1,1].set_ylabel("Fréquence")
+ax[1,1].hist(echU, bins='rice')
+
+f.tight_layout()
 
 glue("tension_u", f, display=False)
 glue("tension_u_m", Uval, display=False)
